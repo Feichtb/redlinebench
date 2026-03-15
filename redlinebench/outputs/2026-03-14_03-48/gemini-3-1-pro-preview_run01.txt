@@ -1,0 +1,48 @@
+### Step 1: Establish project context
+
+- **Project name, location, code:** Bonfire House; Chatham County, NC; 2018 North Carolina Residential Code (IRC 2015).
+- **Building type and construction type:** Single Family Residential (R-3), Type V-B Construction.
+- **Climate zone:** Climate Zone 4A.
+- **Scope of drawing set:** Architectural only (General, Plans, Elevations, Sections, Details, Schedules). Structural, Civil, and MEP drawings are not included. 
+- **Specification divisions included:** An 11-page custom Project Specifications document covering general selections for site, foundation, framing, finishes, MEP, and appliances.
+
+### Step 2: Review the documents
+
+**A. Internal consistency across sheets**
+A-1 | A2.01A & A8.01 | Floor plan A2.01A shows a swing door (11-1) entering Bathroom 11, but this door is entirely missing from the Door Schedule on A8.01. | Certain
+A-2 | A3.02 & A8.01 | South Elevation A3.02 displays a window tagged with a hex "1" under the porch, but the Window Schedule on A8.01 starts at Tag 2 and contains no Tag 1. | Certain
+A-3 | A8.01, A7.10 & Specs | The Room Finish Schedule assigns "WD-1" for Reading Nook 10 walls, but the Project Specifications (pg 6) and Section A7.10 explicitly call for "WD-4" T&G wood. | Certain
+A-4 | A2.01A & A8.01 | Enlarged Plan A2.01A depicts door 08-1 (Master Closet) as a pocket door, but the Door Schedule lists it without pocket hardware or designation. | High
+A-5 | A6.01 | The First Floor Reflected Ceiling Plan depicts Garage 15 as entirely blank, contradicting the specs (pg 8) which mandate 4 interior lights in the garage. | Certain
+
+**B. Dimensional and geometric integrity**
+B-1 | A2.01 | The overall longitudinal dimension string on the North side of the floor plan totals 72'-1", but the corresponding string on the South side adds up to 72'-1 1/2". | Certain
+B-2 | A4.00 | Wall assembly W-2 shows framing and drywall components that sum to 6 1/2" (1/2" gyp + 5 1/2" stud + 1/2" gyp), but the overall top dimension incorrectly states 7". | Certain
+B-3 | A4.00 | Wall assembly E-2 details "2x6 STUDS" (5 1/2"), but the top dimension string calls out a 7 1/4" framing plan dimension, mathematically implying a 2x8 stud wall. | Certain
+
+**C. Specification-to-drawing alignment**
+C-1 | A8.01 & Specs | The Window Schedule specifies "Ultrex-Marvin" products for all windows, directly conflicting with the Specs (pg 3) which require "Andersen 400 Series". | Certain
+C-2 | A8.01 & Specs | The Door Schedule lists entry door 03-1 as a "METAL" door, contradicting the Specs (pg 3) which call for a "Jeld Wen IWP Wood Exterior Door". | Certain
+C-3 | A4.00 & Specs | Exterior Wall Assembly E-4 details 1 1/2" Rigid Insulation on the exterior, conflicting with the Specs (pg 4) which call for 1" Insulated ZIP Board (R6). | Certain
+C-4 | A4.00 & Specs | Exterior CMU Wall Assembly E-1 details 1/2" Rigid Insulation at the interior of the crawl space, conflicting with the Specs (pg 4) which require 2" rigid XPS. | Certain
+C-5 | A3.02 & Specs | Project Specifications (pg 3) state lap siding is exclusively on the "North and West Facades," but South Elevation A3.02 clearly depicts lap siding on the Master Bedroom's south face. | High
+
+**D. Building envelope and building science**
+D-1 | A4.11 | Detail 5/A4.11 shows exterior rigid continuous insulation stopping at the wood wall baseboard, leaving the CMU foundation completely uninsulated on the exterior and creating a thermal bridge at the rim joist transition. | High
+D-2 | A4.01 | Roof Assembly R-1 shows 1x2 wood furring applied over rigid insulation directly to 1/2" plywood; structurally fastening a metal roof through rigid foam requires long fasteners engaging the TJI joist framing, not just the sheathing. | High
+
+**E. Code and life safety**
+E-1 | A4.01 & A2.02 | Floor Assembly F-1 specifies standard 1/2" gypsum board on the ceiling below, which violates the fire separation code requirement for 5/8" Type X gypsum on the Garage 15 ceiling separating it from Guest Bedroom 17 above. | Certain
+E-2 | A2.01B & A8.01 | Door 16-1 between the Garage and interior hallway lacks a self-closing/self-latching hardware specification in the Door Schedule, which is required by code for garage-to-living separations. | High
+
+**F. Constructability**
+F-1 | A4.01 | Floor Assembly F-3 (Tile at Shower) illustrates the 3/4" plywood subfloor recessed below the top edge of the 2x10 joists but fails to show any structural blocking, ledgers, or joist modifications required to physically support the lowered deck. | Certain
+F-2 | A3.03 & A3.10 | Section 2/A3.10 and North Elevation A3.03 leave almost no vertical height between the 8'-0" garage door and the roof framing above, lacking the physical space required to install a structural header capable of spanning an 18'-0" garage opening. | High
+
+**G. Completeness and clarity**
+G-1 | A3.02 & A4.12 | North Elevation A3.02 includes a detail callout for "1 / A4.12" at the roof overhang, but there is no Detail 1 located on sheet A4.12. | Certain
+G-2 | A2.00, A2.01 & Specs | Project Specifications (pg 6) explicitly require 2 Rinnai tankless water heaters, but these units are not located, drafted, or referenced anywhere on the floor plans or crawl space plan. | Certain
+
+### Step 3: Summary
+
+The construction document set demonstrates a clear and robust architectural design intent but suffers from significant coordination failures between the drawing annotations and the written specifications. The top three areas of greatest concern are: 1) direct contradictions between the drawings and specs regarding major envelope components, specifically window/door manufacturers and insulation thicknesses; 2) constructability constraints, particularly the lack of spatial clearance for the massive 18-foot garage door header and the physically unsupported lowered shower subfloor detail; and 3) life safety compliance regarding the insufficient ceiling fire-rating assembly specified for the garage located directly beneath a habitable bedroom. Addressing these issues prior to construction will prevent significant procurement delays, RFI generation, and code-compliance failures in the field.

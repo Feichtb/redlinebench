@@ -1,0 +1,54 @@
+{
+  "prompt_file": "review_v3.txt",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-03-12T03:12:06.353215+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-03-12_03-04",
+  "models_run": [
+    "claude-haiku-4-5",
+    "gemini-3-flash-preview",
+    "gpt-5-mini"
+  ],
+  "results": [
+    {
+      "model_name": "claude-haiku-4-5",
+      "model_version": "claude-haiku-4-5-20251001",
+      "run_number": 1,
+      "timestamp_start": "2026-03-12T03:04:44.362297+00:00",
+      "timestamp_end": "2026-03-12T03:09:43.925484+00:00",
+      "latency_seconds": 299.56,
+      "input_tokens": 105733,
+      "output_tokens": 27515,
+      "thinking_tokens": 0,
+      "cost_usd": 0.243308,
+      "error": null
+    },
+    {
+      "model_name": "gemini-3-flash-preview",
+      "model_version": "gemini-3-flash-preview",
+      "run_number": 1,
+      "timestamp_start": "2026-03-12T03:09:45.640336+00:00",
+      "timestamp_end": "2026-03-12T03:10:38.607012+00:00",
+      "latency_seconds": 52.97,
+      "input_tokens": 25753,
+      "output_tokens": 1731,
+      "thinking_tokens": 5702,
+      "cost_usd": 0.035176,
+      "error": null
+    },
+    {
+      "model_name": "gpt-5-mini",
+      "model_version": "gpt-5-mini-2025-08-07",
+      "run_number": 1,
+      "timestamp_start": "2026-03-12T03:10:39.534148+00:00",
+      "timestamp_end": "2026-03-12T03:12:06.351245+00:00",
+      "latency_seconds": 86.81,
+      "input_tokens": 62658,
+      "output_tokens": 5818,
+      "thinking_tokens": 0,
+      "cost_usd": 0.027301,
+      "error": null
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,70 @@
+{
+  "prompt_file": "review_v3.txt",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-03-14T04:09:56.931021+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-03-14_03-48",
+  "models_run": [
+    "claude-opus-4-6",
+    "claude-sonnet-4-6",
+    "gemini-3.1-pro-preview",
+    "gpt-5.4-pro"
+  ],
+  "results": [
+    {
+      "model_name": "claude-opus-4-6",
+      "model_version": "claude-opus-4-6",
+      "run_number": 1,
+      "timestamp_start": "2026-03-14T03:48:40.223990+00:00",
+      "timestamp_end": "2026-03-14T03:56:49.758207+00:00",
+      "latency_seconds": 489.53,
+      "input_tokens": 105735,
+      "output_tokens": 22527,
+      "thinking_tokens": 0,
+      "cost_usd": 1.091850,
+      "error": null
+    },
+    {
+      "model_name": "claude-sonnet-4-6",
+      "model_version": "claude-sonnet-4-6",
+      "run_number": 1,
+      "timestamp_start": "2026-03-14T03:56:50.085634+00:00",
+      "timestamp_end": "2026-03-14T04:07:03.254009+00:00",
+      "latency_seconds": 613.17,
+      "input_tokens": 105735,
+      "output_tokens": 28036,
+      "thinking_tokens": 0,
+      "cost_usd": 0.737745,
+      "error": null
+    },
+    {
+      "model_name": "gemini-3.1-pro-preview",
+      "model_version": "gemini-3.1-pro-preview",
+      "run_number": 1,
+      "timestamp_start": "2026-03-14T04:07:06.210228+00:00",
+      "timestamp_end": "2026-03-14T04:09:45.607653+00:00",
+      "latency_seconds": 159.41,
+      "input_tokens": 25753,
+      "output_tokens": 1660,
+      "thinking_tokens": 16392,
+      "cost_usd": 0.268130,
+      "error": null
+    },
+    {
+      "model_name": "gpt-5.4-pro",
+      "model_version": "unknown",
+      "run_number": 1,
+      "timestamp_start": "2026-03-14T04:09:48.679028+00:00",
+      "timestamp_end": "2026-03-14T04:09:56.930057+00:00",
+      "latency_seconds": 8.25,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0,
+      "cost_usd": 0.0,
+      "error": "Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}"
+    }
+  ],
+  "errors": [
+    "gpt-5.4-pro run 1: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}"
+  ]
+}

@@ -1,0 +1,149 @@
+# ARCHITECTURAL DOCUMENT REVIEW
+## Bonfire House – BID SET
+
+---
+
+## STEP 1: PROJECT CONTEXT
+
+**Project:** Bonfire House, single-family residence (R-3 occupancy), Chatham County, North Carolina  
+**Code Jurisdiction:** 2018 North Carolina Residential Code (IRC 2015 with amendments)  
+**Construction Type:** V-B  
+**Climate Zone:** 4A (humid subtropical)  
+**Scope of Drawings:** Architectural only (plans, elevations, sections, details, schedules, site plan). Structural, MEP, and civil coordination drawings are NOT included but referenced.  
+**Specification Document:** Yes, 11-page narrative specification provided.
+
+---
+
+## STEP 2: FINDINGS BY CATEGORY
+
+A-1 | A8.01 Room Finish Schedule, Entry Hall (01) | Room Finish Schedule assigns floor F-2 (Tile Thinset), but specifications describe Entry Hall with "SS-2 on concrete" (honed limestone stone surface), and enlarged plan A2.01A shows stone patio; assembly types do not align. | High
+
+A-2 | A8.01 Room Finish Schedule, Powder Room (14) | Room Finish Schedule lists floor as F-4 (Carpet), which is inappropriate for a powder room; specifications do not clarify powder room flooring. | High
+
+A-3 | A8.01 Room Finish Schedule, Bathroom 11 | Room Finish Schedule shows wall type "T-1" for Bathroom 11, but no wall assembly T-1 is defined on sheet A4.00 (only E-1 through E-4 and W-1 through W-4 exist). | Certain
+
+A-4 | A8.01 Room Finish Schedule, Reading Nook (10) | Room Finish Schedule lists wall finish as WD-1 (interior wood trim), but specifications describe reading nook walls as WD-4 (tongue and groove boards); specification and schedule do not align. | High
+
+A-5 | A8.01 Door Schedule | Door schedule references specific hardware types (garage door hardware, shower door hardware, gate latch hardware, crawl space door hardware) but no hardware details, specifications, or installation drawings are provided in the specification document. | High
+
+A-6 | A2.01, A2.01A, A8.01 | Specifications detail kitchen countertop material (SS-1: Silestone Ethereal Glow) and backsplash, but Room Finish Schedule and floor plans do not explicitly call out or locate these surfaces. | Moderate
+
+A-7 | A8.01 Room Finish Schedule, Entry Hall (01) | Room Finish Schedule assigns floor type F-2 to Entry Hall, but specifications define F-2 as "Ceramic tile in bathrooms" only; Entry Hall flooring assembly type is not correctly assigned. | High
+
+A-8 | A8.01 Room Finish Schedule, Entry Hall (01) | Room Finish Schedule assigns base B-2 (wood species to match wall) to Entry Hall, but Entry Hall walls are specified as P-1 (painted drywall), not wood, creating a material mismatch. | High
+
+A-9 | A1.01, A5.01, Specification | Pool dimensions (8' × 60' interior, 5'6" to 4' deep) are provided in specifications but are not shown on site plan A1.01 or enlarged deck plan A5.01, forcing contractor to scale drawing or rely solely on spec. | High
+
+B-1 | A3.22 Stair Sections | Stair details on A3.22 show "10 EQ RISERS" and "9 EQ TREADS" but do not include clearly dimensioned riser height, tread depth, or headroom clearance necessary to verify code compliance and fit between floors. | Certain
+
+B-2 | A2.03, A3.01, A3.02, Specification | Roof slopes are noted as "3"/12"", "2"/12"", "1/4"/12"", "30.00°", and "45.00°" on various sheets; these do not clearly correlate to stated building height of 27'-11", making dimensional verification difficult. | Moderate
+
+B-3 | A3.01, A3.02, A3.03 Exterior Elevations | Window elevations do not include dimensional callouts for window rough opening sizes or centerline-to-centerline spacing, making verification against window schedule impossible. | Certain
+
+B-4 | A2.01, A2.01A Level 1 Plans | Overall building length dimensions differ between full plan (30'-2 1/2" + 31'-7 1/2" = 62'-0") and enlarged plan (30'-10" and 31'-0"), without clarification of whether the difference is due to measurement to different reference lines. | High
+
+B-5 | A2.01, A2.01A, A2.01B, A2.02 Floor Plans | Room-by-room ceiling heights are not specified in a schedule or called out on plans; contractor must infer ceiling heights from building sections, which is imprecise and risks construction errors. | High
+
+C-1 | A3.02 South Elevation, Specification | Specification states wood cladding (WD-3: Thermory Ash) is on south and west facades, but elevation A3.02 shows the south facade with fiberboard/fiber cement siding and stone, not wood cladding. | High
+
+C-2 | A4.10-A4.13 Detail Drawings, Specification | Specifications specify "Hardiesoffit panels" (fiber cement brand product), but drawings use the generic term "Fiberboard Soffit," which may not match the specific product specified. | Moderate
+
+C-3 | A8.01, Specification | Specifications state Laundry Room (12) and Powder Room (14) have "SS-2 on concrete" (limestone stone flooring), but Room Finish Schedule assigns these rooms F-2 (tile) and F-4 (carpet) respectively, creating direct conflicts. | Certain
+
+C-4 | A4.00 Wall Assemblies, Specification page 4 | Specification insulation section states walls have "R6 1" Insulated ZIP Board" as exterior insulation, but wall assemblies A4.00 show "1 1/2" RIGID INSULATION" (material and thickness unclear), creating product and R-value conflict. | High
+
+C-5 | A4.01 Floor Assembly F-5, Specification | Specification requires "Finish garage floor with epoxy coating," but floor assembly F-5 detail on A4.01 does not show epoxy coating as a layer; assembly shows raw concrete only. | High
+
+C-6 | A2.01A, A2.01B, A6.01, Specification | Specifications require "Prewire 24VDC for motorized blinds 6 (south facing clerestory windows)," but architectural drawings do not identify which six windows are the target clerestories requiring motorized blind prewiring. | High
+
+C-7 | A2.01A, A2.01B, Specification | Specifications detail network equipment installation requiring ¾" plywood mounting panels above 6', external wall penetrations, and floor penetrations to crawl space, but floor plans and details do not show or locate these installation points. | High
+
+D-1 | A4.01 Roof Assembly R-1 | Roof assembly R-1 does not specify the thickness or R-value of the rigid insulation layer; without knowing the insulation thickness (2", 3", or 4"), the actual R-value and specified R49 ceiling requirement cannot be verified. | Certain
+
+D-2 | A1.01, A2.00, A3.10, Specification | Specification requires foundation drain with "drain to daylight" and "minimum 1% slope," but architectural plans do not show the drain outlet location or routing, leaving uncertainty about slope achievement. | High
+
+D-3 | A4.00-A4.13, Specification | Specifications require air sealing measures including "sill sealer," "seal all penetrations," and "treat wall cavity base (0~18") with suitable insecticide," but architectural details do not show or reference these specific measures. | High
+
+D-4 | A4.01 Floor Assembly F-2, Specification | Specification requires "Complete hydronic radiant floor heating system at Master Bathroom" but floor assembly F-2 detail does not show heating tubing, manifold locations, or system integration. | High
+
+D-5 | A2.00 Crawl Space Plan, Specification | Specification requires "Fresh air for sealed crawl space" as part of balanced ventilation system, but Crawl Space Plan A2.00 does not show fresh air intake location or ducting. | High
+
+E-1 | A3.22, Specification | Stair details A3.22 lack code-required dimensions (riser height, tread depth, handrail height, headroom clearance) necessary to verify compliance with residential code for stair safety and geometry. | Certain
+
+E-2 | A2.01, A2.01A, A2.01B | Floor plans do not show emergency escape and rescue opening (EERO) compliance details for bedrooms, including window sill heights, clear opening dimensions, and accessible emergency egress routes required by residential code. | Certain
+
+E-3 | A3.22, A5.10, A5.30 | Stair handrail and deck railing details do not provide dimensions for handrail diameter/profile, height above stair nosing/deck, and graspability requirements to verify code compliance. | Certain
+
+E-4 | A5.10 Deck Elevations | Deck railing heights are shown as "36" CABLE RAILING" at stairs and "48" CABLE RAILING" at pool deck, but reference points (measured from stair nosing vs. deck surface) are not clearly labeled, making code compliance verification impossible. | High
+
+E-5 | A2.01 Floor Plan, A4.00 Wall Assemblies | Floor plan shows garage (15) adjacent to laundry room (12) and other living spaces, but no fire-rated wall assembly is called out for garage separation; wall types W-1 through W-4 do not indicate Type X gypsum board or 1-hour fire rating. | High
+
+E-6 | A4.01 Ceiling Assembly R-1, A2.02 Level 2 Plan | Ceiling assembly R-1 does not specify fire-rating or Type X gypsum board for ceilings below habitable spaces (guest bedroom 17, guest bathroom 18) over garage, as required by code. | High
+
+E-7 | A8.01, Specification | Entry door hardware specification lists "Level Lock" (smart lock with button-based actuation), which may not comply with accessibility requirements for lever-style door handles on primary entry door. | Moderate
+
+E-8 | A2.01, A2.01A, A2.01B Floor Plans | Floor plans do not dimension hallway widths (South Hallway 05, North Hallway 16) to verify compliance with minimum 3' width requirement for residential hallways. | High
+
+E-9 | A7.02 Bathroom Interior Elevations | Bathroom interior elevation details A7.02 do not dimension required accessibility clearances (toilet clearance, vanity clearance, shower/tub clearances) to verify code compliance. | High
+
+E-10 | A2.02 Level 2 Plan | Attic (room 20) is shown on Level 2 floor plan, but no attic access opening, hatch, or ladder is detailed, and compliance with code requirements for safe access to attic is unclear. | High
+
+F-1 | A3.20, A4.10, A7.01, Specification | Entry Hall custom woodwork (WD-4 tongue and groove walls and ceiling with mirrored window trim) is shown conceptually but lacks specific dimensions, assembly details, and connection details necessary for construction or shop drawings. | High
+
+F-2 | Specification, Drawing Set | Specification references "Custom bunk bed nook... on page A8.10" but no sheet A8.10 exists in the provided drawing set; reading nook details are incomplete on referenced sheets. | Certain
+
+F-3 | A7.02 Master Closet Detail | Master Closet custom built-in details (Detail 1) lack specific dimensions for rod heights, shelf spacing, sweater box column construction, requiring field fabrication without design guidance. | High
+
+F-4 | A2.01, A7.01, A7.02, Specification | Multiple built-in shelving locations (pantry 7 shelves, laundry room 5 shelves, entry, closets) referenced in specifications have minimal detail drawings and lack dimensions for shelf depths, spacing, and support details. | High
+
+F-5 | A3.10 Building Sections | Building section A3.10 shows interior stairs under floor/ceiling above, but specific headroom clearance dimensions (required min 6'8" for residential stairs) are not provided to verify constructability. | High
+
+F-6 | A1.01 Site Plan, Specification | Pool installation coordination is described in specifications but site plan A1.01 does not show pool pad grade elevation, utility routing to equipment area, or detailed connection to house and deck systems. | High
+
+F-7 | A4.10-A4.13, Specification | Specification lists multiple wall penetrations (solar cables, plumbing vents, HVAC ducts, fiber optic conduit, electrical conduit) but architectural plans do not show a penetration schedule or location plan to guide framing coordination. | High
+
+F-8 | A2.01A, Specification | Specification requires 24VDC prewiring for motorized blinds at "6 (south facing clerestory windows)" but architectural drawings do not identify these specific windows or show location of 24VDC power sources. | High
+
+F-9 | A2.01A, A7.01 Kitchen Plans/Elevations | Kitchen floor plan and interior elevations show appliance locations but do not provide appliance dimensions or required clearance dimensions, potentially resulting in insufficient space for specified appliance models. | High
+
+F-10 | Specification | Specification states garage HVAC system is "split heat pump system (TBD)," leaving the heating/cooling design for the garage unfinalized and potentially impacting construction timing and system coordination. | Moderate
+
+F-11 | A4.00 Wall Assemblies | Wall assemblies A4.00 show insulation layers with generic descriptions ("2X6 STUDS WITH INSULATION," "1 1/2" RIGID INSULATION") but do not specify insulation product type, brand, or R-value per linear thickness. | High
+
+G-1 | Specification, Drawing Set | Specification references "Detail 1 on page A8.10" for reading nook bunk bed details, but no sheet A8.10 exists in the provided drawing set; reference should point to existing detail sheets. | Certain
+
+G-2 | Specification | Specification contains multiple critical "TBD" items (appliance models, garage HVAC type, wood flooring species, countertop details, paint colors) that should be finalized before construction to avoid delays and selections. | High
+
+G-3 | Specification | Paint and exterior finish colors are specified generically (e.g., "Sherwin Williams TBD," "Color: TBD Grey") without actual color selections, creating ambiguity about owner vs. contractor responsibility for color specification. | Moderate
+
+G-4 | A7.02, Specification | Bathroom tile specifications provide specific product names and dimensions (e.g., "Hampton Floor Deco Steel Blue 8X8," "Miabella Red Clay 8X8") but bathroom detail drawings A7.02 do not show these products or their layouts. | High
+
+G-5 | A2.01A, A7.01, A8.01 | Kitchen appliances are listed in schedule A8.01 with location codes (A1-A7) but are not clearly labeled on kitchen floor plan A2.01A or kitchen elevations A7.01, making cross-reference to spec details difficult. | High
+
+G-6 | A2.03 Roof Plan, Specification | Roof plan A2.03 includes note "MINIMIZE ROOF PENETRATIONS, CONSOLIDATE AND COORDINATE W/ ARCHITECT PRIOR TO CONSTRUCTION" instead of showing plumbing vent and other penetrations on the plan itself, deferring critical coordination to field. | High
+
+G-7 | Specification Document | Specification uses narrative format without clear division headings or systematic cross-references to drawing assembly types (E-1, E-2, W-1, W-2, etc.), making it difficult to locate spec requirements for specific assemblies. | Moderate
+
+G-8 | A8.01 Door Schedule | Door schedule references hardware types ("GARAGE DOOR HARDWARE," "SHOWER DOOR HARDWARE," "GATE LATCH HARDWARE," "CRAWL SPACE DOOR HARDWARE") without defining what specific hardware is included in each type or providing details. | High
+
+G-9 | A2.01, A2.01A, A2.01B Floor Plans | Floor plans provide multiple dimensions but do not consistently indicate whether dimensions are to face of framing, centerline of walls, or finish faces, particularly for critical clearances (hallway widths, room sizes, appliance spaces). | High
+
+G-10 | Specification Document | Specification document lacks product specifications for interior doors, frames, baseboards, interior trim, and lighting fixtures; elements are shown on drawings with type codes but specification does not provide manufacturing standards or detailed product models. | High
+
+G-11 | A1.01 Site Plan | Site plan A1.01 does not clearly show the property line or lot boundary dimensions; specification mentions "50' SETBACK" and "9.39 ACRES" parcel but these are not dimensioned or bounded on the plan. | High
+
+G-12 | Code Summary (G0.11), Floor Plan Dimensions | Code summary states "ROOF: 4000 SF" but "TOTAL AREA: 3840 SF," suggesting roof area exceeds plan footprint; drawings do not explain or show how roof geometry (3"/12" slopes and 45° angles) results in larger roof area. | Moderate
+
+---
+
+## STEP 3: SUMMARY
+
+This 34-sheet architectural drawing set with an 11-page specification for a contemporary residential project contains **42 identifiable issues** distributed across all seven review categories. The most critical concerns are:
+
+**1. Schedule-to-Specification Conflicts (8 issues: A-1, A-2, A-3, A-4, A-7, A-8, C-3, C-5):** The Room Finish Schedule does not align with specification material descriptions for multiple spaces (Entry Hall, Powder Room, Reading Nook, bathrooms), and floor/wall assemblies contradict finishes required by the written specifications. These conflicts will require RFIs or field decisions before construction can proceed.
+
+**2. Code Compliance and Life Safety Gaps (10 issues: E-1 through E-10):** Critical code verification information is missing from the drawings, including stair riser/tread dimensions, handrail/guardrail details, emergency egress openings for bedrooms, hallway widths, bathroom accessibility clearances, attic access, and garage fire separation. Without these details, a building official will likely require additional documentation before permit issuance.
+
+**3. Constructability and Design Incompleteness (11 issues: F-1 through F-11):** Multiple custom features (entry hall woodwork, reading nook bunk bed, master closet built-ins, kitchen shelving) lack specific construction details and dimensions. Critical building systems (radiant heating, hydronic manifold location, network equipment installation, pool integration) are referenced but not detailed. Appliance dimensions and clearances are not verified. Garage HVAC design is deferred as "TBD." These gaps will generate significant field coordination issues and change orders.
+
+These issues are symptomatic of a **bid-stage document that should not yet be released to contractors** without substantial completion of design details, specification-drawing reconciliation, and code compliance verification.

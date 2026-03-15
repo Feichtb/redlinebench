@@ -1,0 +1,26 @@
+{
+  "prompt_file": "review_v3.txt",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-03-14T14:13:39.643173+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-03-14_13-54",
+  "models_run": [
+    "gpt-5.4-pro"
+  ],
+  "results": [
+    {
+      "model_name": "gpt-5.4-pro",
+      "model_version": "gpt-5.4-pro-2026-03-05",
+      "run_number": 1,
+      "timestamp_start": "2026-03-14T13:54:56.013598+00:00",
+      "timestamp_end": "2026-03-14T14:13:39.642172+00:00",
+      "latency_seconds": 1123.62,
+      "input_tokens": 62658,
+      "output_tokens": 35484,
+      "thinking_tokens": 0,
+      "cost_usd": 8.266860,
+      "error": null
+    }
+  ],
+  "errors": []
+}

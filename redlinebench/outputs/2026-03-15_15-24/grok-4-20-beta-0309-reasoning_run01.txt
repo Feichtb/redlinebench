@@ -1,0 +1,59 @@
+**Project context:** Bonfire House, Chatham County, NC, under 2018 North Carolina Residential Code (IRC 2015 amendments). Single-family R-3 occupancy, V-B construction type, Climate Zone 4A. Drawing set is architectural only (G, A-series sheets covering site, plans, roof, elevations, sections, details, assemblies, schedules, 3D views); structural, MEP, and civil disciplines absent. Specifications are a narrative "Description of Materials, Applications and Allowances" document (not CSI divisions).
+
+**A-1 | Specifications pp. 2-3 | West facade listed for both Thermory Ash cladding (WD-3, south & west) and Hardieplank lap siding (north & west) with no resolution of overlapping locations | Certain**
+
+**A-2 | A2.01 vs A2.01A/B room tags & enlarged plans | Room numbers, names, and door tags (e.g., master bath 07/10, laundry 12, powder 14) have inconsistent callout density and some cross-references (A3.03, A3.21) do not clearly match enlarged plan detail boundaries | High**
+
+**A-3 | G1.00 3D views vs A2.01/A3.* elevations | East facade rendered brown and west rendered red, but material callouts and elevations imply different cladding systems (wood vs fiber cement) without consistent color or finish coordination | Moderate**
+
+**A-4 | A2.00 crawl space vs A2.01 level 1 | Slab-on-grade areas and crawlspace boundaries do not align exactly with level 1 walls and "deck above" notations | High**
+
+**A-5 | G0.11 code summary vs A2.01/A2.02 | Occupancy and construction type data lists 0 HR ratings for all assemblies but garage-to-living separation details are absent from both plans and wall types | High**
+
+**B-1 | A2.00 vs specifications p.1 | Pool foundation dimensioned at 62'-0" on crawl space plan but project description specifies 60' x 8' lap lane (interior dimensions) | High**
+
+**B-2 | A2.03 roof plan vs A2.01/A2.02 floor plans | Overall building dimensions and overhangs conflict slightly between floor plans (e.g. 31'-7½", 30'-2½") and roof plan (31'-10", 29'-10", 29'-3¼") | Moderate**
+
+**B-3 | Multiple plans | Floor-to-floor height or level-one datum not dimensioned on any plan, section, or elevation despite G0.01 note requiring site verification of level one height | Certain**
+
+**B-4 | A2.01 stair location vs A2.02 | Stair opening and run dimensions on level 1 do not have matching tread/riser counts or total run on level 2 plan | Moderate**
+
+**C-1 | Specifications pp. 2-4 vs A4.00/A4.01 references | Wall and horizontal assembly references on drawings are not aligned with specific products (Thermory Ash, Hardieplank, Accoya, Silestone) detailed in specs; no key or wall type tags link them | High**
+
+**C-2 | Specifications throughout | Repeated "TBD", "contact [name]" (stone, countertops, carpet, stain, colors), and "under consideration" (geothermal) entries contradict bid-set intent and lack allowance values or selection process | Certain**
+
+**C-3 | G0.11 energy compliance vs specifications insulation values | Listed U/SHGC values and R-values do not reference the specific assembly layers shown in drawings or confirm compliance with the exact wall/roof configurations | Moderate**
+
+**D-1 | Specifications pp. 3-4 vs climate zone 4A | Wall assembly (R21 batt + R6 ZIP) and ceiling (R38 batt + 3" XPS) described but no continuous insulation at framing or air barrier continuity details shown at transitions, roof, or crawlspace | High**
+
+**D-2 | A2.00 crawl space details vs sealed crawl requirement | Crawlspace vapor barrier and insulation noted in specs but foundation drain and slab-on-grade transitions lack full detail for sealed, insulated condition in humid climate | High**
+
+**D-3 | A2.03 roof plan & specs | 3:12 diagonal roof slopes with standing seam and solar array; no details showing walkability, underlayment, or thermal breaks at solar attachments | Moderate**
+
+**E-1 | G0.11 & garage/living adjacency on A2.01 | 0 HR ratings listed for all elements; no callout for required garage separation (1/2" gypsum on garage side of walls/ceiling, 20-min door, self-closing hardware) | High**
+
+**E-2 | A2.01/A2.02 sleeping rooms | No emergency escape and rescue openings dimensioned or tagged for bedrooms (06, 09, 17) | Moderate**
+
+**E-3 | A6.01 (referenced RCP) & plans | Smoke and carbon monoxide detector locations not shown or scheduled despite specs requiring complete systems | Moderate**
+
+**E-4 | A2.01 garage & living spaces | No explicit fire-rated assembly or continuity details at garage ceiling where habitable space is above | High**
+
+**F-1 | A2.03 solar array & roof | Solar panels shown on 3:12 standing seam roof without attachment details, penetration coordination, or walkability provisions for construction/maintenance | Moderate**
+
+**F-2 | Specifications p.6 & A2.01/A4.01 | Hydronic radiant floor limited to master bath but shower subfloor lowering for tile (F-3 assembly) creates coordination conflict at transitions | High**
+
+**F-3 | Rain chain/downspout details in specs vs A2.03 | Japanese rain chains and collection pots specified but no coordination with foundation drain or site drainage system shown | Moderate**
+
+**F-4 | Network equipment & low-voltage in specs vs plans | Multiple wall and floor penetrations (1¼" PVC, 1½" conduit) required at specific locations but no dedicated detail or coordination with wall assemblies | High**
+
+**G-1 | A1.00 | Survey removed for this review; site plan A1.01 relies heavily on "VERIFY IN FIELD" notes for critical elements (driveway, property lines, septic, well, power) | Certain**
+
+**G-2 | A8.01 referenced on multiple sheets | Door and window schedule sheet is listed but cross-references and tags on floor plans cannot be fully verified against schedule data | High**
+
+**G-3 | G0.01 & specifications | Numerous general notes, dimensioning standards, and symbols carried forward with "TBD", "by others", or outdated references (e.g. bidder design for hydronic layout) | High**
+
+**G-4 | Entire set | No clear datum, floor-to-floor heights, or benchmark elevations on sections or elevations; all heights referenced to "level one" that must be site-verified | Certain**
+
+**G-5 | Specifications p.1 | "Plan Changes" section references a drawing set name that is redacted/removed; no revision history or clouding of changes provided | High**
+
+**Summary:** The documents are a preliminary bid set with significant coordination gaps, incomplete code/life-safety information, and many deferred decisions. Greatest concerns are (1) conflicting and incomplete garage fire separation and life-safety details, (2) material and cladding inconsistencies between specifications and drawings (especially west facade), and (3) pervasive use of "TBD"/"verify in field" that will generate RFIs and change orders during construction. The architectural set lacks sufficient integration with the narrative specifications and omits critical assembly details at key transitions.

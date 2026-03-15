@@ -1,0 +1,75 @@
+### Step 1: Project Context
+
+**Project name:** Bonfire House, located in North Carolina under Chatham County jurisdiction using 2018 North Carolina Residential Code (adopting IRC 2015 with amendments)
+
+**Building type and construction:** Single family residence, R-3 occupancy, Type V-B construction
+
+**Climate zone:** 4A
+
+**Drawing set scope:** Complete architectural package including general sheets, site/floor plans, elevations, sections, details, schedules, and reflected ceiling plans. No structural, MEP, or civil drawings included.
+
+**Specifications:** Full project specification document provided covering materials, systems, and construction methods across 11 pages.
+
+### Step 2: Document Review Findings
+
+**A. Internal consistency across sheets**
+
+A-1 | A8.01, A2.01 | Door 10-1 appears in the door schedule as a 3'-0" × 7'-0" interior door but this door tag does not appear on any floor plan. | Certain
+
+A-2 | A8.01, specifications page 4-5 | Room finish schedule shows Master Bathroom (07) with generic floor designation F-2, but specifications describe specific products like "Layers Trend 12X24 Porcelain" that don't align with the generic assembly F-2 shown on A4.01. | High
+
+A-3 | A8.01, A2.00 | Door 21-1 is scheduled as 5'-0" × 5'-0" for crawl space access, but typical crawl space access doors are much smaller and this dimension appears oversized for the foundation opening shown on the crawl space plan. | High
+
+A-4 | A2.03, A4.10-A4.13 | Roof plan shows "SOLAR AND DATA CABLES TO WALL PENETRATION BELOW" but corresponding wall penetration details are not provided in the exterior detail sheets. | Certain
+
+A-5 | A6.01, A5.01-A5.30 | Lighting schedule shows 12 step lights (L8) for deck areas but specific installation details for these fixtures are not provided in the deck detail sheets. | High
+
+**B. Dimensional and geometric integrity**
+
+B-1 | A3.22, G0.11 | Stair detail shows "10 EQ RISERS" between Level 1 (508'-0") and Level 2 (518'-0"), resulting in 12" riser height which exceeds typical residential code maximum of 7-3/4". | High
+
+B-2 | A5.01, A5.10 | Deck elevation callouts use negative elevations (-6'-0", -3'-6", -11'-0") that are not clearly related to the positive building datum system used elsewhere (508'-0" for Level 1). | Moderate
+
+**C. Specification-to-drawing alignment**
+
+C-1 | A8.01, specifications page 10 | Appliance schedule shows generic symbols (A1-A7) but specifications list specific model numbers like "JennAir JGC3530GS" that are not coordinated with the drawing callouts. | Certain
+
+C-2 | A4.00, specifications page 2-3 | Wall assembly details show generic material callouts like "WD-3" but specifications describe specific products like "Thermory Ash Cladding 1x6 C20" without clear coordination between drawing designations and specified products. | High
+
+C-3 | A4.01, specifications page 4 | Ceiling insulation specifications describe "R38 12" fiberglass batts + 3" rigid XPS R15 = R49" but roof assembly R-1 shows rigid insulation above the deck creating uncertainty about insulation location and total R-value achievement. | Moderate
+
+**D. Building envelope and building science**
+
+D-1 | A4.00 | Wall assembly E-1 shows CMU with interior rigid insulation, but for climate zone 4A continuous exterior insulation would be more effective at preventing thermal bridging through the masonry units. | Moderate
+
+D-2 | A4.00, specifications page 4 | Wall assembly descriptions lack vapor barrier placement details despite specifications referencing sealed crawl space and air sealing requirements. | Moderate
+
+**E. Code and life safety**
+
+E-1 | A2.02, A8.01 | Guest bedroom (room 17) on Level 2 does not clearly show emergency egress window sizing and identification required for sleeping rooms. | High
+
+E-2 | A2.01, A8.01 | Fire separation details between garage (room 15) and habitable spaces are not clearly shown, including gypsum board type and self-closing hardware requirements for door 15-1. | High
+
+**F. Constructability**
+
+F-1 | A4.13 | Detail 5 shows porch overhang with structural steel framing but connection details to wood framing and steel member support systems are not adequately detailed. | High
+
+F-2 | A5.20 | Pool deck construction shows "STONE CAP TO ALIGN WITH WOOD DECK" but construction sequence and connection details between stone and wood elements are not provided. | Moderate
+
+F-3 | A4.00 | Wall assembly E-4 shows 2x8 studs with insulation but the assembly appears to be only 9" total thickness, which may not accommodate full 2x8 framing plus insulation and sheathing. | High
+
+**G. Completeness and clarity**
+
+G-1 | Specifications pages 3-4 | Multiple finish selections marked "TBD" including exterior siding color, soffit color, and countertop thickness, leaving critical design decisions unresolved for construction. | Certain
+
+G-2 | A8.01 | Door and window schedules reference specific hardware types but detailed hardware schedules and specifications are not provided for contractor pricing and installation. | High
+
+G-3 | Specifications pages 8-9, floor plans | Network equipment specifications describe wall penetrations and mounting panels at office closet and pantry locations but these elements are not shown on architectural drawings. | High
+
+G-4 | Specifications page 10, drawing set | Pool construction described as "Above Ground Pool (ADI)" with coordination requirements but no architectural details or technical specifications are included in the drawing set. | Certain
+
+G-5 | A2.01A, A7.10 | Multiple keynote references on enlarged plans (such as detail callouts) are difficult to verify due to small text size and image resolution limiting confirmation of cross-reference accuracy. | Moderate
+
+### Summary
+
+The document set shows comprehensive architectural development but suffers from coordination gaps between drawings and specifications, incomplete detail development, and unresolved design decisions. The three greatest areas of concern are: (1) **specification-to-drawing coordination** with generic drawing callouts not matching specific products described in specifications, (2) **missing construction details** particularly for specialty systems like solar installation, pool construction, and steel-to-wood connections, and (3) **incomplete design resolution** with numerous "TBD" items and missing technical information needed for construction. While the overall design intent is clear, these coordination and completeness issues would likely generate significant RFIs and change orders during construction.

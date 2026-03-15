@@ -1,0 +1,198 @@
+# RedlineBench — Scoring Prompt
+
+You are scoring AI model responses to the RedlineBench architectural drawing review benchmark. Score each model from scratch by reading its output directly against the benchmark answer key — do not rely on any triage files.
+
+---
+
+## Models to Score
+
+Score the following model output files (fill in before running):
+
+
+
+---
+
+## Scoring Rubric
+
+For each scoreable issue in the answer key (categories A through G):
+
+- **1.0** — The model found this issue and described it correctly and specifically. The key information is present: what is wrong, where it appears (sheet/location), and why it matters (or what it conflicts with).
+- **0.5** — The model found this issue but was vague, incomplete, or only partially correct. For example: flagged the right area but wrong reason, or described the symptom without identifying the conflict.
+- **0.0** — The model did not flag this issue, or what it said is clearly unrelated.
+
+**Incorrect Findings penalty: -1.0 each**
+If the model makes a finding that appears on the Known Incorrect Findings list AND presents it with confidence (not tentatively or hedged), deduct 1.0. If the model hedges ("this may be..." or "I'm not certain..."), do not penalize.
+
+**Neutral Findings: no score impact**
+If the model flags something on the Neutral list, count it in the neutral tally but do not add or subtract points.
+
+---
+
+## Instructions
+
+### Step 1 — Determine max_possible
+
+Count the total number of scoreable issues in the answer key by summing all issues in categories A through G. Do not use a hardcoded number — the answer key grows over time. Record this as `max_possible`.
+
+### Step 2 — Score Each Model
+
+For each model output file, read through the entire response. Identify each discrete finding. Then work through every issue in the answer key in order and score the model against it.
+
+For each issue:
+1. Check whether the model output contains a finding that matches this issue.
+2. Assign a score: 1.0, 0.5, or 0.0 based on the rubric above.
+3. Note a brief justification when the score is anything other than 0.
+
+If the model mentions the same issue in multiple places, score based on the best/clearest instance.
+
+The model output may use its own numbering (e.g., "A-1", "B-3") — this is the model's own labeling, NOT the answer key IDs. Score by content, not by label.
+
+### Step 3 — Tally Incorrect Findings
+
+For each model, check all findings against the Known Incorrect Findings list. Apply -1.0 penalty if stated with confidence.
+
+### Step 4 — Tally Neutral Findings
+
+Count findings matching the Neutral list. No score impact.
+
+### Step 5 — Count Total Items Flagged
+
+Count the total number of distinct findings the model reported, regardless of how they score.
+
+### Step 6 — Calculate Scores
+
+- **Category scores**: Sum of issue scores within each category (A through G)
+- **Raw score**: Sum of all issue scores
+- **Net score**: Raw score minus total incorrect finding penalty
+- **Percent**: (Net score / max_possible) × 100, rounded to one decimal
+
+---
+
+## Output
+
+First, show your scoring work in readable tables per model:
+
+### Scoring Worksheet — [Model Name]
+
+| Issue | Score | Notes |
+|---|---|---|
+| A1 | 0 / 0.5 / 1 | [brief note if not 0] |
+| A2 | ... | |
+| ... | | |
+
+### Category Summary — [Model Name]
+
+| Category | Score |
+|---|---|
+| A. Schedule-to-Drawing | |
+| B. Dimensional/Geometric | |
+| C. Spec-to-Drawing | |
+| D. Building Envelope | |
+| E. Code/Life Safety | |
+| F. Constructability | |
+| G. Completeness/Clarity | |
+| **Total** | |
+
+### Incorrect Findings — [Model Name]
+
+| ID | Model Phrasing | Confident? | Penalty |
+|---|---|---|---|
+| I# | [text] | Yes/No | -1.0 / 0 |
+
+### Tallies — [Model Name]
+- Total items flagged: ___
+- Neutral findings: ___
+- Incorrect findings (penalized): ___
+- Raw score: ___
+- Penalty: ___
+- Net score: ___
+- Max possible: ___
+- Percent: ___%
+
+Repeat the above for each model in the run.
+
+---
+
+Then produce the final JSON output for the entire run:
+
+### JSON Output
+
+Save this file as `redlinebench/outputs/<run_folder>/scores.json`.
+
+```json
+{
+  "run_id": "YYYY-MM-DD_HH-MM",
+  "label": "Round N — vN prompt",
+  "prompt_version": "vN",
+  "benchmark_version": "vN",
+  "scoring_date": "YYYY-MM-DD",
+  "scorer": "Claude Sonnet 4.6",
+  "max_possible": 0,
+  "models": [
+    {
+      "id": "model-key",
+      "label": "Display Name",
+      "version": "version string",
+      "provider": "Anthropic / OpenAI / Google",
+      "color": "#hexcolor",
+      "raw": 0.0,
+      "net": 0.0,
+      "max": 0,
+      "pct": 0.0,
+      "flagged": 0,
+      "neutral": 0,
+      "incorrect": [
+        {
+          "ref": "I# or short label",
+          "claim": "model's phrasing (abbreviated)",
+          "why": "why it is wrong",
+          "penalty": -1
+        }
+      ]
+    }
+  ],
+  "categories": [
+    { "id": "A", "label": "Schedule-to-Drawing",       "max": 0, "color": "#ef4444", "desc": "Door and window schedule entries that conflict with what is drawn on plans or elevations — wrong widths, wrong materials, wrong finishes for the assigned room." },
+    { "id": "B", "label": "Dimensional / Geometric",  "max": 0, "color": "#f97316", "desc": "Dimension discrepancies between sheets, conflicting datums, wall assembly totals that don't match their component layers, and missing code-critical dimensions." },
+    { "id": "C", "label": "Spec-to-Drawing Conflicts", "max": 0, "color": "#eab308", "desc": "Conflicts between the project specifications and the drawn documents — different products, different quantities, different performance requirements, different assembly configurations." },
+    { "id": "D", "label": "Building Envelope",         "max": 0, "color": "#22c55e", "desc": "Vapor control, air barrier continuity, insulation placement and values, flashing details, and whether wall and roof assemblies perform appropriately for the project climate." },
+    { "id": "E", "label": "Code and Life Safety",      "max": 0, "color": "#06b6d4", "desc": "Egress paths, minimum door and railing dimensions, fire separation requirements, makeup air for exhaust systems, and other conditions requiring code compliance." },
+    { "id": "F", "label": "Constructability",          "max": 0, "color": "#6366f1", "desc": "Whether details can physically be built as drawn — door swing clearances, missing flashing, system conflicts, and architectural elements that require coordination not shown." },
+    { "id": "G", "label": "Completeness and Clarity",  "max": 0, "color": "#a855f7", "desc": "Missing tags, orphaned keynotes, TBD items that prevent accurate bidding, dead cross-references, deferred design decisions, and annotations that are ambiguous or absent." }
+  ],
+  "issues": [
+    { "id": "A1",  "cat": "A", "summary": "...", "loc": "..." },
+    { "id": "A2",  "cat": "A", "summary": "...", "loc": "..." }
+  ],
+  "scores": {
+    "model-key": {
+      "A1":0, "A2":0, "A3":0, "A4":0, "A5":0, "A6":0, "A9":0, "A10":0,
+      "B1":0, "B2":0, "B3":0, "B4":0, "B5":0, "B6":0,
+      "C1":0, "C2":0, "C3":0, "C4":0, "C5":0, "C6":0, "C7":0, "C8":0, "C9":0,
+      "D1":0, "D2":0, "D3":0, "D4":0, "D5":0, "D6":0,
+      "E1":0, "E2":0, "E3":0, "E4":0, "E5":0, "E6":0, "E7":0, "E8":0,
+      "F1":0, "F2":0, "F3":0, "F4":0,
+      "G1":0, "G2":0, "G3":0, "G4":0, "G5":0, "G6":0, "G7":0, "G8":0, "G9":0, "G10":0, "G11":0, "G12":0, "G13":0
+    }
+  }
+}
+```
+
+**Important notes on the JSON format:**
+
+- **`models` array** — one entry per model in the run, with summary stats. `max` should equal `max_possible`. `incorrect` array is empty `[]` if the model had no penalized incorrect findings.
+- **`categories` array** — fill in `max` for each category by counting its issues in the current answer key. Copy the `desc` strings from a prior scores.json if the category descriptions haven't changed.
+- **`issues` array** — one entry per scoreable issue. Copy `id`, `cat`, `summary`, and `loc` from the answer key. This array serves as the issue registry for the dashboard and must be complete.
+- **`scores` object** — one key per model (matching the `id` in the `models` array), each containing a flat map of `issue_id → score`. Use only the issue IDs that exist in the answer key. Add keys for any new issues added since the last run's scores.json.
+- **Issue ID gaps** — the answer key skips A7 and A8 (they were renumbered). Use IDs exactly as they appear in the answer key (A1–A6, A9, A10). Do not invent or fill in missing numbers.
+- **`max_possible`** — set to the sum of all issue scores possible (count of all issues in the answer key), not a hardcoded number. As new issues are added to the answer key, this will increase.
+
+---
+
+## Important Reminders
+
+- Score based on the finalized answer key.
+- The model output may have its own numbering (e.g., "A-1" through "G-10") — these are the model's own labels, not answer key IDs. Score by content, not label.
+- Score conservatively: give 1.0 only if the specific conflict is clearly identified. Give 0.5 if the model found the right area but was missing key details. Give 0 if unclear.
+- Do not award 0.5 out of sympathy. The model either added useful, specific information or it didn't.
+- When in doubt about whether a finding matches an answer key issue, go back to the answer key criteria.

@@ -1,0 +1,19 @@
+# Secrets
+.env
+
+# Outputs are the research dataset — delete intentionally, not accidentally.
+# If you want to exclude outputs from the repo, uncomment the next line:
+# outputs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db

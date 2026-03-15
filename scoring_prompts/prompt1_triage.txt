@@ -1,0 +1,90 @@
+# RedlineBench — Triage Prompt (Step 1 of 2)
+
+You are helping score an AI model's response to the RedlineBench architectural drawing review benchmark. This is STEP 1: Triage. Your job is NOT to score the model yet — your job is to map each of the model's findings to the benchmark answer key, and flag anything that doesn't match for the scorer's manual review.
+
+---
+
+## What You Have
+
+- The benchmark answer key: benchmark-answer-key.md
+- Model output files: .txt files in the folder "2026-03-14_03-48" and "2026-03-14_13-54" (testing outputs from opus 4.6, sonnet 4.6, gemeni 3.1 pro preview, gpt 5.4 pro)
+
+The model output file is the raw text response from an AI that reviewed a set of architectural construction documents. The model output may use its own numbering (e.g., "A-1", "B-3") — this is the model's own labeling, NOT the answer key IDs. The answer key IDs are A1, A2, B1, etc. (no dash).
+
+---
+
+## Instructions
+
+### Step 1 — Read and Parse the Model Output
+
+Read through the entire model output. Identify each discrete finding the model makes — a finding is any specific claim that something in the documents is wrong, missing, inconsistent, or needs attention. Count the total number of distinct findings.
+
+### Step 2 — Match Each Finding to the Answer Key
+
+For each finding, check whether it matches one of the following:
+
+1. **Scoreable Issue** (categories A–G in the answer key) — note the issue ID (e.g., A1, C3, G8). A match means the model's finding is substantially the same issue, even if described differently or less precisely.
+
+2. **Neutral Finding** (N1–N25 in the answer key) — the finding is on the neutral list: debatable, out-of-scope, or a reasonable judgment call with no score impact.
+
+3. **Known Incorrect Finding** (I1–I8 in the answer key) — the finding is something the answer key identifies as factually wrong.
+
+4. **Unmatched** — the finding doesn't clearly fit any of the above.
+
+**When in doubt, match generously.** If a finding approximately covers an issue, or partially addresses it, match it. Only mark a finding as Unmatched if it genuinely falls outside all existing answer key categories and neutral/incorrect lists.
+
+### Step 3 — Evaluate Unmatched Findings
+
+For each unmatched finding, decide which of the following best describes it:
+
+**(a) POTENTIAL NEW ISSUE** — The model found a specific, verifiable architectural or coordination error that is:
+   - Within scope of an architectural review (not MEP/structural engineering)
+   - Supported by specific document references (sheet numbers, detail numbers, spec pages)
+   - Not already substantially covered by an existing answer key item
+   - A real error that would affect construction, not a general observation
+
+**(b) LIKELY NEUTRAL** — The finding is debatable, a judgment call, out of scope, or a general observation without a specific clear error. This includes: MEP/structural coordination items, observations about standard practice that may or may not apply, items that are incomplete but not clearly wrong, and anything already adequately addressed in the specifications or details.
+
+**(c) LIKELY INCORRECT** — The model appears to have misread the documents, reached a factually wrong conclusion, or is confidently wrong about something that is actually addressed in the drawings.
+
+**Be conservative.** Only recommend POTENTIAL NEW ISSUE if the finding is specific, verifiable, and clearly within scope. When in doubt, recommend LIKELY NEUTRAL. The scorer will make the final call.
+
+---
+
+## Output Format
+
+Produce the following:
+
+---
+ UNMATCHED FINDINGS (FOR SCORER REVIEW)
+
+List every finding that did NOT match any answer key entry. For each:
+
+| # | Model Finding (brief) | Suggested Classification | Reasoning |
+|---|---|---|---|
+| 1 | [what the model said] | POTENTIAL NEW ISSUE / LIKELY NEUTRAL / LIKELY INCORRECT | [1-2 sentence reason] |
+
+If there are no unmatched findings, say so.
+
+---
+
+## Notes for the Scorer
+
+After reviewing this triage output, the scorer should:
+1. Look at the table and decide for each unmatched finding:
+   - Add it to the answer key as a new scoreable issue (with a new ID)
+   - Add it to the Neutral Findings list
+   - Add it to the Known Incorrect Findings list
+   - Dismiss it (no list entry needed — purely out of scope or too vague)
+2. Once the answer key is updated, run the SCORING prompt (Step 2) against each model output.
+
+put this triage file in the same folder as the original text files. There will be one triage file for each text file.
+---
+
+## Important Reminders
+
+- Do NOT score the model in this step. Just triage.
+- The model output may organize findings by its own categories (e.g., "Internal Consistency", "Spec Conflicts") — ignore that structure and evaluate each finding individually.
+- Some model outputs use a pipe-delimited format: `[ID] | [Location] | [Description] | [Certainty]` — treat each row as one finding.
+- Do not penalize the model for flagging neutral items — that's separate from triage.
+- The answer key may reference sheet names like "A4.00", "A8.01", "G0.11" — these are sheet numbers from the drawing set.

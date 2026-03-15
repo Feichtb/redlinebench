@@ -1,0 +1,58 @@
+### Step 1: Establish project context
+
+*   **Project name, location, and code jurisdiction:** Bonfire House, Chatham County, North Carolina; 2018 North Carolina Residential Code (2015 IRC).
+*   **Building type and construction type:** Single-family residential, two-story; Type V-B construction.
+*   **Climate zone:** 4A (per G0.11).
+*   **Scope of drawing set:** General, Architectural, and Site drawings provided; Structural, MEP, and Civil disciplines are absent.
+*   **Specification divisions included:** 11-page project specification booklet provided covering general materials and allowances (non-CSI format).
+
+### Step 2: Review the documents
+
+**A. Internal consistency across sheets**
+
+[A-1] | A1.00 | The project title on this sheet is "NICKS BEND HOUSE" while all other sheets and the specifications refer to the project as "BONFIRE HOUSE." | Certain
+[A-2] | A8.01, A3.01 | The window schedule lists the count for Tag 3 as six, but elevations and plans only appear to depict five locations (Kitchen, Master Closet, Bedroom 09, and two in the Garage). | High
+[A-3] | A2.01, A2.01A | Room 11 is labeled "Bathroom" on the floor plan but the interior elevations on A7.02 refer to it as "Bathroom 11." | Certain
+[A-4] | A3.01, A3.02 | Elevation tags for wall assemblies (e.g., E-2, E-3, E-4) do not clearly correspond to a keyed legend on the elevation sheets, requiring cross-referencing back to A4.00. | Moderate
+
+**B. Dimensional and geometric integrity**
+
+[B-1] | A2.01, A2.01B | The overall building width is dimensioned as 34'-4" on the Level 1 plan, but the sum of the enlarged plan dimensions for the Garage (22'-10") and Office (11'-5") is 34'-3". | Certain
+[B-2] | A3.22 | The stair section 1/A3.22 shows a riser height of 6 11/16" and 10 equal risers for the upper run, but the floor-to-floor height of 10'-0" requires 18 total risers, which is inconsistent with the graphic representation. | High
+
+**C. Specification-to-drawing alignment**
+
+[C-1] | Spec p. 3, A8.01 | The project specifications require Andersen 400 Series windows, but the window schedule on sheet A8.01 specifies "Ultrex-Marvin-Stonewhite" products. | Certain
+[C-2] | Spec p. 4, A4.00 | The specifications call for 1" Insulated ZIP Board (R-6) for exterior walls, but the wall assembly details on A4.00 depict 1 1/2" rigid insulation. | Certain
+[C-3] | Spec p. 2, A4.00 | The specifications call for Thermory Ash Cladding (WD-3) on the South and West facades, but wall assembly E-3 (Fiberboard) is the primary assembly referenced for those elevations. | Moderate
+[C-4] | Spec p. 2, A8.01 | The specifications call for a Clopay Modern Steel garage door, but the door schedule on A8.01 generically lists the material as "METAL" without referencing the spec. | Moderate
+
+**D. Building envelope and building science**
+
+[D-1] | A4.00 | All exterior wall assemblies (E-2, E-3, E-4) depict the rigid insulation layered between the wood studs and the plywood sheathing, which is an improper building sequence that prevents the sheathing from providing lateral bracing to the studs. | Certain
+[D-2] | A4.01 | Roof assembly R-1 depicts rigid insulation installed between the TJI joists and the plywood sheathing, which creates significant structural attachment and compression issues for the roof deck fasteners. | Certain
+[D-3] | A4.00 | Wall assembly E-1 (CMU) shows vapor barriers on both sides of the rigid insulation in the crawlspace, which may trap moisture within the assembly and lead to degradation. | Moderate
+[D-4] | A4.01 | The roof assembly R-1 does not indicate the presence or location of a continuous air barrier or vapor retarder required for a Climate Zone 4A unvented roof. | High
+
+**E. Code and life safety**
+
+[E-1] | A8.01, A2.01A, A2.02 | Windows in Bedroom 06 (Tag 6), Bedroom 09 (Tag 5), and Guest Bedroom 17 (Tag 4) are all listed as "FIXED" in the window schedule, which violates IRC requirements for emergency escape and rescue openings (Egress). | Certain
+[E-2] | A8.01 | The window schedule does not identify "tempered" or "safety" glazing for Tag 7C and 8C, which are located within the Master Bathroom tub/shower enclosure hazardous area. | High
+[E-3] | A2.01 | The wall between the Garage (15) and the North Hallway (16) / Office (13) is not identified as a fire-separated assembly on the plans or via a specific rated wall tag. | High
+
+**F. Constructability**
+
+[F-1] | A4.10, A4.11 | The window details (e.g., 4/A4.10, 1/A4.11) show window frames set against rigid insulation without indicating a structural buck or "outie" frame to support the weight of the units. | High
+[F-2] | A4.12 | Detail 3/A4.12 shows LED strip lighting recessed into the Accoya garage door header, but does not provide details for electrical conduit access or weatherproofing for the fixture. | Moderate
+[F-3] | A3.20 | The transition between the structural steel porch columns (referenced in specs) and the wood-framed wall assemblies on A4.00 is not detailed. | Moderate
+
+**G. Completeness and clarity**
+
+[G-1] | A8.01 | The Room Finish Schedule and Appliance Schedule contain multiple "TBD" (To Be Determined) entries for floor finishes, bases, and appliance models, deferring final pricing and coordination. | Certain
+[G-2] | A6.01 | The Lighting Fixture Schedule lists "TBD" for the manufacturer and model of every fixture type, preventing accurate electrical rough-in or fixture support planning. | Certain
+[G-3] | A1.01 | The site plan notes "DRIVEWAY LOCATION VERIFY IN FIELD," which leaves the exact grading and clearing limits unresolved on the construction documents. | High
+[G-4] | A3.01, A3.02 | Several window units on the elevations are missing tags, making it difficult to verify the total counts against the schedule on A8.01. | Moderate
+
+### Step 3: Report your findings
+
+Overall, this document set provides a clear design intent but suffers from severe technical and coordination errors that will impede construction. The most critical issues are the structural impossibility of the wall and roof assemblies (sandwiching insulation between studs and sheathing), the omission of code-required egress windows in all bedrooms, and the fundamental conflict between the drawings and specifications regarding the window manufacturer. Significant revisions are required to ensure the building is both safe and structurally sound before permits or bidding can be finalized.

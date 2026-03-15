@@ -1,0 +1,26 @@
+{
+  "prompt_file": "review_v3.txt",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-03-15T15:39:47.241826+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-03-15_15-36",
+  "models_run": [
+    "claude-sonnet-4-0"
+  ],
+  "results": [
+    {
+      "model_name": "claude-sonnet-4-0",
+      "model_version": "claude-sonnet-4-20250514",
+      "run_number": 1,
+      "timestamp_start": "2026-03-15T15:36:32.999443+00:00",
+      "timestamp_end": "2026-03-15T15:39:47.239826+00:00",
+      "latency_seconds": 194.23,
+      "input_tokens": 105732,
+      "output_tokens": 8403,
+      "thinking_tokens": 0,
+      "cost_usd": 0.443241,
+      "error": null
+    }
+  ],
+  "errors": []
+}

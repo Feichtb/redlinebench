@@ -1,0 +1,26 @@
+{
+  "prompt_file": "review_v3.txt",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-03-15T15:32:37.668272+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-03-15_15-24",
+  "models_run": [
+    "grok-4.20-beta-0309-reasoning"
+  ],
+  "results": [
+    {
+      "model_name": "grok-4.20-beta-0309-reasoning",
+      "model_version": "grok-4.20-beta-0309-reasoning",
+      "run_number": 1,
+      "timestamp_start": "2026-03-15T15:24:26.493918+00:00",
+      "timestamp_end": "2026-03-15T15:32:37.666270+00:00",
+      "latency_seconds": 491.17,
+      "input_tokens": 92293,
+      "output_tokens": 10203,
+      "thinking_tokens": 0,
+      "cost_usd": 0.245804,
+      "error": null
+    }
+  ],
+  "errors": []
+}
