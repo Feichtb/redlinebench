@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;display=swap');</style>
+  </defs>
+  <text x="960" y="540" text-anchor="middle" dominant-baseline="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="200" letter-spacing="-2"><tspan fill="#b83020">Redline</tspan><tspan fill="#1a1916" dx="0">Bench</tspan></text>
+</svg>
