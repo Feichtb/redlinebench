@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RedlineBench: AI Architectural Drawing Review Benchmark</title>
+  <meta name="description" content="Benchmark comparing AI models on architectural drawing review. 58 known issues, 10 models tested. Free prompt included.">
+  <meta property="og:title" content="RedlineBench — AI Architectural Drawing Review Benchmark">
+  <meta property="og:description" content="The best AI model catches 38% of drawing errors for $1.09. See how 10 models compare on a real residential project.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://redlinebench.benfeicht.com">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -59,6 +65,13 @@
       font-weight:500; letter-spacing:.02em; transition:color .15s; text-transform:uppercase;
     }
     .nav-links a:hover { color: var(--ink-1); }
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      flex-direction: column; gap: 4px; padding: 6px;
+    }
+    .nav-toggle span {
+      display: block; width: 18px; height: 2px; background: var(--ink-1); transition: .2s;
+    }
 
     /* SECTION LABELS */
     .section-tag {
@@ -73,9 +86,10 @@
     /* HERO */
     #hero { padding: 84px 0 76px; }
     .hero-eyebrow {
-      font-size: .66rem; font-weight: 700; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--red); margin-bottom: 18px;
+      font-size: .82rem; font-weight: 500; letter-spacing: 0;
+      text-transform: none; color: var(--ink-2); margin-bottom: 18px;
       display: flex; align-items: center; gap: 10px;
+      font-style: italic;
     }
     .hero-eyebrow::before { content:''; width:24px; height:2px; background:var(--red); }
     h1 { font-size: 2.9rem; font-weight: 700; letter-spacing: -.04em; line-height: 1.05; max-width: 700px; }
@@ -150,6 +164,7 @@
     .lb-table th { text-align: left; font-size: .63rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--ink-3); padding: 10px 14px; border-bottom: 2px solid var(--border-dk); }
     .lb-table td { padding: 14px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
     .lb-table tr:last-child td { border-bottom: none; }
+    .lb-table tr.top-model td { background: #faf6f5; }
     .rank { font-family: 'JetBrains Mono', monospace; font-size: .95rem; font-weight: 600; color: var(--ink-3); width: 26px; display: inline-block; }
     .rank.gold   { color: var(--red); }
     .rank.silver { color: var(--ink-2); }
@@ -268,6 +283,7 @@
     .prompt-details summary::before { content: '+'; font-size: 1rem; color: var(--red); font-weight: 700; }
     .prompt-details[open] summary::before { content: '−'; }
     .prompt-details summary::-webkit-details-marker { display: none; }
+    details summary::-webkit-details-marker { display: none; }
     .prompt-pre {
       margin-top: 16px; padding: 24px 28px;
       background: var(--surface); border: 1px solid var(--border);
@@ -294,9 +310,18 @@
       .spot-grid  { grid-template-columns: 1fr; }
       .meth-steps { grid-template-columns: 1fr; }
       .rubric-grid { grid-template-columns: repeat(2, 1fr); }
-      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 50px; left: 0; right: 0;
+        background: rgba(255,255,255,.98); backdrop-filter: blur(8px);
+        flex-direction: column; gap: 0; padding: 8px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 32px; display: block; }
       .stat-row { width: 100%; }
       .scatter-meta { flex-direction: column; }
+      .scoring-cards { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 600px) {
       .container { padding: 0 18px; }
@@ -311,31 +336,34 @@
 <nav>
   <div class="container nav-inner">
     <a href="#" class="nav-brand"><span class="brand-r">Redline</span>Bench</a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#scatter">Results</a></li>
-      <li><a href="#intro">About</a></li>
       <li><a href="#highlights">Issue Examples</a></li>
-      <li><a href="#heatmap">All Issues</a></li>
+      <li><a href="#prompt">Try It</a></li>
+      <li><a href="#intro">About</a></li>
       <li><a href="#methodology">Methodology</a></li>
       <li><a href="https://benfeicht.com" target="_blank">benfeicht.com</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="container">
-    <h1>Is AI Ready to Review<br>Architectural Drawing Sets?</h1>
+    <p class="hero-eyebrow">The question isn't whether AI can replace your review. It's whether it's good enough to improve it.</p>
+    <h1>Catch Drawing Errors<br>Before They Hit the Field</h1>
     <p class="hero-sub">
-      RedlineBench benchmarks AI models on a single task: reviewing a real architectural drawing set for coordination errors, spec conflicts, code concerns, and omissions.
+      AI can review your architectural drawing set for coordination errors, spec conflicts, and code concerns -- in about ten minutes, for less than a dollar. RedlineBench tests how well today's models actually perform on a real residential project with 58 known issues.
     </p>
     <div class="sidebar-card" style="max-width:540px;margin-bottom:44px">
       <div class="sidebar-num">38.8%</div>
       <div class="sidebar-label">Issue catch rate, best model</div>
-      <p class="sidebar-body">The top-performing model catches about 38% of seeded issues in a controlled test. That's a meaningful second set of eyes for less than a dollar -- not a replacement for your own review, but a way to reduce risk when there isn't a second reviewer.</p>
-      <hr class="sidebar-rule">
-      <p class="sidebar-note">The question isn't whether AI is good enough to replace your review process. It's whether it's good enough to improve it.</p>
+      <p class="sidebar-body">The top-performing model catches about 38% of seeded issues in a controlled test. That's a meaningful second set of eyes for less than a dollar -- not a replacement for a licensed architect's review, but a second set of eyes that costs a dollar and takes ten minutes.</p>
     </div>
+    <a href="#prompt" class="copy-btn" style="text-decoration:none;margin-bottom:44px;display:inline-flex">Get the Prompt &mdash; Try It on Your Drawings</a>
     <div class="stat-row" id="statRow"><!-- populated by JS --></div>
   </div>
 </section>
@@ -368,24 +396,8 @@
   </div>
 </section>
 
-<!-- INTRO -->
-<section id="intro">
-  <div class="container section-pad">
-    <div style="max-width:700px">
-      <span class="section-tag">Why this exists</span>
-      <p class="intro-lede">Every drawing set goes out with errors. The question is whether anything finds them first.</p>
-      <div class="intro-body">
-        <p>I designed the Nicks Bend House, the test project for this benchmark, and ran the drawing set through an early version of this review before construction started. It found a window manufacturer conflict that would have required field verification of every rough opening. It found a floor assembly above the garage missing the Type X gypsum required by code for fire separation. Neither was a judgment call. Both were real errors, missed in production, that generated RFIs and cost time and design quality to resolve after the fact.</p>
-        <p>I'm the only licensed architect who reviews drawings before they leave the office. On a typical week there are two or three sets due within days of each other with no time for a formal peer review. AI document review has become my QC layer, not a replacement for professional judgment, but a meaningful way to reduce risk when there isn't a second reviewer.</p>
-        <p>This benchmark is ongoing research. The methodology is transparent, the test set is a real project, and every model response is scored at the issue level. The goal is to give architects and firm principals honest data about what these tools can and can't do, and to track how that changes over time.</p>
-        <p class="intro-byline">Ben Feicht, Architect / Portland, OR &nbsp;·&nbsp; <a href="https://www.benfeicht.com/blog-posts/blog---redlinegpt---architectural-drawing-reviews-with-ai" target="_blank" style="color:var(--red);text-decoration:none">First published November 2023</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- LEADERBOARD -->
-<section id="leaderboard" class="alt">
+<section id="leaderboard">
   <div class="container section-pad">
     <div class="section-header">
       <span class="section-tag">Results</span>
@@ -405,50 +417,56 @@
       </thead>
       <tbody><!-- populated by JS --></tbody>
     </table>
-    <div style="margin-top:48px">
-      <div class="section-tag" style="margin-bottom:10px">Scoring Logic</div>
-      <p style="font-size:.82rem;color:var(--ink-2);margin-bottom:20px;max-width:560px">The Review Score is the sum of all issues found correctly, minus false alarms. Maximum possible is 58 points.</p>
-      <div class="scoring-cards">
-        <div class="scoring-card" style="border-color:#2d6a4f">
-          <div class="scoring-card-score" style="color:#2d6a4f">+1</div>
-          <div class="scoring-card-label">Found it</div>
-          <div class="scoring-card-desc">Issue correctly identified and described</div>
-        </div>
-        <div class="scoring-card" style="border-color:#74c69d">
-          <div class="scoring-card-score" style="color:#52b788">+0.5</div>
-          <div class="scoring-card-label">Noticed something</div>
-          <div class="scoring-card-desc">Flagged the area but description was vague</div>
-        </div>
-        <div class="scoring-card" style="border-color:var(--border-dk)">
-          <div class="scoring-card-score" style="color:var(--ink-3)">0</div>
-          <div class="scoring-card-label">Missed it</div>
-          <div class="scoring-card-desc">Issue was present; model didn't flag it</div>
-        </div>
-        <div class="scoring-card" style="border-color:var(--red)">
-          <div class="scoring-card-score" style="color:var(--red)">-1</div>
-          <div class="scoring-card-label">False alarm</div>
-          <div class="scoring-card-desc">Confident claim that wasn't true, the costly mistake</div>
+    <details style="margin-top:48px">
+      <summary style="font-size:.78rem;font-weight:600;color:var(--ink-2);cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;gap:8px"><span style="color:var(--red);font-weight:700;font-size:1rem">+</span> Scoring logic</summary>
+      <div style="margin-top:20px">
+        <p style="font-size:.82rem;color:var(--ink-2);margin-bottom:20px;max-width:560px">The Review Score is the sum of all issues found correctly, minus false alarms. Maximum possible is 58 points.</p>
+        <div class="scoring-cards">
+          <div class="scoring-card" style="border-color:#2d6a4f">
+            <div class="scoring-card-score" style="color:#2d6a4f">+1</div>
+            <div class="scoring-card-label">Found it</div>
+            <div class="scoring-card-desc">Issue correctly identified and described</div>
+          </div>
+          <div class="scoring-card" style="border-color:#74c69d">
+            <div class="scoring-card-score" style="color:#52b788">+0.5</div>
+            <div class="scoring-card-label">Noticed something</div>
+            <div class="scoring-card-desc">Flagged the area but description was vague</div>
+          </div>
+          <div class="scoring-card" style="border-color:var(--border-dk)">
+            <div class="scoring-card-score" style="color:var(--ink-3)">0</div>
+            <div class="scoring-card-label">Missed it</div>
+            <div class="scoring-card-desc">Issue was present; model didn't flag it</div>
+          </div>
+          <div class="scoring-card" style="border-color:var(--red)">
+            <div class="scoring-card-score" style="color:var(--red)">-1</div>
+            <div class="scoring-card-label">False alarm</div>
+            <div class="scoring-card-desc">Confident claim that wasn't true, the costly mistake</div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </details>
 
-<!-- CATEGORY PERFORMANCE -->
-<section id="performance">
-  <div class="container section-pad">
-    <div class="section-header">
-      <span class="section-tag">Analysis</span>
-      <h2>Performance by Category</h2>
-      <p>Each bar shows that model's score as a percentage of the category's total possible points. Models ordered left-to-right by overall ranking.</p>
-    </div>
-    <div class="cat-cards" id="catCards"><!-- populated by JS --></div>
-    <div class="chart-wrap">
-      <div class="chart-title">Issue Catch Rate by Category</div>
-      <div class="chart-desc">Score earned divided by category maximum, per model. Hover for raw points.</div>
-      <div style="position:relative;height:500px">
-        <canvas id="barChart"></canvas>
+    <!-- WHICH MODEL -->
+    <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--border)">
+      <div class="section-tag" style="margin-bottom:14px">Which model should I use?</div>
+      <div class="meth-steps" style="margin-bottom:0">
+        <div class="meth-step-card">
+          <span class="step-num" style="color:#2d6a4f">Best Accuracy</span>
+          <h3>Claude Opus 4.6</h3>
+          <p>38.8% catch rate &nbsp;·&nbsp; $1.09/review<br>Highest score, zero false alarms. The best overall choice for a thorough review.</p>
+        </div>
+        <div class="meth-step-card">
+          <span class="step-num" style="color:#0a5068">Best Value</span>
+          <h3>Claude Haiku 4.5</h3>
+          <p>24.1% catch rate &nbsp;·&nbsp; $0.24/review<br>Two-thirds the accuracy at one-fifth the cost, and zero false alarms.</p>
+        </div>
+        <div class="meth-step-card">
+          <span class="step-num" style="color:#8b4a20">Budget Option</span>
+          <h3>GPT-5 Mini</h3>
+          <p>9.5% catch rate &nbsp;·&nbsp; $0.03/review<br>Limited accuracy but costs pennies. Good for a quick sanity check.</p>
+        </div>
       </div>
+      <p style="font-size:.82rem;color:var(--ink-2);margin-top:16px;max-width:620px">All models use the same prompt. Upload your drawings to any AI that accepts PDFs, paste the prompt, and review the output. Ten minutes, start to finish.</p>
     </div>
   </div>
 </section>
@@ -549,39 +567,35 @@
   </div>
 </section>
 
-<!-- METHODOLOGY -->
-<section id="methodology">
+<!-- PROMPT -->
+<section id="prompt">
   <div class="container section-pad">
     <div class="section-header">
-      <span class="section-tag">How It Works</span>
-      <h2>Methodology</h2>
-      <p>A repeatable, controlled evaluation using a single real project drawing set with known issues seeded across 7 review categories.</p>
+      <span class="section-tag">Use it yourself</span>
+      <h2>Try It on Your Drawings</h2>
+      <p>This is the exact prompt sent to every model in the benchmark. It's free, it works on any project type, and it takes about ten minutes.</p>
     </div>
-    <div class="meth-steps">
+    <div class="meth-steps" style="margin-bottom:36px">
       <div class="meth-step-card">
-        <span class="step-num">01 / TEST SET</span>
-        <h3>One real project, known issues</h3>
-        <p>A complete residential drawing set (34 sheets) and specifications (11 pages) were seeded with issues across 7 categories: clear errors, coordination failures, code concerns, and conditions that warrant review. The test set is not published to preserve benchmark integrity.</p>
+        <span class="step-num">01</span>
+        <h3>Open any AI chat</h3>
+        <p>Use any AI that accepts file uploads -- Claude, ChatGPT, or Gemini all work.</p>
       </div>
       <div class="meth-step-card">
-        <span class="step-num">02 / PROMPT</span>
-        <h3>Identical prompt, every model</h3>
-        <p>Each model receives the same prompt: an experienced-architect framing with 7 review perspectives, guidance on how to structure findings, and instructions to rate confidence. Models receive both PDFs simultaneously. No hints about seeded issues are provided.</p>
+        <span class="step-num">02</span>
+        <h3>Upload your PDFs</h3>
+        <p>Upload your drawing set and specification booklet. The AI reads them directly.</p>
       </div>
       <div class="meth-step-card">
-        <span class="step-num">03 / SCORING</span>
-        <h3>Issue-level, manual scoring</h3>
-        <p>Each response is scored against the benchmark answer key at the issue level. Every finding is classified as correct, vague, missed, incorrect, or neutral. Neutral observations, reasonable but out-of-scope or debatable, carry no score impact in either direction.</p>
+        <span class="step-num">03</span>
+        <h3>Paste the prompt and run</h3>
+        <p>Copy the prompt below, paste it into the chat, and send. Results in about ten minutes for under a dollar.</p>
       </div>
     </div>
-
-    <div class="prompt-cta">
-      <span class="section-tag" style="margin-bottom:14px">Use it yourself</span>
-      <p class="prompt-cta-text">This is the exact prompt sent to every model in the benchmark. Copy it and use it on your own drawing sets. It works with any AI that accepts file uploads -- upload your drawings and specifications, paste the prompt, and run it. The output won't catch everything (no model does), but it takes about ten minutes and costs less than a dollar. That's a reasonable second set of eyes before a set goes out.</p>
-      <button class="copy-btn" id="copyPromptBtn" onclick="copyPrompt()">Copy prompt to clipboard</button>
-      <details class="prompt-details">
-        <summary>View full prompt</summary>
-        <pre class="prompt-pre" id="promptText">You are an experienced architect performing a thorough review of a construction document set. Your job is to find errors, inconsistencies, omissions, and coordination failures that would cause problems during construction — the kinds of issues that generate RFIs, change orders, field conflicts, and disputes.
+    <button class="copy-btn" id="copyPromptBtn" onclick="copyPrompt()">Copy prompt to clipboard</button>
+    <details class="prompt-details">
+      <summary>View full prompt</summary>
+      <pre class="prompt-pre" id="promptText">You are an experienced architect performing a thorough review of a construction document set. Your job is to find errors, inconsistencies, omissions, and coordination failures that would cause problems during construction — the kinds of issues that generate RFIs, change orders, field conflicts, and disputes.
 
 You have been given architectural construction documents in PDF form. These may include a drawing set and a project specification booklet, or only one of the two. Begin by reading all provided documents completely before making any observations.
 
@@ -670,13 +684,81 @@ Where:
 - **Be specific.** "There may be coordination issues" is not useful. "The door schedule lists D-104 as 3'-0" × 7'-0" but the floor plan shows a wider opening at that location" is useful.
 
 - **Do not pad.** If you have genuinely found all the issues in a category, move on. The goal is real findings, not reaching a number.</pre>
-      </details>
+    </details>
+
+    <!-- CONTACT CTA -->
+    <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--border)">
+      <p style="font-size:.88rem;color:var(--ink-2);line-height:1.75;max-width:620px;margin-bottom:18px">Want help applying AI-assisted QC to your practice? I present this research at AIA events and work with firms on integrating AI drawing review into their workflows.</p>
+      <a href="https://benfeicht.com" target="_blank" class="copy-btn" style="text-decoration:none;display:inline-flex">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="intro" class="alt">
+  <div class="container section-pad">
+    <div style="max-width:700px">
+      <span class="section-tag">Why this exists</span>
+      <p class="intro-lede">Every drawing set goes out with errors. The question is whether anything finds them first.</p>
+      <div class="intro-body">
+        <p>I designed the Nicks Bend House, the test project for this benchmark, and ran the drawing set through an early version of this review before construction started. It found a <strong>window manufacturer conflict</strong> that would have required field verification of every rough opening. It found a floor assembly above the garage <strong>missing the Type X gypsum</strong> required by code for fire separation. Neither was a judgment call. Both were real errors, missed in production, that generated RFIs and cost time and design quality to resolve after the fact.</p>
+        <p>I'm the only licensed architect who reviews drawings before they leave the office. On a typical week there are two or three sets due within days of each other with no time for a formal peer review. AI document review has become my QC layer -- not a replacement for professional judgment, but a meaningful way to reduce risk when there isn't a second reviewer.</p>
+        <p>The methodology is transparent and every model response is scored at the issue level. The goal: honest data about what AI can and can't do for drawing review, updated as models improve.</p>
+        <p class="intro-byline">Ben Feicht, Licensed Architect / Portland, OR &nbsp;·&nbsp; <a href="https://www.benfeicht.com/blog-posts/blog---redlinegpt---architectural-drawing-reviews-with-ai" target="_blank" style="color:var(--red);text-decoration:none">First published November 2023</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY PERFORMANCE -->
+<section id="performance">
+  <div class="container section-pad">
+    <div class="section-header">
+      <span class="section-tag">Analysis</span>
+      <h2>Performance by Category</h2>
+      <p>Each bar shows that model's score as a percentage of the category's total possible points. Models ordered left-to-right by overall ranking.</p>
+    </div>
+    <div class="cat-cards" id="catCards"><!-- populated by JS --></div>
+    <div class="chart-wrap">
+      <div class="chart-title">Issue Catch Rate by Category</div>
+      <div class="chart-desc">Score earned divided by category maximum, per model. Hover for raw points.</div>
+      <div style="position:relative;height:500px">
+        <canvas id="barChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section id="methodology" class="alt">
+  <div class="container section-pad">
+    <div class="section-header">
+      <span class="section-tag">How It Works</span>
+      <h2>Methodology</h2>
+      <p>A repeatable, controlled evaluation using a single real project drawing set with known issues seeded across 7 review categories.</p>
+    </div>
+    <div class="meth-steps">
+      <div class="meth-step-card">
+        <span class="step-num">01 / TEST SET</span>
+        <h3>One real project, known issues</h3>
+        <p>A complete residential drawing set (34 sheets) and specifications (11 pages) were seeded with issues across 7 categories: clear errors, coordination failures, code concerns, and conditions that warrant review. The test set is not published to preserve benchmark integrity.</p>
+      </div>
+      <div class="meth-step-card">
+        <span class="step-num">02 / PROMPT</span>
+        <h3>Identical prompt, every model</h3>
+        <p>Each model receives the same prompt: an experienced-architect framing with 7 review perspectives, guidance on how to structure findings, and instructions to rate confidence. Models receive both PDFs simultaneously. No hints about seeded issues are provided.</p>
+      </div>
+      <div class="meth-step-card">
+        <span class="step-num">03 / SCORING</span>
+        <h3>Issue-level, manual scoring</h3>
+        <p>Each response is scored against the benchmark answer key at the issue level. Every finding is classified as correct, vague, missed, incorrect, or neutral. Neutral observations, reasonable but out-of-scope or debatable, carry no score impact in either direction.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- HEATMAP -->
-<section id="heatmap" class="alt">
+<section id="heatmap">
   <div class="container section-pad">
     <div class="section-header">
       <span class="section-tag">Issue-Level Detail</span>
@@ -697,7 +779,14 @@ Where:
 <!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
-    <p><strong style="color:var(--ink-1)">RedlineBench</strong> &nbsp;·&nbsp; Built by <a href="https://benfeicht.com">Ben Feicht</a></p>
+    <div>
+      <p><strong style="color:var(--ink-1)">RedlineBench</strong> &nbsp;·&nbsp; Built by <a href="https://benfeicht.com">Ben Feicht</a>, Licensed Architect &nbsp;·&nbsp; Portland, OR</p>
+    </div>
+    <div>
+      <a href="https://www.benfeicht.com/blog-posts/blog---redlinegpt---architectural-drawing-reviews-with-ai" target="_blank">Read the full story</a>
+      &nbsp;·&nbsp;
+      <a href="https://benfeicht.com" target="_blank">benfeicht.com</a>
+    </div>
   </div>
 </footer>
 
@@ -868,7 +957,7 @@ function renderDashboard(data) {
     const costStr = m.cost_usd != null
       ? `<span class="mono" style="font-size:.85rem">$${m.cost_usd.toFixed(2)}</span>`
       : `<span style="color:var(--ink-3)">-</span>`;
-    tbody.innerHTML += `<tr>
+    tbody.innerHTML += `<tr${i===0?' class="top-model"':''}>
       <td><span class="rank ${rankCls[i]||''}">${i+1}</span></td>
       <td style="width:38%">
         <div class="lb-model-name">${m.label}</div>
@@ -1046,6 +1135,14 @@ document.querySelectorAll('.spot-model-item[data-tip]').forEach(el => {
     tip.style.top = (e.clientY-10)+'px';
   });
   el.addEventListener('mouseleave', () => tip.classList.remove('vis'));
+});
+
+// HAMBURGER MENU
+document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
 });
 
 function copyPrompt() {
