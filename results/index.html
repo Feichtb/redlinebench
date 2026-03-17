@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RedlineBench: AI Architectural Drawing Review Benchmark</title>
   <meta name="description" content="Benchmark comparing AI models on architectural drawing review. 58 known issues, 10 models tested. Free prompt included.">
-  <meta property="og:title" content="RedlineBench — AI Architectural Drawing Review Benchmark">
+  <meta property="og:title" content="RedlineBench - AI Architectural Drawing Review Benchmark">
   <meta property="og:description" content="The best AI model catches 38% of drawing errors for $1.09. See how 10 models compare on a real residential project.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://redlinebench.benfeicht.com">
+  <meta property="og:image" content="https://redlinebench.benfeicht.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://redlinebench.benfeicht.com/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -304,6 +308,7 @@
     #tooltip strong { color: #f5c0b0; }
 
     /* RESPONSIVE */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     @media (max-width: 960px) {
       h1 { font-size: 2.2rem; }
       .intro-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -322,11 +327,17 @@
       .stat-row { width: 100%; }
       .scatter-meta { flex-direction: column; }
       .scoring-cards { grid-template-columns: repeat(2, 1fr); }
+      .lb-model-bar { width: 120px; }
     }
     @media (max-width: 600px) {
       .container { padding: 0 18px; }
       h1 { font-size: 1.75rem; }
       .rubric-grid { grid-template-columns: repeat(2, 1fr); }
+      /* Stat cards: 3-column grid prevents broken wrapping with floating borders */
+      .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); }
+      .stat-card { min-width: 0; padding: 14px 12px; }
+      /* Spotlight legend: 2 per row so the 4th item doesn't orphan */
+      .spot-mc-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
     }
   </style>
 </head>
@@ -353,15 +364,15 @@
 <!-- HERO -->
 <section id="hero">
   <div class="container">
-    <p class="hero-eyebrow">The question isn't whether AI can replace your review. It's whether it's good enough to improve it.</p>
-    <h1>Catch Drawing Errors<br>Before They Hit the Field</h1>
+    <h1>RedlineBench tests how capable AI is at reviewing architectural drawing sets.</h1>
     <p class="hero-sub">
-      AI can review your architectural drawing set for coordination errors, spec conflicts, and code concerns -- in about ten minutes, for less than a dollar. RedlineBench tests how well today's models actually perform on a real residential project with 58 known issues.
+      AI models can be used by architects to catch drawing errors before they hit the field, in about ten minutes without any additional software. These errors can include coordination errors, constructibility, and code concerns. RedlineBench tests how well today's models actually perform on a real residential project with 58 known issues.
     </p>
     <div class="sidebar-card" style="max-width:540px;margin-bottom:44px">
       <div class="sidebar-num">38.8%</div>
       <div class="sidebar-label">Issue catch rate, best model</div>
-      <p class="sidebar-body">The top-performing model catches about 38% of seeded issues in a controlled test. That's a meaningful second set of eyes for less than a dollar -- not a replacement for a licensed architect's review, but a second set of eyes that costs a dollar and takes ten minutes.</p>
+      <p class="sidebar-body">The top-performing model as of March 2026 was Claude Opus 4.6, catching about 38.8% of drawing issues in a controlled test. This is clearly not good enough to replace an architect's review process, but can be a meaningful addition that costs about a dollar and takes ten minutes. The AI models I scored from mid 2025 (ChatGPT-4o and Claude Sonnet 4) caught less than 5% of the drawing issues, meaning an improvement of 9x in less than a year. RedlineBench will continue to track model performance.</p>
+      <p class="sidebar-body" style="margin-top:14px">I would encourage any architects to try this out with drawing sets you are working on, and review the results for yourself.</p>
     </div>
     <a href="#prompt" class="copy-btn" style="text-decoration:none;margin-bottom:44px;display:inline-flex">Get the Prompt &mdash; Try It on Your Drawings</a>
     <div class="stat-row" id="statRow"><!-- populated by JS --></div>
@@ -378,7 +389,6 @@
         <p>
           Each model given the same drawing set with 58 known issues. Issue catch rate is the
           percentage of issues correctly identified out of 58 possible. Cost is per drawing review.
-          The best model currently finds 38.8% of issues for $1.09.
         </p>
       </div>
       <div class="family-legend" id="familyLegend">
@@ -388,8 +398,8 @@
         <div class="family-item"><span class="family-swatch" style="background:#5a5650"></span>xAI</div>
       </div>
     </div>
-    <div id="scatterWrap">
-      <div style="position:relative;height:460px">
+    <div id="scatterWrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <div style="position:relative;height:460px;min-width:560px">
         <canvas id="scatterChart"></canvas>
       </div>
     </div>
@@ -404,6 +414,7 @@
       <h2>All Models</h2>
     </div>
 
+    <div class="table-scroll">
     <table class="lb-table" id="lbTable">
       <thead>
         <tr>
@@ -417,6 +428,7 @@
       </thead>
       <tbody><!-- populated by JS --></tbody>
     </table>
+    </div>
     <details style="margin-top:48px">
       <summary style="font-size:.78rem;font-weight:600;color:var(--ink-2);cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;gap:8px"><span style="color:var(--red);font-weight:700;font-size:1rem">+</span> Scoring logic</summary>
       <div style="margin-top:20px">
@@ -446,124 +458,6 @@
       </div>
     </details>
 
-    <!-- WHICH MODEL -->
-    <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--border)">
-      <div class="section-tag" style="margin-bottom:14px">Which model should I use?</div>
-      <div class="meth-steps" style="margin-bottom:0">
-        <div class="meth-step-card">
-          <span class="step-num" style="color:#2d6a4f">Best Accuracy</span>
-          <h3>Claude Opus 4.6</h3>
-          <p>38.8% catch rate &nbsp;·&nbsp; $1.09/review<br>Highest score, zero false alarms. The best overall choice for a thorough review.</p>
-        </div>
-        <div class="meth-step-card">
-          <span class="step-num" style="color:#0a5068">Best Value</span>
-          <h3>Claude Haiku 4.5</h3>
-          <p>24.1% catch rate &nbsp;·&nbsp; $0.24/review<br>Two-thirds the accuracy at one-fifth the cost, and zero false alarms.</p>
-        </div>
-        <div class="meth-step-card">
-          <span class="step-num" style="color:#8b4a20">Budget Option</span>
-          <h3>GPT-5 Mini</h3>
-          <p>9.5% catch rate &nbsp;·&nbsp; $0.03/review<br>Limited accuracy but costs pennies. Good for a quick sanity check.</p>
-        </div>
-      </div>
-      <p style="font-size:.82rem;color:var(--ink-2);margin-top:16px;max-width:620px">All models use the same prompt. Upload your drawings to any AI that accepts PDFs, paste the prompt, and review the output. Ten minutes, start to finish.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SPOTLIGHTS -->
-<section id="highlights" class="alt">
-  <div class="container section-pad">
-    <div class="section-header">
-      <span class="section-tag">What it finds and misses</span>
-      <h2>Issue Spotlights</h2>
-      <p>Four representative issues illustrating the range of difficulty. Cells below each issue show all ten models left-to-right by overall score.</p>
-    </div>
-    <div class="spot-grid">
-
-      <div class="spot-card">
-        <div class="spot-top">
-          <h3 class="spot-title">Window manufacturer conflict</h3>
-          <p class="spot-desc">The specifications call for <strong>Andersen 400 Series</strong> windows, while the window schedule lists <strong>Marvin Essential (Ultrex)</strong> products. These are completely different manufacturers with different rough-opening dimensions, frame profiles, and weather-sealing details. Every window detail in the A4.10-A4.13 series would need to be reconciled before procurement. A direct product conflict between two named documents -- and most models caught it.</p>
-          <div class="spot-model-grid">
-            <div class="spot-model-item" data-tip="Claude Opus 4.6 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus</div></div>
-            <div class="spot-model-item" data-tip="GPT-5.4 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">GPT-5.4</div></div>
-            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
-            <div class="spot-model-item" data-tip="Claude Sonnet 4.6 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">S 4.6</div></div>
-            <div class="spot-model-item" data-tip="Grok 4.20 Beta · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Grok</div></div>
-            <div class="spot-model-item" data-tip="Gemini 3 Flash · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G Flash</div></div>
-            <div class="spot-model-item" data-tip="GPT-5 Mini · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G5 Mini</div></div>
-            <div class="spot-model-item" data-tip="Gemini 3.1 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G 3.1</div></div>
-            <div class="spot-model-item" data-tip="Claude Sonnet 4.0 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.0</div></div>
-            <div class="spot-model-item" data-tip="GPT-4o · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-4o</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="spot-card">
-        <div class="spot-top">
-          <h3 class="spot-title">Missing Type X gypsum above garage</h3>
-          <p class="spot-desc">The Level 2 guest suite sits directly above the garage. IRC requires <strong>5/8" Type X gypsum</strong> on the garage ceiling when habitable space is above. Floor assembly F-1 specifies standard <strong>1/2" gypsum board</strong>. This is a code-required life safety item, not a judgment call. Three models found it correctly, three flagged it vaguely, and four missed it entirely.</p>
-          <div class="spot-model-grid">
-            <div class="spot-model-item" data-tip="Claude Opus 4.6 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus</div></div>
-            <div class="spot-model-item" data-tip="GPT-5.4 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">GPT-5.4</div></div>
-            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">Haiku</div></div>
-            <div class="spot-model-item" data-tip="Claude Sonnet 4.6 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.6</div></div>
-            <div class="spot-model-item" data-tip="Grok 4.20 Beta · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">Grok</div></div>
-            <div class="spot-model-item" data-tip="Gemini 3 Flash · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">G Flash</div></div>
-            <div class="spot-model-item" data-tip="GPT-5 Mini · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">G5 Mini</div></div>
-            <div class="spot-model-item" data-tip="Gemini 3.1 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G 3.1</div></div>
-            <div class="spot-model-item" data-tip="Claude Sonnet 4.0 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.0</div></div>
-            <div class="spot-model-item" data-tip="GPT-4o · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-4o</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="spot-card">
-        <div class="spot-top">
-          <h3 class="spot-title">Orphaned keynote tag "13"</h3>
-          <p class="spot-desc">On enlarged plan A2.01A, keynote tag <strong>"13"</strong> appears on the drawing with no corresponding entry in the keynote legend. A contractor encountering this tag in the field cannot determine what it refers to. This is concrete and objectively verifiable, yet 9 of 10 models missed it entirely. Models largely skip annotation auditing in favor of higher-level coordination checks.</p>
-          <div class="spot-model-grid">
-            <div class="spot-model-item" data-tip="Claude Opus 4.6 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus</div></div>
-            <div class="spot-model-item" data-tip="GPT-5.4 Pro · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-5.4</div></div>
-            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
-            <div class="spot-model-item" data-tip="Claude Sonnet 4.6 · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">S 4.6</div></div>
-            <div class="spot-model-item" data-tip="Grok 4.20 Beta · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Grok</div></div>
-            <div class="spot-model-item" data-tip="Gemini 3 Flash · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">G Flash</div></div>
-            <div class="spot-model-item" data-tip="GPT-5 Mini · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">G5 Mini</div></div>
-            <div class="spot-model-item" data-tip="Gemini 3.1 Pro · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">G 3.1</div></div>
-            <div class="spot-model-item" data-tip="Claude Sonnet 4.0 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.0</div></div>
-            <div class="spot-model-item" data-tip="GPT-4o · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-4o</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="spot-card">
-        <div class="spot-top">
-          <h3 class="spot-title">Stair geometry misread</h3>
-          <p class="spot-desc">The stair is L-shaped with <strong>10 risers in the east run</strong> and <strong>8 risers in the south run</strong>, 18 total, yielding compliant ~6-11/16" risers. Seven of ten models misread one run as the entire stair and reported impossible or irreconcilable geometry -- a confident, specific, and wrong finding. This is the costliest kind of AI error: it wastes the reviewer's time and could cause unnecessary field work based on a problem that doesn't exist.</p>
-          <div class="spot-model-grid">
-            <div class="spot-model-item" data-tip="Claude Opus 4.6 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus</div></div>
-            <div class="spot-model-item" data-tip="GPT-5.4 Pro · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">GPT-5.4</div></div>
-            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
-            <div class="spot-model-item" data-tip="Claude Sonnet 4.6 · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">S 4.6</div></div>
-            <div class="spot-model-item" data-tip="Grok 4.20 Beta · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">Grok</div></div>
-            <div class="spot-model-item" data-tip="Gemini 3 Flash · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">G Flash</div></div>
-            <div class="spot-model-item" data-tip="GPT-5 Mini · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">G5 Mini</div></div>
-            <div class="spot-model-item" data-tip="Gemini 3.1 Pro · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">G 3.1</div></div>
-            <div class="spot-model-item" data-tip="Claude Sonnet 4.0 · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">S 4.0</div></div>
-            <div class="spot-model-item" data-tip="GPT-4o · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">GPT-4o</div></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="spot-mc-legend" style="margin-top:20px">
-      <div class="spot-mc-legend-item"><div class="spot-mc-swatch" style="background:#2d6a4f"></div>Found correctly</div>
-      <div class="spot-mc-legend-item"><div class="spot-mc-swatch" style="background:#74c69d"></div>Found, vague</div>
-      <div class="spot-mc-legend-item"><div class="spot-mc-swatch" style="background:#ebe5dc;border:1px solid #c0b8af"></div>Missed</div>
-      <div class="spot-mc-legend-item"><div class="spot-mc-swatch" style="background:#b83020"></div>False alarm</div>
-    </div>
   </div>
 </section>
 
@@ -584,18 +478,18 @@
       <div class="meth-step-card">
         <span class="step-num">02</span>
         <h3>Upload your PDFs</h3>
-        <p>Upload your drawing set and specification booklet. The AI reads them directly.</p>
+        <p>Upload your drawing set and specification booklet. The AI reads them directly. Note: some AI models have PDF upload size limits for free account users.</p>
       </div>
       <div class="meth-step-card">
         <span class="step-num">03</span>
         <h3>Paste the prompt and run</h3>
-        <p>Copy the prompt below, paste it into the chat, and send. Results in about ten minutes for under a dollar.</p>
+        <p>Copy the prompt below, paste it into the chat, and send.</p>
       </div>
     </div>
     <button class="copy-btn" id="copyPromptBtn" onclick="copyPrompt()">Copy prompt to clipboard</button>
     <details class="prompt-details">
       <summary>View full prompt</summary>
-      <pre class="prompt-pre" id="promptText">You are an experienced architect performing a thorough review of a construction document set. Your job is to find errors, inconsistencies, omissions, and coordination failures that would cause problems during construction — the kinds of issues that generate RFIs, change orders, field conflicts, and disputes.
+      <pre class="prompt-pre" id="promptText">You are an experienced architect performing a thorough review of a construction document set. Your job is to find errors, inconsistencies, omissions, and coordination failures that would cause problems during construction, the kinds of issues that generate RFIs, change orders, field conflicts, and disputes.
 
 You have been given architectural construction documents in PDF form. These may include a drawing set and a project specification booklet, or only one of the two. Begin by reading all provided documents completely before making any observations.
 
@@ -609,7 +503,7 @@ State the following very briefly:
 
 - Climate zone (infer from location if not stated)
 
-- Scope of drawing set — sheet types included and disciplines absent
+- Scope of drawing set, including sheet types included and disciplines absent
 
 - Specification divisions included, or note if none provided
 
@@ -617,7 +511,7 @@ State the following very briefly:
 
 Work through the documents using the following seven review perspectives. For each perspective, think carefully about what the documents show, what they should show but don't, and where they contradict themselves. Report only issues you can identify with reasonable confidence from the documents provided — do not speculate or invent problems. Report only issues, not confirmations of things that are correct.
 
-**Work each category to exhaustion before moving to the next.** Do not stop after finding a few issues in a category — keep looking until you cannot find more. A residential construction set of this size and complexity will contain many issues across all seven categories; if a category feels thin, look again before moving on.
+**Work each category to exhaustion before moving to the next.** Do not stop after finding a few issues in a category — keep looking until you cannot find more. A construction document set of this size and complexity will contain many issues across all seven categories; if a category feels thin, look again before moving on.
 
 **Stay within the scope of what is provided.** If MEP, structural, civil, or other discipline drawings are not included in the set, do not flag their absence as an issue or critique systems that fall under those disciplines. Focus your review on the architectural documents that are in front of you — plans, elevations, sections, details, schedules, and specifications — and evaluate them on their own terms. If the architectural drawings reference other disciplines (e.g., "bidder design" for a system, or a structural condition), you may note where coordination will be needed, but do not review disciplines that are not present.
 
@@ -687,9 +581,9 @@ Where:
     </details>
 
     <!-- CONTACT CTA -->
-    <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--border)">
-      <p style="font-size:.88rem;color:var(--ink-2);line-height:1.75;max-width:620px;margin-bottom:18px">Want help applying AI-assisted QC to your practice? I present this research at AIA events and work with firms on integrating AI drawing review into their workflows.</p>
-      <a href="https://benfeicht.com" target="_blank" class="copy-btn" style="text-decoration:none;display:inline-flex">Get in Touch</a>
+    <div style="margin-top:48px;padding:40px 0 28px;border-top:1px solid var(--border)">
+      <p style="font-size:.88rem;color:var(--ink-2);line-height:1.75;max-width:620px;margin-bottom:18px">Want help applying AI-assisted QC to your practice, or interested in having me present this research? I'd love to hear from you.</p>
+      <a href="mailto:ben.redlinebench@gmail.com" class="copy-btn" style="text-decoration:none;display:inline-flex">Get in Touch</a>
     </div>
   </div>
 </section>
@@ -699,12 +593,12 @@ Where:
   <div class="container section-pad">
     <div style="max-width:700px">
       <span class="section-tag">Why this exists</span>
-      <p class="intro-lede">Every drawing set goes out with errors. The question is whether anything finds them first.</p>
+      <p class="intro-lede">Every drawing set goes out with errors. The question is how those errors get found.</p>
       <div class="intro-body">
-        <p>I designed the Nicks Bend House, the test project for this benchmark, and ran the drawing set through an early version of this review before construction started. It found a <strong>window manufacturer conflict</strong> that would have required field verification of every rough opening. It found a floor assembly above the garage <strong>missing the Type X gypsum</strong> required by code for fire separation. Neither was a judgment call. Both were real errors, missed in production, that generated RFIs and cost time and design quality to resolve after the fact.</p>
-        <p>I'm the only licensed architect who reviews drawings before they leave the office. On a typical week there are two or three sets due within days of each other with no time for a formal peer review. AI document review has become my QC layer -- not a replacement for professional judgment, but a meaningful way to reduce risk when there isn't a second reviewer.</p>
-        <p>The methodology is transparent and every model response is scored at the issue level. The goal: honest data about what AI can and can't do for drawing review, updated as models improve.</p>
-        <p class="intro-byline">Ben Feicht, Licensed Architect / Portland, OR &nbsp;·&nbsp; <a href="https://www.benfeicht.com/blog-posts/blog---redlinegpt---architectural-drawing-reviews-with-ai" target="_blank" style="color:var(--red);text-decoration:none">First published November 2023</a></p>
+        <p>In 2021 I designed a house which became the test project for this benchmark, the first architecture project I had built on my own. It was the first time I did not have a team to review my work before sending it to the contractor. I compensated by doing extensive research, reviewing with other architects I knew, meeting with building science consultants, and having a great contractor team I could solve problems with throughout design and construction. Even so, there was always a feeling that my drawings had some error that would come back to get me.</p>
+        <p>When AI models became more capable in 2023, reviewing drawing sets was one of my <a href="https://www.benfeicht.com/blog-posts/blog---redlinegpt---architectural-drawing-reviews-with-ai" target="_blank" style="color:var(--red);text-decoration:none">first use cases</a>. Since then I've kept track of AI capabilities, and they've gone from giving vague advice about individual drawings to finding specific issues on complex drawing sets. During this latest round of testing in 2026, the AI models continued to find inconsistencies in the drawing set I had created in 2021, flagging issues that came up during construction and other minor inconsistencies that I'm sure created some confusion on the job site.</p>
+        <p>This full test includes those real issues as well as many additional issues I seeded to test the AI capabilities. My plan is to continue monitoring advances in AI models and promote their use in drawing set review to improve the quality of drawing sets and make for a more straightforward and less stressful construction process.</p>
+        <p class="intro-byline">Ben Feicht, Licensed Architect / Portland, OR</p>
       </div>
     </div>
   </div>
@@ -716,15 +610,113 @@ Where:
     <div class="section-header">
       <span class="section-tag">Analysis</span>
       <h2>Performance by Category</h2>
-      <p>Each bar shows that model's score as a percentage of the category's total possible points. Models ordered left-to-right by overall ranking.</p>
+      <p>The review prompt breaks the document review into seven categories, each targeting a different type of issue that can appear in a drawing set. Categories range from internal consistency across sheets to code compliance, building science, and constructability, covering the full scope of what an architect checks during QA.</p>
     </div>
     <div class="cat-cards" id="catCards"><!-- populated by JS --></div>
     <div class="chart-wrap">
       <div class="chart-title">Issue Catch Rate by Category</div>
-      <div class="chart-desc">Score earned divided by category maximum, per model. Hover for raw points.</div>
-      <div style="position:relative;height:500px">
-        <canvas id="barChart"></canvas>
+      <div class="chart-desc">Each bar shows that model's score as a percentage of the category's total possible points. Models ordered left-to-right by overall ranking. Hover for raw points.</div>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+        <div style="position:relative;height:500px;min-width:540px">
+          <canvas id="barChart"></canvas>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPOTLIGHTS -->
+<section id="highlights" class="alt">
+  <div class="container section-pad">
+    <div class="section-header">
+      <span class="section-tag">What it finds and misses</span>
+      <h2>Issue Spotlights</h2>
+      <p>Four representative issues illustrating the range of difficulty. Cells below each issue show all ten models left-to-right by overall score.</p>
+    </div>
+    <div class="spot-grid">
+
+      <div class="spot-card">
+        <div class="spot-top">
+          <h3 class="spot-title">Window manufacturer conflict</h3>
+          <p class="spot-desc">The specifications call for <strong>Andersen 400 Series</strong> windows, while the window schedule lists <strong>Marvin Essential (Ultrex)</strong> products. These are completely different manufacturers with different rough-opening dimensions, frame profiles, and weather-sealing details. Every window detail in the A4.10-A4.13 series would need to be reconciled before procurement.</p>
+          <div class="spot-model-grid">
+            <div class="spot-model-item" data-tip="Claude Opus 4.6 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus</div></div>
+            <div class="spot-model-item" data-tip="GPT-5.4 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">GPT-5.4</div></div>
+            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
+            <div class="spot-model-item" data-tip="Claude Sonnet 4.6 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">S 4.6</div></div>
+            <div class="spot-model-item" data-tip="Grok 4.20 Beta · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Grok</div></div>
+            <div class="spot-model-item" data-tip="Gemini 3 Flash · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G Flash</div></div>
+            <div class="spot-model-item" data-tip="GPT-5 Mini · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G5 Mini</div></div>
+            <div class="spot-model-item" data-tip="Gemini 3.1 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G 3.1</div></div>
+            <div class="spot-model-item" data-tip="Claude Sonnet 4.0 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.0</div></div>
+            <div class="spot-model-item" data-tip="GPT-4o · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-4o</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-top">
+          <h3 class="spot-title">Missing Type X gypsum above garage</h3>
+          <p class="spot-desc">The Level 2 guest suite sits directly above the garage. IRC requires <strong>5/8" Type X gypsum</strong> on the garage ceiling when habitable space is above. Floor assembly F-1 specifies standard <strong>1/2" gypsum board</strong>. This is a code-required life safety item, not a judgment call.</p>
+          <div class="spot-model-grid">
+            <div class="spot-model-item" data-tip="Claude Opus 4.6 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus</div></div>
+            <div class="spot-model-item" data-tip="GPT-5.4 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">GPT-5.4</div></div>
+            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">Haiku</div></div>
+            <div class="spot-model-item" data-tip="Claude Sonnet 4.6 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.6</div></div>
+            <div class="spot-model-item" data-tip="Grok 4.20 Beta · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">Grok</div></div>
+            <div class="spot-model-item" data-tip="Gemini 3 Flash · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">G Flash</div></div>
+            <div class="spot-model-item" data-tip="GPT-5 Mini · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">G5 Mini</div></div>
+            <div class="spot-model-item" data-tip="Gemini 3.1 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G 3.1</div></div>
+            <div class="spot-model-item" data-tip="Claude Sonnet 4.0 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.0</div></div>
+            <div class="spot-model-item" data-tip="GPT-4o · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-4o</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-top">
+          <h3 class="spot-title">Reversed window sill flashing</h3>
+          <p class="spot-desc">At the window sill detail (A4.11, Detail 2), the <strong>flashing membrane laps under the weather barrier instead of over it</strong>. This means water collected by the flashing drains behind the WRB rather than to the exterior, a direct path for water infiltration into the wall assembly. Finding this requires reading the fine details of a window assembly and understanding that the weather barrier wrapping over the flashing at the sill reverses the intended drainage sequence. No model found this issue.</p>
+          <div class="spot-model-grid">
+            <div class="spot-model-item" data-tip="Claude Opus 4.6 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus</div></div>
+            <div class="spot-model-item" data-tip="GPT-5.4 Pro · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-5.4</div></div>
+            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
+            <div class="spot-model-item" data-tip="Claude Sonnet 4.6 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.6</div></div>
+            <div class="spot-model-item" data-tip="Grok 4.20 Beta · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Grok</div></div>
+            <div class="spot-model-item" data-tip="Gemini 3 Flash · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">G Flash</div></div>
+            <div class="spot-model-item" data-tip="GPT-5 Mini · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">G5 Mini</div></div>
+            <div class="spot-model-item" data-tip="Gemini 3.1 Pro · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">G 3.1</div></div>
+            <div class="spot-model-item" data-tip="Claude Sonnet 4.0 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">S 4.0</div></div>
+            <div class="spot-model-item" data-tip="GPT-4o · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-4o</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-top">
+          <h3 class="spot-title">Stair geometry misread</h3>
+          <p class="spot-desc">The stair is L-shaped with <strong>10 risers in the east run</strong> and <strong>8 risers in the south run</strong>, 18 total, yielding compliant ~6-11/16" risers. Seven of ten models misread one run as the entire stair and reported impossible or irreconcilable geometry -- a confident, specific, and wrong finding. This is the costliest kind of AI error: it wastes the reviewer's time and could cause unnecessary field work based on a problem that doesn't exist.</p>
+          <div class="spot-model-grid">
+            <div class="spot-model-item" data-tip="Claude Opus 4.6 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus</div></div>
+            <div class="spot-model-item" data-tip="GPT-5.4 Pro · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">GPT-5.4</div></div>
+            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
+            <div class="spot-model-item" data-tip="Claude Sonnet 4.6 · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">S 4.6</div></div>
+            <div class="spot-model-item" data-tip="Grok 4.20 Beta · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">Grok</div></div>
+            <div class="spot-model-item" data-tip="Gemini 3 Flash · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">G Flash</div></div>
+            <div class="spot-model-item" data-tip="GPT-5 Mini · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">G5 Mini</div></div>
+            <div class="spot-model-item" data-tip="Gemini 3.1 Pro · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">G 3.1</div></div>
+            <div class="spot-model-item" data-tip="Claude Sonnet 4.0 · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">S 4.0</div></div>
+            <div class="spot-model-item" data-tip="GPT-4o · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">GPT-4o</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="spot-mc-legend" style="margin-top:20px">
+      <div class="spot-mc-legend-item"><div class="spot-mc-swatch" style="background:#2d6a4f"></div>Found correctly</div>
+      <div class="spot-mc-legend-item"><div class="spot-mc-swatch" style="background:#74c69d"></div>Found, vague</div>
+      <div class="spot-mc-legend-item"><div class="spot-mc-swatch" style="background:#ebe5dc;border:1px solid #c0b8af"></div>Missed</div>
+      <div class="spot-mc-legend-item"><div class="spot-mc-swatch" style="background:#b83020"></div>False alarm</div>
     </div>
   </div>
 </section>
@@ -780,11 +772,9 @@ Where:
 <footer>
   <div class="container footer-inner">
     <div>
-      <p><strong style="color:var(--ink-1)">RedlineBench</strong> &nbsp;·&nbsp; Built by <a href="https://benfeicht.com">Ben Feicht</a>, Licensed Architect &nbsp;·&nbsp; Portland, OR</p>
+      <p><strong style="color:var(--ink-1)">RedlineBench</strong> &nbsp;·&nbsp; Built by <a href="https://benfeicht.com">Ben Feicht</a></p>
     </div>
     <div>
-      <a href="https://www.benfeicht.com/blog-posts/blog---redlinegpt---architectural-drawing-reviews-with-ai" target="_blank">Read the full story</a>
-      &nbsp;·&nbsp;
       <a href="https://benfeicht.com" target="_blank">benfeicht.com</a>
     </div>
   </div>
@@ -822,8 +812,8 @@ const COMBINED_V3_DATA = {
       {ref:'Stair-B2',     claim:'Stair section 1/A3.22 shows 10 equal risers for the upper run, but floor-to-floor height of 10\'-0" requires 18 total risers', why:'The stair has two runs: 10 risers (east) + 8 risers (south) = 18 total, yielding compliant ~6-11/16" each.', penalty:-1},
     ]},
     { id:'gpt5mini',               label:'GPT-5 Mini',        provider:'OpenAI',    color:'#4878b4', cost_usd:0.03,  raw:8.5,  net:5.5,  max:58, pct:9.5,  flagged:40, neutral:28, incorrect:[
-      {ref:'Accoya-frame',  claim:'Window schedule lists Ultrex/Marvin frames (fiberglass) while exterior details call out 2x6 Accoya wood frames (WD-2) — direct material conflict', why:'The Accoya frame is the exterior casing/buck around the window unit, not the window frame itself.', penalty:-1},
-      {ref:'I8',            claim:'Stair callouts show 10 EQ RISERS 11" for a 10\'-0" floor-to-floor height — geometry doesn\'t add up', why:'The stair has two runs: 10 risers (east) + 8 risers (south) = 18 total, yielding compliant ~6-11/16" each.', penalty:-1},
+      {ref:'Accoya-frame',  claim:'Window schedule lists Ultrex/Marvin frames (fiberglass) while exterior details call out 2x6 Accoya wood frames (WD-2), a direct material conflict', why:'The Accoya frame is the exterior casing/buck around the window unit, not the window frame itself.', penalty:-1},
+      {ref:'I8',            claim:'Stair callouts show 10 EQ RISERS 11" for a 10\'-0" floor-to-floor height, geometry doesn\'t add up', why:'The stair has two runs: 10 risers (east) + 8 risers (south) = 18 total, yielding compliant ~6-11/16" each.', penalty:-1},
       {ref:'Thermal-break', claim:'Detail lacks a clear continuous thermal break at the sill/foundation-wall interface', why:'Detail 6/A4.10 clearly shows a 3" thermal break at the foundation-to-wall interface.', penalty:-1},
     ]},
     { id:'gemini-3.1-pro-preview', label:'Gemini 3.1 Pro',    provider:'Google',    color:'#b48030', cost_usd:0.27,  raw:8.5,  net:4.5,  max:58, pct:7.8,  flagged:21, neutral:1,  incorrect:[
@@ -938,7 +928,7 @@ function renderDashboard(data) {
   const topCost = sorted[0].cost_usd != null ? `$${sorted[0].cost_usd.toFixed(2)}` : '-';
   const statRow = document.getElementById('statRow');
   statRow.innerHTML = '';
-  [[topCost,'Top model, cost per review',false],[issues.length,'Issues in the test set',false],[sorted.length,'Models evaluated',false]].forEach(([val,lbl,accent]) => {
+  [['9×','Improvement in less than a year',false],[issues.length,'Issues in the test set',false],[sorted.length,'Models evaluated',false]].forEach(([val,lbl,accent]) => {
     const c = document.createElement('div');
     c.className = 'stat-card';
     c.innerHTML = `<div class="stat-val mono${accent?' accent':''}">${val}</div><div class="stat-lbl">${lbl}</div>`;

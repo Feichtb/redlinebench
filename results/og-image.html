@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <title>RedlineBench — OG Image (screenshot at 1200×630)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #f6f5f2;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .frame {
+      width: 1200px;
+      height: 630px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Red top accent bar */
+    .accent-bar { height: 4px; background: #b83020; width: 100%; flex-shrink: 0; }
+
+    /* Header */
+    .header {
+      padding: 22px 48px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .header-left {}
+    .eyebrow {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #9c958e;
+      margin-bottom: 8px;
+    }
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+      color: #1a1916;
+      line-height: 1;
+    }
+    .title-r { color: #b83020; }
+    .subtitle {
+      font-size: .87rem;
+      color: #5c5650;
+      margin-top: 7px;
+      line-height: 1.5;
+    }
+    /* Chart */
+    .chart-area {
+      flex: 1;
+      padding: 8px 40px 0;
+      min-height: 0;
+      position: relative;
+    }
+    .chart-area canvas { display: block; }
+
+    /* Footer */
+    .footer {
+      padding: 0 48px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .legend {
+      display: flex;
+      gap: 20px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .77rem;
+      color: #5c5650;
+    }
+    .legend-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .footer-url {
+      font-size: .78rem;
+      font-weight: 600;
+      color: #b83020;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="accent-bar"></div>
+
+    <div class="header">
+      <div class="header-left">
+        <div class="eyebrow">AI Architectural Drawing Review</div>
+        <div class="title"><span class="title-r">Redline</span>Bench</div>
+        <div class="subtitle">
+          RedlineBench tests how capable AI is at reviewing architectural drawing sets. The best model catches about 38.8% of drawing errors, with a cost of $1.09 per review.
+          <br><span style="font-size:.78rem;color:#9c958e">redlinebench.benfeicht.com &nbsp;&middot;&nbsp; March 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-area">
+      <canvas id="scatterChart"></canvas>
+    </div>
+
+    <div class="footer">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#b83020"></div>Anthropic</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#1a4a88"></div>OpenAI</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#8a5a10"></div>Google</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#5a5650"></div>xAI</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const MODELS = [
+      { label:'Claude Opus 4.6',    pct:38.8, cost:1.09, color:'#b83020' },
+      { label:'GPT-5.4 Pro',        pct:37.1, cost:8.27, color:'#1a4a88' },
+      { label:'Claude Haiku 4.5',   pct:24.1, cost:0.24, color:'#c84838' },
+      { label:'Claude Sonnet 4.6',  pct:24.1, cost:0.74, color:'#d46058' },
+      { label:'Gemini 3 Flash',     pct:12.1, cost:0.04, color:'#8a5a10' },
+      { label:'Grok 4.20 Beta',     pct:10.3, cost:0.25, color:'#5a5650' },
+      { label:'GPT-5 Mini',         pct:9.5,  cost:0.03, color:'#4878b4' },
+      { label:'Gemini 3.1 Pro',     pct:7.8,  cost:0.27, color:'#b48030' },
+      { label:'Claude Sonnet 4.0',  pct:4.3,  cost:0.44, color:'#e09088' },
+      { label:'GPT-4o',             pct:1.7,  cost:0.15, color:'#80a8cc' },
+    ];
+
+    // Label adjustments: [dx, dy] from point center (in px, after initial placement)
+    // Positive dx = right, negative = left; positive dy = down, negative = up
+    const LABEL_NUDGE = {
+      'Claude Opus 4.6':    [  12,   0 ],
+      'GPT-5.4 Pro':        [ -12,   0 ],  // goes left — near right edge
+      'Claude Haiku 4.5':   [  12,  -6 ],
+      'Claude Sonnet 4.6':  [  12,   6 ],
+      'Gemini 3 Flash':     [  12,  -7 ],
+      'Grok 4.20 Beta':     [  12,   7 ],
+      'GPT-5 Mini':         [ -12,   0 ],  // goes left — near left cluster but higher
+      'Gemini 3.1 Pro':     [ -12,   0 ],  // goes left
+      'Claude Sonnet 4.0':  [  12,   0 ],
+      'GPT-4o':             [  12,   0 ],
+    };
+
+    const scatterLabelPlugin = {
+      id: 'scatterLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx, chartArea } = chart;
+        ctx.save();
+        chart.data.datasets.forEach((ds, i) => {
+          const meta = chart.getDatasetMeta(i);
+          if (!meta.visible) return;
+          meta.data.forEach(pt => {
+            const fullLabel = ds.label;
+            // Shorten label for display
+            const lbl = fullLabel
+              .replace('Claude ', '')
+              .replace(' Preview', '');
+            const nudge = LABEL_NUDGE[fullLabel] || [12, 0];
+            const goLeft = nudge[0] < 0;
+
+            ctx.font = '500 11px Inter, sans-serif';
+            ctx.fillStyle = ds.borderColor;
+            ctx.textAlign = goLeft ? 'right' : 'left';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(lbl, pt.x + nudge[0], pt.y + nudge[1]);
+          });
+        });
+        ctx.restore();
+      }
+    };
+
+    new Chart(document.getElementById('scatterChart').getContext('2d'), {
+      type: 'scatter',
+      plugins: [scatterLabelPlugin],
+      data: {
+        datasets: MODELS.map(m => ({
+          label: m.label,
+          data: [{ x: m.pct, y: m.cost }],
+          backgroundColor: m.color + 'dd',
+          borderColor: m.color,
+          pointRadius: 9,
+          pointHoverRadius: 9,
+        })),
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        layout: { padding: { top: 14 } },
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: false },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Issue catch rate (% of 58 issues)',
+              font: { family: 'Inter', size: 12 },
+              color: '#9c958e',
+            },
+            min: 0, max: 50,
+            grid: { color: '#e8e3dc' },
+            ticks: {
+              font: { family: 'JetBrains Mono', size: 11 },
+              color: '#9c958e',
+              callback: v => v + '%',
+              stepSize: 10,
+            },
+          },
+          y: {
+            type: 'logarithmic',
+            title: {
+              display: true,
+              text: 'Cost per review (log scale)',
+              font: { family: 'Inter', size: 12 },
+              color: '#9c958e',
+            },
+            grid: { color: '#e8e3dc' },
+            ticks: {
+              font: { family: 'JetBrains Mono', size: 11 },
+              color: '#9c958e',
+              callback: v => '$' + v,
+            },
+            afterBuildTicks: scale => {
+              scale.ticks = [
+                { value: 0.01 }, { value: 0.05 }, { value: 0.10 },
+                { value: 0.50 }, { value: 1.00 }, { value: 5.00 }, { value: 10.00 }
+              ];
+            },
+          },
+        },
+      },
+    });
+  </script>
+</body>
+</html>
