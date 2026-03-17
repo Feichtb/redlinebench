@@ -95,7 +95,7 @@
 
     /* SECTION LABELS */
     .section-tag {
-      display: block; margin-bottom: 10px;
+      display: block; margin-bottom: 14px;
       font-size: .66rem; font-weight: 700; letter-spacing: .16em;
       text-transform: uppercase; color: var(--ink-3);
     }
@@ -366,9 +366,9 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#scatter">Results</a></li>
       <li><a href="#prompt">Try It</a></li>
-      <li><a href="#intro">About</a></li>
       <li><a href="#highlights">Issue Examples</a></li>
       <li><a href="#methodology">Methodology</a></li>
+      <li><a href="#intro">About</a></li>
       <li><a href="https://benfeicht.com" target="_blank">benfeicht.com</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -377,23 +377,38 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  HERO — VERSION A  (Brand hero: name big, stats immediate)  ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
 <section id="hero">
   <div class="container">
-    <h1>RedlineBench tests how capable AI is at reviewing architectural drawing sets.</h1>
-    <p class="hero-sub">
-      AI models can be used by architects to catch drawing errors before they hit the field, in about ten minutes without any additional software. These errors can include coordination errors, constructibility, and code concerns. RedlineBench tests how well today's models actually perform on a real residential project with 58 known issues.
+    <p style="font-size:.82rem;font-weight:500;color:var(--ink-2);margin-bottom:16px;letter-spacing:.02em">AI Architectural Drawing Review Benchmark</p>
+    <h1 style="font-size:4.2rem;max-width:none;margin-bottom:12px"><span style="color:var(--red)">Redline</span>Bench</h1>
+    <p class="hero-sub" style="margin:0 0 40px;max-width:620px">
+      How well can AI models review architectural drawing sets? 10 models were tested on a real project with 58 known issues, including coordination errors, code concerns, and spec conflicts, and scored every finding.
     </p>
-    <div class="sidebar-card" style="max-width:540px;margin-bottom:44px">
-      <div class="sidebar-num">38.8%</div>
-      <div class="sidebar-label">Issue catch rate, best model</div>
-      <p class="sidebar-body">The top-performing model as of March 2026 was Claude Opus 4.6, catching about 38.8% of drawing issues in a controlled test. This is clearly not good enough to replace an architect's review process, but can be a meaningful addition that costs about a dollar and takes ten minutes. The AI models I scored from mid 2025 (ChatGPT-4o and Claude Sonnet 4) caught less than 5% of the drawing issues, meaning an improvement of 9x in less than a year. RedlineBench will continue to track model performance.</p>
-      <p class="sidebar-body" style="margin-top:14px">I would encourage any architects to try this out with drawing sets you are working on, and review the results for yourself.</p>
+    <div class="stat-row" style="margin-bottom:40px">
+      <div class="stat-card">
+        <div class="stat-val mono accent">38.8%</div>
+        <div class="stat-lbl">Best model catch rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val mono">9&times;</div>
+        <div class="stat-lbl">Improvement in &lt; 1 year</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val mono">58</div>
+        <div class="stat-lbl">Known issues in test set</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val mono">10</div>
+        <div class="stat-lbl">Models tested</div>
+      </div>
     </div>
-    <a href="#prompt" class="copy-btn" style="text-decoration:none;margin-bottom:44px;display:inline-flex">Get the Prompt &mdash; Try It on Your Drawings</a>
-    <div class="stat-row" id="statRow"><!-- populated by JS --></div>
+    <a href="#prompt" class="copy-btn" style="text-decoration:none;display:inline-flex">Get the Prompt // Try It on Your Drawings</a>
   </div>
 </section>
+
 
 <!-- SCATTER -->
 <section id="scatter" class="alt">
@@ -478,7 +493,7 @@
 </section>
 
 <!-- PROMPT -->
-<section id="prompt">
+<section id="prompt" class="alt">
   <div class="container section-pad">
     <div class="section-header">
       <span class="section-tag">Use it yourself</span>
@@ -604,22 +619,6 @@ Where:
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="intro" class="alt">
-  <div class="container section-pad">
-    <div style="max-width:700px">
-      <span class="section-tag">Why this exists</span>
-      <p class="intro-lede">Every drawing set goes out with errors. The question is how those errors get found.</p>
-      <div class="intro-body">
-        <p>In 2021 I designed a house which became the test project for this benchmark, the first architecture project I had built on my own. It was the first time I did not have a team to review my work before sending it to the contractor. I compensated by doing extensive research, reviewing with other architects I knew, meeting with building science consultants, and having a great contractor team I could solve problems with throughout design and construction. Even so, there was always a feeling that my drawings had some error that would come back to get me.</p>
-        <p>When AI models became more capable in 2023, reviewing drawing sets was one of my <a href="https://www.benfeicht.com/blog-posts/blog---redlinegpt---architectural-drawing-reviews-with-ai" target="_blank" style="color:var(--red);text-decoration:none">first use cases</a>. Since then I've kept track of AI capabilities, and they've gone from giving vague advice about individual drawings to finding specific issues on complex drawing sets. During this latest round of testing in 2026, the AI models continued to find inconsistencies in the drawing set I had created in 2021, flagging issues that came up during construction and other minor inconsistencies that I'm sure created some confusion on the job site.</p>
-        <p>This full test includes those real issues as well as many additional issues I seeded to test the AI capabilities. My plan is to continue monitoring advances in AI models and promote their use in drawing set review to improve the quality of drawing sets and make for a more straightforward and less stressful construction process.</p>
-        <p class="intro-byline">Ben Feicht, Licensed Architect / Portland, OR</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CATEGORY PERFORMANCE -->
 <section id="performance">
   <div class="container section-pad">
@@ -633,7 +632,7 @@ Where:
       <div class="chart-title">Issue Catch Rate by Category</div>
       <div class="chart-desc">Each bar shows that model's score as a percentage of the category's total possible points. Models ordered left-to-right by overall ranking. Hover for raw points.</div>
       <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <div style="position:relative;height:500px;min-width:540px">
+        <div style="position:relative;height:500px;min-width:1020px">
           <canvas id="barChart"></canvas>
         </div>
       </div>
@@ -738,7 +737,7 @@ Where:
 </section>
 
 <!-- METHODOLOGY -->
-<section id="methodology" class="alt">
+<section id="methodology">
   <div class="container section-pad">
     <div class="section-header">
       <span class="section-tag">How It Works</span>
@@ -766,7 +765,7 @@ Where:
 </section>
 
 <!-- HEATMAP -->
-<section id="heatmap">
+<section id="heatmap" class="alt">
   <div class="container section-pad">
     <div class="section-header">
       <span class="section-tag">Issue-Level Detail</span>
@@ -784,14 +783,27 @@ Where:
   </div>
 </section>
 
+<!-- ABOUT -->
+<section id="intro">
+  <div class="container section-pad">
+    <div style="max-width:700px">
+      <span class="section-tag">Why this exists</span>
+      <p class="intro-lede">Every drawing set goes out with errors. The question is how those errors get found.</p>
+      <div class="intro-body">
+        <p>In 2021 I designed a house which became the test project for this benchmark, the first architecture project I had built on my own. It was the first time I did not have a team to review my work before sending it to the contractor. I compensated by doing extensive research, reviewing with other architects I knew, meeting with building science consultants, and having a great contractor team I could solve problems with throughout design and construction. Even so, there was always a feeling that my drawings had some error that would come back to get me.</p>
+        <p>When AI models became more capable in 2023, reviewing drawing sets was one of my <a href="https://www.benfeicht.com/blog-posts/blog---redlinegpt---architectural-drawing-reviews-with-ai" target="_blank" style="color:var(--red);text-decoration:none">first use cases</a>. Since then I've kept track of AI capabilities, and they've gone from giving vague advice about individual drawings to finding specific issues on complex drawing sets. During this latest round of testing in 2026, the AI models continued to find inconsistencies in the drawing set I had created in 2021, flagging issues that came up during construction and other minor inconsistencies that I'm sure created some confusion on the job site.</p>
+        <p>This full test includes those real issues as well as many additional issues I seeded to test the AI capabilities. My plan is to continue monitoring advances in AI models and promote their use in drawing set review to improve the quality of drawing sets and make for a more straightforward and less stressful construction process.</p>
+        <p class="intro-byline">Ben Feicht, Licensed Architect / Portland, OR</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
     <div>
       <p><strong style="color:var(--ink-1)">RedlineBench</strong> &nbsp;·&nbsp; Built by <a href="https://benfeicht.com">Ben Feicht</a></p>
-    </div>
-    <div>
-      <a href="https://benfeicht.com" target="_blank">benfeicht.com</a>
     </div>
   </div>
 </footer>
@@ -943,13 +955,15 @@ function renderDashboard(data) {
   document.getElementById('totalIssues').textContent = issues.length;
   const topCost = sorted[0].cost_usd != null ? `$${sorted[0].cost_usd.toFixed(2)}` : '-';
   const statRow = document.getElementById('statRow');
-  statRow.innerHTML = '';
-  [['9×','Improvement in less than a year',false],[issues.length,'Issues in the test set',false],[sorted.length,'Models evaluated',false]].forEach(([val,lbl,accent]) => {
-    const c = document.createElement('div');
-    c.className = 'stat-card';
-    c.innerHTML = `<div class="stat-val mono${accent?' accent':''}">${val}</div><div class="stat-lbl">${lbl}</div>`;
-    statRow.appendChild(c);
-  });
+  if (statRow) {
+    statRow.innerHTML = '';
+    [['9×','Improvement in less than a year',false],[issues.length,'Issues in the test set',false],[sorted.length,'Models evaluated',false]].forEach(([val,lbl,accent]) => {
+      const c = document.createElement('div');
+      c.className = 'stat-card';
+      c.innerHTML = `<div class="stat-val mono${accent?' accent':''}">${val}</div><div class="stat-lbl">${lbl}</div>`;
+      statRow.appendChild(c);
+    });
+  }
 
   // LEADERBOARD TABLE
   const rankCls = ['gold','silver','bronze'];
