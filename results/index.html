@@ -60,7 +60,7 @@
     .mono { font-family: 'JetBrains Mono', monospace; }
 
     /* LAYOUT */
-    .container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 clamp(18px, 5vw, 80px); overflow-x: clip; }
     section { background: var(--surface); }
     section + section { border-top: 1px solid var(--border); }
     section.alt { background: var(--bg); }
@@ -214,7 +214,7 @@
     .cat-max { font-size: .63rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-3); margin-top: 8px; }
 
     /* HEATMAP */
-    .hm-outer { overflow-x: auto; }
+    .hm-outer { overflow-x: auto; width: 100%; }
     .hm-wrap { min-width: 900px; }
     .hm-header { display: grid; gap: 2px; margin-bottom: 2px; }
     .hm-header > div { font-size: .62rem; font-weight: 700; text-align: center; padding: 7px 4px; color: #fff; letter-spacing: .04em; }
@@ -324,7 +324,7 @@
     #tooltip strong { color: #f5c0b0; }
 
     /* RESPONSIVE */
-    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
     @media (max-width: 960px) {
       h1 { font-size: 2.2rem; }
       .intro-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -340,18 +340,17 @@
       }
       .nav-links.open { display: flex; }
       .nav-links a { padding: 10px 32px; display: block; }
-      .stat-row { width: 100%; }
+      /* Stat cards: 2-column grid for 4 cards = clean 2×2 layout at all sub-960px widths */
+      .stat-row { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; }
+      .stat-card { min-width: 0; }
       .scatter-meta { flex-direction: column; }
       .scoring-cards { grid-template-columns: repeat(2, 1fr); }
       .lb-model-bar { width: 120px; }
     }
     @media (max-width: 600px) {
-      .container { padding: 0 18px; }
       h1 { font-size: 1.75rem; }
       .rubric-grid { grid-template-columns: repeat(2, 1fr); }
-      /* Stat cards: 3-column grid prevents broken wrapping with floating borders */
-      .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); }
-      .stat-card { min-width: 0; padding: 14px 12px; }
+      .stat-card { padding: 14px 12px; }
       /* Spotlight legend: 2 per row so the 4th item doesn't orphan */
       .spot-mc-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
     }
@@ -383,7 +382,7 @@
 <section id="hero">
   <div class="container">
     <p style="font-size:.82rem;font-weight:500;color:var(--ink-2);margin-bottom:16px;letter-spacing:.02em">AI Architectural Drawing Review Benchmark</p>
-    <h1 style="font-size:4.2rem;max-width:none;margin-bottom:12px"><span style="color:var(--red)">Redline</span>Bench</h1>
+    <h1 style="font-size:clamp(2.2rem,10vw,4.2rem);max-width:none;margin-bottom:12px"><span style="color:var(--red)">Redline</span>Bench</h1>
     <p class="hero-sub" style="margin:0 0 40px;max-width:620px">
       How well can AI models review architectural drawing sets? 10 models were tested on a real project with 58 known issues, including coordination errors, code concerns, and spec conflicts, and scored every finding.
     </p>
@@ -429,7 +428,7 @@
         <div class="family-item"><span class="family-swatch" style="background:#5a5650"></span>xAI</div>
       </div>
     </div>
-    <div id="scatterWrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <div id="scatterWrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%">
       <div style="position:relative;height:460px;min-width:560px">
         <canvas id="scatterChart"></canvas>
       </div>
@@ -631,7 +630,7 @@ Where:
     <div class="chart-wrap">
       <div class="chart-title">Issue Catch Rate by Category</div>
       <div class="chart-desc">Each bar shows that model's score as a percentage of the category's total possible points. Models ordered left-to-right by overall ranking. Hover for raw points.</div>
-      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%">
         <div style="position:relative;height:500px;min-width:1020px">
           <canvas id="barChart"></canvas>
         </div>
