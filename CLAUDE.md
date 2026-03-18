@@ -8,11 +8,11 @@ RedlineBench benchmarks how well various AI models perform at reviewing architec
 
 1. **Test files** (`test_files/`): A real residential project drawing set and project specification booklet, both intentionally seeded with known issues across 7 categories.
 
-2. **Prompt** (`redlinebench/prompts/`): A model-agnostic prompt versioned by filename. The current active prompt is `review_v3.txt`. Never edit a versioned prompt after it has been sent to any model — create a new version instead.
+2. **Prompt** (`redlinebench/prompts/review.txt`): A model-agnostic review prompt. Never edit the prompt file after it has been used for a scored run — create a new file instead (e.g. `review_v2.txt`).
 
 3. **Runner** (`redlinebench/runner.py`): Automated script that sends the prompt + both PDFs to each model API, saves raw responses and metadata, and writes a run manifest with token counts, latency, and cost.
 
-4. **Model responses**: Raw `.txt` files saved in `redlinebench/outputs/YYYY-MM-DD_HH-MM/`. Legacy manual rounds are archived in `v1_prompt and responses/` and `v2_prompt and responses/`.
+4. **Model responses**: Raw `.txt` files saved in `redlinebench/outputs/YYYY-MM-DD_HH-MM/`.
 
 5. **Benchmark answer key** (`benchmark-answer-key.md`): The scorer's reference listing all 58 known issues, organized by category. Also includes a neutral findings list (no score impact) and an incorrect findings list (score penalty).
 
@@ -22,12 +22,12 @@ RedlineBench benchmarks how well various AI models perform at reviewing architec
 
 ## Audience and Purpose
 
-RedlineBench is published on benfeicht.com and presented at industry events (e.g. AIA Conference). The audience is **architects and architecture firm owners** evaluating whether and how to use AI in their practice — not ML researchers. Results should be clear and practical, not statistically complex.
+RedlineBench is published on benfeicht.com. The audience is **architects and architecture firm owners** evaluating whether and how to use AI in their practice — not ML researchers. Results should be clear and practical, not statistically complex.
 
 ## Benchmark Design Decisions (settled)
 
 - **Single run per model** — deliberate. Multiple runs would complicate the issue-level heatmap, which is the most valuable part of the results page. Single runs are credible for this audience given the transparent methodology and 58-issue answer key.
-- **Answer key locked at 58 issues** — never add new issues to an active answer key version. If a new genuine issue is discovered, it goes into a new versioned answer key (e.g. `benchmark-answer-key-v3.md`), which requires full rescoring. Issues that are debatable go on the neutral list instead.
+- **Answer key locked at 58 issues** — never add new issues to an active answer key. If a new genuine issue is discovered, it goes into a new answer key version, which requires full rescoring. Issues that are debatable go on the neutral list instead.
 - **No design advice** — benchmark scope is QAQC only (post-completion drawing review), not design feedback.
 - **Future rounds use the round-selector UI** — re-running models or adding new models creates a new round, not additional runs within a round.
 - **No cap on items flagged** — models decide when to stop; this is intentional.
@@ -44,9 +44,9 @@ Penalties:
 
 Neutral findings (debatable, out-of-scope, or judgment calls listed in the answer key) have no score impact either direction.
 
-## Current Results — v3 Prompt, 7 Models (main benchmark)
+## Current Results — 10 Models
 
-All models scored against the 58-issue answer key using `review_v3.txt`. Scored and displayed in `results/index.html` as the "All Models — v3 prompt" combined view.
+All models scored against the 58-issue answer key. Scored and displayed in `results/index.html`.
 
 | Model | Net Score | % of max (58) | Cost / run |
 |-------|----------:|------------:|------------|
@@ -69,13 +69,11 @@ All models scored against the 58-issue answer key using `review_v3.txt`. Scored 
 | `test_files/211020 Bonfire House_Specifications_current.pdf` | Current specification booklet |
 | `benchmark-answer-key.md` | Complete 58-issue answer key with scoring guidance |
 | `results/index.html` | Published results page — all scoring data embedded in JS |
-| `results/v1_scores.json` | Raw scores JSON for Round 1 (v1 prompt, 4 models) |
-| `redlinebench/prompts/review_v3.txt` | Current active prompt |
+| `redlinebench/prompts/review.txt` | Current active prompt |
 | `redlinebench/outputs/` | All runner output folders — never delete |
+| `redlinebench/scoring_prompts/` | Prompts used to assist with scoring (human-verified) |
 | `redlinebench/runner.py` | Main runner script |
 | `redlinebench/.env` | API keys and PDF paths (git-ignored) |
-| `v1_prompt and responses/` | Archive: manual Round 1 responses + v1 prompt |
-| `v2_prompt and responses/` | Archive: manual Round 2 responses + v2 prompt (not scored) |
 
 ---
 
@@ -103,8 +101,8 @@ python runner.py --models claude-haiku-4-5 gemini-3-flash-preview gpt-5-mini
 # Multiple runs per model (max 5)
 python runner.py --models claude-sonnet-4-6 --runs 3
 
-# Different prompt version
-python runner.py --prompt review_v2.txt
+# Different prompt file
+python runner.py --prompt my_custom_prompt.txt
 ```
 
 ### Supported Models
@@ -114,10 +112,13 @@ python runner.py --prompt review_v2.txt
 | `claude-opus-4-6` | Anthropic | Extended thinking enabled |
 | `claude-sonnet-4-6` | Anthropic | Extended thinking enabled |
 | `claude-haiku-4-5` | Anthropic | Extended thinking enabled |
+| `claude-sonnet-4-0` | Anthropic | Extended thinking (legacy `enabled` type) |
 | `gemini-3.1-pro-preview` | Google | Dynamic thinking budget |
 | `gemini-3-flash-preview` | Google | Dynamic thinking budget |
 | `gpt-5.4-pro` | OpenAI | Reasoning model (no temperature) |
 | `gpt-5-mini` | OpenAI | Reasoning model (no temperature) |
+| `gpt-4o` | OpenAI | Standard model |
+| `grok-4.20-beta-0309-reasoning` | xAI | Reasoning model (no temperature) |
 
 All model IDs, max_tokens, and thinking budgets are configured in `MODEL_CONFIG` at the top of `runner.py`.
 

@@ -6,8 +6,8 @@ You are helping score an AI model's response to the RedlineBench architectural d
 
 ## What You Have
 
-- The benchmark answer key: benchmark-answer-key.md
-- Model output files: .txt files in the folder "2026-03-14_03-48" and "2026-03-14_13-54" (testing outputs from opus 4.6, sonnet 4.6, gemeni 3.1 pro preview, gpt 5.4 pro)
+- The benchmark answer key: `benchmark-answer-key.md`
+- Model output files: `.txt` files in the relevant `redlinebench/outputs/<run_folder>/` directory
 
 The model output file is the raw text response from an AI that reviewed a set of architectural construction documents. The model output may use its own numbering (e.g., "A-1", "B-3") — this is the model's own labeling, NOT the answer key IDs. The answer key IDs are A1, A2, B1, etc. (no dash).
 
@@ -78,7 +78,7 @@ After reviewing this triage output, the scorer should:
    - Dismiss it (no list entry needed — purely out of scope or too vague)
 2. Once the answer key is updated, run the SCORING prompt (Step 2) against each model output.
 
-put this triage file in the same folder as the original text files. There will be one triage file for each text file.
+Save the triage file in the same folder as the original text files. There will be one triage file per model output file.
 ---
 
 ## Important Reminders

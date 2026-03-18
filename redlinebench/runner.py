@@ -656,9 +656,9 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--prompt",
-        default="review_v3.txt",
+        default="review.txt",
         metavar="FILE",
-        help="Prompt filename inside prompts/ (default: review_v3.txt).",
+        help="Prompt filename inside prompts/ (default: review.txt).",
     )
     return parser.parse_args()
 

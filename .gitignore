@@ -2,6 +2,9 @@
 redlinebench/.env
 .env
 
+# IDE config
+.vscode/
+
 # Large archive folder (65 MB)
 test_files/archive and full/
 
