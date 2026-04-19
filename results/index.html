@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RedlineBench: AI Architectural Drawing Review Benchmark</title>
-  <meta name="description" content="Benchmark comparing AI models on architectural drawing review. 58 known issues, 10 models tested. Free prompt included.">
+  <meta name="description" content="Benchmark comparing AI models on architectural drawing review. 58 known issues across 7 categories. Free prompt included.">
   <meta property="og:title" content="RedlineBench - AI Architectural Drawing Review Benchmark">
-  <meta property="og:description" content="RedlineBench tests how capable AI is at reviewing architectural drawing sets. The best model catches about 38.8% of drawing errors, with a cost of $1.09 per review. 10 models compared on 58 known issues.">
+  <meta property="og:description" content="RedlineBench tests how capable AI is at reviewing architectural drawing sets. The best model catches about 38.8% of drawing errors, with a cost of $1.09 per review. Multiple models compared on 58 known issues.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://redlinebench.benfeicht.com">
   <meta property="og:image" content="https://redlinebench.benfeicht.com/og-image.png">
@@ -385,7 +385,7 @@
     <p style="font-size:.82rem;font-weight:500;color:var(--ink-2);margin-bottom:16px;letter-spacing:.02em">AI Architectural Drawing Review Benchmark</p>
     <h1 style="font-size:clamp(2.2rem,10vw,4.2rem);max-width:none;margin-bottom:12px"><span style="color:var(--red)">Redline</span>Bench</h1>
     <p class="hero-sub" style="margin:0 0 40px;max-width:620px">
-      How well can AI models review architectural drawing sets? 10 models were tested on a real project with 58 known issues, including coordination errors, code concerns, and spec conflicts, and scored every finding.
+      How well can AI models review architectural drawing sets? Multiple models were tested on a real project with 58 known issues, including coordination errors, code concerns, and spec conflicts, with every finding scored.
     </p>
     <div class="stat-row" style="margin-bottom:40px">
       <div class="stat-card">
@@ -399,10 +399,6 @@
       <div class="stat-card">
         <div class="stat-val mono">58</div>
         <div class="stat-lbl">Known issues in test set</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val mono">10</div>
-        <div class="stat-lbl">Models tested</div>
       </div>
     </div>
     <a href="#prompt" class="copy-btn" style="text-decoration:none;display:inline-flex">Get the Prompt // Try It on Your Drawings</a>
@@ -646,7 +642,7 @@ Where:
     <div class="section-header">
       <span class="section-tag">What it finds and misses</span>
       <h2>Issue Spotlights</h2>
-      <p>Four representative issues illustrating the range of difficulty. Cells below each issue show all eleven models left-to-right by overall score.</p>
+      <p>Four representative issues illustrating the range of difficulty. Cells below each issue show all models left-to-right by overall score.</p>
     </div>
     <div class="spot-grid">
 
@@ -713,7 +709,7 @@ Where:
       <div class="spot-card">
         <div class="spot-top">
           <h3 class="spot-title">Stair geometry misread</h3>
-          <p class="spot-desc">The stair is L-shaped with <strong>10 risers in the east run</strong> and <strong>8 risers in the south run</strong>, 18 total, yielding compliant ~6-11/16" risers. Seven of ten models misread one run as the entire stair and reported impossible or irreconcilable geometry -- a confident, specific, and wrong finding. This is the costliest kind of AI error: it wastes the reviewer's time and could cause unnecessary field work based on a problem that doesn't exist.</p>
+          <p class="spot-desc">The stair is L-shaped with <strong>10 risers in the east run</strong> and <strong>8 risers in the south run</strong>, 18 total, yielding compliant ~6-11/16" risers. Most models misread one run as the entire stair and reported impossible or irreconcilable geometry -- a confident, specific, and wrong finding. This is the costliest kind of AI error: it wastes the reviewer's time and could cause unnecessary field work based on a problem that doesn't exist.</p>
           <div class="spot-model-grid">
             <div class="spot-model-item" data-tip="Claude Opus 4.6 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus 4.6</div></div>
             <div class="spot-model-item" data-tip="GPT-5.4 Pro · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">GPT-5.4</div></div>
