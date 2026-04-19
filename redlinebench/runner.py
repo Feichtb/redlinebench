@@ -44,6 +44,12 @@ OUTPUTS_DIR = SCRIPT_DIR / "outputs"
 
 MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # ── Anthropic ──────────────────────────────────────────────────────────
+    "claude-opus-4-7": {
+        "provider": "anthropic",
+        "max_tokens": 32000,
+        "thinking_type": "adaptive",    # no budget_tokens; uses output_config.effort
+        "output_effort": "high",        # controls thinking depth via output_config
+    },
     "claude-opus-4-6": {
         "provider": "anthropic",
         "max_tokens": 32000,
@@ -110,6 +116,24 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
 
 DEFAULT_MODELS = list(MODEL_CONFIG.keys())
 MAX_RUNS = 5
+
+# Per-model pricing in USD per token (input, output).
+# Output pricing applies to all output tokens including thinking tokens.
+# Leave a model out of this dict to get cost_usd = 0.0 in the manifest.
+PRICING: dict[str, tuple[float, float]] = {
+    "claude-opus-4-7":                    (5.00 / 1_000_000, 25.00 / 1_000_000),
+    "claude-opus-4-6":                    (5.00 / 1_000_000, 25.00 / 1_000_000),
+    "claude-sonnet-4-6":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
+    "claude-haiku-4-5":                   (0.80 / 1_000_000,   4.00 / 1_000_000),
+    "claude-sonnet-4-0":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
+}
+
+
+def _calculate_cost(model_name: str, input_tokens: int, output_tokens: int) -> float:
+    if model_name not in PRICING:
+        return 0.0
+    in_rate, out_rate = PRICING[model_name]
+    return input_tokens * in_rate + output_tokens * out_rate
 
 
 # ─── Data model ───────────────────────────────────────────────────────────────
@@ -183,7 +207,7 @@ class ModelAdapter(ABC):
                 input_tokens=api_result["input_tokens"],
                 output_tokens=api_result["output_tokens"],
                 thinking_tokens=api_result.get("thinking_tokens", 0),
-                cost_usd=0.0,
+                cost_usd=_calculate_cost(model_name, api_result["input_tokens"], api_result["output_tokens"]),
                 text_response=api_result["text"],
                 raw_response=api_result["raw_response"],
             )
@@ -248,12 +272,19 @@ class ClaudeAdapter(ModelAdapter):
         content.append({"type": "text", "text": prompt})
 
         thinking_budget = self.config.get("thinking_budget", 0)
+        output_effort = self.config.get("output_effort")
         kwargs: dict[str, Any] = {
             "model": self.model_name,
             "max_tokens": self.config["max_tokens"],
             "messages": [{"role": "user", "content": content}],
         }
-        if thinking_budget:
+        if output_effort:
+            # Newer models (Opus 4.7+) use output_config.effort instead of budget_tokens.
+            thinking_type = self.config.get("thinking_type", "adaptive")
+            kwargs["thinking"] = {"type": thinking_type}
+            kwargs["output_config"] = {"effort": output_effort}
+            kwargs["temperature"] = 1
+        elif thinking_budget:
             # Extended thinking requires temperature=1 (API enforced).
             # Older models use type "enabled"; newer models use "adaptive".
             thinking_type = self.config.get("thinking_type", "adaptive")
