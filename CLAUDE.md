@@ -44,12 +44,14 @@ Penalties:
 
 Neutral findings (debatable, out-of-scope, or judgment calls listed in the answer key) have no score impact either direction.
 
-## Current Results — 10 Models
+## Current Results — 12 Models
 
 All models scored against the 58-issue answer key. Scored and displayed in `results/index.html`.
 
 | Model | Net Score | % of max (58) | Cost / run |
 |-------|----------:|------------:|------------|
+| GPT-5.5 | 24.0 | 41.4% | $1.28 |
+| GPT-5.5 Pro | 23.0 | 39.7% | $8.27 |
 | Claude Opus 4.6 | 22.5 | 38.8% | $1.09 |
 | GPT-5.4 Pro | 21.5 | 37.1% | $8.27 |
 | Claude Haiku 4.5 | 14.0 | 24.1% | $0.24 |

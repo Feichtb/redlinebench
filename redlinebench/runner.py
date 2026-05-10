@@ -90,6 +90,18 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # Verify exact API model IDs at https://platform.openai.com/docs/models
     # If gpt-5.4-pro or gpt-5-mini turn out to be reasoning (o-series) models,
     # add: "reasoning_effort": "high", "no_temperature": True
+    "gpt-5.5": {
+        "provider": "openai",
+        "max_tokens": 65536,
+        "reasoning_effort": "xhigh",
+        "no_temperature": True,     # reasoning model; rejects temperature param
+    },
+    "gpt-5.5-pro": {
+        "provider": "openai",
+        "max_tokens": 65536,
+        "reasoning_effort": "xhigh",
+        "no_temperature": True,     # reasoning model; rejects temperature param
+    },
     "gpt-5.4-pro": {
         "provider": "openai",
         "max_tokens": 65536,
@@ -126,6 +138,8 @@ PRICING: dict[str, tuple[float, float]] = {
     "claude-sonnet-4-6":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
     "claude-haiku-4-5":                   (0.80 / 1_000_000,   4.00 / 1_000_000),
     "claude-sonnet-4-0":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
+    "gpt-5.5":                            (5.00 / 1_000_000,  30.00 / 1_000_000),
+    "gpt-5.5-pro":                        (30.00 / 1_000_000, 180.00 / 1_000_000),
 }
 
 
@@ -207,7 +221,7 @@ class ModelAdapter(ABC):
                 input_tokens=api_result["input_tokens"],
                 output_tokens=api_result["output_tokens"],
                 thinking_tokens=api_result.get("thinking_tokens", 0),
-                cost_usd=_calculate_cost(model_name, api_result["input_tokens"], api_result["output_tokens"]),
+                cost_usd=_calculate_cost(self.model_name, api_result["input_tokens"], api_result["output_tokens"]),
                 text_response=api_result["text"],
                 raw_response=api_result["raw_response"],
             )
