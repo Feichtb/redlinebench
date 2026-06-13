@@ -44,6 +44,12 @@ OUTPUTS_DIR = SCRIPT_DIR / "outputs"
 
 MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # ── Anthropic ──────────────────────────────────────────────────────────
+    "claude-opus-4-8": {
+        "provider": "anthropic",
+        "max_tokens": 64000,
+        "thinking_type": "adaptive",    # no budget_tokens; uses output_config.effort
+        "output_effort": "high",        # controls thinking depth via output_config
+    },
     "claude-opus-4-7": {
         "provider": "anthropic",
         "max_tokens": 32000,
@@ -133,6 +139,7 @@ MAX_RUNS = 5
 # Output pricing applies to all output tokens including thinking tokens.
 # Leave a model out of this dict to get cost_usd = 0.0 in the manifest.
 PRICING: dict[str, tuple[float, float]] = {
+    "claude-opus-4-8":                    (5.00 / 1_000_000, 25.00 / 1_000_000),  # verify pricing
     "claude-opus-4-7":                    (5.00 / 1_000_000, 25.00 / 1_000_000),
     "claude-opus-4-6":                    (5.00 / 1_000_000, 25.00 / 1_000_000),
     "claude-sonnet-4-6":                  (3.00 / 1_000_000,  15.00 / 1_000_000),

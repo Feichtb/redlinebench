@@ -1,0 +1,26 @@
+{
+  "prompt_file": "review.txt",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-06-07T21:41:04.431449+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-06-07_21-33",
+  "models_run": [
+    "claude-opus-4-8"
+  ],
+  "results": [
+    {
+      "model_name": "claude-opus-4-8",
+      "model_version": "claude-opus-4-8",
+      "run_number": 1,
+      "timestamp_start": "2026-06-07T21:33:32.585142+00:00",
+      "timestamp_end": "2026-06-07T21:41:04.428999+00:00",
+      "latency_seconds": 451.84,
+      "input_tokens": 118723,
+      "output_tokens": 32000,
+      "thinking_tokens": 0,
+      "cost_usd": 1.393615,
+      "error": null
+    }
+  ],
+  "errors": []
+}

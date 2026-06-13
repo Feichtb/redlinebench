@@ -1,0 +1,84 @@
+## Step 1: Project Context
+
+- **Project / location / code:** Bonfire House, un-addressed parcel, Chatham County, North Carolina. Code basis stated as 2018 NC Residential Code (adopting IRC 2015 w/ amendments); jurisdiction Chatham County Central Permitting. (Note: G0.11 Zoning box also cites IBC Table 503, V-B/R-3 — see E-1.)
+- **Building type / construction type:** Single-family dwelling, Occupancy R-3, Construction Type V-B, two stories over a sealed crawl space.
+- **Climate zone:** 4A (stated; consistent with central NC Piedmont).
+- **Scope of set:** General (G), Architectural (A) only — plans, elevations, building/wall sections, exterior/interior/deck details, RCP, schedules. **Absent disciplines:** Structural (referenced as separate set), Mechanical, Electrical, Plumbing, Civil/Survey (A1.00 survey removed). Pool, well, septic by allowance/others.
+- **Specifications:** A narrative "Description of Materials, Applications and Allowances" booklet (11 pages, not CSI-divisioned) is provided.
+
+*Limitations: Survey (A1.00) is removed, so all site grades/elevations are unverifiable and are noted by the spec as "approximate, not based on actual grade." Several window/door tags and small dimension strings are at a resolution where exact counts cannot be fully confirmed; these are flagged as Moderate.*
+
+---
+
+## Step 3: Findings
+
+### A. Internal consistency across sheets
+
+`A-1 | A7.01/1 (Kitchen North) vs A8.01 Appliance Schedule | Ceiling hood vent tagged "A3," but schedule assigns A3 = Oven and A5 = Hood; the hood is mislabeled. | High`
+`A-2 | A8.01 Room Finish Schedule (Rm 01) vs Spec p.6 / A7.01 | Entry Hall walls listed as WD-1, but spec/details call for custom WD-4 tongue-and-groove wood walls and ceiling. | High`
+`A-3 | G0.11 Project Data / Zoning vs A2.01/02 plans | Project described as "four bedroom," but only three rooms are labeled bedrooms (06 Master, 09 Second, 17 Guest); the 4th sleeping room is not identified (affects septic sizing). | High`
+`A-4 | A8.01 Room Finish (Rm 11) vs Spec p.5 | Bathroom 11 finish shows tile (T-1) on only the north wall with P-1 elsewhere, but spec specifies Hampton tile on floor and bath walls. | Moderate`
+`A-5 | A6.01 Lighting Fixture Schedule | Schedule skips type L2 (lists L1, then L3–L10); either a fixture type is missing or the numbering is in error. | Moderate`
+`A-6 | A8.01 Window Schedule vs A3.02/2, A3.03/1 & Spec p.8 | Spec calls for "6 south-facing clerestory windows" (motorized-blind prewire) but the schedule shows only one clerestory unit (Type 10, qty 1); south clerestory band is not fully tagged/scheduled. | Moderate`
+`A-7 | A8.01 Room Finish | Several wall cells left blank (Rm 02 west, Rm 03 north/east) with no note indicating whether these are openings or unfinished — ambiguous. | Moderate`
+
+### B. Dimensional and geometric integrity
+
+`B-1 | A3.02/1 North Elevation vs A3.01, A3.10, A3.20, A2.00 | Crawl-space datum given as 501'-0" on A3.02 North but 502'-0" on all other sheets — a 1'-0" datum conflict. | High`
+`B-2 | A2.01B/2 (Level 2 North) | Two dimension chains for the same overall width disagree (16'-6"+17'-10"=34'-4" vs 24'-3"+5'-7"+4'-0½"=33'-10½"). | Moderate`
+`B-3 | A2.01B/1 (Level 1 North) | Chain "22'-10"+11'-5"=34'-3"" does not match the stated 34'-4" overall (1" bust). | Moderate`
+`B-4 | A3.22/1 & /2 stair sections | Stair riser/tread counts and the ~6-11/16" riser are not reconciled to the 10'-0" floor-to-floor on a single sheet (appears to be a two-flight switchback totaling 18 risers); landing and total rise should be confirmed. | Moderate`
+`B-5 | A3.22 / A7.01-8 stairs | Stair headroom (min 6'-8") and handrail/guard heights are not dimensioned anywhere, despite stairs running under sloped roof framing. | High`
+
+### C. Specification-to-drawing alignment
+
+`C-1 | A8.01 Window Schedule vs Spec p.3 | Schedule specifies "Ultrex-Marvin-Stonewhite" windows; specification specifies "Andersen 400 Series" — two different manufacturers. | Certain`
+`C-2 | A8.01 Door Schedule (03-1) vs Spec p.3 | Door 03-1 scheduled as METAL; spec lists 03-01 as a Jeld-Wen IWP wood glass-panel exterior door. | Certain`
+`C-3 | G0.11 Plumbing (Hose Bibs: 5) vs Spec p.7 | Drawing fixture count lists 5 hose bibs; spec states "Exterior hose bibs (3) to be Aqua Hydrants." | Certain`
+`C-4 | G0.11 Plumbing (Tub: 1) vs Spec p.7 | Fixture count shows 1 tub, but spec provides at least two tubs (Toto Master air bath + Signature guest alcove tub). | Certain`
+`C-5 | G0.11 Energy (Ceiling R=53) vs Spec p.4 (R49) | Ceiling insulation R-value conflicts: 53 on drawings vs R38+R15=R49 in spec. | High`
+`C-6 | A4.00 E-4/E-3/E-2 vs Spec p.4 | Walls drawn as "1½" rigid insulation + ½" plywood + WRB" but spec requires "1" Insulated ZIP Board (R6)" — product and thickness mismatch. | High`
+`C-7 | Spec p.6 vs drawing set | Spec references custom bunk nook "on page A8.10," a sheet that does not exist in the set (only A8.01). | Certain`
+`C-8 | Spec p.2 vs p.3 | West Façade is assigned BOTH WD-3 Thermory wood cladding (p.2: "South and West Facades") and Hardieplank lap siding (p.3: "North and West Facades") — conflicting cladding for the same façade. | High`
+`C-9 | A4.00 E-1 vs Spec p.4 / G0.11 | E-1 shows only "½" rigid insulation @ crawl space," but spec (2" XPS) and project values require R-10 crawl-wall insulation. | High`
+`C-10 | G0.11 Plumbing (Lavatories: 4) vs A7.02/10 | Master Bath North elevation appears to show a double vanity; with Bath 11, Powder 14, and Guest 18 that totals 5 lavatories vs the 4 scheduled. | Moderate`
+
+### D. Building envelope and building science
+
+`D-1 | A2.03 roof slope tags vs Spec p.4 (Sheffield SnapLock 450) | Roof areas drawn at 2":12 and 1/4":12 are below the typical minimum slope (≈3":12) for the specified snap-lock standing-seam profile. | High`
+`D-2 | A4.00 E-1 / A4.11-5 | Crawl-wall rigid insulation shown as ½" (≈R-2.5) cannot meet the R-10 stem-wall requirement; insulated, sealed crawl space will be under-insulated as drawn. | High`
+`D-3 | A4.01 R-1 / A4.11-4 | Roof detailed as an unvented insulated joist assembly, yet the overhang/soffit is called "vented fiberboard soffit"; venting strategy is internally inconsistent and should be coordinated. | Moderate`
+`D-4 | A4.01 F-2 vs Spec p.3 (SS-2 limestone at Entry/Laundry/Powder) | Honed limestone over thinset directly on plywood subfloor (framed floor) lacks an uncoupling/cement-board substrate and is deflection-sensitive — risk of cracking. | Moderate`
+
+### E. Code and life safety
+
+`E-1 | G0.11 Zoning box vs Building Code line | Single-family dwelling is reviewed under IRC, yet the Zoning/Construction-type box cites IBC Table 503 for area/height/stories — wrong code path for an R-3 dwelling. | Moderate`
+`E-2 | A4.01 F-1 (1/2" gyp) / A7.10-3 vs Level 2 over garage | Garage ceiling/separation shown with ½" gypsum board; habitable rooms over the garage require 5/8" Type X — Type X separation not specified. | High`
+`E-3 | A8.01 Door Schedule (garage-to-house door) / A2.01B | No door between Garage 15 and conditioned space is identified as 20-minute / self-closing / self-latching as required for the garage separation. | High`
+`E-4 | A5.10/4 South Section, Deck | "26" CABLE RAILING" at deck stairs is below the 36" guard minimum (and outside the 34"–38" handrail range) — non-compliant. | High`
+`E-5 | A3.01/A3.02 elevations / window schedule | Large low-sill windows (Types 6, 9) on floors well above exterior grade (crawl/deck side) are not addressed for window fall protection where sill is <24" AFF and >72" above grade. | Moderate`
+`E-6 | A8.01 / bedroom plans | Emergency escape & rescue openings are not demonstrated for sleeping rooms; many windows are FIXED, and 2'-0"×2'-0" casements (Type 2C, 4 SF gross) cannot meet the 5.7 SF clear-opening requirement if relied upon. | Moderate`
+`E-7 | A5.01 / A5.10 / Spec p.10 | Above-ground pool (4'+ above grade, south edge open, removable deck section) — required pool safety barrier/alarms/gate self-closing-latching not shown/detailed. | Moderate`
+`E-8 | Spec p.3 / A5.x | Horizontal cable-rail infill spacing is not specified/dimensioned to demonstrate the 4" sphere limitation. | Moderate`
+
+### F. Constructability
+
+`F-1 | A4.13/5 Section Porch Overhang & Spec p.1 (#4) | Steel tube columns "hidden inside wall framing" must fit within a 2x6 (5½") cavity; column size vs stud depth and cladding over steel need coordination. | Moderate`
+`F-2 | A4.13/1,2,3 corner windows (reading nook/kitchen/office) | Mulled corner fixed-glass units with mirror returns require a structural corner header/post and specialized flashing; feasibility/structure not resolved on the architectural sheets. | Moderate`
+`F-3 | A2.03 roof / A2.03 solar array | Rooftop PV array on standing-seam metal at 3:12 with a stated goal to "minimize roof penetrations" — mounting method (seam clamps vs penetrations) not detailed. | Moderate`
+`F-4 | A2.01A note / A7.02 Master Bath | In-floor hydronic radiant ("bidder design layout") is required at Master Bath, but floor assembly F-2 shows no tubing/mortar bed accommodation. | Moderate`
+
+### G. Completeness and clarity
+
+`G-1 | Throughout spec & schedules | Numerous bid-critical selections left "TBD" (window stain, siding/paint colors, kitchen sink, carpet, cabinet hardware, countertop thickness, HVAC ground-source vs furnace) — incomplete for hard bidding. | High`
+`G-2 | A8.01 Room Finish "Comments" (Rm 07, 11, 18) | "FOR SHOWER FINISHES SEE ___" references appear truncated/incomplete. | Moderate`
+`G-3 | A6.01 Lighting Schedule | Fixture types listed as "TBD" manufacturer/model for all lighting; no fixture selections provided. | Moderate`
+`G-4 | Title blocks / cover (all sheets) | Owner, Structural Engineer, Job No., and Planning Application # are blank throughout. | Moderate`
+`G-5 | Spec p.6 reference A8.10 | Referenced sheet does not exist; bunk-nook detail not provided in the set. | High`
+`G-6 | G0.11 / A1.00 | Survey removed and grades noted as "approximate, not actual"; site-specific elevations, ramp slopes, and setback verification cannot be confirmed from the set. | Moderate`
+
+---
+
+## Summary
+
+The architectural set is
