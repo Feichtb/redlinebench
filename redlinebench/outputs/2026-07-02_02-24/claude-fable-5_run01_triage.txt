@@ -1,0 +1,50 @@
+# RedlineBench — Triage (Step 1 of 2)
+Model: claude-fable-5
+Run: 2026-07-02_02-24
+Answer key: benchmark-answer-key.md (58 scoreable issues, benchmark v2)
+
+Total distinct findings in model output: 61
+(A: 12, B: 4, C: 15, D: 6, E: 8, F: 6, G: 10)
+
+Most findings mapped cleanly to the answer key (scoreable A–G), the Neutral list,
+or the Known Incorrect list. Notable matches:
+
+- MATCHED → SCOREABLE (representative): A-1→G4, A-2→B2, A-3→A11, A-4→A5, A-5→A4,
+  A-11→A1, B-2→B3, B-4→E1, C-1→C1, C-2→A6, C-3→C2, C-4→C5, C-5→D2, C-6→C3,
+  C-7→C7, C-8→C4, C-10→G12, D-3→G8, E-1→E7, E-2→E8/E4, E-3→E3, E-5→E2, F-2→F3,
+  G-2→G6, G-9→G9, A-8→G15, G-10 (central vac)→F4.
+- MATCHED → NEUTRAL: A-7 (2 tubs vs 1 in code summary), A-10 (4 bedrooms vs 3 → egress under E3),
+  A-12 (clerestory tags illegible), C-9 (Cat6e vs Cat6a, N30), C-12 (solar scope, N5-adjacent),
+  C-15 (fiberboard vs Hardie soffit, N1), D-1 (vented soffit vs unvented roof), D-2 (roof condensation, overlaps C5),
+  D-5 (rain chains, N7), D-6 (mirror panel in cavity), E-8 (safety glazing not designated, N9),
+  F-1 (porch tube steel, N13), F-5 (removable deck no detail), F-6 (pool retaining walls, N14),
+  G-1 (blank project directory / planning #), G-3 (door hardware column blank),
+  G-4 (spec editorial: placeholders, typos, N20), G-5 (Div. 8 reference, N27),
+  G-10 (tankless WH location, N11).
+- MATCHED → KNOWN INCORRECT (hedged → no penalty): E-6 (south pool edge "open" = I311, stated "Moderate"/"not demonstrated"),
+  G-8 (HERO code = I2, "possibly HERS", "Moderate").
+- MATCHED → KNOWN INCORRECT (confident → PENALIZED): A-6 (connector roof slope 1/4":12 vs 1/8":12 = I309,
+  stated "Certain"). See scoring.
+
+---
+## UNMATCHED FINDINGS (FOR SCORER REVIEW)
+
+| # | Model Finding (brief) | Suggested Classification | Reasoning |
+|---|---|---|---|
+| 1 | A-9: Kitchen hood vent labeled "A3" (wall oven) but hood is A5 per appliance schedule | LIKELY NEUTRAL | Appliance location codes (A1–A7) are on the neutral list as a clarity issue; the specific mislabel is hard to verify at reduced scale. |
+| 2 | B-1: E-4 (and E-3) callout reads "1 1/2\" RIGID INSULATION" but dimension string shows 1" for that layer | LIKELY INCORRECT / NEUTRAL | Overlaps the C2 spec-vs-drawing insulation conflict (already scoreable). As a standalone internal-contradiction claim it needs the native dimension string verified; possible misread. |
+| 3 | B-3: E-1 CMU sub-dims (2" + 9 5/8" + 1/2" = 12 1/8") don't reconcile with 11 1/2" overall | LIKELY INCORRECT | Internally inconsistent with the model's own C-5 finding (which correctly reads E-1 rigid insulation as 1/2", not 2"); likely a misread of the assembly dimension string. Stated "Moderate" — not penalized. |
+| 4 | C-13: Spec requires hard-wired 240V/60A EV charger; plan labels a "240V 60 AMP OUTLET" | LIKELY NEUTRAL | Minor spec-vs-drawing wording; electrical/MEP-adjacent, no clear construction error. |
+| 5 | C-14: Spec says all interior doors composite solid-core; door 06-2 is wood rail-and-stile w/ frosted glass | LIKELY NEUTRAL | Spec generalization vs a single door exception; coordination note, not a confirmed error. |
+| 6 | D-4: Garage is conditioned but F-5 slab shows no perimeter/under-slab insulation | LIKELY NEUTRAL | Slab-edge insulation for a conditioned garage is a judgment/energy-code call; not on the current key. |
+| 7 | E-7: Smoke/CO detector locations not shown on plans or RCP | LIKELY NEUTRAL | Detection-device layout is typically electrical/MEP scope; not expected on the architectural set. |
+| 8 | F-4: Floor drains shown but trapping/priming/discharge routing undefined | LIKELY NEUTRAL | Plumbing/MEP scope; the spec explicitly leaves drain diversion open to bidders. |
+| 9 | G-6: Abbreviations/standards sheet retains commercial-template content (elevator, CMU partitions, etc.) | LIKELY NEUTRAL | Documentation-quality/boilerplate observation; no construction impact. |
+| 10 | G-7: Bath exhaust fans not on RCP; dryer/hood vent terminations not shown | LIKELY NEUTRAL | MEP/mechanical scope; vent termination locations not typically on architectural plans. |
+
+## Notes for the Scorer
+- None of the unmatched findings rise to POTENTIAL NEW ISSUE — the answer key is locked at 58; any
+  genuinely new issue would require a new answer-key version and full rescore (see CLAUDE.md).
+- Items 2 and 3 are internal-contradiction / dimensional claims that would each need the native
+  drawing verified before being treated as anything other than a possible misread. Neither is
+  penalized (item 2 overlaps a scoreable spec conflict; item 3 is hedged "Moderate").

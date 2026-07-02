@@ -48,10 +48,11 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 
 **Source of truth: `results/index.html`.** All scoring data is the `COMBINED_V3_DATA` object near the bottom of that file; each run's `scores.json` is the per-run record those values are copied from. The table below is a snapshot for quick reference — when it disagrees with the page, the page wins.
 
-Snapshot — 14 models scored against the 58-issue answer key:
+Snapshot — 15 models scored against the 58-issue answer key:
 
 | Model | Net Score | % of max (58) | Cost / run |
 |-------|----------:|------------:|------------|
+| Claude Fable 5 | 26.0 | 44.8% | $3.12 |
 | GPT-5.5 | 24.0 | 41.4% | $1.28 |
 | GPT-5.5 Pro | 23.0 | 39.7% | $8.27 |
 | Claude Opus 4.6 | 22.5 | 38.8% | $1.09 |
@@ -129,6 +130,7 @@ python runner.py --prompt my_custom_prompt.txt
 
 | Model key | Provider | Notes |
 |-----------|----------|-------|
+| `claude-fable-5` | Anthropic | Most capable model. Thinking always on (`output_config.effort`, no `budget_tokens`); `max_tokens` at the 128K ceiling; requires 30-day data retention |
 | `claude-opus-4-8` | Anthropic | Adaptive thinking via `output_config.effort` (no `budget_tokens`) |
 | `claude-opus-4-7` | Anthropic | Adaptive thinking via `output_config.effort` (no `budget_tokens`) |
 | `claude-opus-4-6` | Anthropic | Extended thinking (`budget_tokens`) |

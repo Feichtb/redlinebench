@@ -44,6 +44,17 @@ OUTPUTS_DIR = SCRIPT_DIR / "outputs"
 
 MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # ── Anthropic ──────────────────────────────────────────────────────────
+    # Anthropic's most capable model. Thinking is always on: send only
+    # {"type": "adaptive"} (no budget_tokens) and control depth via
+    # output_config.effort. max_tokens raised to the model's 128K ceiling so
+    # long reviews don't get truncated (the "output cap" removed for this run).
+    # Requires 30-day data retention (not available under zero data retention).
+    "claude-fable-5": {
+        "provider": "anthropic",
+        "max_tokens": 128000,
+        "thinking_type": "adaptive",    # no budget_tokens; uses output_config.effort
+        "output_effort": "high",        # matches the Opus runs for a fair comparison
+    },
     "claude-opus-4-8": {
         "provider": "anthropic",
         "max_tokens": 64000,
@@ -139,6 +150,7 @@ MAX_RUNS = 5
 # Output pricing applies to all output tokens including thinking tokens.
 # Leave a model out of this dict to get cost_usd = 0.0 in the manifest.
 PRICING: dict[str, tuple[float, float]] = {
+    "claude-fable-5":                     (10.00 / 1_000_000, 50.00 / 1_000_000),
     "claude-opus-4-8":                    (5.00 / 1_000_000, 25.00 / 1_000_000),  # verify pricing
     "claude-opus-4-7":                    (5.00 / 1_000_000, 25.00 / 1_000_000),
     "claude-opus-4-6":                    (5.00 / 1_000_000, 25.00 / 1_000_000),
