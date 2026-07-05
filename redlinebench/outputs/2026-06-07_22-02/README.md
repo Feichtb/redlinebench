@@ -1,7 +1,6 @@
-# Secondary run — NOT the published Claude Opus 4.8 result
+# Second same-day Opus 4.8 run
 
-This folder is a **second** run of Claude Opus 4.8 from the same day. It is retained as
-research data only and is **not** the canonical entry for this model on the results page.
+This folder is a second run of Claude Opus 4.8 from the same day as `../2026-06-07_21-33/`.
 
 ## Why two runs exist
 
@@ -11,14 +10,14 @@ model was re-run here.
 
 On review, the 21-33 run is **findings-complete** — all seven categories (A–G) are present
 and the model had finished its findings by its own choice; only the non-scoring narrative
-summary was cut off. The re-run was therefore based on a false premise.
+summary was cut off. The re-run was therefore based on a false premise, though it turned out
+to be useful anyway (see below).
 
-## Which run is published
+## How this is used now
 
-**`2026-06-07_21-33` is the canonical, published Opus 4.8 run.** Per the benchmark's
-single-run-per-model design, every model is represented by its first complete pass. Using
-21-33 keeps Opus 4.8 on the same single-shot terms as the other models and avoids selecting
-the better of two attempts.
-
-For the record, the two runs scored: **21-33 → 18.5 net**, **22-02 (this folder) → 24.5 net**.
-The gap is genuine run-to-run variance, not a truncation artifact.
+Both runs count. RedlineBench moved from a single-run-per-model design to permanent
+multi-run aggregation (`redlinebench/build_data.py`) — every scored run is a dated record
+that contributes to that model's mean/min/max, and neither run here is treated as
+"canonical" or discarded. Per each run's `scores.json`: **21-33 → 19.5 net**, **22-02 (this
+folder) → 24.5 net**, giving Opus 4.8 n=2, mean 22.0. The gap between them is genuine
+run-to-run variance — exactly what the reliability heatmap on the results page is for.

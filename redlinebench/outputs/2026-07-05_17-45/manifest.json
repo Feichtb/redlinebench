@@ -1,0 +1,29 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-07-05T18:13:51.236355+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-07-05_17-45",
+  "models_run": [
+    "gpt-5.5-pro"
+  ],
+  "results": [
+    {
+      "model_name": "gpt-5.5-pro",
+      "model_version": "gpt-5.5-pro-2026-04-23",
+      "run_number": 1,
+      "timestamp_start": "2026-07-05T17:45:03.060222+00:00",
+      "timestamp_end": "2026-07-05T18:13:51.236355+00:00",
+      "latency_seconds": 1728.17,
+      "input_tokens": 62633,
+      "output_tokens": 61931,
+      "thinking_tokens": 0,
+      "cost_usd": 13.02657,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "note": "This folder holds the second of two gpt-5.5-pro runs that were fired in a single `runner.py --models gpt-5.5-pro --runs 2` invocation targeting output folder outputs/2026-07-05_17-11/ (alongside a concurrent gpt-5.5 --runs 2 invocation writing to the same shared folder). Split into its own folder because the scores.json/build_data.py schema expects at most one run per model per output folder. gpt-5-5-pro_run01.txt here is the exact text of what the original invocation labeled run02 (renamed for this folder's own run-local numbering). The full raw API response object for this run was NOT duplicated here to avoid a redundant copy -- it remains at ../2026-07-05_17-11/gpt-5-5-pro_run02_raw.json, its original location from the shared invocation."
+}

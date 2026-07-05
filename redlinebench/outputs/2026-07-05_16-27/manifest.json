@@ -1,0 +1,58 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-07-05T16:47:04.961003+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-07-05_16-27",
+  "models_run": [
+    "claude-fable-5",
+    "claude-opus-4-8"
+  ],
+  "results": [
+    {
+      "model_name": "claude-opus-4-8",
+      "model_version": "claude-opus-4-8",
+      "run_number": 1,
+      "timestamp_start": "2026-07-05T16:27:26.226234+00:00",
+      "timestamp_end": "2026-07-05T16:38:15.361226+00:00",
+      "latency_seconds": 649.14,
+      "input_tokens": 118723,
+      "output_tokens": 46407,
+      "thinking_tokens": 0,
+      "cost_usd": 1.75379,
+      "temperature": 1,
+      "error": null
+    },
+    {
+      "model_name": "claude-fable-5",
+      "model_version": "claude-fable-5",
+      "run_number": 1,
+      "timestamp_start": "2026-07-05T16:27:08.740630+00:00",
+      "timestamp_end": "2026-07-05T16:37:41.538465+00:00",
+      "latency_seconds": 632.8,
+      "input_tokens": 118723,
+      "output_tokens": 46390,
+      "thinking_tokens": 0,
+      "cost_usd": 3.50673,
+      "temperature": 1,
+      "error": null
+    },
+    {
+      "model_name": "claude-fable-5",
+      "model_version": "claude-fable-5",
+      "run_number": 2,
+      "timestamp_start": "2026-07-05T16:37:41.541425+00:00",
+      "timestamp_end": "2026-07-05T16:47:04.957994+00:00",
+      "latency_seconds": 563.41,
+      "input_tokens": 118723,
+      "output_tokens": 42300,
+      "thinking_tokens": 0,
+      "cost_usd": 3.30223,
+      "temperature": 1,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "note": "Two runner.py processes (claude-fable-5 --runs 2, claude-opus-4-8 --runs 1) were launched in parallel and happened to land in the same timestamped output folder, each overwriting the other's manifest.json on completion. This file was manually reconstructed by merging both processes' final manifest output (captured from process logs / a pre-overwrite backup) so no run data was lost. The claude-fable-5 run02 result (text + raw json originally named claude-fable-5_run02.txt/_raw.json in this folder) was split out into its own output folder at ../2026-07-05_16-37/ so each model has at most one run per scores.json, matching the aggregation schema. Its raw API response json (claude-fable-5_run02_raw.json) was left in place here rather than duplicated; the text response was moved to the new folder as claude-fable-5_run01.txt."
+}

@@ -6,7 +6,7 @@ redlinebench/.env
 .vscode/
 
 # Large archive folder (65 MB)
-test_files/archive and full/
+results/dataset/test_files/archive and full/
 
 # Python artifacts
 __pycache__/

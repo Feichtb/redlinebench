@@ -1,0 +1,29 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-07-05T16:47:04.957994+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-07-05_16-37",
+  "models_run": [
+    "claude-fable-5"
+  ],
+  "results": [
+    {
+      "model_name": "claude-fable-5",
+      "model_version": "claude-fable-5",
+      "run_number": 1,
+      "timestamp_start": "2026-07-05T16:37:41.541425+00:00",
+      "timestamp_end": "2026-07-05T16:47:04.957994+00:00",
+      "latency_seconds": 563.41,
+      "input_tokens": 118723,
+      "output_tokens": 42300,
+      "thinking_tokens": 0,
+      "cost_usd": 3.30223,
+      "temperature": 1,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "note": "This folder holds the second of two Claude Fable 5 runs that were fired in a single `runner.py --models claude-fable-5 --runs 2` invocation targeting output folder outputs/2026-07-05_16-27/ (alongside a concurrent claude-opus-4-8 --runs 1 invocation writing to the same shared folder). Split into its own folder because the scores.json/build_data.py schema expects at most one run per model per output folder. claude-fable-5_run01.txt here is the exact text of what the original invocation labeled run02 (renamed for this folder's own run-local numbering). The full raw API response object for this run was NOT duplicated here to avoid a redundant ~120KB copy -- it remains at ../2026-07-05_16-27/claude-fable-5_run02_raw.json, its original location from the shared invocation."
+}

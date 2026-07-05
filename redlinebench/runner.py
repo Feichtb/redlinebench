@@ -13,6 +13,7 @@ import argparse
 import base64
 import json
 import os
+import re
 import sys
 import time
 from abc import ABC, abstractmethod
@@ -28,7 +29,9 @@ from dotenv import load_dotenv
 SCRIPT_DIR = Path(__file__).parent
 
 load_dotenv(SCRIPT_DIR / ".env")
-PROMPTS_DIR = SCRIPT_DIR / "prompts"
+# Prompts live under results/dataset/ -- the single canonical copy shared by the
+# runner, the results page, and the Hugging Face export (see build_data.py).
+PROMPTS_DIR = SCRIPT_DIR.parent / "results" / "dataset" / "prompts"
 OUTPUTS_DIR = SCRIPT_DIR / "outputs"
 
 # Per-model settings.
@@ -184,6 +187,7 @@ class RunResult:
     output_tokens: int
     thinking_tokens: int    # 0 if model doesn't report separately
     cost_usd: float         # 0.0 until pricing is configured
+    temperature: Optional[float]   # None if the provider doesn't accept the param
     text_response: str
     raw_response: dict
     error: Optional[str] = None
@@ -241,6 +245,7 @@ class ModelAdapter(ABC):
                 output_tokens=api_result["output_tokens"],
                 thinking_tokens=api_result.get("thinking_tokens", 0),
                 cost_usd=_calculate_cost(self.model_name, api_result["input_tokens"], api_result["output_tokens"]),
+                temperature=api_result.get("temperature"),
                 text_response=api_result["text"],
                 raw_response=api_result["raw_response"],
             )
@@ -258,6 +263,7 @@ class ModelAdapter(ABC):
                 output_tokens=0,
                 thinking_tokens=0,
                 cost_usd=0.0,
+                temperature=None,
                 text_response="",
                 raw_response={},
                 error=str(exc),
@@ -353,6 +359,7 @@ class ClaudeAdapter(ModelAdapter):
             "thinking_tokens": thinking_tokens,
             "model_version": response.model,
             "raw_response": response.model_dump(),
+            "temperature": kwargs["temperature"],
         }
 
 
@@ -432,6 +439,7 @@ class OpenAIAdapter(ModelAdapter):
             "thinking_tokens": thinking_tokens,
             "model_version": response.model,
             "raw_response": response.model_dump(),
+            "temperature": kwargs.get("temperature"),
         }
 
 
@@ -497,6 +505,7 @@ class GeminiAdapter(ModelAdapter):
             "thinking_tokens": thinking_tokens,
             "model_version": self.model_name,  # Gemini doesn't echo version
             "raw_response": response.model_dump(),
+            "temperature": cfg_kwargs.get("temperature"),
         }
 
 
@@ -578,6 +587,7 @@ class GrokAdapter(ModelAdapter):
             "thinking_tokens": thinking_tokens,
             "model_version": response.model,
             "raw_response": response.model_dump(),
+            "temperature": kwargs.get("temperature"),
         }
 
 
@@ -641,6 +651,15 @@ def slugify_model(model_name: str) -> str:
     return model_name.replace("/", "-").replace(":", "-").replace(" ", "_").replace(".", "-")
 
 
+def derive_prompt_version(prompt_file: str) -> str:
+    """review.txt -> v1; review_v2.txt -> v2; anything else -> the filename itself."""
+    stem = Path(prompt_file).stem
+    if stem == "review":
+        return "v1"
+    match = re.fullmatch(r"review_v(\d+)", stem)
+    return f"v{match.group(1)}" if match else stem
+
+
 def save_run_outputs(result: RunResult, run_dir: Path) -> tuple[Path, Path]:
     """Write .txt (text response) and _raw.json (API metadata). Returns both paths."""
     slug = slugify_model(result.model_name)
@@ -668,6 +687,7 @@ def write_manifest(
 ) -> Path:
     manifest = {
         "prompt_file": prompt_file,
+        "prompt_version": derive_prompt_version(prompt_file),
         "drawings_pdf": drawings_pdf_name,
         "specs_pdf": specs_pdf_name,
         "run_timestamp": datetime.now(timezone.utc).isoformat(),
@@ -685,6 +705,7 @@ def write_manifest(
                 "output_tokens": r.output_tokens,
                 "thinking_tokens": r.thinking_tokens,
                 "cost_usd": r.cost_usd,
+                "temperature": r.temperature,
                 "error": r.error,
             }
             for r in results

@@ -1,0 +1,72 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-07-05T18:13:51.243245+00:00",
+  "run_directory": "C:\\Users\\feich\\Documents\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-07-05_17-11",
+  "models_run": [
+    "gpt-5.5",
+    "gpt-5.5-pro"
+  ],
+  "results": [
+    {
+      "model_name": "gpt-5.5",
+      "model_version": "gpt-5.5-2026-04-23",
+      "run_number": 1,
+      "timestamp_start": "2026-07-05T17:11:37.818348+00:00",
+      "timestamp_end": "2026-07-05T17:17:49.151733+00:00",
+      "latency_seconds": 371.34,
+      "input_tokens": 62633,
+      "output_tokens": 54753,
+      "thinking_tokens": 0,
+      "cost_usd": 1.955755,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gpt-5.5",
+      "model_version": "gpt-5.5-2026-04-23",
+      "run_number": 2,
+      "timestamp_start": "2026-07-05T17:17:49.153743+00:00",
+      "timestamp_end": "2026-07-05T17:24:56.872354+00:00",
+      "latency_seconds": 427.72,
+      "input_tokens": 62633,
+      "output_tokens": 65928,
+      "thinking_tokens": 0,
+      "cost_usd": 2.291005,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gpt-5.5-pro",
+      "model_version": "gpt-5.5-pro-2026-04-23",
+      "run_number": 1,
+      "timestamp_start": "2026-07-05T17:11:40.797207+00:00",
+      "timestamp_end": "2026-07-05T17:45:03.057595+00:00",
+      "latency_seconds": 2002.27,
+      "input_tokens": 62633,
+      "output_tokens": 74765,
+      "thinking_tokens": 0,
+      "cost_usd": 15.33669,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gpt-5.5-pro",
+      "model_version": "gpt-5.5-pro-2026-04-23",
+      "run_number": 2,
+      "timestamp_start": "2026-07-05T17:45:03.060222+00:00",
+      "timestamp_end": "2026-07-05T18:13:51.236355+00:00",
+      "latency_seconds": 1728.17,
+      "input_tokens": 62633,
+      "output_tokens": 61931,
+      "thinking_tokens": 0,
+      "cost_usd": 13.02657,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "note": "Two runner.py processes (gpt-5.5 --runs 2, gpt-5.5-pro --runs 2) were launched in parallel and happened to land in the same timestamped output folder, each overwriting the other's manifest.json on completion. This file was manually reconstructed by merging both processes' final manifest output (captured from process logs / a pre-overwrite backup) so no run data was lost. The gpt-5.5 run02 and gpt-5.5-pro run02 results (originally gpt-5-5_run02.txt/_raw.json and gpt-5-5-pro_run02.txt/_raw.json in this folder) were split out into their own output folders at ../2026-07-05_17-17/ and ../2026-07-05_17-45/ respectively, so each model has at most one run per scores.json, matching the aggregation schema. Their raw API response jsons (gpt-5-5_run02_raw.json, gpt-5-5-pro_run02_raw.json) were left in place here rather than duplicated; the text responses were copied to the new folders as gpt-5-5_run01.txt and gpt-5-5-pro_run01.txt respectively."
+}
