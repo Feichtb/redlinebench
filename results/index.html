@@ -55,7 +55,7 @@
     "@context": "https://schema.org",
     "@type": "Dataset",
     "name": "RedlineBench — AI Architectural Drawing Review Benchmark Results",
-    "description": "Benchmark dataset comparing 15 AI models on their ability to identify errors and inconsistencies in a residential architectural construction document set. Scored against 58 known issues across 7 categories including dimension conflicts, specification mismatches, and coordination failures.",
+    "description": "Benchmark dataset comparing 16 AI models on their ability to identify errors and inconsistencies in a residential architectural construction document set. Scored against 58 known issues across 7 categories including dimension conflicts, specification mismatches, and coordination failures.",
     "url": "https://redlinebench.benfeicht.com",
     "creator": { "@type": "Person", "name": "Ben Feicht", "url": "https://benfeicht.com" },
     "datePublished": "2026-03-16",
@@ -687,6 +687,7 @@ Where:
           <h3 class="spot-title">Window manufacturer conflict</h3>
           <p class="spot-desc">The specifications call for <strong>Andersen 400 Series</strong> windows, while the window schedule lists <strong>Marvin Essential (Ultrex)</strong> products. These are completely different manufacturers with different rough-opening dimensions, frame profiles, and weather-sealing details. Every window detail in the A4.10-A4.13 series would need to be reconciled before procurement.</p>
           <div class="spot-model-grid">
+            <div class="spot-model-item" data-tip="GPT-5.6 Sol · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G5.6 Sol</div></div>
             <div class="spot-model-item" data-tip="Claude Fable 5 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Fable 5</div></div>
             <div class="spot-model-item" data-tip="GPT-5.5 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">GPT-5.5</div></div>
             <div class="spot-model-item" data-tip="Claude Opus 4.8 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus 4.8</div></div>
@@ -694,7 +695,6 @@ Where:
             <div class="spot-model-item" data-tip="Claude Opus 4.6 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus 4.6</div></div>
             <div class="spot-model-item" data-tip="GPT-5.4 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">GPT-5.4</div></div>
             <div class="spot-model-item" data-tip="Claude Opus 4.7 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus 4.7</div></div>
-            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
           </div>
         </div>
       </div>
@@ -704,6 +704,7 @@ Where:
           <h3 class="spot-title">Missing Type X gypsum above garage</h3>
           <p class="spot-desc">The Level 2 guest suite sits directly above the garage. IRC requires <strong>5/8" Type X gypsum</strong> on the garage ceiling when habitable space is above. Floor assembly F-1 specifies standard <strong>1/2" gypsum board</strong>. This is a code-required life safety item, not a judgment call.</p>
           <div class="spot-model-grid">
+            <div class="spot-model-item" data-tip="GPT-5.6 Sol · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">G5.6 Sol</div></div>
             <div class="spot-model-item" data-tip="Claude Fable 5 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Fable 5</div></div>
             <div class="spot-model-item" data-tip="GPT-5.5 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">GPT-5.5</div></div>
             <div class="spot-model-item" data-tip="Claude Opus 4.8 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus 4.8</div></div>
@@ -711,7 +712,6 @@ Where:
             <div class="spot-model-item" data-tip="Claude Opus 4.6 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus 4.6</div></div>
             <div class="spot-model-item" data-tip="GPT-5.4 Pro · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">GPT-5.4</div></div>
             <div class="spot-model-item" data-tip="Claude Opus 4.7 · Found correctly"><div class="spot-mc cell-1"></div><div class="spot-ml">Opus 4.7</div></div>
-            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">Haiku</div></div>
           </div>
         </div>
       </div>
@@ -719,8 +719,9 @@ Where:
       <div class="spot-card">
         <div class="spot-top">
           <h3 class="spot-title">Reversed window sill flashing</h3>
-          <p class="spot-desc">At the window sill detail (A4.11, Detail 2), the <strong>flashing membrane laps under the weather barrier instead of over it</strong>. This means water collected by the flashing drains behind the WRB rather than to the exterior, a direct path for water infiltration into the wall assembly. Finding this requires reading the fine details of a window assembly and understanding that the weather barrier wrapping over the flashing at the sill reverses the intended drainage sequence. No model found this issue.</p>
+          <p class="spot-desc">At the window sill detail (A4.11, Detail 2), the <strong>flashing membrane laps under the weather barrier instead of over it</strong>. This means water collected by the flashing drains behind the WRB rather than to the exterior, a direct path for water infiltration into the wall assembly. Finding this requires reading the fine details of a window assembly and understanding that the weather barrier wrapping over the flashing at the sill reverses the intended drainage sequence. No model has fully identified this issue; GPT-5.6 Sol is the first to flag the right detail, though for a different reason (missing sill pan components rather than the reversed lap).</p>
           <div class="spot-model-grid">
+            <div class="spot-model-item" data-tip="GPT-5.6 Sol · Partial (0.5 pt)"><div class="spot-mc cell-half"></div><div class="spot-ml">G5.6 Sol</div></div>
             <div class="spot-model-item" data-tip="Claude Fable 5 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Fable 5</div></div>
             <div class="spot-model-item" data-tip="GPT-5.5 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-5.5</div></div>
             <div class="spot-model-item" data-tip="Claude Opus 4.8 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus 4.8</div></div>
@@ -728,7 +729,6 @@ Where:
             <div class="spot-model-item" data-tip="Claude Opus 4.6 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus 4.6</div></div>
             <div class="spot-model-item" data-tip="GPT-5.4 Pro · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-5.4</div></div>
             <div class="spot-model-item" data-tip="Claude Opus 4.7 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus 4.7</div></div>
-            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Missed"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
           </div>
         </div>
       </div>
@@ -738,6 +738,7 @@ Where:
           <h3 class="spot-title">Stair geometry misread</h3>
           <p class="spot-desc">The stair is L-shaped with <strong>10 risers in the east run</strong> and <strong>8 risers in the south run</strong>, 18 total, yielding compliant ~6-11/16" risers. Most models misread one run as the entire stair and reported impossible or irreconcilable geometry -- a confident, specific, and wrong finding. This is the costliest kind of AI error: it wastes the reviewer's time and could cause unnecessary field work based on a problem that doesn't exist.</p>
           <div class="spot-model-grid">
+            <div class="spot-model-item" data-tip="GPT-5.6 Sol · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">G5.6 Sol</div></div>
             <div class="spot-model-item" data-tip="Claude Fable 5 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Fable 5</div></div>
             <div class="spot-model-item" data-tip="GPT-5.5 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">GPT-5.5</div></div>
             <div class="spot-model-item" data-tip="Claude Opus 4.8 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus 4.8</div></div>
@@ -745,7 +746,6 @@ Where:
             <div class="spot-model-item" data-tip="Claude Opus 4.6 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Opus 4.6</div></div>
             <div class="spot-model-item" data-tip="GPT-5.4 Pro · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">GPT-5.4</div></div>
             <div class="spot-model-item" data-tip="Claude Opus 4.7 · False alarm (−1 pt)"><div class="spot-mc cell-pen"></div><div class="spot-ml">Opus 4.7</div></div>
-            <div class="spot-model-item" data-tip="Claude Haiku 4.5 · Didn't make this error"><div class="spot-mc cell-0"></div><div class="spot-ml">Haiku</div></div>
           </div>
         </div>
       </div>

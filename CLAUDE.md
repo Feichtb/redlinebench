@@ -60,6 +60,7 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 <!-- REDLINEBENCH:RESULTS_TABLE:START -->
 | Model | Net Score | % of max (58) | Cost / run |
 |-------|----------:|------------:|------------|
+| GPT-5.6 Sol (n=3, range 26.0–28.0) | 27.0 | 46.6% | $3.25 |
 | Claude Fable 5 (n=3, range 26.0–26.5) | 26.33 | 45.4% | $3.31 |
 | GPT-5.5 (n=3, range 21.5–29.0) | 24.83 | 42.8% | $1.84 |
 | Claude Opus 4.8 (n=3, range 19.5–25.0) | 23.0 | 39.7% | $1.47 |
@@ -153,6 +154,7 @@ python runner.py --prompt my_custom_prompt.txt
 | `claude-sonnet-4-0` | Anthropic | Extended thinking (`budget_tokens`, legacy `enabled` type) |
 | `gemini-3.1-pro-preview` | Google | Dynamic thinking budget (`-1`) |
 | `gemini-3-flash-preview` | Google | Dynamic thinking budget (`-1`) |
+| `gpt-5.6-sol` | OpenAI | Reasoning model (no temperature) |
 | `gpt-5.5` | OpenAI | Reasoning model; `reasoning_effort: xhigh`, no temperature |
 | `gpt-5.5-pro` | OpenAI | Reasoning model; `reasoning_effort: xhigh`, no temperature |
 | `gpt-5.4-pro` | OpenAI | Reasoning model (no temperature) |

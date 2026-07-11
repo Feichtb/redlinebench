@@ -15,6 +15,23 @@ tags:
 pretty_name: RedlineBench
 size_categories:
 - n<1K
+configs:
+- config_name: runs
+  data_files:
+  - split: train
+    path: data/runs.csv
+- config_name: issues
+  data_files:
+  - split: train
+    path: data/issues.csv
+- config_name: issue_scores
+  data_files:
+  - split: train
+    path: data/issue_scores.csv
+- config_name: model_summary
+  data_files:
+  - split: train
+    path: data/model_summary.jsonl
 ---
 
 # RedlineBench

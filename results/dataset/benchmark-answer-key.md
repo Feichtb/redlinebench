@@ -38,7 +38,7 @@ Additionally track:
 
 | # | Issue | Location | What to Look For |
 |---|-------|----------|-----------------|
-| B1 | Office length dimension changed from 11'-6" to 11'-5" on A2.01B. Other plan (A2.01) may show the original dimension. | A2.01B vs. A2.01 | Model should flag 1" discrepancy between plan scales. |
+| B1 | Office length dimension changed from 11'-6" to 11'-5" on A2.01B. Other plan (A2.01) may show the original dimension. | A2.01B vs. A2.01 | Model should flag 1" discrepancy between plan scales. Also valid: detecting it within A2.01B alone — the chain 22'-10" + 11'-5" sums to 34'-3" against the 34'-4" overall dimension (confirmed 2026-07-11). |
 | B2 | Crawl space datum on North Elevation changed from 502'-0" to 501'-0". All other sheets show 502'-0". | A3.02 vs. A2.00, A3.01, A3.03, A3.10 | Model should flag inconsistent datum across sheets. |
 | B3 | E-3 wall assembly plan dimension changed from 8-9/16" to 8". Individual layer thicknesses still sum to 8-9/16". | A4.00 | Model should flag that the stated total doesn't match the sum of layers. |
 | B4 | Grid spacing between D and E changed from 6'-11 1/2" to 6'-10 1/2" on A2.01. Enlarged plans unchanged. | A2.01 vs. A2.01A/B | Model should flag grid dimension discrepancy between plan scales. |
@@ -309,6 +309,7 @@ Items models commonly flag that are factually wrong. Score **-1** per incorrect 
 | Connector/entry roof slope is labeled 1/4" per foot on roof plan (A2.03) but 1/8" per foot on exterior elevations — actual pitch is undefined. | The connector/entry roof slope is correctly labeled as 2" per foot in both plan and section. The confusion likely arises from the main roofs sloping 3":12" diagonally and the porch roof sloping approximately 1/2" over its short span — neither of which matches 1/4" or 1/8". The claim of a labeling conflict is a misread. |
 | Corner window jamb details (A4.13/1–4) omit head and sill waterproofing details for high-risk envelope conditions. | Head and sill waterproofing for these conditions is covered by detail 1/A4.11. The claim that the details are absent is incorrect. |
 | South pool edge has no railing while three other sides have 48" cable railings; NC pool barrier ordinances require complete enclosure. | The south pool edge is intentionally unenclosed. The pool wall at the south edge extends high enough above grade that no additional guardrail is required. This is correct design. |
+| Specified top-loading washer (Maytag MVW7230HW) is drawn beneath a fixed continuous countertop in the laundry elevation and cannot be operated. | The washer is drawn under a shelf above, not a continuous countertop. Following the floor plan's elevation tags to 13/A7.02 shows the washer has ample clearance for top-loading access. The claim of a fixed countertop over the washer is a misread. |
 
 ---
 

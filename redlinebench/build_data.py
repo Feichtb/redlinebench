@@ -77,6 +77,7 @@ MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     "claude-sonnet-4-0":              {"label": "Claude Sonnet 4.0", "provider": "Anthropic", "color": "#e09088"},
     "gemini-3.1-pro-preview":         {"label": "Gemini 3.1 Pro",    "provider": "Google",    "color": "#b48030"},
     "gemini-3-flash-preview":         {"label": "Gemini 3 Flash",    "provider": "Google",    "color": "#8a5a10"},
+    "gpt-5.6-sol":                    {"label": "GPT-5.6 Sol",       "provider": "OpenAI",    "color": "#2a62b0"},
     "gpt-5.5":                        {"label": "GPT-5.5",           "provider": "OpenAI",    "color": "#0d3a7a"},
     "gpt-5.5-pro":                    {"label": "GPT-5.5 Pro",       "provider": "OpenAI",    "color": "#153070"},
     "gpt-5.4-pro":                    {"label": "GPT-5.4 Pro",       "provider": "OpenAI",    "color": "#1a4a88"},

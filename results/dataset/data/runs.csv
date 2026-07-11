@@ -22,3 +22,6 @@ run_id,date,model_id,label,provider,model_version,prompt_version,benchmark_versi
 2026-07-05_17-11,2026-07-05,gpt-5.5-pro,GPT-5.5 Pro,OpenAI,gpt-5.5-pro-2026-04-23,v3,v2,,15.34,21.5,19.5,33.6,60,15,Claude Sonnet 5,2026-07-05
 2026-07-05_17-17,2026-07-05,gpt-5.5,GPT-5.5,OpenAI,gpt-5.5-2026-04-23,v3,v2,,2.29,30.0,29.0,50.0,94,15,Claude Sonnet 5,2026-07-05
 2026-07-05_17-45,2026-07-05,gpt-5.5-pro,GPT-5.5 Pro,OpenAI,gpt-5.5-pro-2026-04-23,v3,v2,,13.03,27.5,25.5,44.0,94,16,Claude Sonnet 5,2026-07-05
+2026-07-11_15-09,2026-07-11,gpt-5.6-sol,GPT-5.6 Sol,OpenAI,gpt-5.6-sol,v3,v2,,2.44,27.0,27.0,46.6,113,47,Claude Fable 5,2026-07-11
+2026-07-11_15-35,2026-07-11,gpt-5.6-sol,GPT-5.6 Sol,OpenAI,gpt-5.6-sol,v3,v2,,3.67,27.0,26.0,44.8,94,34,Claude Fable 5,2026-07-11
+2026-07-11_15-42,2026-07-11,gpt-5.6-sol,GPT-5.6 Sol,OpenAI,gpt-5.6-sol,v3,v2,,3.65,28.0,28.0,48.3,92,35,Claude Fable 5,2026-07-11

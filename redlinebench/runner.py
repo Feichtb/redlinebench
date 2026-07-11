@@ -35,6 +35,10 @@ PROMPTS_DIR = SCRIPT_DIR.parent / "results" / "dataset" / "prompts"
 OUTPUTS_DIR = SCRIPT_DIR / "outputs"
 
 # Per-model settings.
+# max_tokens: optional for OpenAI/Gemini/xAI models — omit it to send no output
+#   cap at all (policy as of 2026-07: new models get no cap). The Anthropic API
+#   requires max_tokens, so Claude entries must keep an explicit value (set it
+#   to the model's ceiling).
 # thinking_budget (Claude/Gemini): tokens reserved for internal reasoning.
 #   Claude:  must be < max_tokens; remaining is available for text output.
 #            Extended thinking requires temperature=1 (handled automatically).
@@ -110,6 +114,12 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # Verify exact API model IDs at https://platform.openai.com/docs/models
     # If gpt-5.4-pro or gpt-5-mini turn out to be reasoning (o-series) models,
     # add: "reasoning_effort": "high", "no_temperature": True
+    "gpt-5.6-sol": {
+        "provider": "openai",
+        "no_temperature": True,     # reasoning model; rejects temperature param
+        # No reasoning_effort set — uses the API's default reasoning level.
+        # No max_tokens — uncapped output. (First run 2026-07-11 used 65536.)
+    },
     "gpt-5.5": {
         "provider": "openai",
         "max_tokens": 65536,
@@ -160,6 +170,7 @@ PRICING: dict[str, tuple[float, float]] = {
     "claude-sonnet-4-6":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
     "claude-haiku-4-5":                   (0.80 / 1_000_000,   4.00 / 1_000_000),
     "claude-sonnet-4-0":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
+    "gpt-5.6-sol":                        (5.00 / 1_000_000,  30.00 / 1_000_000),
     "gpt-5.5":                            (5.00 / 1_000_000,  30.00 / 1_000_000),
     "gpt-5.5-pro":                        (30.00 / 1_000_000, 180.00 / 1_000_000),
 }
@@ -405,8 +416,9 @@ class OpenAIAdapter(ModelAdapter):
         kwargs: dict[str, Any] = {
             "model": self.model_name,
             "input": [{"role": "user", "content": content}],
-            "max_output_tokens": self.config["max_tokens"],
         }
+        if self.config.get("max_tokens"):
+            kwargs["max_output_tokens"] = self.config["max_tokens"]
 
         if self.config.get("reasoning_effort"):
             # Reasoning models (o-series, GPT-5 reasoning variants)
@@ -477,9 +489,9 @@ class GeminiAdapter(ModelAdapter):
         contents.append(prompt)
 
         thinking_budget = self.config.get("thinking_budget")
-        cfg_kwargs: dict[str, Any] = {
-            "max_output_tokens": self.config["max_tokens"],
-        }
+        cfg_kwargs: dict[str, Any] = {}
+        if self.config.get("max_tokens"):
+            cfg_kwargs["max_output_tokens"] = self.config["max_tokens"]
         if thinking_budget is not None:
             cfg_kwargs["thinking_config"] = types.ThinkingConfig(
                 thinking_budget=thinking_budget  # -1 = dynamic
@@ -562,8 +574,9 @@ class GrokAdapter(ModelAdapter):
         kwargs: dict[str, Any] = {
             "model": self.model_name,
             "input": [{"role": "user", "content": content}],
-            "max_output_tokens": self.config["max_tokens"],
         }
+        if self.config.get("max_tokens"):
+            kwargs["max_output_tokens"] = self.config["max_tokens"]
         if not self.config.get("no_temperature"):
             kwargs["temperature"] = 0
 

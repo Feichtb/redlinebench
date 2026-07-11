@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T19:54:43.226296+00:00",
+  "generated_at": "2026-07-11T19:49:41.209843+00:00",
   "benchmark_version": "v2",
   "max_possible": 58,
   "categories": [
@@ -404,6 +404,435 @@
     }
   ],
   "models": [
+    {
+      "id": "gpt-5.6-sol",
+      "label": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "color": "#2a62b0",
+      "n": 3,
+      "net_mean": 27.0,
+      "net_min": 26.0,
+      "net_max": 28.0,
+      "pct_mean": 46.6,
+      "cost_mean": 3.25,
+      "flagged_mean": 99.67,
+      "neutral_mean": 38.67,
+      "incorrect_count_mean": 0.33,
+      "incorrect": [
+        {
+          "ref": "Washer under countertop (new incorrect-list entry 2026-07-11)",
+          "claim": "Laundry elevation 13/A7.02 shows the specified Maytag MVW7230HW top-loading washer beneath a fixed continuous countertop, making it inoperable",
+          "why": "The washer is drawn under a shelf above, not a continuous countertop. Elevation 13/A7.02 shows the washer has ample clearance for top-loading access. Stated 'Certain' in both C-10 and F-3; counted once as the same claim.",
+          "penalty": -1,
+          "run_id": "2026-07-11_15-35"
+        }
+      ],
+      "issue_reliability": {
+        "A1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A3": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A5": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A6": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "A9": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A10": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A11": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B1": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "B2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B3": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "B4": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "B5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B6": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "C1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C3": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "C4": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "C5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C7": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "C8": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "C9": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D4": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D5": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "D6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E1": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "E2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E5": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "E6": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "E7": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "F1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "F4": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G3": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G5": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G7": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G9": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G10": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G11": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G12": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G13": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G14": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G15": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G16": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        }
+      },
+      "issue_mean_scores": {
+        "A1": 1,
+        "A2": 0,
+        "A3": 0,
+        "A4": 1,
+        "A5": 0,
+        "A6": 0.667,
+        "A9": 0,
+        "A10": 0,
+        "A11": 1,
+        "B1": 0.333,
+        "B2": 1,
+        "B3": 0.333,
+        "B4": 0,
+        "B5": 1,
+        "B6": 0.5,
+        "C1": 1,
+        "C2": 1,
+        "C3": 0.333,
+        "C4": 0.167,
+        "C5": 1,
+        "C6": 1,
+        "C7": 0,
+        "C8": 0,
+        "C9": 0.5,
+        "D1": 0,
+        "D2": 1,
+        "D3": 0.5,
+        "D4": 0,
+        "D5": 0.333,
+        "D6": 0.667,
+        "E1": 0.167,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 0.667,
+        "E6": 0.667,
+        "E7": 1,
+        "E8": 0.833,
+        "F1": 0,
+        "F2": 0,
+        "F3": 1,
+        "F4": 0,
+        "G1": 0,
+        "G2": 0,
+        "G3": 0,
+        "G4": 1,
+        "G5": 0,
+        "G6": 1,
+        "G7": 0,
+        "G8": 1,
+        "G9": 0.667,
+        "G10": 0,
+        "G11": 0,
+        "G12": 1,
+        "G13": 0,
+        "G14": 0,
+        "G15": 1,
+        "G16": 0
+      },
+      "runs": [
+        {
+          "run_id": "2026-07-11_15-09",
+          "date": "2026-07-11",
+          "model_version": "gpt-5.6-sol",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 27.0,
+          "net": 27.0,
+          "pct": 46.6,
+          "cost_usd": 2.44,
+          "flagged": 113,
+          "neutral": 47,
+          "incorrect_count": 0,
+          "scorer": "Claude Fable 5",
+          "scoring_date": "2026-07-11",
+          "notes": "AI-assisted triage only -- not yet reviewed/approved by a human scorer. Per CLAUDE.md this must be skimmed and approved before being treated as a published score. First run of gpt-5.6-sol; per project decision this and future new models use the provider's DEFAULT reasoning effort (no reasoning_effort param), unlike the gpt-5.5/gpt-5.5-pro runs which were pinned to xhigh. No incorrect-finding penalties applied: the model's stair finding (its B-1) correctly reads 10+8=18 risers and questions only riser-height rounding, so it does not match I8; its south-pool-edge finding (E-11) acknowledges the intentional opening and is hedged, so no penalty per the rubric. Borderline partial credits the human reviewer should spot-check: E8=0.5 (self-closing hardware flagged on garage-to-office door 13-2 rather than the answer key's door 16-1), C3=0.5 (flagged spec-internal west-facade overlap and missing east assignment rather than the spec-vs-elevation conflict), C9=0.5 (generic F-2/F-3-vs-spec-products flagged without naming SS-2 rooms; consistent with the 0.5 given to gpt-5.5-pro), D3=0.5 (right sill detail A4.11/2, but flagged missing pan components rather than the reversed lap), D5=0.5 (identified rigid-insulation-inboard-of-sheathing layer order but not the CZ 4A condensation risk), G9=0.5 (VIF site geometry flagged without the setback-compliance tie; consistent with gpt-5.5-pro), G8=1.0 (its D-6 questions snap-lock suitability at 1/4:12 -- scoreable G8, not neutral N8, since it targets product slope minimums), G11=0 (its G-15 lists T-1 among finish codes needing spec cross-reference but asserts the definitions exist in the spec, which misses that T-1 is never defined). Neutral tally of 47 is approximate -- this model produced many scope-adjacent observations that map to the neutral list."
+        },
+        {
+          "run_id": "2026-07-11_15-35",
+          "date": "2026-07-11",
+          "model_version": "gpt-5.6-sol",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 27.0,
+          "net": 26.0,
+          "pct": 44.8,
+          "cost_usd": 3.67,
+          "flagged": 94,
+          "neutral": 34,
+          "incorrect_count": 1,
+          "scorer": "Claude Fable 5",
+          "scoring_date": "2026-07-11",
+          "notes": "AI-assisted triage reviewed by the human scorer on 2026-07-11 for the washer and B1 items; remaining calls pending skim. Second run of gpt-5.6-sol at the provider's default reasoning effort; first run under the new uncapped-output policy (no max_output_tokens sent; the model produced 75,258 output tokens vs 34,135 on the capped run 1). One incorrect-finding penalty (-1.0), applied per the architect's 2026-07-11 ruling: the model's C-10/F-3 claim that the specified Maytag MVW7230HW top-loading washer sits beneath a fixed continuous countertop (both stated 'Certain') is a misread -- the washer is drawn under a shelf, and elevation 13/A7.02 shows ample top-loading clearance. Now on the Known Incorrect Findings list; counted once since C-10 and F-3 restate the same claim. Not penalized: the stair riser arithmetic claim (its B-2, 'High') correctly reads 18 risers and flags only a 3/8-inch rounding artifact -- same borderline item earlier scorers declined to penalize -- and the south pool edge finding (its E-9) is framed as a verification gap, not a confident violation claim. B1=1.0 confirmed by the architect: the A2.01B chain 22'-10\" + 11'-5\" vs the 34'-4\" overall is the seeded B1 office-dimension error detected within the enlarged plan (answer key B1 guidance updated to note this detection path). Remaining calls the human reviewer should spot-check: A6=1.0 (door 03-1 metal flagged against the spec's Jeld-Wen wood door rather than the wood frame/details), C4=0.5 (hose bib 3-vs-5 count found via the G0.11 fixture count, but it claims the elevations do not show five, which contradicts the key), D6=0.5 (air-barrier continuity flagged only piecemeal at the crawl liner and steel penetration), G9=1.0 (its B-4 explicitly ties verify-in-field notes to locating the house/pool/well/septic from property lines). Also unmatched: SS-3 flagstone at the ramp vs the spec's SS-2 porch/ramp assignment (its C-7). Neutral tally of 34 is approximate."
+        },
+        {
+          "run_id": "2026-07-11_15-42",
+          "date": "2026-07-11",
+          "model_version": "gpt-5.6-sol",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 28.0,
+          "net": 28.0,
+          "pct": 48.3,
+          "cost_usd": 3.65,
+          "flagged": 92,
+          "neutral": 35,
+          "incorrect_count": 0,
+          "scorer": "Claude Fable 5",
+          "scoring_date": "2026-07-11",
+          "notes": "AI-assisted triage only -- not yet reviewed/approved by a human scorer. Per CLAUDE.md this must be skimmed and approved before being treated as a published score. Third run of gpt-5.6-sol at default reasoning effort, uncapped output (74,648 output tokens). Best of the three runs (net 28.0). No incorrect-finding penalties: the stair riser 3/8-inch arithmetic claim (its B-1, stated 'Certain' this time) correctly reads 18 risers and does not claim impossibility or non-compliance, matching the borderline item earlier scorers declined to penalize; the Clopay garage-door glazing claim (its C-8) matches the existing neutral-list entry; the south pool edge (its C-18/E-10) is verification-gap framing. Calls the human reviewer should spot-check: B3=1.0 (its A-9 catches the seeded E-3 total-vs-layer-sum mismatch but lumps in E-4, whose total may be fine -- verify), B6=0.5 (crawl elevation ambiguity flagged via -6'-0\" vs an -8'-0\" annotation rather than the key's -6/-7/-9 set), E1=0.5 (its A-14 spots the 1'-10\" powder door and calls it unusually narrow but frames it as needs-confirmation rather than below-minimum), E5=1.0 (its E-8 explicitly flags missing cable spacing at the pool barrier/guards), E8=1.0 (garage-to-house connecting door flagged for missing self-closing requirement without naming 16-1), E6=0 (this run did NOT flag the range-hood makeup air, unlike runs 1 and 2). Notable unmatched findings for triage: spec text calls the guest bathroom 'Room 19' (its C-14) -- the spec-side counterpart of A11; and A3.03/3 titled as a partial west elevation while reading as a building section (its A-10) -- both specific and worth a look for the neutral list. Its C-11 Cat6a/Cat6e finding matches neutral N30. Neutral tally of 35 is approximate."
+        }
+      ]
+    },
     {
       "id": "claude-fable-5",
       "label": "Claude Fable 5",
