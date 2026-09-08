@@ -487,7 +487,7 @@
     <details style="margin-top:48px">
       <summary style="font-size:.78rem;font-weight:600;color:var(--ink-2);cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;gap:8px"><span style="color:var(--red);font-weight:700;font-size:1rem">+</span> Scoring logic</summary>
       <div style="margin-top:20px">
-        <p style="font-size:.82rem;color:var(--ink-2);margin-bottom:20px;max-width:560px">The Review Score is the sum of all issues found correctly, minus false alarms. Maximum possible is 55 points. Four answer-key entries were audited against the drawings in August 2026: three were void and are no longer scored, and one (G16) was reworded — see the dataset's retired-issues.md.</p>
+        <p style="font-size:.82rem;color:var(--ink-2);margin-bottom:20px;max-width:560px">The Review Score is the sum of all issues found correctly, minus false alarms. Maximum possible is 55 points. The answer key has been checked against the drawings twice. In August 2026, four entries were audited: three described things the drawings do not contain and are no longer scored, and one (G16) was reworded. In September 2026 a second pass corrected eight more entries, struck one false-alarm entry that turned out to describe a real defect, and reclassified seven observations as neutral. Both passes are recorded in the dataset's retired-issues.md, including every run whose score changed.</p>
         <div class="scoring-cards">
           <div class="scoring-card" style="border-color:#2d6a4f">
             <div class="scoring-card-score" style="color:#2d6a4f">+1</div>
@@ -764,7 +764,7 @@ Where:
       <div class="meth-step-card">
         <span class="step-num">01 / TEST SET</span>
         <h3>One real project, known issues</h3>
-        <p>A complete residential drawing set (34 sheets) and specifications (11 pages) were seeded with issues across 7 categories: clear errors, coordination failures, code concerns, and conditions that warrant review. The test set is not published to preserve benchmark integrity.</p>
+        <p>A complete residential drawing set (34 sheets) and specifications (11 pages) were seeded with issues across 7 categories: clear errors, coordination failures, code concerns, and conditions that warrant review. The test set is <a href="https://huggingface.co/datasets/feichtb/redlinebench" target="_blank">published in full</a> — both PDFs, the answer key, and every scored model response — so any number here can be checked or reproduced. That is a deliberate trade: open test data can end up in training corpora. The dataset carries a do-not-train canary string, but the files have been public since 5 July 2026, and scores for models released after that date should be read with the possibility of exposure in mind.</p>
       </div>
       <div class="meth-step-card">
         <span class="step-num">02 / PROMPT</span>
@@ -819,7 +819,7 @@ Where:
 <footer>
   <div class="container footer-inner">
     <div>
-      <p><strong style="color:var(--ink-1)">RedlineBench</strong> &nbsp;·&nbsp; Built by <a href="https://benfeicht.com">Ben Feicht</a> &nbsp;·&nbsp; <a href="https://github.com/Feichtb/redlinebench" target="_blank">GitHub</a></p>
+      <p><strong style="color:var(--ink-1)">RedlineBench</strong> &nbsp;·&nbsp; Built by <a href="https://benfeicht.com">Ben Feicht</a> &nbsp;·&nbsp; <a href="https://github.com/Feichtb/redlinebench" target="_blank">GitHub</a> &nbsp;·&nbsp; <a href="https://huggingface.co/datasets/feichtb/redlinebench" target="_blank">Dataset</a></p>
     </div>
   </div>
 </footer>

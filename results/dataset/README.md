@@ -124,9 +124,17 @@ silent edit to existing numbers.
   project. Performance on other project types (commercial, institutional,
   multi-family) or other document formats may differ.
 - **Run counts vary by model**: most models in this release have a single scored
-  run; a handful of the top performers have three. Treat single-run scores as a
-  point estimate, not a guaranteed reproduction — see `data/model_summary.jsonl`
-  for which models have more than one run and how much they varied.
+  run; seven have three. Treat single-run scores as a point estimate, not a
+  guaranteed reproduction — see `data/model_summary.jsonl` for which models have
+  more than one run and how much they varied.
+- **The test data is public**: the drawing set and specification booklet have been
+  published here since 5 July 2026. This is deliberate — an open benchmark can be
+  checked and reproduced — but it means a model trained on these files could score
+  well without being able to review drawings. The canary string below asks corpus
+  builders to exclude the material, which only helps for corpora that honour it.
+  For models released after July 2026, weigh the per-issue detail in
+  `data/issue_scores.csv` — which issues were caught, and how consistently across
+  runs — over the headline score.
 
 ## Canary String
 
