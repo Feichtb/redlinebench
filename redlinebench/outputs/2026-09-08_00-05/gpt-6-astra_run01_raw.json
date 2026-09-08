@@ -1,0 +1,569 @@
+{
+  "id": "resp_0e6d1f834f097eea006a9f515ca9ac87d0baf30bbdae79ea21",
+  "created_at": 1788825949.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-6-astra",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0e6d1f834f097eea006a9f516f95a487d09928e5106503d1fb",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f517cc0f487d0ba630774cebaef58",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5189863887d0908866a349f89f0f",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5196933087d081a3e54187c0c4ea",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f51a2522887d0a42958fc711e9684",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f51ae1c2087d0870fd79cf4c60d95",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f51bae68c87d0a3d4c00fa2c77d2f",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f51c7632c87d0a83f91921152e6a2",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f51d3b06887d0898e8781899cac10",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f51e35a4887d09ff9c42dc732df09",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f51f1e41c87d0b5dd99caa25e27cb",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f52008f0487d0a39018c1c22114e0",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f520ca04c87d0b2faef067cd88a88",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f521abedc87d09baf849cc3d040f8",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f522a5b3c87d0b7fbf4a6f58895ee",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5237447087d0ac945b38bb4d58a1",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5245566c87d0a0e6addb49ca2e01",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5256459c87d0b7722e4e75373035",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5268021487d0b6fb99478476feb0",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5278320887d081d8dc0234b75231",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5286bc9887d0b6f3e9bab28ef33d",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f529584e087d0a797e88ee61df12a",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f52a329e087d0bcf1339b30e328cd",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f52b1bdc087d0993469a24877d0b5",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f52be6ff887d0857039f234f00289",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f52cc7fd487d0b107e30a82b2bd74",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f52ddc4b487d081fbbd5080aa5272",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f52ed062487d08e41cf1e0a32057a",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f52fe52d887d0a1f165c0cad66abb",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f530e04fc87d0afb095612ae4d21a",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f531d142887d08266782169271f2c",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f532e5b6087d091e7f28462c0bd5e",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5340271487d0898cbf03ab1f5772",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f534e980887d08d0441a480c775dd",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f536036d487d0b7e5172e2e868cf0",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5371356c87d084aa1482c67ddb02",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f53808ff487d09e61ea7b31abf288",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5390874887d09cb71d7739a33d08",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f53a2250c87d083bb04510b29d9f7",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f53b4b92487d0958163b2685a629e",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f53c106c087d0953ba755454ad93e",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f53ce42f087d0b4f9be33a12ae6b2",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f53dc502c87d0a28990752d2ff5a5",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f53ea073c87d084939f5bf73e4d42",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f53f77f4087d0b1931b5ebab53883",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f54073fd887d08aee6ace770ac987",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5415e2ac87d0aaecdd4b28236601",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f54247c1087d09139100ec43ffdfd",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f543874e887d095f500fb2c4a6d44",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5447eb4c87d0bd7f3dddc63fa618",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5456d14887d0a613f2aea6044284",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f54689a8087d09c1afe4136bb73c5",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5475b1f887d084e0324ad1a16565",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5484858887d08f616893ef42d01b",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f5491531c87d0bcba5fc248827d38",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f54a1584487d0a5ff4e077a42ddcc",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f54b25b0c87d0be0698fa57f27290",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f54ce68dc87d0ab69e0a7df0ffe75",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "rs_0e6d1f834f097eea006a9f54e0a10c87d08bd0dad2aa8f581d",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "msg_0e6d1f834f097eea006a9f54e7098887d0bbfaa17b556d7748",
+      "content": [
+        {
+          "annotations": [],
+          "text": "## Project context\n\n- **Project:** Bonfire House, Chatham County, North Carolina; documents dated October 20, 2021.\n- **Code/type:** 2018 North Carolina Residential Code, based on the 2015 IRC with amendments; two-story single-family residence, identified as R-3, Type V-B.\n- **Climate:** Zone 4A.\n- **Drawings:** 34 sheets covering general information, site, architectural plans, elevations, sections, assemblies, details, decks, reflected ceilings, and schedules; survey intentionally removed, and separate structural, civil, and MEP packages not provided or reviewed.\n- **Specifications:** 11-page narrative booklet covering sitework, construction materials, finishes, equipment, building services, pool, and utilities; not organized into numbered CSI divisions.\n\n## A. Internal consistency across sheets\n\n[A-1] | Cover sheet; A5.20 | The sheet index identifies deck sections as A5.11, but the supplied deck-section sheet is A5.20. | Certain\n\n[A-2] | G0.11; A2.01; A2.02 | The project summary declares four bedrooms, but the plans identify only three bedrooms and label the other potential sleeping room as Office 13. | Certain\n\n[A-3] | G0.11; A2.01A; A2.01B | The plumbing summary lists four lavatories and one tub, whereas the plans show five lavatories and two tubs. | Certain\n\n[A-4] | A8.01 window schedule; A2.01A; A2.01B; A2.02 | Eight Type 6 windows are scheduled, but the plans identify seven: five on Level 1 and two on Level 2. | High\n\n[A-5] | A8.01 door schedule; A2.01A | Door 10-1 is scheduled but has no corresponding tagged opening on the Reading Nook plan. | Certain\n\n[A-6] | A8.01, Room 14; A2.01B; A4.01 | The finish schedule assigns carpet assembly F-4 to the Powder Room, while its enlarged plan specifies F-2 tile. | Certain\n\n[A-7] | A8.01, Room 01; 6–7/A7.01 | The Entry Hall finish schedule assigns P-1 to the east wall and WD-1 to the west wall, while both interior elevations identify WD-4 wood boards. | Certain\n\n[A-8] | A8.01, Room 10; 9/A7.01; 1/A7.10 | The Reading Nook wall finishes are scheduled as WD-1 but detailed as WD-4 tongue-and-groove boards. | Certain\n\n[A-9] | 2/A2.01B; A4.01, F-2 and F-3 | The Guest Bathroom shower is tagged F-2, although the separate shower assembly F-3 provides the recessed framing and sloped mortar bed needed for the indicated shower construction. | High\n\n[A-10] | A2.01B; A2.01A; A4.01; 6/A4.10 | Exterior entry-side porch areas are tagged F-2 on the enlarged north plan despite being identified or detailed elsewhere as concrete-supported exterior stone construction associated with F-6. | High\n\n[A-11] | 2/A3.01; A4.01 | The connector roof is tagged R-2 in the west elevation, but no R-2 assembly is provided. | Certain\n\n[A-12] | 1/A7.01; A8.01 appliance schedule | The kitchen elevation calls the ceiling-mounted hood A3, while the appliance schedule assigns A3 to the oven and A5 to the hood. | Certain\n\n[A-13] | 5/A7.02; A2.01B; A8.01 | The Guest Bathroom elevation is titled Room 19, but the plans and room schedule identify the bathroom as Room 18 and the closet as Room 19. | Certain\n\n[A-14] | 2/A3.02; 1 and 4/A4.13 | The south elevation references bathroom-jamb detail 4/A4.13 at the Reading Nook window rather than the nook corner-window condition detailed in 1/A4.13. | High\n\n[A-15] | A6.01 lighting schedule; A2.01A; A2.01B; A7.01 | L7 strip lighting is scheduled as two fixtures despite separately indicated runs at the kitchen, stair handrail, and bunk/reading-nook locations. | Certain\n\n[A-16] | 1/A3.01; A2.02 | The upper east Living Room window nearest the Entry Hall has an unnumbered window-type diamond in the elevation, while the upper-level plan identifies it as Type 5. | High\n\n## B. Dimensional and geometric integrity\n\n[B-1] | 1–2/A3.22 | Applying the only stated riser height of 6 11/16 inches to the indicated eighteen risers produces 10 feet 3/8 inch rather than the 10-foot floor-to-floor height, with no adjustment between flights identified. | Certain\n\n[B-2] | 1/A3.02; A2.00; A3.10 | The north elevation labels the crawl-space datum 501 feet while dimensioning it six feet below Level 1 at 508 feet, which would place it at 502 feet as shown elsewhere. | Certain\n\n[B-3] | 1/A2.01B, north dimension strings | The 22-foot-10-inch and 11-foot-5-inch subdivisions total 34 feet 3 inches rather than the stated 34 feet 4 inches. | Certain\n\n[B-4] | A4.00, E-2, E-3, and E-4 | The exterior wall assemblies label the rigid insulation 1½ inches thick but dimension that layer as 1 inch. | Certain\n\n[B-5] | A4.00, E-3 | The dimensioned E-3 layers total 8 9/16 inches, but the assembly’s overall thickness is labeled 8 inches. | Certain\n\n[B-6] | A4.00, E-1 | The crawl-space rigid insulation is labeled ½ inch thick although the illustrated insulation layer is dimensioned 2 inches. | Certain\n\n[B-7] | 1/A2.01B, doors 13-2 and 16-1 | The garage is one foot below the adjoining interior floor, but the communicating-door transitions lack dimensioned riser, tread, and landing geometry. | High\n\n[B-8] | A1.01; A2.01A, east entry ramp | The entry ramp lacks a dimensioned longitudinal run, running slope, and grade-end elevation needed to establish its geometry without scaling or field design. | High\n\n## C. Specification-to-drawing alignment\n\n[C-1] | A8.01 window schedule; specifications p. 3 | The window schedule specifies Marvin Ultrex products, while the specifications require Andersen 400 Series windows. | Certain\n\n[C-2] | A3.01–A3.03; A4.00, E-3 and E-4; specifications pp. 2–3 | The specifications locate wood cladding on the south and west façades, while the elevations principally assign wood to the east and south and fiber-cement siding to the north and west. | Certain\n\n[C-3] | A4.00, E-2; 4/A4.10; specifications p. 2 | The specifications require all conditioned exterior walls to use 2×6 framing, but the connector assembly uses 2×8 studs and the entry-window jamb detail identifies 2×10 studs. | Certain\n\n[C-4] | A4.00, E-2 through E-4; specifications p. 4 | The specifications require insulated ZIP Board, while the wall assemblies separately call for plywood, rigid insulation, and a weather barrier, leaving the intended sheathing and air/water-control system inconsistent. | Certain\n\n[C-5] | G0.11; specifications p. 4 | The specifications incorrectly total R-38 cavity insulation plus R-15 continuous insulation as R-49 rather than R-53, the value stated on G0.11. | Certain\n\n[C-6] | A4.01, F-1 through F-4; specifications p. 2 | The floor assemblies call for plywood sheathing, whereas the specifications require ¾-inch Advantech tongue-and-groove subfloor. | Certain\n\n[C-7] | A2.01A; specifications p. 3 | The entry ramp is identified as SS-3 flagstone on the plan and in the stone-finish descriptions but as SS-2 limestone in the specification’s concrete-work list. | Certain\n\n[C-8] | A2.01A; A4.00, W-1 and W-2; specifications p. 4 | The specified acoustic barriers at the Master/Second Bedroom partition and Bathroom 11 shared walls are not incorporated into the assigned wall assemblies. | High\n\n[C-9] | G0.11; A3.01–A3.03; specifications p. 7 | The specifications identify three exterior hydrants, while the code summary and exterior elevations identify five. | Certain\n\n[C-10] | A6.01; specifications p. 9 | The drawings call for CAT6E cabling, whereas the specifications require Cat6a. | Certain\n\n[C-11] | A6.01 network note; specifications p. 9 | The reflected-ceiling note calls for male terminations at the network panels, while the specifications require more than 24 inches of unterminated cable beyond each mounting panel. | Certain\n\n[C-12] | 1/A2.01B; specifications p. 8 | The garage plan calls for a 240-volt, 60-amp outlet, whereas the specifications require a hardwired EV-charger connection. | Certain\n\n[C-13] | A8.01, door 18-2; specifications p. 9–10 | The Guest Bathroom shower door is scheduled with no frame, while the specifications require a semi-framed enclosure. | Certain\n\n[C-14] | A8.01, door 06-2; specifications p. 5 | Door 06-2 is scheduled as wood rail-and-stile construction with frosted glass, but the interior-door specification requires all-panel molded composite doors without identifying this exception. | Certain\n\n[C-15] | 2/A7.01; specifications pp. 5–6 | The kitchen elevation requires WD-1 wood frames, including the same treatment at door 06-2, while the specifications state that all door casing and trim are painted. | High\n\n[C-16] | Specifications p. 6; A7.10 | The specifications direct the contractor to nonexistent sheet A8.10 for the custom bunk nook instead of the supplied detail on A7.10. | Certain\n\n[C-17] | G0.01, door-tag note; specification booklet | The drawing note directs the contractor to Specifications Division 8, but the supplied narrative booklet contains no numbered Division 8 section. | Certain\n\n[C-18] | 1–2/A7.01; specifications p. 6 | The kitchen elevations specify a 6 mm SS-1 backsplash, whereas the specifications leave the selected Silestone backsplash thickness undetermined. | Certain\n\n[C-19] | A2.00; A5.01; specifications p. 10 | The drawings place pool equipment at the pool’s west short end, while the specifications locate it on the side opposite the house near the west end. | High\n\n[C-20] | A5.01; A5.20; specifications p. 10 | The specifications place the pool water surface two feet below Level 1, while A5.01 assigns that elevation to the top of the pool wall, leaving coping elevation and freeboard uncoordinated. | High\n\n## D. Building envelope and building science\n\n[D-1] | A4.01, R-1; 4/A4.11; specifications p. 4 | The roof sections show an insulated joist cavity and vented soffits without establishing either a continuous roof ventilation path or an explicitly unvented insulated-roof strategy. | High\n\n[D-2] | 2/A4.11; 8/A4.10 | The window sill details do not establish a sloped sill-pan assembly with end dams, back dam, and positive drainage beyond the projecting wood surround. | High\n\n[D-3] | 1–3/A4.11; 1–4/A4.10 | The custom window and door surround details do not define the perimeter sealant, backing, and air-seal interfaces between the manufactured units, wood surrounds, and rough openings. | High\n\n[D-4] | 3 and 6/A4.10 | The near-flush entry threshold adjoining concrete-supported stone paving lacks a resolved sill-pan, end-dam, and waterproof transition detail. | High\n\n[D-5] | A4.00, E-1; 5/A4.11; specifications p. 2 | Below-grade CMU is specified with a parge coat but no identified exterior dampproofing or waterproofing system and termination. | High\n\n[D-6] | A3.20; A4.11; specifications p. 2 | The required 20 mil crawl-space liner lacks installation details for sealed laps, pier and penetration interfaces, wall terminations, and the access-door transition. | High\n\n[D-7] | A8.01, door 21-1; specifications pp. 1–2 | The crawl-space access door has no insulation, gasket, or threshold requirements demonstrating compatibility with the specified sealed and insulated crawl space. | High\n\n[D-8] | 6/A4.12 | The roof-to-wall intersection does not resolve terminal kick-out/diverter flashing or end dams where runoff reaches the adjoining wall and gutter transition. | High\n\n[D-9] | 5/A4.13 | The canopy steel penetrates the insulated exterior wall without an identified thermal-break strategy or a detailed air/water seal around the penetration. | Moderate\n\n[D-10] | 3/A5.30 | The upper-deck junction does not establish a drained clearance and waterproof transition where the flush deck meets the wall cladding and rainscreen system. | High\n\n[D-11] | A4.01, F-3 | The shower-floor assembly includes tile, mortar, lath, and plywood but omits a waterproofing membrane, drain connection, and returns into the adjoining wall construction. | Certain\n\n[D-12] | 3/A7.02; A4.11 | Bathroom 11 calls for waterproof tile at the window frame, but no detail connects the shower waterproofing to the window or resolves the tiled jamb, head, and sill returns. | High\n\n[D-13] | A2.01A; A2.01B; A4.01; specifications p. 7 | Overflow floor drains are shown without corresponding waterproof catchment areas, floor slopes, or containment transitions, particularly at wood-floored appliance locations. | High\n\n[D-14] | A6.01, L1; A4.01, R-1; specifications pp. 4 and 8 | Recessed lights penetrate the insulated sloping roof/ceiling assembly without identified insulation-contact and airtight ratings or an air-barrier enclosure detail. | High\n\n## E. Code and life safety\n\n[E-1] | G0.11 | The code summary invokes IBC Table 503 height and area allowances while listing only the North Carolina Residential Code, leaving the governing code path and referenced IBC edition unresolved. | Certain\n\n[E-2] | A4.01, F-1 and F-2; A2.01B | The assemblies beneath the habitable guest rooms show ½-inch ordinary gypsum at the garage ceiling rather than an identified garage-to-habitable separation membrane such as the typically required ⅝-inch Type X gypsum. | High\n\n[E-3] | A8.01, Room 20; A3.10; A4.01 | The unfinished attic over the garage is not assigned an assembly establishing the garage-side ceiling protection and its continuity with adjoining separation construction. | High\n\n[E-4] | A8.01, doors 13-2 and 16-1; specifications p. 5 | The garage communicating doors lack defined leaf thickness or fire-protection designation and applicable closing/latching hardware requirements. | High\n\n[E-5] | A2.01A; A2.01B; A8.01 | Emergency escape compliance is not demonstrated for Guest Bedroom 17’s nominal 3×3 casements or Bedroom 09’s apparent escape route through the nook window, with no designated escape units or net-clear-opening data. | High\n\n[E-6] | A8.01; A2.01A; A2.01B; A7.02 | The window and door schedules omit safety-glazing designations for glazing at tubs, showers, stairs, and glazed exterior doors or adjacent hazardous locations. | High\n\n[E-7] | A3.22; A2.01B | The stair sections do not dimension minimum stair headroom or verify occupied-space clearances in the Powder Room beneath the upper flight. | High\n\n[E-8] | A3.22; A5.10; specifications p. 6 | Stair handrails lack dimensioned graspable profiles, wall clearances, returns, and continuity details, including clarification of whether the exterior cable-rail top member serves as a handrail. | High\n\n[E-9] | 4/A5.10; A5.01 | The exterior stair railing is labeled 26 inches high in the deck section but 36 inches high on the deck plan. | Certain\n\n[E-10] | A5.01; A5.10; specifications p. 3 | Cable guards lack dimensioned cable spacing and intermediate support spacing needed to establish compliant openings under cable deflection. | High\n\n[E-11] | A5.01; A5.10; specifications pp. 3 and 10 | The pool barrier leaves the south side open and relies on the elevated pool wall without documenting a continuous compliant barrier at deck, stair, and wall interfaces. | High\n\n[E-12] | A8.01, gates 22-1 and 22-2; specifications p. 3 | Pool gates are assigned only generic gate-latch hardware without self-closing, self-latching, latch-height, or clearance requirements. | High\n\n[E-13] | 1/A7.10; 9/A7.01 | The elevated sleeping platform has an 18-inch railing above the platform but no maximum mattress elevation, opening criteria, or clarification of whether it is regulated as bunk furniture or an occupied loft. | Moderate\n\n[E-14] | A4.00, E-1; A2.00; specifications p. 4 | XPS insulation is left exposed in a crawl space expressly designated for storage without identified thermal or ignition protection appropriate to that use. | High\n\n[E-15] | A6.01; specifications p. 9 | Smoke and carbon-monoxide detection are specified only generally, without locations coordinated with the bedrooms, sleeping-area circulation, and building levels. | High\n\n[E-16] | G0.11; specifications p. 1 | The impervious-area calculation excludes the approximately 4,200-square-foot gravel driveway and turnaround without stating the jurisdictional basis for treating those surfaces as exempt. | Moderate\n\n## F. Constructability\n\n[F-1] | A4.00, E-2 through E-4 | The assemblies place rigid insulation between the studs and exterior plywood, requiring explicit coordination of sheathing and cladding attachment through the foam rather than leaving that fastening configuration implicit. | Moderate\n\n[F-2] | 1–3/A4.11 | The custom window details identify “frame angle attachment” without fabrication dimensions, material, fastening, or backing information for the projecting surround. | High\n\n[F-3] | A4.01, R-1; 4/A4.11; specifications p. 4 | The specified 24-gauge snap-lock roof is shown over furring and rigid insulation without batten spacing or an approved supporting substrate establishing the required walkability. | High\n\n[F-4] | A2.03; 5/A4.13; specifications pp. 3–4 | The roofing specification applies the same snap-lock product without identifying an approved low-slope assembly for the 2:12 connector roof and ¼:12 porch canopy. | High\n\n[F-5] | A3.01–A3.03; A4.00, E-4; specifications p. 2 | The vertical wood cladding lacks a coordinated horizontal or cross-batten attachment arrangement that preserves the intended vertical rainscreen drainage path. | High\n\n[F-6] | A4.01, F-2 | The tile-and-stone assembly shows direct thinset over a single plywood layer without identifying an approved direct-bond substrate system or alternative underlayment. | High\n\n[F-7] | A2.01A; A4.01, F-2 and F-3; specifications p. 6 | The Master Bathroom floor assemblies do not locate the hydronic tubing and heat-transfer components or establish an above- versus below-subfloor installation compatible with the specified finish transitions. | High\n\n[F-8] | A2.01A; A7.02; specifications p. 7 | The built-in Toto air bath lacks an identified service-access panel or removal route for its blower, controls, and concealed connections. | High\n\n[F-9] | A5.01 | The removable deck over the pool-cover access area has no panel divisions, lifting arrangement, fastening, or edge-support interface detail. | High\n\n[F-10] | A2.00; A5.01; A5.10 | The fenced pool-equipment enclosure below the deck lacks an identified service opening and equipment-removal route. | High\n\n[F-11] | A5.01; 1/A5.20 | The flush wood-deck-to-stone-coping junction lacks a movement/isolation joint and a resolved edge-support interface between the dissimilar assemblies. | High\n\n[F-12] | A4.01, F-6; specifications p. 3 | Exterior stone paving lacks movement-joint locations and coordination with underlying concrete joints and abutting building construction. | High\n\n[F-13] | 6 and 9/A7.02 | Grab bars are shown without coordinated blocking and backing requirements that can be installed before the bathroom walls are closed. | High\n\n## G. Completeness and clarity\n\n[G-1] | A1.01; A2.00; A5.01–A5.20; specifications p. 2 | The specifications expressly describe architectural elevations and topography as approximate and not based on actual grade, although the house, pool, deck, and access relationships depend on fixed design elevations. | High\n\n[G-2] | A1.01; specifications p. 1 | The turnaround and curved driveway/granite-edging layout lack dimensions sufficient to establish their quantities and field layout. | High\n\n[G-3] | Specifications pp. 2–6 | Flooring, carpet, stain, and other finish selections remain TBD or optional without defined base-bid grades or monetary allowances. | High\n\n[G-4] | A6.01 lighting schedule; specifications p. 8 | Lighting manufacturers and models remain TBD without fixture allowances or sufficiently complete product-selection criteria for comparable bids. | High\n\n[G-5] | A8.01 door schedule; specifications pp. 3 and 5 | Most door hardware entries are blank, and no hardware sets define hinges, locks, privacy functions, stops, or exterior weather hardware. | Certain\n\n[G-6] | A7.01; A7.02; specifications pp. 5–6 | Custom cabinet elevations lack carcass construction, door/drawer construction, and countertop-edge details needed to price and fabricate the millwork consistently. | High\n\n[G-7] | A7.02; specifications p. 5 | Bathroom 11’s specified field and border tiles are not translated into dimensioned border widths and termination layouts on the interior elevations. | High\n\n[G-8] | A6.01; A8.01 | The reflected-ceiling drawings and finish schedule lack a coordinated ceiling-type/finish legend distinguishing gypsum, wood-board, and soffit treatments and their transitions. | High\n\n[G-9] | A2.03; 4/A4.11; A4.12 | The single generic roof-edge detail does not establish the distinct high-eave, low-eave, rake, and closure conditions created by the diagonally sloped roofs. | High\n\n[G-10] | A2.01A; 1/A3.01 | The steel toe guard extending from grade above the stone surface has no section, anchorage, finish, or paving-edge interface detail. | High\n\n[G-11] | A5.01; A5.20; specifications p. 10 | The instruction to finish exposed pool walls and provide stone caps does not identify the wall finish system or a specific coping material, profile, and thickness. | High\n\n[G-12] | A2.00; A5.20; specifications p. 10 | Concrete pool-support construction is depicted before the final ADI pool technical specifications are established, leaving the pool-to-support-wall and base interfaces undefined. | High\n\n[G-13] | A2.03; A2.01B; specifications pp. 1 and 11 | The documents alternately describe installed solar production with battery backup and a merely “solar ready” building without clearly dividing supply and installation responsibility. | Certain\n\n[G-14] | G0.11; specifications p. 1 | The HERO performance commitment is not translated into specific verification and testing responsibilities, while certification remains an unresolved owner option. | High\n\n[G-15] | Specifications p. 1 | Wisteria removal and screening of the upper 6–12 inches of soil are described as desirable rather than clearly included, excluded, or separately priced work. | Certain\n\n[G-16] | Specifications p. 10 | Well and septic work are described as allowances without stated allowance amounts or a defined common pricing basis. | Certain\n\n[G-17] | 1/A7.10; specifications p. 6 | The built-in bunk relies on “framing as needed” without fabrication and coordination information for platform construction, wall anchorage, and ladder connections. | High\n\n[G-18] | A6.01, garage | The chain-hoist mounting point lacks dimensioned location and intended load criteria for coordination with the supporting construction. | Moderate\n\n## Summary\n\nThe set contains substantial architectural detail, but significant inconsistencies and unresolved interfaces remain for bidding and construction. The three greatest concerns are envelope waterproofing and roof-system definition, garage/pool/stair life-safety coordination, and conflicting material, dimensional, and schedule information. Several custom elements are depicted architecturally without enough fabrication or interface information to establish a reliable construction scope. These issues should be resolved through coordinated drawing and specification revisions rather than accumulated field decisions.",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.98,
+  "background": true,
+  "completed_at": 1788826966.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "effort": "high",
+    "generate_summary": null,
+    "summary": null,
+    "context": "all_turns",
+    "mode": "standard"
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 282243,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "output_tokens": 35973,
+    "output_tokens_details": {
+      "reasoning_tokens": 30192
+    },
+    "total_tokens": 318216
+  },
+  "user": null,
+  "billing": {
+    "payer": "developer"
+  },
+  "frequency_penalty": 0.0,
+  "moderation": null,
+  "presence_penalty": 0.0,
+  "store": true,
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-09-08T00:03:45.449345+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-09-07_23-59",
+  "models_run": [
+    "gpt-6-astra"
+  ],
+  "results": [
+    {
+      "model_name": "gpt-6-astra",
+      "model_version": "gpt-6-astra",
+      "run_number": 1,
+      "timestamp_start": "2026-09-07T23:59:38.673310+00:00",
+      "timestamp_end": "2026-09-08T00:03:45.446382+00:00",
+      "latency_seconds": 246.76,
+      "input_tokens": 282243,
+      "output_tokens": 9291,
+      "thinking_tokens": 0,
+      "cost_usd": 0.0,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": []
+}

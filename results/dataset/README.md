@@ -49,7 +49,7 @@ failures that would cause real problems during construction.
 Architects spend significant time reviewing drawing sets for coordination errors
 before issuing them for construction. RedlineBench tests whether AI can do this work
 reliably by giving models a real residential drawing set (with known issues seeded
-in) and scoring their findings against a 58-issue answer key.
+in) and scoring their findings against a 55-issue answer key.
 
 This is a **QAQC benchmark**, not a design benchmark. It measures a model's ability
 to catch mistakes in completed documents — the same work an architect does during a
@@ -62,7 +62,8 @@ quality review before issuing for bid or construction.
 | `test_files/` | The two test PDFs: a residential drawing set and a specification booklet, both with issues intentionally seeded in |
 | `prompts/review.txt` | The exact review prompt sent to every model |
 | `prompts/scoring/` | The triage and scoring prompt templates used to grade each model's response against the answer key |
-| `benchmark-answer-key.md` | All 58 known issues with scoring guidance, plus neutral and known-incorrect findings lists |
+| `benchmark-answer-key.md` | All 58 seeded issues with scoring guidance, plus neutral and known-incorrect findings lists. 55 are scored — see `retired-issues.md` |
+| `retired-issues.md` | Audit overlay: the three void entries dropped from scoring, the one reworded entry, and the four per-run verdicts re-judged with it |
 | `data/issues.csv` | Flat issue registry: id, category, summary, location |
 | `data/runs.csv` | One row per scored run: model, date, model version, prompt version, temperature, cost, raw/net/pct score, scorer |
 | `data/issue_scores.csv` | One row per run × issue: the actual 0 / 0.5 / 1 score |
@@ -104,7 +105,7 @@ runs, not signing off on each one individually).
 ## Versioning
 
 This is **v1** of RedlineBench, corresponding to `benchmark_version: v2` of the
-58-issue answer key referenced in `data/runs.csv` (a v1 answer key existed only
+answer key referenced in `data/runs.csv` — 58 issues seeded, 55 scored (a v1 answer key existed only
 during initial development and was never published). Future rounds — including any
 private/internal benchmark versions — will be calibrated against this public release
 via bridge runs: models re-run on both the old and new answer keys to confirm

@@ -5,7 +5,6 @@ A3,A,Window type 6 count: schedule says 8; only 7 on plans/elevations,A8.01 vs p
 A4,A,Powder Room (14) assigned F-4 carpet — inappropriate for wet room,A8.01
 A5,A,Entry Hall east wall WD-1→P-1 in schedule; interior elevations show wood,"A8.01 vs A3.20, A7.01"
 A6,A,Door 03-1 METAL in schedule; frame says WOOD; details show wood door,A8.01 vs A4.10
-A9,A,Garage (Room 15) assigned F-4 carpet in finish schedule; should be F-5,A8.01 vs A2.00
 A10,A,Reading Nook walls assigned WD-1 in schedule; specs require WD-4,A8.01 vs Specs p.6
 A11,A,"Interior elevation 5/A7.02 labeled 'Guest Bathroom 19 – South'; Room 19 is the Guest Closet, not the bathroom","A7.02 vs A2.01B, A8.01"
 B1,B,"Office length: 11'–6"" on A2.01 vs 11'–5"" on A2.01B",A2.01 vs A2.01B
@@ -45,9 +44,7 @@ G1,G,Blank roof assembly tag on Entry Hall area of East Elevation,A3.01
 G2,G,"Window tag ""5"" removed from East Elevation — window drawn but untagged",A3.01
 G3,G,"Orphaned keynote tag ""13"" on A2.01A — no matching legend entry",A2.01A
 G4,G,"Sheet list shows deck sections as ""A5.11""; actual sheet number is A5.20",Cover vs A5.20
-G5,G,Plans cross-reference section A3.04 (callouts show A3.10); sheet does not exist,"A2.01–03, index"
 G6,G,"Extensive TBDs: lighting L3–L11, all appliances — set too incomplete for reliable bidding","A6.01, A8.01"
-G7,G,"""OPENING TBD"" at Level 2 stair landing — undefined on construction documents",A2.01B
 G8,G,"Awning roof slope 1/4"":12"" is below typical standing seam manufacturer minimums",A2.03
 G9,G,"""Verify in field"" on primary building dimensions affecting setback compliance","A1.01, A2.00"
 G10,G,"Floor assembly F-1 lacks product specification: species, thickness, installation method",A4.01

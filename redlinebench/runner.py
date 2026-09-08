@@ -51,7 +51,19 @@ OUTPUTS_DIR = SCRIPT_DIR / "outputs"
 
 MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # ── Anthropic ──────────────────────────────────────────────────────────
-    # Anthropic's most capable model. Thinking is always on: send only
+    # Anthropic's most capable model (released 2026-08-28; successor to Fable 5).
+    # Identical request surface to Fable 5: thinking is always on, so send only
+    # {"type": "adaptive"} (no budget_tokens) and control depth via
+    # output_config.effort. 1M context / 128K max output — max_tokens set to the
+    # model's ceiling so long reviews don't get truncated.
+    # Requires 30-day data retention (not available under zero data retention).
+    "claude-fable-5-1": {
+        "provider": "anthropic",
+        "max_tokens": 128000,
+        "thinking_type": "adaptive",    # no budget_tokens; uses output_config.effort
+        "output_effort": "high",        # matches the Fable 5 / Opus runs for a fair comparison
+    },
+    # Previous generation of the same family. Thinking is always on: send only
     # {"type": "adaptive"} (no budget_tokens) and control depth via
     # output_config.effort. max_tokens raised to the model's 128K ceiling so
     # long reviews don't get truncated (the "output cap" removed for this run).
@@ -114,6 +126,17 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # Verify exact API model IDs at https://platform.openai.com/docs/models
     # If gpt-5.4-pro or gpt-5-mini turn out to be reasoning (o-series) models,
     # add: "reasoning_effort": "high", "no_temperature": True
+    # OpenAI's newest frontier model (GPT-6 generation). Config mirrors the
+    # GPT-5.6 Sol entry — the most recent OpenAI addition: reasoning model, no
+    # temperature, no output cap, and no explicit reasoning_effort so it uses
+    # the API's default reasoning level.
+    "gpt-6-astra": {
+        "provider": "openai",
+        "reasoning_effort": "high",  # matches Fable 5.1's effort="high" so the two
+                                     # 2026-09 additions are a controlled comparison
+        "no_temperature": True,      # reasoning model; rejects temperature param
+        # No max_tokens — uncapped output (policy: new models get no cap).
+    },
     "gpt-5.6-sol": {
         "provider": "openai",
         "no_temperature": True,     # reasoning model; rejects temperature param
@@ -163,6 +186,7 @@ MAX_RUNS = 5
 # Output pricing applies to all output tokens including thinking tokens.
 # Leave a model out of this dict to get cost_usd = 0.0 in the manifest.
 PRICING: dict[str, tuple[float, float]] = {
+    "claude-fable-5-1":                   (10.00 / 1_000_000, 50.00 / 1_000_000),
     "claude-fable-5":                     (10.00 / 1_000_000, 50.00 / 1_000_000),
     "claude-opus-4-8":                    (5.00 / 1_000_000, 25.00 / 1_000_000),  # verify pricing
     "claude-opus-4-7":                    (5.00 / 1_000_000, 25.00 / 1_000_000),
@@ -170,10 +194,26 @@ PRICING: dict[str, tuple[float, float]] = {
     "claude-sonnet-4-6":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
     "claude-haiku-4-5":                   (0.80 / 1_000_000,   4.00 / 1_000_000),
     "claude-sonnet-4-0":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
+    "gpt-6-astra":                        (10.00 / 1_000_000, 50.00 / 1_000_000),
     "gpt-5.6-sol":                        (5.00 / 1_000_000,  30.00 / 1_000_000),
     "gpt-5.5":                            (5.00 / 1_000_000,  30.00 / 1_000_000),
     "gpt-5.5-pro":                        (30.00 / 1_000_000, 180.00 / 1_000_000),
 }
+
+
+def _reasoning_tokens(usage: Any) -> int:
+    """Reasoning tokens from an OpenAI-style Responses API usage object.
+
+    They live at usage.output_tokens_details.reasoning_tokens. Note they are a
+    *subset* of output_tokens, not an addition to it, so cost is computed from
+    output_tokens alone and must never add these on top.
+    """
+    details = getattr(usage, "output_tokens_details", None)
+    if details is None:
+        return 0
+    if isinstance(details, dict):
+        return details.get("reasoning_tokens", 0) or 0
+    return getattr(details, "reasoning_tokens", 0) or 0
 
 
 def _calculate_cost(model_name: str, input_tokens: int, output_tokens: int) -> float:
@@ -359,9 +399,11 @@ class ClaudeAdapter(ModelAdapter):
             # thinking blocks are captured in raw_response; not needed for text output
 
         usage = response.usage
-        thinking_tokens = getattr(usage, "cache_creation_input_tokens", 0) or 0
-        # Anthropic doesn't expose a dedicated thinking_tokens field yet;
-        # output_tokens already includes thinking tokens.
+        # Anthropic does not report thinking tokens separately -- output_tokens
+        # already includes them and there is no field that breaks them out. This
+        # previously read cache_creation_input_tokens, which is a different thing
+        # entirely (and was 0 on every run, so no recorded number was affected).
+        thinking_tokens = 0
 
         return {
             "text": "\n".join(text_parts),
@@ -441,8 +483,7 @@ class OpenAIAdapter(ModelAdapter):
         # "incomplete" means the model hit max_output_tokens — save what was generated
 
         usage = response.usage
-        # reasoning_output_tokens is reported for o-series models
-        thinking_tokens = getattr(usage, "reasoning_output_tokens", 0) or 0
+        thinking_tokens = _reasoning_tokens(usage)
 
         return {
             "text": response.output_text,
@@ -591,7 +632,7 @@ class GrokAdapter(ModelAdapter):
                     pass
 
         usage = response.usage
-        thinking_tokens = getattr(usage, "reasoning_output_tokens", 0) or 0
+        thinking_tokens = _reasoning_tokens(usage) if usage else 0
 
         return {
             "text": response.output_text,

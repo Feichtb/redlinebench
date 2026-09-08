@@ -1,0 +1,136 @@
+## Step 1 — Project Context
+
+- **Project:** Bonfire House, Chatham County, NC (unaddressed 9.39-acre parcel). Jurisdiction: Chatham County Building Inspections; 2018 NC Residential Code (IRC 2015 w/ amendments). Bid Set dated 10/20/2021.
+- **Building type / construction type:** New single-family residence, R-3 occupancy, Type V-B; 3,840 SF total (3,270 SF heated, 570 SF garage), 2 stories, with attached lap pool, deck, well, septic.
+- **Climate zone:** 4A (stated on G0.11).
+- **Drawing scope:** General (G0.01, G0.11, G1.00) and Architectural only (site plan, crawl/L1/L2/roof plans, enlarged plans, exterior elevations, building/wall sections, wall & horizontal assemblies, exterior/deck/interior details, RCP, interior elevations, schedules). Survey removed. No structural, civil, MEP, or pool drawings.
+- **Specifications:** Single 11-page narrative "Description of Materials, Applications and Allowances"; not organized by CSI division.
+
+## Step 2/3 — Findings
+
+**A. Internal consistency across sheets**
+
+A-1 | A2.01A / A8.01 door schedule | Plan tags door 11-1 (Bathroom 11), which has no row in the door schedule, while the schedule lists door 10-1 (Reading Nook) that appears on no plan. | Certain
+A-2 | A8.01 Room Finish Schedule, Room 14 | Powder Room floor is scheduled as F-4 (carpet assembly), inappropriate for a toilet room and contradicting the spec (SS-2 limestone; carpet in master closet only). | Certain
+A-3 | A8.01 finish schedule Rooms 01 & 10 vs A7.01/6, A7.01/7, A7.10/1, spec p.6 | Entry Hall walls are scheduled P-1 (east) / WD-1 (west) and Reading Nook walls WD-1, but the interior elevations, nook section and spec show WD-4 T&G on both entry hall walls and the nook. | Certain
+A-4 | A8.01 finish schedule, Room 11 | North wall finish "T-1" is not defined in any legend, assembly sheet, or the specification. | Certain
+A-5 | A7.02 detail 5 / A8.01 | Detail is titled "Guest Bathroom 19 – South" but Room 19 is Guest Closet; Guest Bathroom is Room 18, and the finish schedule points to 5/A7.02 for Room 18 finishes. | Certain
+A-6 | A7.01 detail 1 vs A8.01 Appliance Schedule | Note reads "A3 ceiling mounted hood vent," but A3 is the oven; the hood is A5. | Certain
+A-7 | A3.02 detail 1 | Crawl space datum is labeled 501'-0" while every other sheet shows 502'-0". | Certain
+A-8 | A3.01 detail 2 / A4.01 | West elevation tags a roof assembly "R-2," but A4.01 defines only R-1. | Certain
+A-9 | A4.00 E-2, E-3, E-4 | Callouts read "1 1/2" RIGID INSULATION," but the dimension strings (e.g., 1/2"+5 1/2"+1"+1/2"+3/4"+3/4" = 9") show 1" foam, and the stated overall thicknesses only close with 1". | Certain
+A-10 | A4.00 E-1 vs G0.11, spec p.4 | E-1 calls out "1/2" rigid insulation @ crawl space" but dimensions 2", and G0.11/spec require R-10 (2" XPS); 1/2" cannot achieve R-10. | Certain
+A-11 | A4.01 F-1 vs A4.10/6, A4.11/5, A5.30/3, A5.30/5 | F-1 states insulation "only above garage," yet all perimeter base details show batt insulation in the floor cavity in addition to crawl wall insulation, leaving the thermal boundary undefined. | High
+A-12 | A4.10 detail 4 vs A4.00 E-2 vs spec p.2 | Entry hall jamb detail shows a "2x10 STUD," the E-2 assembly is 2x8, and the spec says all conditioned exterior walls are 2x6. | Certain
+A-13 | A4.10/6, A4.10/7, A4.13/1–4 vs spec p.2, p.5 | Exterior cladding is labeled "WD-1 WOOD VENEER" at several exterior details, but WD-1 is the interior maple/birch trim; exterior wood cladding is WD-3. | Certain
+A-14 | A3.03 detail 3 | Titled "West Elevation, Partial, Living Room" but the drawing is a building section through Bathroom 11, South Hallway, Reading Nook, and crawlspace. | Certain
+A-15 | A3.20/3 vs A3.02/1, A3.03/1 vs A2.03 vs spec p.1 | Entry hall roof is drawn at 2:12 in section, 1/8:12 on the north and south elevations, and the spec states all roofs are 3:12 on the diagonal; garage roof plan shows 2:12 and porch overhang 1/4:12. | High
+A-16 | A4.10/7, A4.12/6, A6.01 vs A3.01, A4.11/4 | Soffit is called "vented fiberboard soffit" on some sheets and "fiberboard soffit" on others; vented status must be resolved (see D-2). | Certain
+A-17 | G0.11 vs A2.01A vs spec p.7 | G0.11 lists one tub; plans show tubs in Rooms 07 and 11, and spec lists two (Toto air bath and Sitka alcove tub). | Certain
+A-18 | G0.11 vs spec p.7 vs A3.01–A3.03 | Hose bibs are counted as 5 on G0.11, 3 in the spec, and 5 Aquor hydrants appear on elevations. | Certain
+A-19 | G0.11 vs A2.01/A2.02 | Four bedrooms are stated but only three rooms are labeled bedroom; whether Reading Nook (bunks) or Office is the fourth is not indicated. | Moderate
+A-20 | A6.01 Lighting Fixture Schedule, L7 | L7 count is 2, but L7 is called out at kitchen (two locations), reading nook, second bedroom closet, north hallway railing, and both stair handrails; spec lists 75 LF. | Certain
+A-21 | A6.01 L8 vs A5.01 | Schedule/spec list 12 step lights; A5.01 shows approximately 8 L8 symbols. | Moderate
+A-22 | A2.00, A2.01A | Wall tags appear as both "E1" and "E-1"; note references "W1" versus assembly "W-1" — tag format is inconsistent. | Certain
+A-23 | A7.10 detail 2 vs A4.00 W-2 | Shelf detail shows 1/2" gyp + 5 1/2" stud + 3/4" WD-1 (6 3/4"), while W-2 is gyp/plywood/2x6/gyp totaling 7". | Moderate
+A-24 | A2.01B, A2.03 vs spec p.9 | PV/data wall penetration is on the garage west wall in plans; spec says solar conduit to the north wall of the garage. | Moderate
+A-25 | A5.01, A5.10/1 vs A5.10/3, A5.10/4 | Pool mechanical top-of-wall/grade elevation is -11'-4" on some views and -11'-0" on others. | Certain
+A-26 | A2.00 vs A3.01/2, A5.10/1 | Crawl floor is -6'-0" (lowered area -7'-0"), but crawl door 21-1 threshold is dimensioned at -8'-0". | Moderate
+A-27 | A2.02 | Level 2 plan shows partitions and a hatched element within the single-story south wing with no labels ("roof below," "open to below," or room names). | Moderate
+A-28 | A6.01 vs spec p.9 | RCP labels data drops "CAT6E"; spec requires cat6a. | Certain
+
+**B. Dimensional and geometric integrity**
+
+B-1 | A2.01B detail 1, north dimension strings | 22'-10" + 11'-5" = 34'-3" but the overall is 34'-4" and the parallel string 11'-5"+11'-5"+8'-6"+3'-0" = 34'-4". | Certain
+B-2 | A2.01B detail 2, south string | 24'-3" + 5'-7" + 4'-0 1/2" = 33'-10 1/2" versus the 34'-4" overall, with no indication of a different reference face. | Moderate
+B-3 | A3.22 details 1 & 2 | Two sections of the same stair show 10 risers and 8 risers respectively with a single 6 11/16" riser dimension; no stair plan, landing dimension, or total riser count is given to confirm 18 × 6 11/16" = 120 3/8" against the 10'-0" floor-to-floor. | Moderate
+B-4 | A2.03, A2.01A | Roof overhang dimensions vary (1'-11 1/2", 2'-0", 2'-0 1/2", 2'-2 3/4", 2'-4 1/2", 1'-8 3/8") with no stated typical or reason. | Moderate
+B-5 | A2.00 vs A2.01A | Crawl plan gives 31'-6" for the living-wing width where Level 1 gives 31'-7 1/2"; the repeated "1 1/2"" offsets are not explained (ledger? sheathing?). | Moderate
+B-6 | A1.01 | No dimensions tie the house to property lines or the 50' setback; garage NE corner appears close to the setback line. | High
+B-7 | A2.01A east entry | Ramp from grade (-1'-6") to porch (0'-0") has no length or slope dimension. | High
+
+**C. Specification-to-drawing alignment**
+
+C-1 | A8.01 Window Schedule vs spec p.3 | Schedule specifies Marvin Ultrex (ESDG/ESCA) units; spec specifies Andersen 400 Series. | Certain
+C-2 | A8.01 door 03-1 vs spec p.3 | Schedule lists 03-1 as METAL; spec lists 03-1 among the Jeld-Wen wood/glass-panel exterior doors. | Certain
+C-3 | A4.00 E-2/E-3/E-4 vs spec p.4 | Spec wall insulation is R-21 batt + 1" insulated ZIP sheathing (integral WRB, foam inboard of OSB); drawings show 1/2" plywood with separate rigid foam and WRB outboard — a different product and layer order. | Certain
+C-4 | G0.11 vs spec p.4 | G0.11 lists ceiling R-53; spec gives R-38 + R-15 = R-49. | Certain
+C-5 | A3.01/A3.02 wall tags vs spec p.2–3 | Drawings show E-4 wood cladding on east, south, and part of north facades and E-3 fiber cement on west and north; spec assigns wood to south and west and lap siding to north and west. | Certain
+C-6 | A2.01A vs spec p.3 | East entry ramp is "WET-LAID SS-3 RAMP" on plan; spec calls ramp "SS-2 on concrete" and also lists SS-3 for "Entry Ramp" and "East Path" while calling the "Entry Walkway" SS-2 on concrete. | Certain
+C-7 | Spec p.6 | Spec references "page A8.10" for the reading nook bunk; no such sheet exists (nook is on A7.10). | Certain
+C-8 | Spec p.6 vs A7.01, A2.01A | Spec says dining room built-in shelves are "as shown on A7.01," but no dining room elevation exists; A2.01A says "SHELF. SEE ELEVATIONS." | Certain
+C-9 | Spec p.1 vs A8.01 Room 09 | Spec places wood walls at "2nd Bedroom"; drawings put WD-4 in Reading Nook (10) and schedule Room 09 as all P-1. | Moderate
+C-10 | Spec p.4 vs A2.01A | Spec requires acoustic barrier at master/second bedroom wall and Bathroom 11 walls to hallway and kitchen; those walls carry no W-3 (insulated) tag and default to W-1. | High
+C-11 | Spec p.6 | HVAC section addresses first floor and garage only; Level 2 guest suite (which has supply/return grilles on A2.01B) is not addressed. | Moderate
+C-12 | A3.03/2 vs spec p.2 | Garage door elevation shows no glazing; spec specifies Clopay grooved door with long panel windows. | Moderate
+C-13 | A1.01 vs spec p.9 | Site plan shows 2" PVC pass-throughs; spec requires 1 1/4" network conduits and a 1.5" future fiber conduit. | Moderate
+C-14 | Spec p.5 | Spec calls for an "Entry" hanging rod and shelf per A2.01B, but no entry closet appears on any plan. | Moderate
+C-15 | Spec p.10 vs A5.20/1, A2.00 | Spec describes an "above ground" ADI pool; drawings show cast concrete retaining walls and a slab-on-grade pool foundation "to be coordinated with pool," with depth drawn at 6'-0" versus spec 5'-6" tapering to 4'. | Moderate
+C-16 | Spec p.10 vs A5.01 | Spec says water surface is "as noted on drawings" 2' below Level 1; drawings show only "-2'-0" TOP OF WALL" and no water surface elevation, and a stone cap "aligned with wood deck" cannot also be at water level. | Moderate
+C-17 | A8.01 door 06-2, 14-1 vs spec p.5 | Spec interior doors are all "single panel solid core molded composite"; schedule door 06-2 is rail-and-stile with frosted glass and is not covered by the spec. | Moderate
+C-18 | Spec p.7 vs A2.00 | Spec requires two Rinnai tankless heaters; A2.00 shows a single "HOT WATER" location. | Moderate
+
+**D. Building envelope and building science**
+
+D-1 | A4.01 R-1 | Standing seam panels bear on 1x2 PT furring over 3" rigid foam with no nail-base sheathing above the foam; snap-lock panels require a continuous solid substrate for clips and the spec demands a walkable roof. | High
+D-2 | A4.01 R-1 vs soffit callouts | R-1 is a hybrid unvented assembly (foam above WRB/deck, batts in TJI cavity) yet soffits are called "vented," and the 1x2 air gap above the foam has no intake/exhaust or ridge/eave closure detailing. | High
+D-3 | A2.03, A3.20/3, A4.13/5 vs spec p.4 | Sheffield SMI 1.5 SnapLock 450 minimum slope is 3:12; garage roof (2:12), entry hall roof (2:12 or 1/8:12), and porch overhang (1/4:12) are below manufacturer minimum. | High
+D-4 | A4.00 E-1 | Assembly lists a vapor barrier on both faces of the interior rigid insulation, an unnecessary/ambiguous double barrier at the crawl wall. | Moderate
+D-5 | A4.10/3, A4.10/6, A5.30/3 | Exterior door sills and stone/wood decks are flush with Level 1 with no step-down or drainage gap, exposing the F-1/F-2 floor edge to water. | Moderate
+D-6 | A4.01 F-5, A7.10/3 vs spec p.6 | Garage is to be conditioned by a split heat pump, but the slab has no perimeter or under-slab insulation and the CMU wall to the crawl has no thermal break shown. | Moderate
+D-7 | A2.03, A3.01/2, A3.02/1 | Plumbing vents terminate through walls beneath roof overhangs and near windows; termination clearances and the dryer and 650 CFM hood exhaust outlets are not located. | Moderate
+
+**E. Code and life safety**
+
+E-1 | A4.01 F-1, A8.01 finish schedule Room 15 | Guest Bedroom 17 and Attic 20 sit over the garage, but F-1 specifies 1/2" gypsum ceiling and the finish schedule has no garage ceiling entry; 5/8" Type X is required at the garage ceiling. | High
+E-2 | A8.01 doors 12-1 / 16-1 / 13-1 (garage-to-house) | No door is identified as the garage separation door with rating, 1 3/8" solid wood, or self-closing hardware. | Moderate
+E-3 | A2.01A, A2.01B, A8.01 | No windows are identified as emergency escape openings; Level 2 bedroom casements are 3'x3' (net clear likely under 5.7 SF) and the bunk-equipped Reading Nook has only fixed glazing. | Moderate
+E-4 | A8.01 schedules | Safety glazing is not identified for windows 9 flanking doors 01-1/01-2 (2'-0" sill), 5'/6' fixed units with 6"–1'-0" sills, the Bathroom 11 tub window, or glass shower doors 07-2/18-2. | High
+E-5 | A5.10 detail 4 vs A5.01 | "26" CABLE RAILING" at the stairs to the deck is below any handrail or guard minimum and conflicts with 36"/48" railings on A5.01. | Certain
+E-6 | A5.01, A8.01 doors 22-1/22-2, spec p.3 | Pool barrier gates have only "gate latch hardware" with no self-closing/self-latching requirement, and cable rail is not evaluated as a compliant pool barrier. | Moderate
+E-7 | A2.01A | Entry ramp with 18" rise has no slope, handrails, or edge protection detail other than a steel toe guard. | Moderate
+E-8 | A3.22, A2.01B | Interior stair handrail height, extensions, and guard baluster/cable spacing are not dimensioned ("METAL RAILING" only). | Moderate
+E-9 | A3.01, A2.01B Level 2 | Level 2 window sill heights are not given; casements with sills below 24" would require fall protection. | Moderate
+E-10 | Spec p.6 | Makeup air is questioned "over 600 CFM (?)" for a 650 CFM hood; the code threshold is 400 CFM. | High
+E-11 | A4.12/8, A4.01 F-5 | Garage slab is drawn level with no slope to the vehicle door or drain. | Moderate
+E-12 | A8.01 door 14-1 | Powder room door is 1'-10" wide, impractical and below common minimums; headroom under the stair in Room 14 is not dimensioned. | Moderate
+E-13 | A6.01 vs spec p.9 | Smoke and CO alarm locations are not shown on the RCP although the spec calls for complete systems. | Moderate
+E-14 | A2.01B, spec p.1 | Battery storage/solar control hardware in the garage has no location, clearance, or vehicle-impact protection indicated. | Moderate
+E-15 | A5.01, A5.30/1 | House deck at 0'-0" sits over grade at -3'-6" to -6'-0" in places yet 36" guard is shown only on portions; deck-edge-at-landscape detail has no guard. | Moderate
+
+**F. Constructability**
+
+F-1 | A3.20/3, A3.20/1, A4.10/7 | Entry hall door/window heads at 8'-0" coincide with T.O.F. 8'-0 3/4", leaving no depth for a header within the wall; header location must be resolved with structure. | High
+F-2 | A4.13 details 1, 2, 3 | 6'x6' fixed corner windows meet at outside corners with only wood veneer/frame shown and no structural post or load path. | Moderate
+F-3 | A2.01A, A4.01 F-2 | Master bath hydronic radiant heating is "bidder design," but the F-2 thinset-on-plywood assembly has no tubing layer, mud bed, or added thickness. | Moderate
+F-4 | A2.01A/B FD keynotes, A4.01 F-2 | Floor drains are placed in bathrooms and laundry with flat F-2 thinset floors; no slope or recessed subfloor is detailed except at showers (F-3). | Moderate
+F-5 | A7.01/1, spec p.10 | Zephyr ZSI-E30BS is an island-style hood shown "ceiling mounted" over a wall cooktop under a sloped ceiling; mounting condition is not detailed. | Moderate
+F-6 | A4.12/6, A3.02/1 | Gutter and rain chain at the garage/entry-hall roof intersection must discharge through or onto the lower entry roof; no path is detailed. | Moderate
+F-7 | A2.03, A3.03/3 | Single rain chain at the low corner of each ~1,000 SF diagonally sloped roof is an inadequate discharge for the tributary area. | Moderate
+F-8 | A4.13/5, spec p.1 | Porch overhang steel tube framing on steel columns "hidden inside wall framing" has no column size, base/cap, or steel-to-wood connection shown. | Moderate
+F-9 | A4.10/4 | 1/4" mirror panel full height of entry window cavities has no attachment, edge protection, or moisture/thermal exposure provisions. | Moderate
+F-10 | A4.01 F-3 | Lowered 2x8 shower framing within 2x10 floors (Rooms 07 and 18) requires structural coordination not indicated. | Moderate
+F-11 | A2.01B, A4.12/7 | 12" step from house floor (0'-0") down to garage slab (-1'-0") at doors 12-1/16-1 has no threshold or landing detail. | Moderate
+F-12 | A5.20/1, A5.10 | Deck framing bears on the pool retaining wall "to be coordinated with pool" while spec calls the pool a manufactured above-ground unit; the interface is undefined. | Moderate
+
+**G. Completeness and clarity**
+
+G-1 | Cover, G0.11 | Owner and structural engineer blank, location map blank, planning application number blank, job no. "18," and revision block placeholder text. | Certain
+G-2 | G0.01 | General notes/legend are boilerplate not updated for this project (references to Div. 8 specs, relite types, CMU partitions, sheet "A0.01," 1/2" enlarged plans, CUH/FEC/FHC). | High
+G-3 | A8.01 | No door or window type elevations, frame types, glazing/tempering column, fire rating column, or operation (pairs, pocket, bifold) for 09-2, 13-2, 13-3; hardware column blank for most doors. | Certain
+G-4 | A8.01, A6.01 | Finish schedule has no ceiling finish column and RCP gives ceiling heights for only two areas. | Certain
+G-5 | A2.01A, A8.01 | Pantry is not numbered, its opening/door is not scheduled, and the spec places network equipment on its "south wall." | Moderate
+G-6 | A2.00, A1.01 | Locations of the second tankless heater, outdoor condenser, garage split-system outdoor unit, and pool evaporator pad are not shown. | Moderate
+G-7 | A1.01, spec p.2 | No finished floor elevation is tied to the survey datum (Level 1 = 508' "site verify"), no grading or spot elevations, and the spec concedes topography is approximate. | High
+G-8 | A1.01 | Driveway location and property line are marked "VERIFY IN FIELD" rather than resolved. | Moderate
+G-9 | A6.01, spec throughout | All light fixtures are "TBD" manufacturer/model; siding color, stain, carpet, countertop thickness, kitchen sink, hardware, garage HVAC, and geothermal/HERO options remain TBD or "under consideration." | Certain
+G-10 | A7.01, A7.02 | Interior elevations are missing for the dining room shelf wall, living room TV wall (CAT6 at TV), and remaining walls of powder room and guest bathroom. | Moderate
+G-11 | A5.10, A5.30/2, A5.30/4 | Exterior stair risers and treads are noted "EQ" without riser height, tread depth, or count. | Moderate
+G-12 | A6.01 | Garage "chain hoist mounting point" has no load or structural reference. | Moderate
+G-13 | A6.01 | Fixture schedule skips L2, suggesting a deleted fixture not purged from the set. | Moderate
+G-14 | A2.02, A8.01 Room 20 | "Attic" is within the conditioned envelope with 6'x6' windows, plywood floor, and "unfinished" walls; intended use and finish are ambiguous. | Moderate
+G-15 | G0.11 | Height/area analysis cites IBC Table 503 on a project governed by the NC Residential Code. | Moderate
+
+## Summary
+
+This bid set is graphically well developed but suffers from significant coordination gaps between the drawings, the schedules, and the narrative specification—most seriously in product basis (windows, sheathing/insulation system, exterior cladding assignment, door materials) where the two documents describe different buildings. The three areas of greatest concern are: (1) the roof system—a snap-lock standing seam roof on furring over foam without a nail base, applied to low-slope areas below the manufacturer's minimum, with conflicting vented/unvented soffit intent; (2) schedule integrity—the door schedule misses a plan door, the finish schedule assigns carpet to a powder room and wrong wall finishes to the wood-clad rooms, and no glazing, rating, or ceiling information is provided; and (3) life-safety/code items left undefined—garage ceiling separation under the guest suite, emergency escape and safety glazing identification, and a 26" railing at exterior stairs. Resolving the wall assembly dimension/callout conflicts and the entry-hall header/roof-slope geometry before bid would eliminate a large fraction of likely RFIs.

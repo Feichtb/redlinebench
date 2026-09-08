@@ -8,6 +8,10 @@ redlinebench/.env
 # Large archive folder (65 MB)
 results/dataset/test_files/archive and full/
 
+# Conference deck - not part of the published benchmark. Kept local only:
+# it is a talk, not data, and it carries 30 MB of sheet crops and fonts.
+presentation/
+
 # Python artifacts
 __pycache__/
 *.pyc

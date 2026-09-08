@@ -14,7 +14,7 @@ RedlineBench benchmarks how well various AI models perform at reviewing architec
 
 4. **Model responses**: Raw `.txt` files saved in `redlinebench/outputs/YYYY-MM-DD_HH-MM/`.
 
-5. **Benchmark answer key** (`results/dataset/benchmark-answer-key.md`): The scorer's reference listing all 58 known issues, organized by category. Also includes a neutral findings list (no score impact) and an incorrect findings list (score penalty).
+5. **Benchmark answer key** (`results/dataset/benchmark-answer-key.md`): The scorer's reference, organized by category. It still lists all 58 originally seeded issues; `results/dataset/retired-issues.md` is the overlay that says which of them are void, leaving **55 scored**. Also includes a neutral findings list (no score impact) and an incorrect findings list (score penalty).
 
 6. **Scoring**: Each model response is scored against the answer key at the issue level (AI-assisted triage, spot-checked by a licensed architect before publication — see the "Scoring is human-validated" design decision below). Written to a per-run `scores.json` in that run's output folder — one file per scored run, never edited afterward.
 
@@ -31,17 +31,19 @@ RedlineBench is published on benfeicht.com. The audience is **architects and arc
 ## Benchmark Design Decisions (settled)
 
 - **Multiple runs per model, all permanent** (as of 2026-07) — a model may be scored more than once; every run is a dated, permanent record (model version, prompt version, temperature, tokens, cost, per-issue scores). Never delete or overwrite a historical run, including ones that score lower than a later run of the same model — run-to-run variance is real data, not noise to be hidden. `build_data.py` aggregates all of a model's runs into mean/min/max net score and a per-issue "% of runs caught" reliability heatmap. Most models currently have n=1; the leaderboard and heatmap render the single-run case identically to before, and only show the mean/range/fraction UI once a model has n>1. (This supersedes the old "single run per model" / "round-selector UI" decisions — no round selector was ever built; the natural replacement was per-model aggregation.)
-- **Answer key locked at 58 issues** — never add new issues to an active answer key. If a new genuine issue is discovered, it goes into a new answer key version, which requires full rescoring. Issues that are debatable go on the neutral list instead.
+- **Answer key locked against additions; corrections go through the audit overlay** (revised 2026-08-10) — never add a new issue to an active answer key; a newly discovered genuine issue needs a new key version and full rescoring, and debatable ones go on the neutral list. **Removing or correcting an entry is different**, because an entry that describes something the test files do not contain is scoring every model as missing an issue that was never there. Those go in `results/dataset/retired-issues.md`, which carries **three** fenced tables — `retired` (void entries, dropped from the denominator), `rescored` (per-run verdicts re-judged after an entry was reworded, which can also *add* an incorrect finding), and `voided-penalties` (per-run incorrect findings **struck** because the Known Incorrect Findings entry they were scored against turned out to describe a real defect). `build_data.py` reads all three; `presentation/build_deck_data.py` reads `retired` only. Neither ever edits a `scores.json`. The 2026-08-10 audit voided **A9, G5, G7** and reworded **G16**, taking the key from 58 scored issues to **55** (category maxima A 9→8, G 16→14). The answer key file itself keeps all 58 rows and stays v1.
 - **No design advice** — benchmark scope is QAQC only (post-completion drawing review), not design feedback.
 - **No cap on items flagged** — models decide when to stop; this is intentional.
 - **Legacy model-ID aliases** — a few early `scores.json` files used shorthand model IDs (`haiku`, `gemini-flash`, `gpt5mini`, `grok-4.20-beta`) instead of the runner's canonical keys. These are never edited in place; `build_data.py`'s `LEGACY_MODEL_ALIASES` map normalizes them at aggregation time. Likewise, `MODEL_DISPLAY_OVERRIDES` in that file is now the canonical source for each model's label/color/provider on the site — several older `scores.json` files recorded generic placeholder colors that collide across models, so the aggregator overrides them rather than trusting whatever a given run happened to record.
 - **Opus 4.8 dual-run precedent** — two same-day Opus 4.8 runs exist (`2026-06-07_21-33` net 19.5, `2026-06-07_22-02` net 24.5). The 21-33 folder's README previously framed one as "canonical" and the other as a discardable duplicate (a truncation was suspected, then found not to matter). Under the multi-run model both count as legitimate samples (n=2, mean 22.0) — don't reintroduce a canonical/shadow-copy pattern for future same-model reruns.
 - **Scoring is human-validated, not per-cell badged or per-run logged** — every automated scoring pass is spot-checked by a licensed architect before publication; scores are not revised after that review. This is stated once as a methodology claim (site text, dataset card) rather than tracked as a `human_validated`/`validated_by` field on each run — that per-run field existed briefly (2026-07) and was removed because it forced a formal sign-off step that didn't match the actual workflow (spot-checking, not per-run logging). Don't reintroduce it; there's also no per-cell "verified" UI convention on Hugging Face or on the site, so don't invent one there either.
+- **Second audit — 2026-09-08** — fifteen scoring questions raised by the Fable 5.1 / GPT-6 Astra round were checked against the drawings. It corrected **B3, B4, B5, E2, E8, G1, G14, G16** in place, **voided the A2.01 north/south chain** entry on the Known Incorrect Findings list (the chains really do differ, by 1", because the seeded B4 grid change propagates into one and not the other), narrowed **I8** to the single-run misread, and added **N31–N37**. Two structural fixes matter most: the B4 row named the wrong grid pair (D–E; it is **C–D**), and **G1/G14 were being treated as two valid readings of one gap**, which paid a single "R-2 is undefined" observation into two scoreable issues — they are separate defects and G1 is the blank tag only. Six models' scores moved; no issue was added or removed, so the key stays v1 at 55.
+- **Corrections stay in v1, additions do not** — the 2026-08-10 audit was applied to the published v1 numbers rather than forked into a v2, because it removes entries that were never answerable and corrects one that was misworded; nobody's score changed on a judgement about their answer except where a run was re-read and re-judged in the open. A new *issue* would still force a version bump.
 - **Versioning**: this public release is v1 (`benchmark_version: v2` internally, since a v1 answer key existed only during development and was never published). Any future private/internal benchmark version gets calibrated against v1 via bridge runs — models re-run on both versions to confirm relative rankings hold — before being treated as comparable. Never silently replace published v1 numbers.
 
 ## Scoring Method
 
-For each of the 58 known issues:
+For each of the 55 scored issues:
 - **1 point** — found and correctly described
 - **0.5 points** — found but vague or incomplete
 - **0 points** — missed
@@ -55,27 +57,29 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 
 **Source of truth: `redlinebench/outputs/*/scores.json`.** `results/dataset/data.json` (fetched by the site), `results/dataset/data/*` (the HF export), and the table below are all generated from those files by `python redlinebench/build_data.py` — **never hand-edit the table between the markers**, it's overwritten every time `build_data.py` runs. If it disagrees with `results/dataset/data.json`, regenerate; don't manually reconcile.
 
-15 models scored against the 58-issue answer key (mean net score across all runs; `n` shown only where >1):
+18 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
 
 <!-- REDLINEBENCH:RESULTS_TABLE:START -->
-| Model | Net Score | % of max (58) | Cost / run |
+| Model | Net Score | % of max (55) | Cost / run |
 |-------|----------:|------------:|------------|
-| GPT-5.6 Sol (n=3, range 26.0–28.0) | 27.0 | 46.6% | $3.25 |
-| Claude Fable 5 (n=3, range 26.0–26.5) | 26.33 | 45.4% | $3.31 |
-| GPT-5.5 (n=3, range 21.5–29.0) | 24.83 | 42.8% | $1.84 |
-| Claude Opus 4.8 (n=3, range 19.5–25.0) | 23.0 | 39.7% | $1.47 |
-| GPT-5.5 Pro (n=3, range 19.5–25.5) | 22.67 | 39.1% | $12.21 |
-| Claude Opus 4.6 | 22.5 | 38.8% | $1.09 |
-| GPT-5.4 Pro | 21.5 | 37.1% | $8.27 |
-| Claude Opus 4.7 | 20.0 | 34.5% | $1.12 |
-| Claude Haiku 4.5 | 14.0 | 24.1% | $0.24 |
-| Claude Sonnet 4.6 | 14.0 | 24.1% | $0.74 |
-| Gemini 3 Flash | 7.0 | 12.1% | $0.04 |
-| Grok 4.20 Beta | 6.0 | 10.3% | $0.25 |
-| GPT-5 Mini | 5.5 | 9.5% | $0.03 |
-| Gemini 3.1 Pro | 4.5 | 7.8% | $0.27 |
-| Claude Sonnet 4.0 | 2.5 | 4.3% | $0.44 |
-| GPT-4o | 1.0 | 1.7% | $0.15 |
+| GPT-6 Astra (n=3, range 33.5–37.5) | 36.0 | 65.5% | $4.29 |
+| Claude Fable 5.1 (n=3, range 34.0–34.5) | 34.33 | 62.4% | $4.42 |
+| GPT-5.6 Sol (n=3, range 26.0–28.0) | 27.0 | 49.1% | $3.25 |
+| Claude Fable 5 (n=3, range 26.0–26.5) | 26.33 | 47.9% | $3.31 |
+| GPT-5.5 (n=3, range 21.5–29.0) | 24.83 | 45.1% | $1.84 |
+| Claude Opus 4.6 | 23.0 | 41.8% | $1.09 |
+| GPT-5.5 Pro (n=3, range 19.5–25.5) | 22.67 | 41.2% | $12.21 |
+| Claude Opus 4.8 (n=3, range 19.5–24.5) | 22.67 | 41.2% | $1.47 |
+| GPT-5.4 Pro | 22.5 | 40.9% | $8.27 |
+| Claude Opus 4.7 | 20.0 | 36.4% | $1.12 |
+| Claude Haiku 4.5 | 14.0 | 25.5% | $0.24 |
+| Claude Sonnet 4.6 | 12.0 | 21.8% | $0.74 |
+| Gemini 3 Flash | 7.0 | 12.7% | $0.04 |
+| Grok 4.20 Beta | 6.0 | 10.9% | $0.25 |
+| GPT-5 Mini | 5.5 | 10.0% | $0.03 |
+| Gemini 3.1 Pro | 5.5 | 10.0% | $0.27 |
+| Claude Sonnet 4.0 | 2.5 | 4.5% | $0.44 |
+| GPT-4o | 2.0 | 3.6% | $0.15 |
 <!-- REDLINEBENCH:RESULTS_TABLE:END -->
 
 ### Adding a model (or a new run of an existing model)
@@ -95,7 +99,8 @@ Everything else — leaderboard ranks/mean-range display, "Models evaluated" sta
 |-------------|-------------|
 | `results/dataset/test_files/211020 Bonfire House_Architectural_current.pdf` | Current drawing set (use this for all new runs) |
 | `results/dataset/test_files/211020 Bonfire House_Specifications_current.pdf` | Current specification booklet |
-| `results/dataset/benchmark-answer-key.md` | Complete 58-issue answer key with scoring guidance |
+| `results/dataset/benchmark-answer-key.md` | The answer key — all 58 seeded issues, 55 of them scored |
+| `results/dataset/retired-issues.md` | Audit overlay: void entries and re-judged runs. Read by `build_data.py`; never edit a `scores.json` instead. |
 | `results/dataset/prompts/review.txt` | Current active review prompt |
 | `results/dataset/prompts/scoring/` | Prompts used to assist with scoring (human-verified) |
 | `results/dataset/data.json` | Generated by `build_data.py`; single source the site reads. Never hand-edit. |
@@ -145,6 +150,7 @@ python runner.py --prompt my_custom_prompt.txt
 <!-- REDLINEBENCH:MODEL_TABLE:START -->
 | Model key | Provider | Notes |
 |-----------|----------|-------|
+| `claude-fable-5-1` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-fable-5` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-opus-4-8` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-opus-4-7` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
@@ -154,6 +160,7 @@ python runner.py --prompt my_custom_prompt.txt
 | `claude-sonnet-4-0` | Anthropic | Extended thinking (`budget_tokens`, legacy `enabled` type) |
 | `gemini-3.1-pro-preview` | Google | Dynamic thinking budget (`-1`) |
 | `gemini-3-flash-preview` | Google | Dynamic thinking budget (`-1`) |
+| `gpt-6-astra` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
 | `gpt-5.6-sol` | OpenAI | Reasoning model (no temperature) |
 | `gpt-5.5` | OpenAI | Reasoning model; `reasoning_effort: xhigh`, no temperature |
 | `gpt-5.5-pro` | OpenAI | Reasoning model; `reasoning_effort: xhigh`, no temperature |

@@ -38,6 +38,7 @@ OUTPUTS_DIR = SCRIPT_DIR / "outputs"
 DATASET_DIR = REPO_ROOT / "results" / "dataset"
 DATA_JSON_PATH = DATASET_DIR / "data.json"
 HF_DATA_DIR = DATASET_DIR / "data"
+AUDIT_DOC = DATASET_DIR / "retired-issues.md"
 ROOT_README = REPO_ROOT / "README.md"
 CLAUDE_MD = REPO_ROOT / "CLAUDE.md"
 
@@ -68,6 +69,7 @@ LEGACY_MODEL_ALIASES = {
 # back to the most recent run's own label/provider/color if a model_id is
 # missing here.
 MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
+    "claude-fable-5-1":               {"label": "Claude Fable 5.1",  "provider": "Anthropic", "color": "#ff922b"},
     "claude-fable-5":                 {"label": "Claude Fable 5",    "provider": "Anthropic", "color": "#e8590c"},
     "claude-opus-4-8":                {"label": "Claude Opus 4.8",   "provider": "Anthropic", "color": "#7b2318"},
     "claude-opus-4-7":                {"label": "Claude Opus 4.7",   "provider": "Anthropic", "color": "#9c2216"},
@@ -77,6 +79,7 @@ MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     "claude-sonnet-4-0":              {"label": "Claude Sonnet 4.0", "provider": "Anthropic", "color": "#e09088"},
     "gemini-3.1-pro-preview":         {"label": "Gemini 3.1 Pro",    "provider": "Google",    "color": "#b48030"},
     "gemini-3-flash-preview":         {"label": "Gemini 3 Flash",    "provider": "Google",    "color": "#8a5a10"},
+    "gpt-6-astra":                    {"label": "GPT-6 Astra",       "provider": "OpenAI",    "color": "#1f8ac0"},
     "gpt-5.6-sol":                    {"label": "GPT-5.6 Sol",       "provider": "OpenAI",    "color": "#2a62b0"},
     "gpt-5.5":                        {"label": "GPT-5.5",           "provider": "OpenAI",    "color": "#0d3a7a"},
     "gpt-5.5-pro":                    {"label": "GPT-5.5 Pro",       "provider": "OpenAI",    "color": "#153070"},
@@ -84,6 +87,40 @@ MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     "gpt-5-mini":                     {"label": "GPT-5 Mini",        "provider": "OpenAI",    "color": "#4878b4"},
     "gpt-4o":                         {"label": "GPT-4o",            "provider": "OpenAI",    "color": "#80a8cc"},
     "grok-4.20-beta-0309-reasoning":  {"label": "Grok 4.20 Beta",    "provider": "xAI",       "color": "#5a5650"},
+}
+
+# Ship dates, not benchmark dates. data.json records when a model was *run*, and
+# ten of the eighteen were run in the same week of March 2026, so anything that
+# reasons about progress over time needs the date the model actually shipped.
+#
+# This lives here, not in presentation/build_deck_data.py, because two consumers
+# need it: the deck's frontier chart and the results page's "best catch rate as
+# of" line. It is emitted into data.json per model so neither consumer keeps its
+# own copy -- the deck used to, and a second copy is a second thing to forget.
+#
+# The `note` column records what the date refers to where the answer isn't a
+# single clean launch day. Read those before presenting: a different reading
+# moves a point on the deck's x-axis.
+RELEASE_DATES: dict[str, tuple[str, str]] = {
+    #  model key                        date          note
+    "gpt-4o":                        ("2024-05-13", ""),
+    "claude-sonnet-4-0":             ("2025-05-22", ""),
+    "gpt-5-mini":                    ("2025-08-07", ""),
+    "claude-haiku-4-5":              ("2025-10-15", ""),
+    "gemini-3-flash-preview":        ("2025-12-17", "Flash tier; the Gemini 3 family launched 2025-11-18"),
+    "claude-opus-4-6":               ("2026-02-05", ""),
+    "claude-sonnet-4-6":             ("2026-02-17", ""),
+    "gemini-3.1-pro-preview":        ("2026-02-19", ""),
+    "gpt-5.4-pro":                   ("2026-03-05", ""),
+    "grok-4.20-beta-0309-reasoning": ("2026-03-09", "the 0309 snapshot we ran; the beta opened 2026-02-17"),
+    "claude-opus-4-7":               ("2026-04-16", ""),
+    "gpt-5.5":                       ("2026-04-23", "API access followed on 2026-04-24"),
+    "gpt-5.5-pro":                   ("2026-04-23", "API access followed on 2026-04-24"),
+    "claude-opus-4-8":               ("2026-05-28", ""),
+    "claude-fable-5":                ("2026-06-09", "export controls pulled it 06-12 to 06-30"),
+    "gpt-5.6-sol":                   ("2026-07-09", "public launch; partner preview from 2026-06-26"),
+    "claude-fable-5-1":              ("2026-09-01", ""),
+    "gpt-6-astra":                   ("2026-09-04", "general API availability"),
 }
 
 # Generated once (2026-07-05); must stay constant across regenerations to
@@ -168,6 +205,114 @@ def load_runs() -> tuple[list[dict], list[dict], list[dict]]:
     return runs, categories, issues
 
 
+def load_audit() -> tuple[dict[str, str], list[dict]]:
+    """Post-publication audit of the answer key, read from the dataset itself.
+
+    results/dataset/retired-issues.md carries two fenced tables:
+      retired  -- answer-key entries the test files turn out not to contain.
+                  Dropped from the issue registry, from max_possible, from the
+                  owning category's max, and from every run's per-issue scores.
+      rescored -- per-run verdicts re-judged after an entry was reworded.
+      voided-penalties -- per-run incorrect findings struck because the
+                  Known Incorrect Findings entry they were scored against
+                  turned out to describe a real defect. Removing a penalty is
+                  the mirror of `rescored`'s ability to add one.
+
+    Both are applied here rather than by editing the per-run scores.json files,
+    which are permanent records and are never rewritten -- the same principle as
+    LEGACY_MODEL_ALIASES above. One markdown file is the source for this script
+    and for the conference deck, so the two can never drift apart.
+    """
+    if not AUDIT_DOC.exists():
+        return {}, [], []
+    retired: dict[str, str] = {}
+    rescored: list[dict] = []
+    voided: list[dict] = []
+    block = None
+    for line in AUDIT_DOC.read_text(encoding="utf-8").splitlines():
+        if line.startswith("<!-- retired:begin"):
+            block = "retired"
+        elif line.startswith("<!-- rescored:begin"):
+            block = "rescored"
+        elif line.startswith("<!-- voided-penalties:begin"):
+            block = "voided"
+        elif (line.startswith("<!-- retired:end")
+              or line.startswith("<!-- rescored:end")
+              or line.startswith("<!-- voided-penalties:end")):
+            block = None
+        elif block == "retired":
+            m = re.match(r"\|\s*([A-G]\d+)\s*\|\s*(.+?)\s*\|", line)
+            if m:
+                retired[m.group(1)] = m.group(2)
+        elif block == "rescored":
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if len(cells) == 7 and re.match(r"^\d{4}-\d{2}-\d{2}_", cells[0]):
+                rescored.append({
+                    "run": cells[0], "model": cells[1], "issue": cells[2],
+                    "was": float(cells[3]), "now": float(cells[4]),
+                    "counts_as": cells[5], "why": cells[6],
+                })
+        elif block == "voided":
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if len(cells) == 4 and re.match(r"^\d{4}-\d{2}-\d{2}_", cells[0]):
+                voided.append({
+                    "run": cells[0], "model": cells[1],
+                    "ref": cells[2], "why": cells[3],
+                })
+    return retired, rescored, voided
+
+
+def apply_audit(runs: list[dict], categories: list[dict], issues: list[dict],
+                retired: dict[str, str], rescored: list[dict],
+                voided: list[dict]) -> list[dict]:
+    """Fold the audit into the loaded runs, in place. Returns the live issues."""
+    by_run = {(r["run_id"], r["model_id"]): r for r in runs}
+    for strike in voided:
+        run = by_run.get((strike["run"], strike["model"]))
+        if run is None:
+            sys.exit(f"voided-penalties row names a run that does not exist: "
+                     f"{strike['run']} / {strike['model']}")
+        kept = [i for i in run["incorrect"] if i.get("ref") != strike["ref"]]
+        if len(kept) == len(run["incorrect"]):
+            sys.exit(f"{strike['run']} / {strike['model']} has no incorrect "
+                     f"finding with ref {strike['ref']!r} -- has it been voided "
+                     f"already, or is the ref misspelled?")
+        run["incorrect"] = kept
+    for fix in rescored:
+        run = by_run.get((fix["run"], fix["model"]))
+        if run is None:
+            sys.exit(f"rescored row names a run that does not exist: "
+                     f"{fix['run']} / {fix['model']}")
+        if fix["issue"] not in run["scores"]:
+            sys.exit(f"{fix['run']} / {fix['model']} never scored {fix['issue']}")
+        if run["scores"][fix["issue"]] != fix["was"]:
+            sys.exit(f"{fix['run']} / {fix['model']} {fix['issue']} is "
+                     f"{run['scores'][fix['issue']]}, not the {fix['was']} the "
+                     f"audit expects -- has it been rescored already?")
+        run["scores"][fix["issue"]] = fix["now"]
+        if fix["counts_as"] == "incorrect finding":
+            run["incorrect"] = list(run["incorrect"]) + [{
+                "ref": fix["issue"],
+                "claim": fix["why"],
+                "why": "Reclassified by the answer-key audit; see retired-issues.md.",
+            }]
+
+    live = [i for i in issues if i["id"] not in retired]
+    for c in categories:
+        c["max"] -= sum(1 for i in issues
+                        if i["id"] in retired and i["cat"] == c["id"])
+    max_possible = sum(c["max"] for c in categories)
+
+    # Every run's own totals were computed against the old registry, so they are
+    # all stale now -- recompute from the scores that survive.
+    for r in runs:
+        r["scores"] = {k: v for k, v in r["scores"].items() if k not in retired}
+        r["raw"] = round(sum(r["scores"].values()), 2)
+        r["net"] = round(r["raw"] - len(r["incorrect"]), 2)
+        r["pct"] = round(r["net"] / max_possible * 100, 1)
+    return live
+
+
 def _mean_or_none(values: list) -> float | None:
     present = [v for v in values if v is not None]
     return round(statistics.mean(present), 2) if present else None
@@ -211,11 +356,14 @@ def aggregate(runs: list[dict], issue_ids: list[str], max_possible: int) -> list
 
         display = MODEL_DISPLAY_OVERRIDES.get(model_id, {})
 
+        release_date, release_note = RELEASE_DATES.get(model_id, (None, ""))
         models.append({
             "id": model_id,
             "label": display.get("label", latest["label"]),
             "provider": display.get("provider", latest["provider"]),
             "color": display.get("color", latest["color"]),
+            "release_date": release_date,
+            "release_note": release_note,
             "n": n,
             "net_mean": net_mean,
             "net_min": min(net_values),
@@ -414,9 +562,19 @@ def write_hf_export(issues: list[dict], runs: list[dict], models: list[dict]) ->
 
 def build() -> None:
     runs, categories, issues = load_runs()
+    retired, rescored, voided = load_audit()
+    if retired or rescored or voided:
+        issues = apply_audit(runs, categories, issues, retired, rescored, voided)
+        print(f"Audit applied: {len(retired)} issue(s) retired "
+              f"({' '.join(sorted(retired))}), {len(rescored)} run verdict(s) "
+              f"re-judged, {len(voided)} penalty/penalties voided")
     max_possible = sum(c["max"] for c in categories)
     issue_ids = [i["id"] for i in issues]
     models = aggregate(runs, issue_ids, max_possible)
+
+    undated = sorted(m["id"] for m in models if not m["release_date"])
+    if undated:
+        sys.exit(f"no release date for: {undated} -- add to RELEASE_DATES")
 
     data = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
