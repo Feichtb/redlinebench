@@ -31,6 +31,24 @@ Additionally track:
 > stays **v1** and the denominator stays **55**. The rows below are otherwise
 > unchanged from v1.
 
+## Entries with open questions
+
+**E8 and G8 are flagged, as of 2026-09-12, as not yet confirmed to be issues at all.**
+
+This is a different state from the audited entries above, and it deliberately changes
+nothing yet. Both rows are still live, still scored exactly as written, still in the
+denominator of 55, and still in every published number. Nothing goes in
+`retired-issues.md` and nobody's score moves unless and until the research below
+actually lands and says it should. The flag exists so that a scorer reading either row
+knows the row itself is under question, rather than reading it as settled.
+
+| # | The question | What would settle it |
+|---|---|---|
+| E8 | Whether a **self-closing** device is actually required on the garage-to-dwelling door, as opposed to the door being solid-core/rated and self-latching. The requirement has moved between IRC editions, so it turns on the edition the project is permitted under. | Identify the governing code edition for the project, then read its garage-separation opening-protection section. If that edition does not call for a closer, E8 is asking models to flag a non-defect and belongs in `retired-issues.md`. |
+| G8 | Whether ¼":12 is genuinely below the minimum slope for the roof product this set implies, and, first, whether the awning is annotated at ¼":12 at all — the string does not appear in the drawing set's extractable text, so the callout has to be read off the sheet. | Confirm the awning slope on A2.03 by eye. Then check it against the specified product: spec p.4 names **"Sheffield Metals SMI 1.5 SnapLock 450"**, and snap-lock and mechanically-seamed profiles carry very different minimum slopes. Either the entry is understated or it is not an issue; it is unlikely to be exactly what the row currently says. |
+
+Neither line above is a finding. They are the two things to go and check.
+
 ## A. Schedule-to-Drawing Cross-Reference Errors
 
 | # | Issue | Location | What to Look For |
@@ -100,7 +118,7 @@ Additionally track:
 | E5 | Pool barrier cable spacing not detailed (4" max opening required). | A5.01 | Model should flag missing cable spacing specification at pool barrier. |
 | E6 | Makeup air for range hood: specified Zephyr range hood is rated at 650 CFM. IRC M1503.6 requires makeup air provisions for exhaust hoods exceeding 400 CFM. No makeup air system is specified or coordinated on architectural drawings or in specifications. | Specs p.6 | Model should flag that code-required makeup air is not specified for the selected range hood. |
 | E7 | Garage ceiling fire separation above guest suite: Level 2 guest suite (Rooms 17–20) is located directly above the garage (Room 15) per section A3.10. IRC requires 5/8" Type X gypsum board on the garage ceiling where habitable space is above. Floor assembly F-1 (the Level 2 floor over the garage) specifies standard 1/2" gypsum board, which does not meet this requirement. | A3.10, A4.01 (F-1) | Model should flag that the floor assembly above the garage does not specify the required Type X gypsum. |
-| E8 | Garage-to-house door self-closing hardware: door 16-1 (from garage Room 15 to hallway Room 16) is scheduled as a standard solid-core interior wood door with no hardware notation. IRC requires this door to be self-closing. Self-closing hardware is not specified anywhere in the documents. Clarified 2026-09-08: **door 13-2 (garage to office) is also a garage-to-house door** and likewise has no closer — naming either door is a catch. Door 13-1 is office-to-hallway and is not a garage door. | A8.01 | Model should flag missing self-closing hardware requirement on a garage-to-habitable-space door. |
+| E8 | **⚠ Open question as of 2026-09-12 — see "Entries with open questions" above; score this row as written until that is resolved.** Garage-to-house door self-closing hardware: door 16-1 (from garage Room 15 to hallway Room 16) is scheduled as a standard solid-core interior wood door with no hardware notation. IRC requires this door to be self-closing. Self-closing hardware is not specified anywhere in the documents. Clarified 2026-09-08: **door 13-2 (garage to office) is also a garage-to-house door** and likewise has no closer — naming either door is a catch. Door 13-1 is office-to-hallway and is not a garage door. | A8.01 | Model should flag missing self-closing hardware requirement on a garage-to-habitable-space door. |
 
 ---
 
@@ -126,7 +144,7 @@ Additionally track:
 | G5 | Plans A2.01, A2.02, and A2.03 cross-reference a building section labeled A3.04, but those callout bubbles show A3.10 and no sheet A3.04 exists in the set. | A2.01, A2.02, A2.03, sheet index | Model should flag that the referenced section sheet does not exist, or that the cross-reference label appears mislabeled. |
 | G6 | Extensive TBDs — lighting fixtures L3-L11, appliances all TBD on a bid set. | A6.01, A8.01 | Model should flag incomplete selections preventing bidding. |
 | G7 | "OPENING TBD" at Level 2 stair landing — undefined on construction documents. | A2.01B | Model should flag unresolved opening. |
-| G8 | Awning roof slope 1/4":12" is below typical standing seam manufacturer minimums (most require 1/2":12" minimum). | A2.03 | Model should flag the low slope as a potential incompatibility with standard standing seam products. |
+| G8 | **⚠ Open question as of 2026-09-12 — see "Entries with open questions" above; score this row as written until that is resolved.** Awning roof slope 1/4":12" is below typical standing seam manufacturer minimums (most require 1/2":12" minimum). | A2.03 | Model should flag the low slope as a potential incompatibility with standard standing seam products. |
 | G9 | "Verify in field" on primary building dimensions affecting setback compliance. | A1.01, A2.00 | Model should flag deferred setback-critical dimensions. |
 | G10 | F-1 floor assembly (typical Level 1) lacks product specification — species, thickness, installation method. | A4.01 | Model should flag missing floor product information. |
 | G11 | Room Finish Schedule assigns wall type "T-1" to Bathroom 11, but T-1 is never defined in the specification (unlike P-1 and other finish codes, which are defined). | A8.01 vs. Specs | Model should flag that T-1 is used in the finish schedule but has no corresponding spec definition. |

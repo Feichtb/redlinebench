@@ -71,6 +71,7 @@ LEGACY_MODEL_ALIASES = {
 MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     "claude-fable-5-1":               {"label": "Claude Fable 5.1",  "provider": "Anthropic", "color": "#ff922b"},
     "claude-fable-5":                 {"label": "Claude Fable 5",    "provider": "Anthropic", "color": "#e8590c"},
+    "claude-opus-5":                  {"label": "Claude Opus 5",     "provider": "Anthropic", "color": "#a33a28"},
     "claude-opus-4-8":                {"label": "Claude Opus 4.8",   "provider": "Anthropic", "color": "#7b2318"},
     "claude-opus-4-7":                {"label": "Claude Opus 4.7",   "provider": "Anthropic", "color": "#9c2216"},
     "claude-opus-4-6":                {"label": "Claude Opus 4.6",   "provider": "Anthropic", "color": "#b83020"},
@@ -119,6 +120,7 @@ RELEASE_DATES: dict[str, tuple[str, str]] = {
     "claude-opus-4-8":               ("2026-05-28", ""),
     "claude-fable-5":                ("2026-06-09", "export controls pulled it 06-12 to 06-30"),
     "gpt-5.6-sol":                   ("2026-07-09", "public launch; partner preview from 2026-06-26"),
+    "claude-opus-5":                 ("2026-07-24", ""),
     "claude-fable-5-1":              ("2026-09-01", ""),
     "gpt-6-astra":                   ("2026-09-04", "general API availability"),
 }

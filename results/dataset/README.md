@@ -124,7 +124,7 @@ silent edit to existing numbers.
   project. Performance on other project types (commercial, institutional,
   multi-family) or other document formats may differ.
 - **Run counts vary by model**: most models in this release have a single scored
-  run; seven have three. Treat single-run scores as a point estimate, not a
+  run; eight have three. Treat single-run scores as a point estimate, not a
   guaranteed reproduction — see `data/model_summary.jsonl` for which models have
   more than one run and how much they varied.
 - **The test data is public**: the drawing set and specification booklet have been

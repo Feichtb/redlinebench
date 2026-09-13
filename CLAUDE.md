@@ -38,6 +38,7 @@ RedlineBench is published on benfeicht.com. The audience is **architects and arc
 - **Opus 4.8 dual-run precedent** — two same-day Opus 4.8 runs exist (`2026-06-07_21-33` net 19.5, `2026-06-07_22-02` net 24.5). The 21-33 folder's README previously framed one as "canonical" and the other as a discardable duplicate (a truncation was suspected, then found not to matter). Under the multi-run model both count as legitimate samples (n=2, mean 22.0) — don't reintroduce a canonical/shadow-copy pattern for future same-model reruns.
 - **Scoring is human-validated, not per-cell badged or per-run logged** — every automated scoring pass is spot-checked by a licensed architect before publication; scores are not revised after that review. This is stated once as a methodology claim (site text, dataset card) rather than tracked as a `human_validated`/`validated_by` field on each run — that per-run field existed briefly (2026-07) and was removed because it forced a formal sign-off step that didn't match the actual workflow (spot-checking, not per-run logging). Don't reintroduce it; there's also no per-cell "verified" UI convention on Hugging Face or on the site, so don't invent one there either.
 - **Second audit — 2026-09-08** — fifteen scoring questions raised by the Fable 5.1 / GPT-6 Astra round were checked against the drawings. It corrected **B3, B4, B5, E2, E8, G1, G14, G16** in place, **voided the A2.01 north/south chain** entry on the Known Incorrect Findings list (the chains really do differ, by 1", because the seeded B4 grid change propagates into one and not the other), narrowed **I8** to the single-run misread, and added **N31–N37**. Two structural fixes matter most: the B4 row named the wrong grid pair (D–E; it is **C–D**), and **G1/G14 were being treated as two valid readings of one gap**, which paid a single "R-2 is undefined" observation into two scoreable issues — they are separate defects and G1 is the blank tag only. Six models' scores moved; no issue was added or removed, so the key stays v1 at 55.
+- **An open question is not an audit action** (2026-09-12) — E8 and G8 are flagged in the answer key's "Entries with open questions" section as not yet confirmed to be issues at all: E8 turns on whether the governing IRC edition requires a *self-closing* device on the garage-to-dwelling door, G8 on whether the awning is annotated ¼":12 and on the minimum slope of the snap-lock profile the spec names. **Flagging is not retiring.** Both rows stay live, stay scored as written, stay in the denominator of 55, and stay in every published number; nothing goes in `retired-issues.md` and no score moves until the research lands and says it should. Both are also cut from the conference deck (`presentation/crops.js` `skip`) — an unsettled entry is not something to put in front of a room, and `skip` has no effect on scoring. Resolve a flag by either deleting it (the entry holds up) or doing the normal retire/reword through the overlay.
 - **Corrections stay in v1, additions do not** — the 2026-08-10 audit was applied to the published v1 numbers rather than forked into a v2, because it removes entries that were never answerable and corrects one that was misworded; nobody's score changed on a judgement about their answer except where a run was re-read and re-judged in the open. A new *issue* would still force a version bump.
 - **Versioning**: this public release is v1 (`benchmark_version: v2` internally, since a v1 answer key existed only during development and was never published). Any future private/internal benchmark version gets calibrated against v1 via bridge runs — models re-run on both versions to confirm relative rankings hold — before being treated as comparable. Never silently replace published v1 numbers.
 
@@ -57,12 +58,13 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 
 **Source of truth: `redlinebench/outputs/*/scores.json`.** `results/dataset/data.json` (fetched by the site), `results/dataset/data/*` (the HF export), and the table below are all generated from those files by `python redlinebench/build_data.py` — **never hand-edit the table between the markers**, it's overwritten every time `build_data.py` runs. If it disagrees with `results/dataset/data.json`, regenerate; don't manually reconcile.
 
-18 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
+19 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
 
 <!-- REDLINEBENCH:RESULTS_TABLE:START -->
 | Model | Net Score | % of max (55) | Cost / run |
 |-------|----------:|------------:|------------|
 | GPT-6 Astra (n=3, range 33.5–37.5) | 36.0 | 65.5% | $4.29 |
+| Claude Opus 5 (n=3, range 33.5–35.0) | 34.5 | 62.7% | $2.14 |
 | Claude Fable 5.1 (n=3, range 34.0–34.5) | 34.33 | 62.4% | $4.42 |
 | GPT-5.6 Sol (n=3, range 26.0–28.0) | 27.0 | 49.1% | $3.25 |
 | Claude Fable 5 (n=3, range 26.0–26.5) | 26.33 | 47.9% | $3.31 |
@@ -99,7 +101,7 @@ Everything else — leaderboard ranks/mean-range display, "Models evaluated" sta
 |-------------|-------------|
 | `results/dataset/test_files/211020 Bonfire House_Architectural_current.pdf` | Current drawing set (use this for all new runs) |
 | `results/dataset/test_files/211020 Bonfire House_Specifications_current.pdf` | Current specification booklet |
-| `results/dataset/benchmark-answer-key.md` | The answer key — all 58 seeded issues, 55 of them scored |
+| `results/dataset/benchmark-answer-key.md` | The answer key — all 58 seeded issues, 55 of them scored. Prose only; nothing parses it. Carries an "Entries with open questions" section. |
 | `results/dataset/retired-issues.md` | Audit overlay: void entries and re-judged runs. Read by `build_data.py`; never edit a `scores.json` instead. |
 | `results/dataset/prompts/review.txt` | Current active review prompt |
 | `results/dataset/prompts/scoring/` | Prompts used to assist with scoring (human-verified) |
@@ -152,6 +154,7 @@ python runner.py --prompt my_custom_prompt.txt
 |-----------|----------|-------|
 | `claude-fable-5-1` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-fable-5` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
+| `claude-opus-5` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-opus-4-8` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-opus-4-7` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-opus-4-6` | Anthropic | Extended thinking (`budget_tokens=20000`) |

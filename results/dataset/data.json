@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T14:34:46.896878+00:00",
+  "generated_at": "2026-09-13T14:26:37.596471+00:00",
   "benchmark_version": "v2",
   "max_possible": 55,
   "categories": [
@@ -788,6 +788,440 @@
           "scorer": "Claude Opus 5",
           "scoring_date": "2026-09-08",
           "notes": "Unusually broad run (110 distinct findings) with sheet-level citations; no penalized incorrect findings - notably it stated the G16 acoustic-wall issue in the correct (post-audit) form, naming the specific bedroom/bathroom partitions rather than claiming W-3 is untagged everywhere. Voided entries A9, G5, G7 recorded as 0.0."
+        }
+      ]
+    },
+    {
+      "id": "claude-opus-5",
+      "label": "Claude Opus 5",
+      "provider": "Anthropic",
+      "color": "#a33a28",
+      "release_date": "2026-07-24",
+      "release_note": "",
+      "n": 3,
+      "net_mean": 34.5,
+      "net_min": 33.5,
+      "net_max": 35.0,
+      "pct_mean": 62.7,
+      "cost_mean": 2.14,
+      "flagged_mean": 118.67,
+      "neutral_mean": 17.33,
+      "incorrect_count_mean": 1.33,
+      "incorrect": [
+        {
+          "ref": "I (south pool edge)",
+          "claim": "Pool barrier is open on the south edge, leaving the 48\" barrier discontinuous and the pool not fully enclosed.",
+          "why": "The south pool edge is intentionally unenclosed; the pool wall there extends high enough above grade that no additional barrier is required. Known Incorrect Findings entry.",
+          "penalty": -1,
+          "run_id": "2026-09-12_19-13"
+        },
+        {
+          "ref": "I (connector roof 1/4\" vs 1/8\")",
+          "claim": "The entry-link/low-slope roof is 1/4\":12 on the roof plan but 1/8\":12 on two elevations.",
+          "why": "The connector/entry roof is labelled 2\" per foot everywhere it appears. The 1/4\" and 1/8\" figures belong to other elements (south porch roof; porch floor). Gathering them into one conflicting roof is a misread, and it is stated here at High confidence.",
+          "penalty": -1,
+          "run_id": "2026-09-12_19-24"
+        },
+        {
+          "ref": "I8",
+          "claim": "Ten equal risers at 6-11/16\" total 5'-6 7/8\" and cannot span the 10'-0\" floor-to-floor shown in the same section.",
+          "why": "Reasons from the 10-riser east run as if it were the whole stair. The stair has 18 risers across two runs (10 east + 8 south). This is the I8 single-run misread, not the neutral N33 arithmetic observation.",
+          "penalty": -1,
+          "run_id": "2026-09-12_19-24"
+        },
+        {
+          "ref": "I (south pool edge)",
+          "claim": "Pool barrier is open on the south edge, leaving the 48\" barrier discontinuous and the pool not fully enclosed.",
+          "why": "The south pool edge is intentionally unenclosed; the pool wall there extends high enough above grade that no additional barrier is required. Known Incorrect Findings entry.",
+          "penalty": -1,
+          "run_id": "2026-09-12_19-40"
+        }
+      ],
+      "issue_reliability": {
+        "A1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A3": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "A4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A10": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A11": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B4": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "B5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B6": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "C1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C6": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "C7": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "C8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C9": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D3": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "D4": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "D5": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "D6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E1": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "E2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E7": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "F1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "F4": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G3": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G9": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G10": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G11": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G12": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G13": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G14": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G15": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G16": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        }
+      },
+      "issue_mean_scores": {
+        "A1": 1,
+        "A2": 0,
+        "A3": 0.333,
+        "A4": 1,
+        "A5": 1,
+        "A6": 1,
+        "A10": 1,
+        "A11": 1,
+        "B1": 1,
+        "B2": 1,
+        "B3": 1,
+        "B4": 0.167,
+        "B5": 1,
+        "B6": 0.667,
+        "C1": 1,
+        "C2": 1,
+        "C3": 0.833,
+        "C4": 1,
+        "C5": 1,
+        "C6": 0.667,
+        "C7": 0.333,
+        "C8": 0.5,
+        "C9": 0,
+        "D1": 0,
+        "D2": 1,
+        "D3": 0.167,
+        "D4": 0.333,
+        "D5": 0.5,
+        "D6": 1,
+        "E1": 0.5,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 0.833,
+        "E7": 1,
+        "E8": 0.5,
+        "F1": 0,
+        "F2": 0,
+        "F3": 1,
+        "F4": 0,
+        "G1": 0,
+        "G2": 0,
+        "G3": 0,
+        "G4": 1,
+        "G6": 0.667,
+        "G8": 1,
+        "G9": 1,
+        "G10": 0.5,
+        "G11": 1,
+        "G12": 1,
+        "G13": 0,
+        "G14": 0,
+        "G15": 1,
+        "G16": 0.333
+      },
+      "runs": [
+        {
+          "run_id": "2026-09-12_19-13",
+          "date": "2026-09-12",
+          "model_version": "claude-opus-5",
+          "prompt_version": "v3",
+          "temperature": 1,
+          "raw": 36.0,
+          "net": 35.0,
+          "pct": 63.6,
+          "cost_usd": 1.86,
+          "flagged": 111,
+          "neutral": 14,
+          "incorrect_count": 1,
+          "scorer": "Claude Opus 5",
+          "scoring_date": "2026-09-13",
+          "notes": "Run 1 of 3. Densest A/C/E coverage of the three: full catches on both halves of A1 (door 11-1 unscheduled and door 10-1 unplanned), the E-2 2x8-vs-2x6 conflict (C7, the only run of the three to get it), and the E-3 assembly from both valid framings (stated total vs. layer sum, and the 1-1/2\" callout vs. the 1\" drawn layer). Missed the whole G-series drafting cluster (blank roof tag, window tag 5, orphaned keynote 13, deleted bottom stair, R-2 undefined). Its stair finding correctly reads 18 risers across two runs, so it is N33 and not the I8 misread; its 1/4\" vs 1/8\" roof-slope claim is the known-incorrect connector-roof misread but is hedged at Moderate, so it carries no penalty."
+        },
+        {
+          "run_id": "2026-09-12_19-24",
+          "date": "2026-09-12",
+          "model_version": "claude-opus-5",
+          "prompt_version": "v3",
+          "temperature": 1,
+          "raw": 35.5,
+          "net": 33.5,
+          "pct": 60.9,
+          "cost_usd": 2.45,
+          "flagged": 122,
+          "neutral": 18,
+          "incorrect_count": 2,
+          "scorer": "Claude Opus 5",
+          "scoring_date": "2026-09-13",
+          "notes": "Run 2 of 3, and the only run of the three to catch A3 (tallied 7 type-6 windows against a scheduled 8) and G16 (named the Master/Second bedroom party wall and the 2nd-bath walls as lacking the spec-required insulated assembly, while correctly noting W-3 is used elsewhere in the north wing -- not the 'W-3 tagged nowhere' error). Its A2.01 chain finding earns the B4 partial: it flags the 1\" north/south chain difference and even carries the 6'-10 1/2\" segment in the chain, but never names it as the changed grid dimension. Two penalties: the 1/4\" vs 1/8\" connector-roof misread stated at High (run 1 hedged the same claim at Moderate), and an I8 stair misread reasoning from the 10-riser east run against the full floor-to-floor. Its HERO-code claim matches I2 but is hedged at Moderate, so it is not penalized."
+        },
+        {
+          "run_id": "2026-09-12_19-40",
+          "date": "2026-09-12",
+          "model_version": "claude-opus-5",
+          "prompt_version": "v3",
+          "temperature": 1,
+          "raw": 36.0,
+          "net": 35.0,
+          "pct": 63.6,
+          "cost_usd": 2.11,
+          "flagged": 123,
+          "neutral": 20,
+          "incorrect_count": 1,
+          "scorer": "Claude Opus 5",
+          "scoring_date": "2026-09-13",
+          "notes": "Run 3 of 3, and much the strongest on building science: the only run of the three to catch D4 (vapor barrier on both faces of the E-1 rigid, sandwiching the masonry with no drying path) and to score D5 in full by both identifying the inboard-of-sheathing layer order and assessing it as a CZ 4A condensing-surface risk. Also the only run to flag door 14-1's 1'-10\" leaf against minimum width (E1). Weakest C category of the three: it caught the west-facade double assignment inside the spec but never compared it to the elevations (C3 partial) and never flagged the spec's single '3\"/12 on diagonal' statement against the multiple drawn slopes (C6). Its stair finding correctly totals 18 risers across both runs, so it is N33, not I8."
         }
       ]
     },

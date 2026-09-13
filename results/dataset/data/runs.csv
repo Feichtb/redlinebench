@@ -31,3 +31,6 @@ run_id,date,model_id,label,provider,model_version,prompt_version,benchmark_versi
 2026-09-08_00-10,2026-09-08,claude-fable-5-1,Claude Fable 5.1,Anthropic,claude-fable-5-1,v3,v2,1,4.69,34.5,34.5,62.7,96,27,Claude Opus 5,2026-09-08
 2026-09-08_00-24,2026-09-08,gpt-6-astra,GPT-6 Astra,OpenAI,gpt-6-astra,v3,v2,,4.18,37.0,37.0,67.3,112,29,Claude Opus 5,2026-09-08
 2026-09-08_00-25,2026-09-08,gpt-6-astra,GPT-6 Astra,OpenAI,gpt-6-astra,v3,v2,,4.07,37.5,37.5,68.2,110,30,Claude Opus 5,2026-09-08
+2026-09-12_19-13,2026-09-12,claude-opus-5,Claude Opus 5,Anthropic,claude-opus-5,v3,v2,1,1.86,36.0,35.0,63.6,111,14,Claude Opus 5,2026-09-13
+2026-09-12_19-24,2026-09-12,claude-opus-5,Claude Opus 5,Anthropic,claude-opus-5,v3,v2,1,2.45,35.5,33.5,60.9,122,18,Claude Opus 5,2026-09-13
+2026-09-12_19-40,2026-09-12,claude-opus-5,Claude Opus 5,Anthropic,claude-opus-5,v3,v2,1,2.11,36.0,35.0,63.6,123,20,Claude Opus 5,2026-09-13
