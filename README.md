@@ -78,7 +78,8 @@ The best model found ~39% of known issues. See the [full results page](https://r
 - **Publish the Hugging Face dataset**: `results/dataset/` is a normal folder in this repo — the *same* files the site and the runner use, not a separately maintained copy. After regenerating, mirror it to a Hugging Face Hub dataset repo yourself whenever you want the published dataset to catch up — this isn't automated:
 
   ```bash
-  huggingface-cli upload <your-hf-repo> results/dataset . --repo-type=dataset \n      --exclude "test_files/archive and full/*"
+  huggingface-cli upload <your-hf-repo> results/dataset . --repo-type=dataset \
+      --exclude "test_files/archive and full/*"
   ```
 
   The `--exclude` is not optional. `results/dataset/test_files/archive and full/` holds earlier seeded variants of the drawing set (`_witherrors`, `_v1`, `_v2`) that are gitignored and have never been published; without the flag they would be uploaded along with everything else. `git subtree push --prefix=results/dataset` needs no exclusion — that folder isn't tracked by git — but it publishes only what has been committed.
