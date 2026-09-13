@@ -75,7 +75,13 @@ The best model found ~39% of known issues. See the [full results page](https://r
 - **Add a new run**: `python runner.py --models <model-key>` (add `--runs N` for several in one batch) from `redlinebench/`. See "Running the Benchmark Yourself" below for the full setup and CLI reference.
 - **Score it**: follow [`results/dataset/prompts/scoring/`](results/dataset/prompts/scoring/) to produce a `scores.json` in that run's output folder. This is the only place scoring data lives — it's never copied by hand into the results page.
 - **Regenerate published data**: `python build_data.py` from `redlinebench/`. This reads every `scores.json`, aggregates by model (mean/min/max net score, per-issue reliability), and writes `results/dataset/data.json` (fetched by the site) and `results/dataset/data/*.csv`/`.jsonl` (for the Hugging Face dataset viewer) from the same source — there's one place scoring data lives and one script that reshapes it for each consumer.
-- **Publish the Hugging Face dataset**: `results/dataset/` is a normal folder in this repo — the *same* files the site and the runner use, not a separately maintained copy. After regenerating, mirror it to a Hugging Face Hub dataset repo yourself (e.g. `huggingface-cli upload <your-hf-repo> results/dataset .` or `git subtree push --prefix=results/dataset`) whenever you want the published dataset to catch up — this isn't automated.
+- **Publish the Hugging Face dataset**: `results/dataset/` is a normal folder in this repo — the *same* files the site and the runner use, not a separately maintained copy. After regenerating, mirror it to a Hugging Face Hub dataset repo yourself whenever you want the published dataset to catch up — this isn't automated:
+
+  ```bash
+  huggingface-cli upload <your-hf-repo> results/dataset . --repo-type=dataset \n      --exclude "test_files/archive and full/*"
+  ```
+
+  The `--exclude` is not optional. `results/dataset/test_files/archive and full/` holds earlier seeded variants of the drawing set (`_witherrors`, `_v1`, `_v2`) that are gitignored and have never been published; without the flag they would be uploaded along with everything else. `git subtree push --prefix=results/dataset` needs no exclusion — that folder isn't tracked by git — but it publishes only what has been committed.
 
 ### Versioning
 
