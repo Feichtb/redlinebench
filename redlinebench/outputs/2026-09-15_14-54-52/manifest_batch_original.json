@@ -1,0 +1,56 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-09-15T15:41:01.551451+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-09-15_14-54",
+  "models_run": [
+    "gpt-5-pro"
+  ],
+  "results": [
+    {
+      "model_name": "gpt-5-pro",
+      "model_version": "gpt-5-pro-2025-10-06",
+      "run_number": 1,
+      "timestamp_start": "2026-09-15T14:54:52.796825+00:00",
+      "timestamp_end": "2026-09-15T15:16:39.874491+00:00",
+      "latency_seconds": 1307.08,
+      "input_tokens": 52705,
+      "output_tokens": 19144,
+      "thinking_tokens": 16000,
+      "cost_usd": 3.0878550000000002,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gpt-5-pro",
+      "model_version": "gpt-5-pro-2025-10-06",
+      "run_number": 2,
+      "timestamp_start": "2026-09-15T15:16:39.876461+00:00",
+      "timestamp_end": "2026-09-15T15:28:50.617241+00:00",
+      "latency_seconds": 730.75,
+      "input_tokens": 52705,
+      "output_tokens": 19199,
+      "thinking_tokens": 15616,
+      "cost_usd": 3.094455,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gpt-5-pro",
+      "model_version": "gpt-5-pro-2025-10-06",
+      "run_number": 3,
+      "timestamp_start": "2026-09-15T15:28:50.624321+00:00",
+      "timestamp_end": "2026-09-15T15:41:01.547858+00:00",
+      "latency_seconds": 730.92,
+      "input_tokens": 52705,
+      "output_tokens": 22760,
+      "thinking_tokens": 19008,
+      "cost_usd": 3.521775,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": []
+}

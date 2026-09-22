@@ -55,7 +55,7 @@
     "@context": "https://schema.org",
     "@type": "Dataset",
     "name": "RedlineBench — AI Architectural Drawing Review Benchmark Results",
-    "description": "Benchmark dataset comparing 19 AI models on their ability to identify errors and inconsistencies in a residential architectural construction document set. Scored against 55 known issues across 7 categories including dimension conflicts, specification mismatches, and coordination failures.",
+    "description": "Benchmark dataset comparing 27 AI models on their ability to identify errors and inconsistencies in a residential architectural construction document set. Scored against 55 known issues across 7 categories including dimension conflicts, specification mismatches, and coordination failures.",
     "url": "https://redlinebench.benfeicht.com",
     "creator": { "@type": "Person", "name": "Ben Feicht", "url": "https://benfeicht.com" },
     "datePublished": "2026-03-16",
@@ -274,6 +274,10 @@
 
     /* METHODOLOGY */
     .meth-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 48px; }
+    /* 4-card methodology row: 2x2 rather than 4 narrow columns, so the longer
+       cards stay readable. Needs a class, not an inline style -- an inline
+       grid-template-columns would beat the max-width:960px stacking rule. */
+    .meth-steps.two-up { grid-template-columns: repeat(2, 1fr); }
     .meth-step-card { background: var(--surface); padding: 26px; }
     .step-num { font-family: 'JetBrains Mono', monospace; font-size: .66rem; font-weight: 700; color: var(--ink-3); letter-spacing: .16em; margin-bottom: 10px; display: block; text-transform: uppercase; }
     .cat-label { font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--ink-2); display: block; margin-bottom: 10px; }
@@ -367,6 +371,7 @@
       .intro-grid { grid-template-columns: 1fr; gap: 40px; }
       .spot-grid  { grid-template-columns: 1fr; }
       .meth-steps { grid-template-columns: 1fr; }
+      .meth-steps.two-up { grid-template-columns: 1fr; }
       .rubric-grid { grid-template-columns: repeat(2, 1fr); }
       .nav-toggle { display: flex; }
       .nav-links {
@@ -761,7 +766,7 @@ Where:
       <h2>Methodology</h2>
       <p>A repeatable, controlled evaluation using a single real project drawing set with known issues seeded across 7 review categories.</p>
     </div>
-    <div class="meth-steps">
+    <div class="meth-steps two-up">
       <div class="meth-step-card">
         <span class="step-num">01 / TEST SET</span>
         <h3>One real project, known issues</h3>
@@ -776,6 +781,11 @@ Where:
         <span class="step-num">03 / SCORING</span>
         <h3>Issue-level, manual scoring</h3>
         <p>Each response is scored against the benchmark answer key at the issue level. Every finding is classified as correct, vague, missed, incorrect, or neutral. Neutral observations, reasonable but out-of-scope or debatable, carry no score impact in either direction.</p>
+      </div>
+      <div class="meth-step-card">
+        <span class="step-num">04 / MODEL SELECTION</span>
+        <h3>Which models, and what is missing</h3>
+        <p>Models are tested when they ship, plus a back-catalog series run in September 2026 to measure progress over time. That series is weighted toward OpenAI for a reason worth stating plainly: OpenAI still serves its older models, while Google and xAI do not. <strong>Gemini 2.5 Pro and Gemini 3 Pro, which led most independent leaderboards through 2025, cannot be tested at all</strong> &mdash; they now return &ldquo;no longer available&rdquo; from the API, as do Grok 3 and Grok 4 and every Claude before Sonnet 4.5. The 2025 portion of this chart is therefore the best <em>available</em> record, not a complete one. One upside: every back-catalog model was trained before this test set went public on 5 July 2026, so those runs cannot be contaminated by it.</p>
       </div>
     </div>
   </div>

@@ -1,0 +1,29 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-09-15T15:41:01.551451+00:00",
+  "errors": [],
+  "models_run": [
+    "gpt-5-pro"
+  ],
+  "results": [
+    {
+      "model_name": "gpt-5-pro",
+      "model_version": "gpt-5-pro-2025-10-06",
+      "run_number": 2,
+      "timestamp_start": "2026-09-15T15:16:39.876461+00:00",
+      "timestamp_end": "2026-09-15T15:28:50.617241+00:00",
+      "latency_seconds": 730.75,
+      "input_tokens": 52705,
+      "output_tokens": 19199,
+      "thinking_tokens": 15616,
+      "cost_usd": 3.094455,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-09-15_15-16-39",
+  "batch_note": "Produced by a single `runner.py --models gpt-5-pro --runs 3` invocation that wrote all three runs to 2026-09-15_14-54. Split into one folder per run (folder name = that run's start time) to match the one-run-per-folder convention build_data.py requires. The unmodified batch manifest is kept at 2026-09-15_14-54/manifest_batch_original.json."
+}

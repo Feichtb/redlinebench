@@ -1,0 +1,73 @@
+### Step 1: Establish project context (very brief)
+
+- **Project**: Bonfire House | **Location/Jurisdiction**: Chatham County, North Carolina | **Code basis shown**: 2018 North Carolina Residential Code (IRC 2015 w/ amendments) on **G0.11**
+- **Building**: New single-family dwelling w/ garage, crawlspace, deck and pool | **Occupancy/Const. type shown**: R-3 / V-B (noted per IBC) on **G0.11**
+- **Climate zone**: 4A (stated on **G0.11**)
+- **Drawing set scope**: Architectural only (G + A sheets: site plan, floor plans, roof plan, elevations, sections, assemblies, details, RCP, interior elevations, door/window/finish schedules); **structural/MEP/civil not included** (but referenced)
+- **Specifications provided**: 11-page narrative/outline spec booklet (not CSI Divisions)
+
+---
+
+### Step 2–3: Findings (organized by the seven review perspectives)
+
+A-1 | G0.11 vs A3.02 (North Elevation) vs A3.01/A3.10 | Crawlspace level datum is shown as **501'-0"** on A3.02 but **502'-0"** on other sheets, creating a 1' vertical coordination conflict. | Certain  
+A-2 | A0.01 Sheet List vs provided set | Sheet list includes **A5.11** but no A5.11 sheet is included in the provided drawing set, so the sheet list does not match the deliverable set. | High  
+A-3 | A5.01 | Sheet title is “ENLARGED PLAN, DECK” but the drawing title under the plan reads “ENLARGED PLAN, SITE PLAN,” which is inconsistent. | Certain  
+A-4 | A8.01 Room Finish Schedule vs A7.02 (Powder Room 14) | Powder Room 14 is scheduled with **F-4 (carpet)** but interior elevation drawings indicate a hard finish intent, creating a direct finish conflict. | Certain  
+A-5 | A8.01 Room Finish Schedule vs A7.10 (Reading Nook) | Reading Nook 10 walls are scheduled as **WD-1** but the Reading Nook detail/section depicts **WD-4 T&G** wall treatment, creating a scope/finish mismatch. | High  
+A-6 | A5.01 vs A5.10 vs A2.01A | Guard/railing heights are shown as **48"**, **36"**, and even **26"** cable railing at different locations/sheets for the deck/pool edges, with no clear differentiation of where each applies. | High  
+A-7 | A3.02 callouts vs A5.20 content | Elevations reference **1/A5.20** in locations that do not appear to correspond to the **pool section** (A5.20-1), suggesting at least one elevation callout is mis-referenced. | Moderate  
+A-8 | G0.11 vs A4.00 E-1 | Code summary/energy target calls for crawlspace wall **R-10**, but wall assembly E-1 labels only **“1/2" rigid insulation @ crawl space,”** which does not align with the stated performance. | High  
+
+B-1 | A3.22 stair sections vs level datums | Stair is shown as **10 risers @ 6 11/16"** plus **8 risers** (18 total), totaling **10'-0 3/8"** rise, which does not match the **10'-0"** Level 1-to-Level 2 difference (508'-0" to 518'-0"). | High  
+B-2 | A3.22 | Stair sections provide riser/tread counts but do not dimension the **landing length(s)** or **overall run**, preventing geometric verification against the plan layout. | High  
+B-3 | A2.00 | Crawlspace plan uses relative elevations such as **“-7'-0" (lowered floor area)”** and **“-6'-0" (crawlspace level)** without clearly tying those to the project datum, making setout ambiguous. | High  
+B-4 | A5.10/A5.20 | Deck/pool drawings show multiple relative elevations (e.g., **-1'-6", -3'-6", -8'-0", -11'-0", -11'-4"**) without a clearly stated relationship to **Level 1** or a consistent grade datum, increasing layout risk. | High  
+
+C-1 | Spec p.3 (Exterior Doors and Windows) vs A8.01 Window Schedule | Specs call for **Andersen 400 Series** windows, but the window schedule lists **Marvin/Ultrex** window types/finishes, creating a major procurement conflict. | Certain  
+C-2 | Spec p.3 (Exterior Doors and Windows) vs A8.01 Door Schedule | Specs call for **Jeld-Wen IWP wood exterior doors** for doors **01-1/01-2/03-1/06-1**, but the door schedule lists **03-1 as METAL** and does not align manufacturers/models for the remaining exterior doors. | High  
+C-3 | Spec p.2 (Garage Door) vs A8.01 Door Schedule/A4.12 | Specs call for **Clopay Modern Steel (grooved) with long panel windows**, but the drawings provide only a generic “METAL” designation and do not clearly identify the specified product/configuration. | High  
+C-4 | Spec p.4 (Insulation) vs G0.11 + A4.00/A4.01 | Spec insulation strategy (e.g., **ZIP-R 1"**, wall/ceiling R-values) conflicts with the **G0.11** stated project insulation values and with the assembly callouts shown on A4.00/A4.01. | High  
+C-5 | Spec p.4 (Stem Wall: 2" XPS R10) vs A4.00 E-1 | Specs require **2" rigid XPS (R-10)** at stem wall, but E-1 indicates **1/2" rigid insulation** at crawlspace. | Certain  
+C-6 | Spec p.3 (Cladding by façade) vs drawing wall-type system | Specs describe façade-specific products (Hardie lap vs Thermory wood), but drawings rely on **E-3/E-4** wall tags without an explicit mapping back to the specified product selections, leaving façade material assignment ambiguous. | Moderate  
+C-7 | Spec p.9 (Cat6a) vs A6.01 | Specs require **Cat6a** Ethernet, but the reflected ceiling plan repeatedly calls out **CAT6E**. | Certain  
+C-8 | Spec p.3 (Pool deck railings 48") vs A2.01A/A5.10 | Specs call for **48"** cable fence around pool deck edges, but drawings also show **36"** and **26"** cable railing without clarification. | High  
+C-9 | Spec p.3 (SS-2 limestone locations incl. Entry Hall/Laundry/Powder) vs A8.01 Room Finish Schedule | Specs assign **SS-2** stone to several interior rooms, but the finish schedule uses generic floor assembly tags (and even carpet at Powder), creating a finish scope conflict for bidding/procurement. | High  
+
+D-1 | A4.00 E-3/E-4 | Exterior wall assembly callouts do not clearly communicate the **continuous air/water barrier plane** and layer order (components listed without a clear exterior-to-interior sequence), increasing risk of mis-installation. | High  
+D-2 | A4.10/A4.11 window details | Window head/jamb/sill details show flashing/membranes but do not clearly depict a **drained sill/weep path** compatible with a rainscreen over continuous insulation (beyond a generic insect screen note). | Moderate  
+D-3 | A4.10/A4.11 base conditions | Base-of-wall details do not indicate a **termite inspection gap/termite shield** strategy (commonly critical in NC), which is a building-science durability risk. | Moderate  
+D-4 | A4.01 R-1 | Roof is drawn as an unvented assembly with cavity insulation plus exterior rigid insulation, but rigid insulation **R-value/thickness** needed for condensation control is not stated. | Moderate  
+D-5 | A2.00 + A4.00 E-1 + Spec p.2 | Set indicates a **sealed crawlspace** (and specs require a 20-mil liner), but there is no architectural detail showing **liner attachment/sealing at walls, piers, and penetrations**, leaving a high-risk enclosure component unresolved. | High  
+D-6 | A4.13 (Porch overhang) | Porch overhang detail shows tube steel within the roof/wall zone but does not show **insulation/air-barrier continuity** around the embedded steel, creating a thermal-bridge/condensation risk. | Moderate  
+
+E-1 | A5.10 | “**26" cable railing**” is called out, which is below typical minimum guard height and is not clearly identified as a handrail vs guard condition. | High  
+E-2 | A3.22 | Stair sections do not show required **handrail/guard heights**, **open-side guard conditions**, or **headroom** criteria, leaving key life-safety attributes unverified. | High  
+E-3 | A8.01 Door Schedule (14-1) | Powder Room door **14-1** is scheduled at **1'-10"** wide, which is unusually narrow for a bathroom and may not meet minimum clear opening expectations. | Moderate  
+E-4 | A2.02 + A4.01 (assemblies) | Separation between **garage** and **occupied space above** is not clearly detailed for required fire-protection (gypsum type/thickness and continuity not explicitly indicated for the garage ceiling condition). | High  
+E-5 | A8.01 Door Schedule (garage-to-house doors 16-1/16-2) | Doors between garage and interior are scheduled generically as wood solid-core with no indication of **self-closing** or other garage-separation requirements. | Moderate  
+E-6 | A2.01A/A2.01B + A8.01 Window Schedule | Sleeping-room emergency escape openings are not identified, and many windows are scheduled as **fixed**, requiring verification that each bedroom has a compliant operable egress window. | Moderate  
+E-7 | A5.01 + A8.01 (22-1/22-2 gates) | Pool gate doors are scheduled, but drawings/specs do not indicate **self-closing/self-latching** requirements, latch location, or barrier performance criteria. | Moderate  
+E-8 | G0.11 | Code summary uses IBC concepts (Type **V-B**, **Table 503**) while the stated governing code is the NC Residential Code/IRC, which can complicate plan review. | High  
+
+F-1 | A4.00 E-3/E-4 | Continuous exterior rigid insulation plus furring is indicated, but the drawings do not provide a **cladding fastening basis** (fastener length/spacing, furring thickness vs insulation thickness), increasing constructability and performance risk. | Moderate  
+F-2 | A4.13 corner window details | Corner window conditions are detailed geometrically but lack explicit sequencing/tolerances for **WRB/flashing continuity** at the 2-plane corner frame intersections. | Moderate  
+F-3 | A4.10 (base) + A5.30 (deck base) | Interfaces between exterior hardscape/stone surfaces and wall base flashing are shown but do not clearly establish a **movement joint and drainage strategy** at wall-to-paving transitions. | Moderate  
+F-4 | A5.01 | “Removable deck for pool cover access” is noted without any detail for **framing, fastening, structural support, or lifting/handling**, which is likely to generate RFIs and field improvisation. | High  
+F-5 | Spec p.1 (“steel columns hidden inside wall framing”) vs A4.13 | The spec describes concealed structural steel for the south porch overhang, but architectural details do not show **where within the wall** the steel sits or how envelope layers/trim are coordinated around it. | Moderate  
+
+G-1 | Specs cover page | Specification booklet leaves **Architect** and **Owner** blank and provides no project address, creating contractual/admin ambiguity. | Certain  
+G-2 | G0.11 | Planning application number and site address are left blank (“Planning Application # ____” and “yet un-addressed property”), which can hinder permitting/inspection documentation. | Certain  
+G-3 | A8.01 Room Finish Schedule | Finish tags include **T-1** (and others) without a clear, consolidated legend defining all finish codes/materials, which will cause finish RFIs. | High  
+G-4 | A8.01 Door Schedule | Door schedule lacks defined **hardware sets** (functions, lock types, closers, hinges) and provides only generic “HARDWARE/SHOWER DOOR HARDWARE,” preventing accurate bidding. | High  
+G-5 | A6.01 Lighting Fixture Schedule | All lighting fixture manufacturers/models are listed as **TBD**, preventing fixture-dependent coordination (apertures, trims, housings, wet ratings) and reliable pricing. | Certain  
+G-6 | Specs pp.2–7 | Numerous key selections remain **TBD** (colors, carpet, sink, cabinet hardware, etc.) without being formalized as allowances/alternates, which undermines bid comparability. | High  
+G-7 | A1.00 + A1.01 | Survey is removed and site plan includes several “verify in field” directives, leaving insufficient site control information for layout/grading and increasing risk of field conflicts. | High  
+G-8 | A2.01A/A2.01B | Enlarged plan keynote blocks define only a small subset of symbols/abbreviations while additional tags (e.g., SS-3 surface notes, lighting tags) appear without consistent legend support on those sheets. | Moderate  
+G-9 | A4.10–A4.13 | Envelope notes repeatedly call out generic “WEATHER BARRIER/FLASHING MEMBRANE” without product type/compatibility requirements, which is a common source of substitution disputes on high-performance walls. | Moderate  
+
+---
+
+### Brief summary (3–5 sentences)
+
+Overall, the set communicates the architectural intent, but it contains several high-risk coordination problems that are very likely to generate RFIs and change orders. The most critical issues are (1) major **spec-to-drawing procurement conflicts** (windows/doors, cabling category, insulation approach), (2) **inconsistent vertical datums and guard/railing heights** across sheets, and (3) **finish schedule errors/ambiguities** (notably the Powder Room floor and wood-finish room treatments). Building-envelope execution details for a sealed crawlspace and continuous exterior insulation are not sufficiently resolved to avoid field interpretation. Tightening the schedules, unifying datums, and reconciling the spec selections with the drawing tags should be prioritized before bidding/construction.

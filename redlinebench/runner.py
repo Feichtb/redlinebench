@@ -120,6 +120,26 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
         "thinking_budget": 16000,
         "thinking_type": "enabled",     # older models use "enabled" not "adaptive"
     },
+    # ── Anthropic back-catalog (added 2026-09-15) ──────────────────────────
+    # The two oldest Claude models the API still serves. Everything before
+    # Sonnet 4.5 (3.7 Sonnet, Opus 4, Opus 4.1) has been retired, so the Claude
+    # line in the Jan 2025 - Jan 2026 progress series cannot reach back further.
+    # Both REJECT adaptive thinking ("adaptive thinking is not supported on this
+    # model", verified 2026-09-15), so they use the older thinking.budget_tokens
+    # surface with type "enabled" rather than output_config.effort.
+    # 64K max output is each model's ceiling; 32K thinking leaves 32K for text.
+    "claude-opus-4-5-20251101": {
+        "provider": "anthropic",
+        "max_tokens": 64000,
+        "thinking_budget": 32000,
+        "thinking_type": "enabled",     # adaptive unsupported on this model
+    },
+    "claude-sonnet-4-5-20250929": {
+        "provider": "anthropic",
+        "max_tokens": 64000,
+        "thinking_budget": 32000,
+        "thinking_type": "enabled",     # adaptive unsupported on this model
+    },
     # ── Google Gemini ──────────────────────────────────────────────────────
     # IDs verified against the API's ListModels endpoint (2026-03-12).
     "gemini-3.1-pro-preview": {
@@ -179,6 +199,44 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
         "provider": "openai",
         "max_tokens": 32768,        # standard model; temperature=0 applied
     },
+    # ── OpenAI back-catalog (added 2026-09-15) ─────────────────────────────
+    # Historical models for the Jan 2025 - Jan 2026 progress series. All six
+    # verified against the live Responses API on 2026-09-15 and all accept
+    # inline PDF input. Unlike Anthropic and Google, OpenAI still serves its
+    # full back catalog, which is why this series skews OpenAI-heavy.
+    # No max_tokens on the reasoning models (policy: uncapped output).
+    "gpt-5.2": {
+        "provider": "openai",
+        "reasoning_effort": "high",
+        "no_temperature": True,
+    },
+    "gpt-5-pro": {
+        "provider": "openai",
+        "reasoning_effort": "high",
+        "no_temperature": True,
+    },
+    "gpt-5": {
+        "provider": "openai",
+        "reasoning_effort": "high",
+        "no_temperature": True,
+    },
+    # April 2025 non-reasoning flagship. Paired deliberately with o3 (same
+    # month) so the series isolates what reasoning buys on this task.
+    "gpt-4.1": {
+        "provider": "openai",
+        "max_tokens": 32768,        # standard model; temperature=0 applied
+    },
+    "o3": {
+        "provider": "openai",
+        "reasoning_effort": "high",
+        "no_temperature": True,
+    },
+    # The frontier reasoning model as of January 2025 — the start of the range.
+    "o1": {
+        "provider": "openai",
+        "reasoning_effort": "high",
+        "no_temperature": True,
+    },
     # ── xAI Grok ───────────────────────────────────────────────────────────
     # Uses OpenAI-compatible Chat Completions API at api.x.ai/v1.
     # Reasoning model — rejects temperature param.
@@ -209,6 +267,22 @@ PRICING: dict[str, tuple[float, float]] = {
     "gpt-5.6-sol":                        (5.00 / 1_000_000,  30.00 / 1_000_000),
     "gpt-5.5":                            (5.00 / 1_000_000,  30.00 / 1_000_000),
     "gpt-5.5-pro":                        (30.00 / 1_000_000, 180.00 / 1_000_000),
+    # Back-catalog rates (added 2026-09-15), all verified 2026-09-15 against
+    # each model's launch-day announcement. **These are launch-day rates, not
+    # today's rates** -- the benchmark asks what a model cost when it was the
+    # current model, so a back-catalog run is costed at what it cost then.
+    # Every other entry in this table was run close enough to its own launch
+    # that the two are the same number; o3 is the only one where they differ.
+    "gpt-5.2":                            (1.75 / 1_000_000,  14.00 / 1_000_000),
+    "gpt-5-pro":                          (15.00 / 1_000_000, 120.00 / 1_000_000),
+    "gpt-5":                              (1.25 / 1_000_000,  10.00 / 1_000_000),
+    "gpt-4.1":                            (2.00 / 1_000_000,   8.00 / 1_000_000),
+    # Launch rate (2025-04-16). OpenAI cut o3 by 80% to 2/8 on 2025-06-10; we
+    # deliberately do NOT use the cut rate, because o3 competed at 10/40.
+    "o3":                                 (10.00 / 1_000_000, 40.00 / 1_000_000),
+    "o1":                                 (15.00 / 1_000_000, 60.00 / 1_000_000),
+    "claude-opus-4-5-20251101":           (5.00 / 1_000_000,  25.00 / 1_000_000),
+    "claude-sonnet-4-5-20250929":         (3.00 / 1_000_000,  15.00 / 1_000_000),
 }
 
 

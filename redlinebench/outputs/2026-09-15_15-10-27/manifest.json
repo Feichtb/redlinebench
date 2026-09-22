@@ -1,0 +1,29 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-09-15T15:38:14.014317+00:00",
+  "errors": [],
+  "models_run": [
+    "claude-sonnet-4-5-20250929"
+  ],
+  "results": [
+    {
+      "model_name": "claude-sonnet-4-5-20250929",
+      "model_version": "claude-sonnet-4-5-20250929",
+      "run_number": 2,
+      "timestamp_start": "2026-09-15T15:10:27.205863+00:00",
+      "timestamp_end": "2026-09-15T15:26:37.552035+00:00",
+      "latency_seconds": 970.36,
+      "input_tokens": 105732,
+      "output_tokens": 42944,
+      "thinking_tokens": 0,
+      "cost_usd": 0.9613560000000001,
+      "temperature": 1,
+      "error": null
+    }
+  ],
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-09-15_15-10-27",
+  "batch_note": "Produced by a single `runner.py --models claude-sonnet-4-5-20250929 --runs 3` invocation that wrote all three runs to 2026-09-15_14-53. Split into one folder per run (folder name = that run's start time) to match the one-run-per-folder convention build_data.py requires. The unmodified batch manifest is kept at 2026-09-15_14-53/manifest_batch_original.json."
+}

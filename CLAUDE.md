@@ -74,12 +74,20 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 | Claude Opus 4.8 (n=3, range 19.5–24.5) | 22.67 | 41.2% | $1.47 |
 | GPT-5.4 Pro | 22.5 | 40.9% | $8.27 |
 | Claude Opus 4.7 | 20.0 | 36.4% | $1.12 |
+| GPT-5.2 (n=3, range 15.5–20.5) | 17.67 | 32.1% | $0.65 |
+| Claude Sonnet 4.5 (n=3, range 14.0–16.0) | 14.83 | 27.0% | $0.90 |
+| Claude Opus 4.5 (n=3, range 13.5–15.5) | 14.33 | 26.1% | $0.98 |
 | Claude Haiku 4.5 | 14.0 | 25.5% | $0.24 |
+| GPT-5 Pro (n=3, range 13.0–13.5) | 13.33 | 24.2% | $3.23 |
+| GPT-5 (n=3, range 9.5–15.5) | 12.83 | 23.3% | $0.24 |
 | Claude Sonnet 4.6 | 12.0 | 21.8% | $0.74 |
+| o3 (n=3, range 7.0–11.0) | 8.67 | 15.8% | $0.87 |
 | Gemini 3 Flash | 7.0 | 12.7% | $0.04 |
+| o1 (n=3, range 5.5–7.0) | 6.17 | 11.2% | $1.36 |
 | Grok 4.20 Beta | 6.0 | 10.9% | $0.25 |
 | GPT-5 Mini | 5.5 | 10.0% | $0.03 |
 | Gemini 3.1 Pro | 5.5 | 10.0% | $0.27 |
+| GPT-4.1 (n=3, range 4.0–4.5) | 4.17 | 7.6% | $0.14 |
 | Claude Sonnet 4.0 | 2.5 | 4.5% | $0.44 |
 | GPT-4o | 2.0 | 3.6% | $0.15 |
 <!-- REDLINEBENCH:RESULTS_TABLE:END -->
@@ -161,6 +169,8 @@ python runner.py --prompt my_custom_prompt.txt
 | `claude-sonnet-4-6` | Anthropic | Extended thinking (`budget_tokens=16000`) |
 | `claude-haiku-4-5` | Anthropic | Extended thinking (`budget_tokens=8000`) |
 | `claude-sonnet-4-0` | Anthropic | Extended thinking (`budget_tokens`, legacy `enabled` type) |
+| `claude-opus-4-5-20251101` | Anthropic | Extended thinking (`budget_tokens`, legacy `enabled` type) |
+| `claude-sonnet-4-5-20250929` | Anthropic | Extended thinking (`budget_tokens`, legacy `enabled` type) |
 | `gemini-3.1-pro-preview` | Google | Dynamic thinking budget (`-1`) |
 | `gemini-3-flash-preview` | Google | Dynamic thinking budget (`-1`) |
 | `gpt-6-astra` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
@@ -170,6 +180,12 @@ python runner.py --prompt my_custom_prompt.txt
 | `gpt-5.4-pro` | OpenAI | Reasoning model (no temperature) |
 | `gpt-5-mini` | OpenAI | Reasoning model (no temperature) |
 | `gpt-4o` | OpenAI | Standard model (temperature=0) |
+| `gpt-5.2` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
+| `gpt-5-pro` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
+| `gpt-5` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
+| `gpt-4.1` | OpenAI | Standard model (temperature=0) |
+| `o3` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
+| `o1` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
 | `grok-4.20-beta-0309-reasoning` | xAI | Reasoning model (no temperature) |
 <!-- REDLINEBENCH:MODEL_TABLE:END -->
 

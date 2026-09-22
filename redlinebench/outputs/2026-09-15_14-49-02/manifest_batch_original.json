@@ -1,0 +1,56 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-09-15T15:02:19.970768+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-09-15_14-49",
+  "models_run": [
+    "o1"
+  ],
+  "results": [
+    {
+      "model_name": "o1",
+      "model_version": "o1-2024-12-17",
+      "run_number": 1,
+      "timestamp_start": "2026-09-15T14:49:02.686438+00:00",
+      "timestamp_end": "2026-09-15T14:53:08.607942+00:00",
+      "latency_seconds": 245.92,
+      "input_tokens": 54235,
+      "output_tokens": 10800,
+      "thinking_tokens": 9536,
+      "cost_usd": 1.461525,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "o1",
+      "model_version": "o1-2024-12-17",
+      "run_number": 2,
+      "timestamp_start": "2026-09-15T14:53:08.608905+00:00",
+      "timestamp_end": "2026-09-15T14:56:13.270442+00:00",
+      "latency_seconds": 184.67,
+      "input_tokens": 54235,
+      "output_tokens": 8642,
+      "thinking_tokens": 7232,
+      "cost_usd": 1.332045,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "o1",
+      "model_version": "o1-2024-12-17",
+      "run_number": 3,
+      "timestamp_start": "2026-09-15T14:56:13.272405+00:00",
+      "timestamp_end": "2026-09-15T15:02:19.968770+00:00",
+      "latency_seconds": 366.69,
+      "input_tokens": 54235,
+      "output_tokens": 8137,
+      "thinking_tokens": 6976,
+      "cost_usd": 1.301745,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": []
+}

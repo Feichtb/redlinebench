@@ -1,0 +1,56 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-09-15T15:38:14.014317+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-09-15_14-53",
+  "models_run": [
+    "claude-sonnet-4-5-20250929"
+  ],
+  "results": [
+    {
+      "model_name": "claude-sonnet-4-5-20250929",
+      "model_version": "claude-sonnet-4-5-20250929",
+      "run_number": 1,
+      "timestamp_start": "2026-09-15T14:53:42.718376+00:00",
+      "timestamp_end": "2026-09-15T15:10:27.200498+00:00",
+      "latency_seconds": 1004.49,
+      "input_tokens": 105732,
+      "output_tokens": 43511,
+      "thinking_tokens": 0,
+      "cost_usd": 0.9698610000000001,
+      "temperature": 1,
+      "error": null
+    },
+    {
+      "model_name": "claude-sonnet-4-5-20250929",
+      "model_version": "claude-sonnet-4-5-20250929",
+      "run_number": 2,
+      "timestamp_start": "2026-09-15T15:10:27.205863+00:00",
+      "timestamp_end": "2026-09-15T15:26:37.552035+00:00",
+      "latency_seconds": 970.36,
+      "input_tokens": 105732,
+      "output_tokens": 42944,
+      "thinking_tokens": 0,
+      "cost_usd": 0.9613560000000001,
+      "temperature": 1,
+      "error": null
+    },
+    {
+      "model_name": "claude-sonnet-4-5-20250929",
+      "model_version": "claude-sonnet-4-5-20250929",
+      "run_number": 3,
+      "timestamp_start": "2026-09-15T15:26:37.556036+00:00",
+      "timestamp_end": "2026-09-15T15:38:14.008213+00:00",
+      "latency_seconds": 696.45,
+      "input_tokens": 105732,
+      "output_tokens": 29563,
+      "thinking_tokens": 0,
+      "cost_usd": 0.7606410000000001,
+      "temperature": 1,
+      "error": null
+    }
+  ],
+  "errors": []
+}

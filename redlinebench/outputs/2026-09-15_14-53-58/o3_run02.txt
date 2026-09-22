@@ -1,0 +1,73 @@
+Step 1 – Project context  
+• Project: “Bonfire House,” un-addressed parcel, Chatham County NC; jurisdiction 2018 NC Residential Code (IRC 2015 w/ amendments).  
+• Occupancy R-3 single-family; Construction Type V-B.  
+• Climate zone 4A (mixed-humid).  
+• Drawing set: General (G), Architectural (A) only – plans, elevations, sections, wall/roof/floor assemblies, interior & exterior details, deck sheets, schedules.  No structural, MEP, civil, or landscape sheets.  
+• Specifications: 11-page architect-written booklet (no CSI divisions) describing materials, allowances, and systems.
+
+Step 3 – Findings  
+
+A - Internal consistency across sheets  
+A-1 | A8.01 window schedule vs Spec p3 | Window schedule names Marvin Ultrex window types while spec calls for Andersen 400 series casement & fixed windows | Certain  
+A-2 | Spec p2 | Spec says wood cladding (WD-3) on South & West facades but also says Hardie lap siding on North & West, so West facade is assigned two conflicting claddings | Certain  
+A-3 | A8.01 door schedule vs Spec p3 | Door 03-1 listed as “METAL” in schedule but spec lists same door among “wood exterior doors,” material conflict | Certain  
+A-4 | A2.01A plan | Interior partition lines are tagged “E-1” (CMU exterior wall) even though drawings show wood stud interior walls, wall-type mis-tag | High  
+A-5 | Multiple sheets (keynote legend on G0.01) | Drawing legend references sheet A3.11, but there is no sheet A3.11 in the set; numerous call-outs point to a non-existent drawing | Certain  
+A-6 | Spec p6 (§“Room 10 Reading Nook on page A8.10”) | Specification references sheet A8.10, which is not on the sheet list or included in the set | Certain  
+A-7 | A3.10, A3.20, A3.21 | Section cut bubbles reference grid/column lines that do not exist on the corresponding plans, creating locating ambiguity | High  
+A-8 | A6.01 lighting schedule vs A6.01 plan | Schedule lists 70 type L1 fixtures but only 58 symbols visible on reflected ceiling plans (counted); quantity mismatch | Moderate  
+A-9 | A8.01 room-finish schedule vs A4.01 assemblies | Garage floor finish called “F-5 Concrete slab” yet A4.01 F-5 assembly is labeled “Garage” with epoxy top coat; room schedule omits epoxy requirement | High  
+
+B - Dimensional and geometric integrity  
+B-1 | A3.22/1 Stair East | 10 equal risers @ 6-11/16 in = 66 ⅞ in total rise, but Level 1-to-Level 2 is 120 in; stair cannot reach second floor | Certain  
+B-2 | A3.22/2 Stair South | 8 risers are drawn but no riser height dimension given; tread count (7) plus landing geometry unstated, preventing code check | High  
+B-3 | A3.10 sections | Building sections show Level 2 at 518'-0" and several T.O.F. call-outs as 17'-11 ⅞" above 508', yet roof peak on elevations is 27'-11"; vertical datums are inconsistent or undefined | High  
+B-4 | A2.03 roof plan vs elevations | Roof slope noted 3"/12 on plan, but eave-to-ridge vertical differences measured on elevations do not equal calculated rise, indicating mismatch in roof geometry | Moderate  
+B-5 | A5.10 deck south section | Pool deck edge called out at –11'-0" but adjacent grade level not dimensioned; unclear whether guard/rail height meets 36"/42" requirement | Moderate  
+
+C - Specification-to-drawing alignment  
+C-1 | A4.00 wall types vs Spec p4 | Drawings show plywood sheathing + WRB, spec calls for “Insulated ZIP Board” sheathing; assembly materials conflict | High  
+C-2 | A4.00/E-3 wall vs Spec p2 | E-3 detail omits any weather-resistive barrier but spec requires Hardie siding over WRB; incompatibility | Certain  
+C-3 | A4.01 roof R-1 vs Spec p3 | Roof detail lacks any underlayment, whereas spec names Sheffield SnapLock profile which requires synthetic underlayment per manufacturer | High  
+C-4 | Door hardware | Spec references Level Lock smart lock only at Entry, door schedule gives no hardware sets; incomplete alignment | High  
+C-5 | Garage door | Door 15-1 schedule “METAL/WOOD painted,” spec names Clopay Modern Steel with factory finish color match; finish treatment conflicting | Moderate  
+C-6 | Thermal values | Energy code worksheet on G0.11 gives wall R-21+6, spec lists wall R-27 (21+ZIP R-6), but E-4 detail provides 1.5" foam (~R-7.5) plus batt = ~R-28.5; three different R-values for same wall | High  
+
+D - Building envelope / building science  
+D-1 | A4.00 E-3 wall | No WRB shown between rigid insulation and cement-fiber cladding; risk of bulk-water intrusion in mixed-humid zone | High  
+D-2 | A4.01 roof R-1 | Ventilation/drainage plane under standing-seam panels shown (1x2 furring) but no continuous air barrier at roof–wall junction; potential wind-driven rain penetration | Moderate  
+D-3 | A4.10/6 base entry hall | Rigid insulation stops at slab edge, steel column inside wall bypasses insulation, creating major thermal bridge | High  
+D-4 | A4.11/2 sill square window | Wood sill trim shown flush with cladding, no back-dam or pan flashing indicated; high leakage risk | High  
+D-5 | Crawl space insulation | Spec calls for R-10 interior XPS but no detail provided showing attachment, protection, or continuity at rim joist | Moderate  
+
+E - Code and life safety  
+E-1 | A3.22/1 stair | Stair rise/run mismatch creates non-code-compliant second-floor egress path | Certain  
+E-2 | A3.22 handrails | Handrail profiles, grasp dimension, and continuity not detailed; required for stair compliance | High  
+E-3 | Garage separation | Wall between Garage 15 and Living spaces tagged W-1 (non-rated); no ½" Type X lid or 20-min self-closing door indicated as required | Certain  
+E-4 | A5.10 pool deck | South pool edge called “open” with no guard; fall >30 in to grade likely, guard/handrail absent | High  
+E-5 | Smoke/CO detectors | No symbols or notes for detectors on any plan; code-required devices not shown | High  
+E-6 | Egress windows | Bedroom 17 on Level 2 uses window type 3C (3'×3' casement) below code-minimum 5.7 sf emergency escape size if clear opening not full; needs verification | Moderate  
+
+F - Constructability  
+F-1 | A4.10/7 roof entry hall | Hidden steel columns inside 2×6 wall leave only ~¾" cover to exterior, complicating insulation, WRB continuity, and fastener clearance | High  
+F-2 | A4.12/6 roof intersection | Two roofs intersect at shallow 1/8"/12 cricket with standing-seam—impractical to fabricate and prone to ponding | High  
+F-3 | A5.20 pool section | Builder responsible for “coordinate pool installation” without structural detail for retaining wall resisting 4-5 ft water load; high risk of change order | High  
+F-4 | Bidder-designed hydronic floor (note on A2.01A) | No tubing layout, manifold location, or structural topping indicated; schedule impact and slab conflicts likely | High  
+F-5 | Cable-rail anchorage | 48" wood & cable fence shown but no post size, footing, or end-force connection detail; field improvisation likely | Moderate  
+F-6 | 1½" exterior foam plus 2× trim | Window and door jamb details demand custom thickness Accoya trim; tolerances tight and not dimensioned | Moderate  
+F-7 | A4.11/4 roof exterior | Rigid insulation shown above roof trusses but continuous overhang framing penetrates it, leaving discontinuous plane difficult to tape/air-seal | High  
+
+G - Completeness and clarity  
+G-1 | Spec numerous (“Color TBD,” “Material TBD,” HVAC type under consideration) | Many selections unresolved; contractor cannot price accurately | Certain  
+G-2 | Lighting schedule (A6.01) | All luminaires “TBD” manufacturer/model; no photometric or cut-sheets referenced | High  
+G-3 | Sheet call-outs to A3.11, A8.10, and A8.10 in spec but these sheets do not exist; drawing set incomplete | Certain  
+G-4 | Wall type legend (G0.01) lists nine assemblies but interior plans rarely tag interior walls, leaving builder unsure which wall type applies | High  
+G-5 | No foundation details | Architectural set defers entirely to structural drawings that are not included; footing depths, stem-wall insulation, and anchor locations absent | Moderate  
+G-6 | Keynote numbers on enlarged plans (A2.01A/B) do not match any keynote list in the set | High  
+G-7 | Door hardware groups, finish schedules, and ADA clearances not provided; references “by specs” but spec booklet is silent | High  
+G-8 | No reflected ceiling plan for deck/porch areas though exterior lighting called out; coordination gap | Moderate  
+G-9 | Allowances for well, septic, driveway, pool, and hydronic heat included in spec but dollar values or scope descriptions not defined | Certain  
+G-10 | Energy features (solar, battery, geothermal) listed as “under consideration” yet electrical one-line and mechanical rough-ins not shown; major scope undefined | High  
+
+Summary  
+The Bonfire House documents show an ambitious custom residence but contain numerous coordination and scope gaps. Key inconsistencies between drawings and the short-form specifications (windows, cladding, door materials) will cause immediate bidding confusion. Stair geometry, garage fire separation, and missing life-safety details present clear code compliance risks. Building-science detailing (WRB, flashing, insulation continuity) is incomplete, and many selections and systems are left “TBD,” leaving cost and constructability unresolved. Greatest concern areas are: (1) drawing-to-spec conflicts on major building envelope components, (2) incomplete or incorrect stair and code-required safety details, and (3) large undefined scopes for critical systems (mechanical, pool, renewable energy) that will drive change orders.

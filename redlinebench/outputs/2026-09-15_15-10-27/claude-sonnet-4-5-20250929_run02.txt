@@ -1,0 +1,253 @@
+# Architectural Document Review: Bonfire House
+
+## Step 1: Project Context
+
+**Project:** Bonfire House, single-family residence  
+**Location:** Chatham County, North Carolina  
+**Code:** 2018 North Carolina Residential Code (IRC 2015 with amendments)  
+**Building type:** R-3 occupancy, Construction Type V-B  
+**Climate zone:** 4A (mixed-humid)  
+**Drawing scope:** Complete architectural set (34 sheets: general, floor plans, elevations, sections, details, schedules). Structural, MEP, and civil engineering disciplines referenced but not included.  
+**Specifications:** 11-page project specification document provided covering materials, systems, and construction requirements.
+
+---
+
+## Step 2: Findings by Category
+
+### A. Internal Consistency Across Sheets
+
+A-1 | A8.01 door schedule, A2.01 floor plans | Door 10-1 listed in door schedule but no corresponding door tag shown on any floor plan at reading nook (room 10). | Certain
+
+A-2 | A3.01 west elevation | Wall assembly type R-2 called out on west elevation but only R-1 roof assembly is defined in assembly details on A4.01. | Certain
+
+A-3 | A8.01 room finish schedule, specifications page 5 | Room 14 (powder room) shows floor finish F-4 (carpet) but specs state carpet is only in master closet; powder room should have tile or stone. | High
+
+A-4 | A8.01 room finish schedule, A7.01 interior elevations | Reading nook (room 10) walls listed as WD-1 in finish schedule but drawings and specs indicate WD-4 tongue-and-groove boards. | High
+
+A-5 | A8.01 room finish schedule | Shower finish note reads "FOR SHOWER FINISHES SEE" but does not specify which sheet or detail to reference. | Certain
+
+A-6 | Sheet list page 1, actual sheets | Sheet list shows A5.11 as "ELEVATIONS, DECK" but actual sheet is numbered A5.10; no A5.11 exists in set. | Certain
+
+A-7 | A8.01 room finish schedule, specifications page 3 | Entry hall (01) and laundry room (12) show floor assembly F-2 in schedule but specs indicate these should have SS-2 stone tile, creating ambiguity about material. | Moderate
+
+A-8 | A7.01 detail 1, specifications page 6 | Kitchen backsplash shown as 6mm thickness on elevation but specs state thickness TBD. | Certain
+
+A-9 | A4.10 detail 1, specifications page 4, A7.01 interior elevations | Entry hall interior wall detail shows WD-1 wood veneer but specs explicitly call for WD-4 tongue-and-groove boards in entry hall. | Certain
+
+A-10 | A5.01 deck plan, specifications page 10 | Pool deck elevations show 5'-4" pool depth (-11'-4" to -6'-0") but specs state 5'-6" deep pool. | Moderate
+
+A-11 | A8.01 door schedule | Door 21-1 (crawl space access) listed as 5'-0" × 5'-0" (square door) but elevation A3.01 appears to show standard rectangular door. | High
+
+A-12 | A8.01 door schedule, specifications page 3 | Door 15-1 material listed as "HOLLOW METAL" which is incorrect terminology for residential garage door (should specify as metal garage door). | High
+
+A-13 | A6.01 reflected ceiling plan, specifications page 7 | Specs require bathroom exhaust fans but reflected ceiling plan does not show exhaust fan locations in any bathrooms. | Certain
+
+A-14 | A2.01 level 1 plan, A2.00 crawl space plan, A3.10 building sections | Garage floor shown on Level 1 plan (room 15) but building sections and foundation details show garage slab below Level 1 at grade, creating ambiguity about garage floor elevation. | High
+
+A-15 | A5.01 deck plan, A5.10 deck elevations | Deck stair railing shown as 26" height which is below IRC minimum of 34" for stair guards. | Certain
+
+A-16 | A8.01 window schedule, floor plans | Bedroom windows appear to be primarily fixed types (types 5, 6) which cannot serve as emergency egress; no operable egress windows clearly identified for sleeping rooms. | High
+
+A-17 | Specifications page 4, A4.00 wall assemblies | Specs state wall insulation as "R21 + R6 = R27" but wall assembly details E-2, E-3, E-4 show 1-1/2" rigid insulation which equals R7.5, not R6. | Certain
+
+A-18 | Specifications page 4 | Ceiling insulation calculation states "R38 + R15 = R49" but correct sum is R53. | Certain
+
+A-19 | A6.01 reflected ceiling plan, specifications page 8 | Specs specify Lutron Caséta lighting controls in specific rooms vs conventional switches in others, but reflected ceiling plan does not differentiate control types. | High
+
+A-20 | A2.01B garage plan, specifications page 8 | Battery storage cabinet location for solar system mentioned in specs but not shown on garage floor plan. | Moderate
+
+### B. Dimensional and Geometric Integrity
+
+B-1 | A3.22 detail 1, G0.11 code summary | Stair from Level 1 to Level 2 shows 10 risers for 10'-0" floor-to-floor height, requiring 12" risers, which exceeds IRC maximum of 7-3/4". | Certain
+
+B-2 | A3.22 detail 2, G0.11 code summary | Stair from crawl space to Level 1 shows 8 risers for 6'-0" height, requiring 9" risers, which exceeds IRC maximum of 7-3/4". | Certain
+
+B-3 | A3.22 stair sections | Riser height and tread depth dimensions not clearly provided on stair sections to verify code-compliant geometry. | Certain
+
+B-4 | A3.10 building sections, A7.02 interior elevations | Window head heights not dimensioned consistently on building sections or interior elevations for construction reference. | High
+
+B-5 | A3.10 building sections | Ceiling heights not dimensioned in rooms with sloped ceilings to verify 7'-0" minimum code requirement. | High
+
+B-6 | A8.01 door schedule note | Door framing note states "Doors framed 6" off wall framing typ unless dimensioned" which is ambiguous and does not clearly indicate rough opening dimensions or centerline offsets. | High
+
+B-7 | A4.10, A4.11 roof details | Roof overhang and soffit depth not consistently dimensioned on details and sections for construction reference. | High
+
+B-8 | A4.11 detail 5, other foundation details | Foundation wall height from footing to top of wall not dimensioned on foundation details (only elevation references shown). | High
+
+B-9 | A7.01 kitchen elevations | Kitchen elevations reference "TYP. HEIGHTS" but actual cabinet dimensions (width, height, depth) not provided for construction. | High
+
+B-10 | A7.02 bathroom elevations | Tile layouts in bathrooms not dimensioned (tile size noted in specs but not layout pattern, cuts, or trim piece locations on elevations). | Moderate
+
+B-11 | A5.10 deck elevations, specifications page 3 | Cable railing post spacing not dimensioned on deck elevations or details for code compliance verification. | High
+
+B-12 | A7.01 kitchen island elevations | Kitchen island counter overhang dimension for seating not shown on interior elevations. | Moderate
+
+B-13 | A3.22 stair sections | Stair width not dimensioned on stair sections to verify 36" minimum clear width requirement. | High
+
+B-14 | A3.22 stair sections | Stair headroom not dimensioned on sections to verify 6'-8" minimum code requirement. | High
+
+B-15 | A2.01A, A2.01B enlarged plans | Stair landing dimensions not shown on plans or sections to verify 36" minimum per IRC. | High
+
+B-16 | A2.01A, A2.01B enlarged plans | Door swings relative to stair landings not dimensioned to verify code compliance for doors near stairs. | Moderate
+
+B-17 | A2.01A, A2.01B floor plans | Hallway widths not dimensioned on plans to verify 36" minimum code requirement. | High
+
+B-18 | A7.02 bathroom elevations | Toilet clearances not dimensioned on bathroom plans to verify IRC minimum requirements (15" to wall, 21" in front). | High
+
+B-19 | A7.02 bathroom elevations | Shower interior dimensions not clearly shown on bathroom elevations to verify 30" × 30" minimum per IRC. | Moderate
+
+### C. Specification-to-Drawing Alignment
+
+C-1 | Specifications page 4, A4.00 wall assembly E-3 | Wall assembly shows 1-1/2" rigid insulation (R7.5) but specs state R6 exterior insulation component. | High
+
+C-2 | Specifications page 4 | Ceiling insulation arithmetic error: spec states "R38 + R15 = R49" but sum equals R53. | Certain
+
+C-3 | A8.01 door schedule, specifications page 7 | Garage-to-house door (appears to be 16-2) does not specify self-closing device in schedule despite IRC requirement for garage separation. | High
+
+C-4 | A4.00 wall assemblies, specifications | Wall assembly weather barrier material not specified as vapor-permeable WRB, which is critical for drying potential in climate zone 4A. | Moderate
+
+C-5 | A4.11 detail 1, specifications page 2 | Window head detail shows weather barrier but does not show explicit head flashing membrane as called for in specs. | Moderate
+
+C-6 | A2.01A, A2.01B plans, specifications page 8 | Drawings reference air sealing details per specs (item 5: "See Drawings for additional air sealing measures") but specific air sealing details not provided. | High
+
+C-7 | A4.01 roof assembly R-1, A4.11 detail 4 | Roof eave detail does not show intake ventilation for vented roof assembly above rigid insulation layer. | High
+
+C-8 | Specifications page 10 | Product substitution policy and procedures not included in specifications for contractor guidance. | Moderate
+
+C-9 | Specifications page 10 | Special inspections and testing requirements not specified for energy code verification or HERO certification mentioned in specs. | Moderate
+
+C-10 | Specifications multiple pages | Allowance items identified (septic, well, fixtures) but dollar amounts not provided for bidding purposes. | Moderate
+
+### D. Building Envelope and Building Science
+
+D-1 | A4.01 roof assembly R-1 | Roof assembly does not detail how continuous insulation transitions at eave overhang where "2x4 overhang structure" meets main roof framing. | High
+
+D-2 | A4.11 detail 5 | Foundation wall insulation depth below grade not dimensioned; should extend to frost line or footing for thermal performance. | Moderate
+
+D-3 | A4.11 detail 1 | Window head flashing not clearly detailed (weather barrier shown but no explicit head flashing membrane callout). | Moderate
+
+D-4 | A2.03 roof plan, A4.11 detail 4 | Roof eave detail does not show soffit intake vent for ventilated metal roof assembly above rigid insulation. | High
+
+D-5 | A5.30 detail 6, A5.01 deck plan | Deck ledger attachment and through-wall flashing details not fully shown at building connection where deck attaches to envelope. | High
+
+D-6 | A4.00 wall assemblies | Wall assembly weather barrier not specified as vapor-permeable material; permeance rating should be provided for climate zone 4A assemblies. | Moderate
+
+D-7 | A2.03 roof plan, building sections | Roof drainage at valleys and complex roof geometry not detailed; no crickets or diverters shown where needed. | Moderate
+
+### E. Code and Life Safety
+
+E-1 | A8.01 window schedule, floor plans | Bedroom egress windows not clearly identified in schedule or verified for IRC compliance (operability, 5.7 SF opening, 44" max sill height). | High
+
+E-2 | A3.22 stair sections, G0.11 code summary | Both interior stairs show riser heights exceeding IRC maximum of 7-3/4" (10 risers for 10'-0" and 8 risers for 6'-0"). | Certain
+
+E-3 | A3.22 stair sections | Handrail details not provided to verify code-compliant height (34"-38"), profile, and terminations despite notes referencing handrails. | High
+
+E-4 | A5.10 deck elevation detail 4, A5.01 deck plan | Deck stair railing shown as 26" high, below IRC minimum of 34" for stair guards. | Certain
+
+E-5 | Specifications page 3, A5.01 deck plans | Cable railing specifications do not specify cable spacing required for 4" sphere code compliance (should be 3" max o.c.). | High
+
+E-6 | A3.22 stair sections | Stair width not dimensioned to verify 36" minimum clear width per IRC. | High
+
+E-7 | A3.22 stair sections | Stair headroom not dimensioned to verify 6'-8" minimum per IRC. | High
+
+E-8 | A2.01A, A2.01B enlarged plans | Stair landing dimensions not shown to verify 36" minimum per IRC R311.7.6. | High
+
+E-9 | A2.01A, A2.01B enlarged plans | Door swings relative to stair landings not clearly shown to verify IRC prohibition on doors swinging over stairs. | Moderate
+
+E-10 | A2.01A, A2.01B floor plans | Hallway widths not dimensioned to verify 36" minimum per IRC R311.6. | High
+
+E-11 | A3.10 building sections | Ceiling heights in rooms with sloped ceilings not dimensioned to verify 7'-0" minimum per IRC R305.1. | High
+
+E-12 | A7.02 bathroom elevations, A2.01A plans | Toilet clearances not dimensioned to verify IRC minimums (15" centerline to wall, 21" clear in front). | High
+
+E-13 | A7.02 bathroom elevations | Shower interior dimensions not shown to verify 30" × 30" minimum per IRC R307.2. | Moderate
+
+E-14 | A8.01 door and window schedules | Schedules do not identify safety glazing requirements at hazardous locations per IRC R308. | High
+
+E-15 | A8.01 door schedule, specifications | Door 16-2 (garage to house connection) does not specify self-closing device required by IRC R302.6. | High
+
+E-16 | A6.01 reflected ceiling plan | Bathroom exhaust fan locations not shown despite IRC requirement for ventilation in bathrooms without windows. | Certain
+
+E-17 | A6.01 reflected ceiling plan, specifications | Smoke alarm and carbon monoxide detector locations not shown despite IRC requirements and spec reference to detection systems. | High
+
+E-18 | A8.01 window schedule, A7.02 bathroom elevations | Windows adjacent to bathtubs not specified as tempered glass where required by IRC R308.4.5. | Moderate
+
+E-19 | A4.00 wall assemblies, specifications | Wall and ceiling assemblies at garage do not specify if fire-rated gypsum board required per IRC R302.6 garage separation. | Moderate
+
+### F. Constructability
+
+F-1 | A4.10 detail 7, A3.20 section 1 | Entry hall tongue-and-groove ceiling attachment to sloped roof structure not clearly detailed. | Moderate
+
+F-2 | A4.13 corner window details | Corner window structural framing not shown (exterior finish shown but not structural support at corner where two windows meet). | High
+
+F-3 | A7.10 detail 1 | Reading nook bunk bed structural framing shown as "FRAMING AS NEEDED" without specific attachment or support details. | High
+
+F-4 | A2.03 roof plan, A4.01 roof assembly | Standing seam metal roof ridge and valley construction details not provided. | High
+
+F-5 | A3.01, A3.02 elevations | Rain chain connection details not shown (gutter outlet fitting and base collection system). | Moderate
+
+F-6 | A5.30 detail 1 | Deck edge taper detail shows "TAPER STRUCTURE TO DECK EDGE" but does not detail how structural framing is tapered. | Moderate
+
+F-7 | Specifications page 2, floor plans | Steel column locations supporting south porch overhang referenced in specs but not indicated on architectural plans or sections. | High
+
+F-8 | A2.01A kitchen plan, A7.01 elevations | Kitchen island plumbing routing not indicated on floor plans (supply/drain lines to island sink location). | Moderate
+
+F-9 | A7.01 kitchen elevations | Appliance clearances not dimensioned on elevations to verify adequate space for door swing and operation. | Moderate
+
+F-10 | A2.01B laundry room plan | Laundry room washer and dryer utility connections (water supply, drain, electrical, vent) not located on plans. | Moderate
+
+F-11 | A7.02 bathroom elevations | Shower curb height not dimensioned on bathroom elevations. | Moderate
+
+F-12 | A5.01 pool deck plan, A2.00 crawl space plan | Pool mechanical area access dimensions not shown (gate width and clearances around equipment for maintenance). | Moderate
+
+F-13 | A2.03 roof plan | Solar panel mounting system and roof penetration details not shown despite architectural waterproofing implications. | Moderate
+
+F-14 | A1.01 site plan | LP gas line foundation penetration location not specifically indicated on plans. | Moderate
+
+### G. Completeness and Clarity
+
+G-1 | A8.01 door schedule, specifications page 5 | Door schedule shows "---" for hardware on most interior doors despite specs mentioning door levers and hardware requirements. | Moderate
+
+G-2 | A8.01 window schedule | Window schedule lacks sill heights AFF, rough opening dimensions, egress window designation, and safety glazing requirements. | High
+
+G-3 | Specifications page 6, A7.01 elevations | Countertop thickness shown as TBD in specs (backsplash is 6mm but counter slab thickness not specified). | Moderate
+
+G-4 | Specifications multiple pages | Multiple finish colors and selections listed as TBD without indicating if these are owner selections or contractor allowances. | Moderate
+
+G-5 | A2.01A, A2.01B, A7.01, A7.02 drawings | Material abbreviations (SS-1, SS-2, SS-3, WD-1, WD-2, WD-3, WD-4, WD-5) used extensively but not defined in drawing legend. | High
+
+G-6 | G0.01 dimensioning standards | Gridline dimensioning convention specifies "face of framing at grid" but does not clarify which face (interior or exterior) of wall. | Moderate
+
+G-7 | A6.01 reflected ceiling plan | Lighting fixture schedule shows manufacturers as TBD for all fixtures. | Moderate
+
+G-8 | A2.01A, A2.01B floor plans | Floor drain symbols shown (FD) but floor drain details not provided (type, size, grate style, rough-in location). | Moderate
+
+G-9 | Specifications page 10 | Product substitution policy not included in specifications for contractor guidance during bidding and construction. | Moderate
+
+G-10 | Specifications page 10 | Special inspections and testing requirements not specified (blower door test, HVAC commissioning, insulation verification) for HERO certification. | Moderate
+
+G-11 | Specifications multiple pages | Allowance items identified (septic, well, entry door handleset, finishes) but dollar amounts not provided for accurate bidding. | Moderate
+
+G-12 | A3.22 stair sections, A7.10 interior details | Handrail details not provided despite multiple references to handrails and lighting at handrails. | High
+
+G-13 | A7.02 master bathroom elevations | Bathtub step detail referenced in specs (tile on step and top surface) but not clearly dimensioned or shown in section. | Moderate
+
+G-14 | A7.01 kitchen elevations | Kitchen cabinet elevations do not dimension individual cabinet widths, heights, or depths despite being custom built-ins. | High
+
+G-15 | A2.01A dining room plan, specifications | Dining room built-in shelves referenced in specs but no dedicated interior elevation showing them from dining room side. | Moderate
+
+---
+
+## Summary
+
+The Bonfire House drawing set and specifications represent a comprehensive residential design package with strong architectural intent and modern energy-efficient features. However, the documents contain **87 identified issues** requiring resolution before construction, with concerns distributed across all review categories.
+
+**Top three areas of greatest concern:**
+
+1. **Code compliance verification gaps** (Category E): Critical dimensional information is missing for code verification, including stair geometry that as-drawn violates riser height maximums, unverified egress window compliance for sleeping rooms, missing guardrail heights meeting code minimums, and absent life-safety device locations (smoke alarms, bathroom ventilation). These items will generate immediate plan review comments from the building department.
+
+2. **Incomplete construction dimensions** (Category B): Extensive missing dimensions create ambiguity for contractors, including stair geometry, window sill heights, ceiling heights in sloped areas, cabinet dimensions, handrail and guardrail details, hallway widths, bathroom fixture clearances, and foundation wall heights. The lack of dimensioned information will generate numerous RFIs and potential field conflicts.
+
+3. **Building envelope detailing** (Category D): Several critical weatherproofing and thermal control details are incomplete or missing, including roof ventilation intake at soffits, continuous insulation transitions at overhangs, window head flashing, deck ledger flashing at building connection, and foundation insulation depth. These gaps present moisture intrusion and thermal performance risks in the mixed-humid climate of North Carolina.
+
+The documents would benefit from a thorough coordination review focusing on dimensional completeness, code compliance verification information, and building envelope detailing before issuing for construction.

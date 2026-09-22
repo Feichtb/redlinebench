@@ -1,0 +1,125 @@
+## Step 1: Project Context
+
+- **Project**: Bonfire House, Chatham County, North Carolina; 2018 NC Residential Code (adopts IRC 2015 with amendments)
+- **Building type**: Single-family residential (R-3 occupancy), Construction Type V-B
+- **Climate zone**: 4A (stated in code summary)
+- **Drawing set scope**: General sheets (symbols, code summary, 3D views), Architectural sheets (site plan, floor plans, elevations, sections, wall assemblies, details, interior elevations, reflected ceiling plan, schedules). Structural, MEP, and civil drawings are not included.
+- **Specifications**: 11-page project specification covering materials, applications, and allowances for all major building systems
+
+---
+
+## Step 2: Findings
+
+### A. Internal Consistency Across Sheets
+
+A-1 | A7.02, Detail 5 | Interior elevation is labeled "GUEST BATHROOM 19 - SOUTH" but room 19 is Guest Closet per room finish schedule; Guest Bathroom is room 18 | Certain
+
+A-2 | A8.01, G0.11 | Window schedule specifies Ultrex-Marvin-Stonewhite windows while specifications (page 3) call for Andersen 400 Series windows | Certain
+
+A-3 | G0.11, Specifications p.4 | Code summary states ceiling insulation as R=53 but specifications calculate R38 batts + R15 rigid = R49 | Certain
+
+A-4 | A4.00 (E-2), Specifications p.4 | Wall assembly E-2 shows 2x8 studs (7-1/4" cavity) but specifications call for R-21 5.5" fiberglass batts which are sized for 2x6 (5.5") cavities | High
+
+A-5 | A6.01 | Lighting fixture schedule shows L7 (Strip Lighting) with count of "2" but specifications (page 8) state "75 LF" — these are incompatible units | Certain
+
+A-6 | A4.00, Specifications p.4 | Wall assembly details show 1-1/2" rigid insulation but specifications state "R6 1" Insulated ZIP Board" — thickness mismatch | High
+
+A-7 | A4.00 (E-1), G0.11 | Crawl space wall assembly E-1 shows 1/2" rigid insulation which would provide approximately R-2 to R-3, but code summary claims R=10 (interior) and specifications confirm R-10 requirement | Certain
+
+A-8 | A4.00 (E-3) | Wall assembly shows plan dimension of 8" but component dimensions total approximately 8-5/8" (1/2" plywood + 5-1/2" studs + 1" rigid + 1/2" GWB + 3/4" furring + 5/16" siding = 8.56") | Moderate
+
+### B. Dimensional and Geometric Integrity
+
+B-1 | A3.22 | Stair section shows riser height of 6-11/16" but does not dimension headroom clearance which must meet 6'-8" minimum per code | High
+
+B-2 | A2.01A, A2.01B | Multiple room dimensions provided but no overall building dimension string to verify cumulative accuracy across the full east-west or north-south building extents | Moderate
+
+B-3 | A3.20, A3.21 | Wall sections show "T.O.F. (TOP OF FRAMING) VARIES" without providing specific heights at key locations for framing layout | Moderate
+
+### C. Specification-to-Drawing Alignment
+
+C-1 | A8.01, Specifications p.3 | Window schedule specifies Marvin windows (Ultrex-Marvin-Stonewhite) while specifications call for "Andersen, 400 Series, Casement & Fixed, Low E-3 coating" — manufacturer conflict | Certain
+
+C-2 | A4.00, Specifications p.4 | Wall assembly E-2 graphic indicates 2x8 stud framing incompatible with specified R-21 5.5" cavity insulation dimensions | High
+
+C-3 | A4.00, Specifications p.4 | Wall assemblies show 1-1/2" rigid insulation exterior but specifications call for 1" Insulated ZIP Board — product type and thickness mismatch | High
+
+C-4 | A8.01, Specifications p.5 | Door schedule does not specify self-closing hardware for door 16-1 (garage to hallway) which is required per specifications' reference to code compliance and IRC garage separation requirements | High
+
+C-5 | A6.01, Specifications p.8 | Strip lighting L7 unit mismatch — schedule shows fixture count while specifications describe linear footage requirement of 75 LF | Certain
+
+### D. Building Envelope and Building Science
+
+D-1 | A4.00 (E-1) | Crawl space wall assembly shows only 1/2" rigid insulation on interior of CMU which cannot achieve the R-10 value stated in code summary — would require minimum 2" of XPS or equivalent | Certain
+
+D-2 | A4.00 (E-2) | Wall assembly E-2 has 2x8 framing (7-1/4" cavity) which creates either unfilled cavity depth with specified 5.5" R-21 batts or requires different insulation product not specified | High
+
+D-3 | A4.10, A4.11 | Window and door head details show weather barrier and flashing membrane but do not detail air barrier continuity from window frame to wall air barrier system | Moderate
+
+D-4 | A4.11, A4.01 | Roof-to-wall transition at typical exterior (detail 4) does not show continuous insulation connection between wall rigid insulation and roof rigid insulation — thermal bridge potential | Moderate
+
+D-5 | A4.00 | Wall assemblies do not specify type of rigid insulation (XPS, EPS, polyiso) which have different R-values per inch and moisture/vapor permeance characteristics relevant to Climate Zone 4A | Moderate
+
+### E. Code and Life Safety
+
+E-1 | A8.01, A2.01A | Second Bedroom (room 09) appears to have window type 4 (4'-0" × 4'-0" FIXED) as primary window — fixed windows cannot serve as emergency escape and rescue openings per IRC R310 | High
+
+E-2 | A8.01 | Door schedule lists door 16-1 (garage to North Hallway) as "WOOD (SOLID-CORE)" but does not specify fire rating or self-closing hardware required for garage-to-dwelling separation per IRC R302.6 | Certain
+
+E-3 | A8.01, Room Finish Schedule | Garage (room 15) wall finishes listed as P-1 (painted) without specifying gypsum board type or fire resistance — garage separation requires minimum 1/2" gypsum board on garage side of common walls | High
+
+E-4 | A3.22 | Stair sections do not dimension guardrail heights at upper landing/floor opening where 36" minimum (or 42" if not adjacent to stair) is required | Moderate
+
+E-5 | A2.01B | Guest Bedroom (room 17) shows window type 3C (3'-0" × 3'-0" casement) — net clear opening of standard 3'×3' casement may not achieve 5.7 SF minimum required for EERO without verification | Moderate
+
+E-6 | A8.01, A2.00 | Crawl space access door 21-1 is 3'-0" × 5'-0" which exceeds typical crawl space access requirements but fire separation between crawl space and conditioned space is not addressed | Moderate
+
+### F. Constructability
+
+F-1 | A3.20, A4.10 | Entry hall mirrored window trim at 45° and 30° angles with wood paneling requires precise shop drawing coordination but no installation sequence or tolerance notes are provided | High
+
+F-2 | A2.03 | Roof slopes at 3"/12" on diagonal orientation create complex valley conditions at roof intersections — standing seam panel layout and valley flashing details not fully developed | High
+
+F-3 | A5.20, A5.01 | Pool deck construction notes "SEE STRUCTURAL SET FOR DECK STRUCTURE" and "CONCRETE RETAINING WALL TO BE COORDINATED WITH POOL" but no pool subcontractor coordination details provided in architectural set | Moderate
+
+F-4 | A2.03 | Solar array shown on roof with note "SOLAR AND DATA CABLES TO WALL PENETRATION BELOW" but cable routing through roof and wall assemblies to garage is not detailed | Moderate
+
+F-5 | A4.13, Detail 5 | Porch overhang section shows tube steel structure but integration of steel columns within wood-framed wall (per specifications unique features) not detailed for construction sequencing | High
+
+F-6 | A4.12 | Garage door header (detail 3) shows LED strip lighting at jamb but electrical rough-in coordination for power supply to this location is not addressed | Moderate
+
+### G. Completeness and Clarity
+
+G-1 | Specifications pp.2-11 | Multiple items listed as "TBD" including exterior stain colors, lap siding color, soffit color, carpet material, and cabinet hardware — creates pricing uncertainty at bid set | Moderate
+
+G-2 | A8.01 | Door schedule "HARDWARE" column is mostly blank for interior doors — lever style and finish should be specified or referenced to hardware specification section | High
+
+G-3 | A8.01, Window Schedule | Window schedule "COMMENTS" column is entirely blank — special conditions such as tempered glass requirements at code-required locations not noted | High
+
+G-4 | A4.00 | Wall assembly details do not specify rigid insulation product type (XPS, EPS, polyiso) or manufacturer which affects R-value calculations and installation requirements | Moderate
+
+G-5 | A2.01A, A2.01B | In-floor hydronic heating system in Master Bathroom noted as "BIDDER DESIGN LAYOUT" without performance criteria, tubing spacing parameters, or coordination requirements | High
+
+G-6 | A6.01 | Reflected ceiling plan note states "SEE ENLARGED PLANS (A2.01A,B, A5.01) FOR CASEMENT AND FLOOR LIGHTING" but these are floor plans, not lighting plans — reference is unclear | Moderate
+
+G-7 | A8.01 | Room finish schedule shows Reading Nook (room 10) with "WD-1" for all four wall directions but also shows no baseboard (dash in BASE column) — conflict with built-in millwork shown in A7.10 | Moderate
+
+G-8 | A4.01 | Floor assembly F-3 (Tile at Shower) shows mortar bed sloped to drain but slope ratio and drain location coordination requirements not specified | Moderate
+
+G-9 | A1.01 | Site plan notes "DRIVEWAY LOCATION VERIFY IN FIELD" and multiple "VERIFY IN FIELD" notations for property line and utility locations — excessive field verification for bid-level documents | Moderate
+
+G-10 | A8.01 | Window types in schedule do not indicate which locations require tempered/safety glass per IRC R308 (within 24" of doors, wet areas, etc.) | High
+
+---
+
+## Summary
+
+The Bonfire House bid set demonstrates competent architectural documentation with thoughtful details for custom elements like the entry hall wood paneling and exterior cladding systems. However, the documents contain several significant coordination failures that would generate RFIs and potential change orders during construction.
+
+**Top three areas of concern:**
+
+1. **Specification-to-drawing conflicts**: The window manufacturer discrepancy (Marvin on drawings vs. Andersen in specs) and wall insulation mismatches (thickness, stud depth, and R-value claims) would immediately surface during submittal review and require resolution before procurement.
+
+2. **Code compliance gaps**: The bedroom emergency egress situation — particularly Second Bedroom (09) appearing to rely on fixed windows — and the incomplete garage-to-dwelling separation documentation (fire rating, self-closing hardware) require verification and potential design revision.
+
+3. **Thermal envelope inconsistencies**: The crawl space insulation as detailed (1/2" rigid showing R-2 to R-3) cannot achieve the claimed R-10 value, and the wall cavity/insulation mismatch in assembly E-2 indicates the energy calculations may not align with constructible assemblies.

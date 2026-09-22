@@ -1,0 +1,169 @@
+# Architectural Document Review: Bonfire House
+
+## Project Context
+
+**Project:** Bonfire House, Chatham County, North Carolina  
+**Code Jurisdiction:** 2018 North Carolina Residential Code (IRC 2015 with amendments)  
+**Building Type:** Single-family residence (R-3 occupancy)  
+**Construction Type:** V-B  
+**Climate Zone:** 4A (mixed-humid)  
+**Scope:** 4-bedroom, 3.5-bath, 2-story house with attached garage, 3,270 SF heated, 3,840 SF total; includes lap pool, deck, and site work  
+
+**Drawing Set Included:** Complete architectural set (34 sheets) — general, site, floor plans, elevations, sections, details, schedules; no structural, MEP, or civil drawings provided  
+**Specifications Included:** Yes, 11-page narrative specifications document
+
+---
+
+## Findings by Category
+
+### A. Internal Consistency Across Sheets
+
+A-1 | A8.01, A2.01A, A7.10 detail 1 | Door schedule lists D-10-1 as 3'-0" × 7'-0" interior door for Reading Nook (room 10) but no door is shown on floor plans or section detail, which depicts ladder access instead | Certain
+
+A-2 | A3.01, A3.02, A8.01 | Window schedule lists 50 windows by type but individual windows on plans and elevations lack type designations, making verification of scheduled quantities and locations against installed conditions impossible | High
+
+A-3 | A8.01 Room Finish Schedule | Notes for rooms 07, 11, and 18 state "FOR SHOWER FINISHES SEE" without specifying sheet or detail reference | Certain
+
+A-4 | A8.01, Specifications p.8 | Lighting fixture schedule lists L7 strip lighting with count "2" but specifications describe "75 LF" — unit type conflict (count vs. linear feet) | Certain
+
+A-5 | A8.01 Room Finish Schedule | Entry Hall (01) shows north and south walls as "-" but plans show doors exist on south side and walls on north — designation meaning undefined | High
+
+A-6 | G0.01, Specifications p.3 | Drawing legend defines "SS" as stainless steel but specifications use SS-1, SS-2, SS-3 for stone finishes (Silestone, limestone, flagstone) — abbreviation conflict | Moderate
+
+A-7 | A2.01B, A4.01 | Garage floor (room 15) lacks F-5 floor assembly tag on plan though F-5 "Floor Assembly, Garage" is defined in assembly details | High
+
+A-8 | A3.22 detail 1, A3.10 | East stairs show "10 EQ RISERS" with "11"" notation spanning 10'-0" height (Level 1 to Level 2), yielding 11" risers that exceed IRC maximum of 7-3/4" | High
+
+A-9 | A5.10 details 3 and 4 | Deck stair sections show "26" CABLE RAILING" notation which appears below IRC R312.1.3 minimum of 34" for stair guards | High
+
+A-10 | A2.03, Specifications p.10 | Roof plan shows detailed solar array layout with panel arrangement and cable routing but specifications state "Make system 'solar ready' for PV panel installation" — inconsistent scope definition | High
+
+### B. Dimensional and Geometric Integrity
+
+B-1 | A3.22 detail 2, A3.10 | South stairs show "8 EQ RISERS" spanning 6'-0" (Crawl Space 502'-0" to Level 1 508'-0"), yielding 9" risers that exceed IRC R311.7.5.1 maximum of 7-3/4" | High
+
+B-2 | A3.22 details 1 and 2 | Stair sections show riser counts and notes but omit total run and tread depth dimensions, preventing verification of IRC R311.7.5.2 minimum 10" tread requirement | High
+
+B-3 | A2.01A, A7.01, A7.02 | Interior elevations show built-in casework and counters without dimensioning counter heights, shelf heights, or cabinet sizes — requires field verification or assumptions | Moderate
+
+B-4 | A8.01, Multiple detail sheets | Door rough opening dimensions not shown on plans or details — only frame sizes given in schedule — requires contractor calculation per typical practice | Moderate
+
+### C. Specification-to-Drawing Alignment
+
+C-1 | A4.00 Wall E-4, Specifications p.4 | Wall assembly E-4 shows "1 1/2" RIGID INSULATION" but specifications state exterior wall uses "1" Insulated ZIP Board" for R6 — thickness and product type conflict | Certain
+
+C-2 | Specifications p.4 (two locations) | Ceiling insulation described as "R38 + 3" XPS R15 = R49" in one section but project compliance table lists "CEILING R = 53" — internal R-value conflict | Certain
+
+C-3 | A8.01, Specifications p.3 | Window schedule lists all windows as "Ultrex-Marvin-Stonewhite" but specifications specify "Andersen, 400 Series" — different manufacturers | Certain
+
+C-4 | A8.01, Specifications p.9 | Door D-18-2 (Guest Bathroom shower) listed with frame "NONE" (frameless) but specifications state "Guest Bathroom (Room 18) - semi-framed" | High
+
+C-5 | A2.01A, A2.01B, Specifications p.8 | Specifications list "4 central vacuum system wall fixtures" but only 2 CV symbols visible on floor plans | High
+
+C-6 | A2.03, Specifications p.10 | Roof plan shows installed solar array with detailed panel layout but specifications state "Make system 'solar ready'" suggesting preparation only — scope inconsistency | High
+
+### D. Building Envelope and Building Science
+
+D-1 | A4.00 Wall E-1, Specifications p.4 | Crawl space stem wall E-1 shows "1/2" RIGID INSULATION" (R-2.5) but specifications require R-10 for crawl space wall insulation — assembly undersized by 75% | Certain
+
+D-2 | A4.00 Wall E-3, E-4 | Wall assembly dimension strings show "1"" for rigid insulation thickness but labels state "1 1/2" RIGID INSULATION" — dimension-label conflict within same detail | Certain
+
+D-3 | A4.00 Wall E-3, Specifications p.4 | Specifications require "Insulated ZIP Board" sheathing product but detail E-3 shows "1/2" PLYWOOD" with separate rigid insulation — specified system not drawn | Certain
+
+D-4 | A4.00 Wall E-1, E-2 | Stem wall assemblies show "VAPOR BARRIER" on both sides of insulation without distinguishing exterior dampproofing from interior vapor retarder — could trap moisture if both are impermeable | High
+
+D-5 | A4.01 Roof R-1, Specifications p.4 | Roof assembly shows "RIGID INSULATION" without dimension and conflicting spec values (R49 vs. R53) — cannot verify compliance with IRC R806.5 minimum R-15 exterior insulation for CZ4A unvented assembly | High
+
+D-6 | A4.00 Wall E-3, A4.11 | Exterior wall shows weather barrier inboard of rigid insulation without notation of taped foam seams or drainage details, leaving drainage plane hierarchy ambiguous | High
+
+D-7 | A4.11 detail 4, A4.12 detail 6 | Roof-to-wall connection shows multiple barrier layers (weather barriers, rigid insulation, flashings) but does not indicate how wall and roof WRBs connect for continuous air and water control | Moderate
+
+D-8 | A4.11 details 1-3 | Window head, jamb, and sill details show flashing elements but omit installation sequence or integration details for ASTM E2112-compliant rough opening waterproofing in mixed-humid climate | Moderate
+
+D-9 | A5.30 detail 6 | Deck ledger connection shows structural framing but omits flashing and WRB integration details necessary to prevent water infiltration at this penetration | Moderate
+
+D-10 | Specifications p.2, No detail | Foundation drain system (4" perforated pipe with aggregate) described in specifications but not detailed on drawings, omitting critical information for conditioned crawl space moisture control in CZ4A | High
+
+### E. Code and Life Safety
+
+E-1 | A3.22 details 1 and 2, IRC R311.7.5.1 | East stair with 10 risers over 10'-0" yields 12" risers; south stair with 8 risers over 6'-0" yields 9" risers — both exceed IRC maximum 7-3/4" and cannot be built to code as dimensioned | Certain
+
+E-2 | A8.01, A3.01, A3.02, IRC R310 | Sleeping room windows (rooms 06, 09, 17) not identified as emergency escape and rescue openings (EEROs) and dimensions not verified for 5.7 SF opening, 24" height, 20" width, 44" sill height minimums | High
+
+E-3 | A3.22, IRC R311.7.8 | Stair handrails shown graphically but no details provided for required 34"-38" height, 1-1/4" to 2" gripping surface, end returns, or mounting to verify IRC compliance | High
+
+E-4 | A2.01B, A8.01, IRC R302.5 | Door schedule does not identify which doors (D-13-1, D-13-2, or D-13-3) serve as garage separation or specify required 1-3/8" solid wood/steel construction, 20-minute rating, and self-closing hardware | High
+
+E-5 | A4.01 Floor F-1, IRC R302.6 | Floor above garage shows "1/2" GYPSUM BOARD" but IRC requires 5/8" Type X gypsum board for fire protection at dwelling/garage separation with habitable space above | High
+
+E-6 | Specifications p.3, IRC AG105.2.2.5 | Pool barrier cable rail specifies "3/16" cable" but omits maximum cable spacing needed to prevent 4" sphere passage per IRC Appendix G requirements | Moderate
+
+E-7 | A8.01, IRC AG105.2.3.2 | Pool gates (D-22-1, D-22-2) specified with "GATE LATCH HARDWARE" but do not indicate required self-closing hinges and self-latching hardware opening away from pool | Moderate
+
+E-8 | Specifications p.9, IRC R314, R315 | Specifications mention smoke and CO detection systems but RCP and plans omit required locations (each sleeping room, outside each sleeping area, each story for smoke; near fuel-burning appliances for CO) | High
+
+E-9 | A2.01B, IRC R302.5 | Garage separation wall between garage (15) and dwelling not identified with wall type or notation requiring minimum 1/2" gypsum board on garage side per IRC separation requirements | High
+
+### F. Constructability
+
+F-1 | A4.00 Wall E-3, E-4 | Assemblies show rigid insulation outboard of weather barrier without notation of taped seams or method to weatherproof rigid foam layer, creating ambiguity about primary drainage plane | High
+
+F-2 | A4.01 Roof R-1 | Roof assembly shows rigid insulation over deck without specifying attachment method (adhesive, mechanical fasteners, temporary securing) needed before furring installation | Moderate
+
+F-3 | A4.01 Roof R-1 | Standing seam metal roof over rigid insulation and furring does not detail how roofing clips penetrate insulation and furring layers to reach structure — clip length and fastening not specified | High
+
+F-4 | A2.03 | Roof plan shows areas with 1/8"/12" slope which may be below manufacturer minimum for standing seam metal roofing, risking ponding water and warranty voiding | High
+
+F-5 | A2.03 | Complex roof with multiple valleys and slope transitions shown on plan but valley flashing, cricket details, and slope transition treatments not detailed | Moderate
+
+F-6 | A3.20, A7.01, A7.10, Specifications | Custom millwork (entry hall wood ceiling/walls, reading nook built-ins) shown conceptually but drawings do not note shop drawing submittal required for joinery, attachment, and sequencing | Moderate
+
+F-7 | A5.01, Specifications p.3 | Cable railing specified by product line but post spacing, cable spacing, tensioning method, and end termination details necessary for installation not provided | Moderate
+
+F-8 | Specifications p.3, A2.03 | Thermory Ash thermally modified wood specified for exterior cladding and decking but specifications do not reference manufacturer installation instructions required for this material's special fastening | Moderate
+
+F-9 | A8.01, A2.00 | Crawl space access D-21-1 listed as 5'-0" × 5'-0" (unusually large) "Metal" door but type (hinged, removable panel, hatch), support method, and foundation wall integration not detailed | High
+
+### G. Completeness and Clarity
+
+G-1 | A8.01, Specifications multiple pages | Numerous "TBD" items (wood stain color, soffit color, flooring species, cabinet hardware, light fixtures) without notation of whether these are allowances or owner selections — prevents complete pricing | Certain
+
+G-2 | G0.01, Specifications p.2-3 | "SS" defined as stainless steel in legend but used for stone products (SS-1 Silestone, SS-2 limestone, SS-3 flagstone) throughout specifications — terminology conflict creates confusion | Certain
+
+G-3 | A3.22, No details | Interior stair handrails shown on sections but details for height, profile, returns, mounting, and graspability dimensions required for construction and code compliance not provided | High
+
+G-4 | Specifications p.3, p.10 | Allowances listed for septic, well, and entry door handleset without dollar amounts — contractors cannot prepare complete bids without allowance values | Certain
+
+G-5 | A8.01 notes | Door schedule references "SPECIFICATIONS DIV. 8" but project specifications not organized by CSI divisions — reference cannot be followed | Moderate
+
+G-6 | Specifications multiple pages | Cable railing, thermally modified wood, and Accoya wood specified by product name but specifications do not reference manufacturer instructions or note special installation procedures required | High
+
+G-7 | Specifications multiple pages | Project includes specialized systems (above-ground pool, solar array, hydronic radiant floor, geothermal consideration) but specifications omit required contractor qualifications, testing, commissioning, or warranties | Moderate
+
+G-8 | A1.01, Specifications p.1 | Site plan shows existing trees but does not distinguish which to remove vs. protect, or provide tree protection measures during construction | Moderate
+
+G-9 | Multiple sheets | Numerous "SEE STRUCTURAL DRAWINGS" references (deck, foundation, framing) but architectural requirements affecting structural design (finish loads, attachment details, clearances) not noted for coordination | Moderate
+
+G-10 | No sheet | Required construction testing and inspections (footing, foundation, framing, insulation, mechanical, final) not listed in specifications or noted on drawings | High
+
+G-11 | A6.01, G0.01 | Lighting symbols L1-L10, appliance symbols A1-A7, and CV (central vacuum) used throughout but not all defined on symbols sheet G0.01 — legend incomplete | Moderate
+
+G-12 | A2.03, Specifications p.10 | Scope ambiguity: specifications state "solar ready" (implying preparation) while drawings show completed solar array with detailed panel layout and wiring — whether solar included in bid unclear | Certain
+
+---
+
+## Summary
+
+This bid set exhibits a level of development appropriate for residential construction but contains **critical deficiencies that will generate RFIs, change orders, and potential code compliance failures** if not resolved before bidding.
+
+**Top Three Areas of Concern:**
+
+1. **Code and Life Safety Violations:** Both interior stairs are dimensioned with riser heights (9" and 12") that substantially exceed the IRC maximum of 7-3/4", making them unbuildable as drawn. Garage separation details omit required fire-rated assemblies and self-closing door hardware. Emergency escape window verification is absent. These are not minor coordination gaps — they are fundamental code violations that would fail inspection.
+
+2. **Building Envelope Coordination Failures:** The exterior wall insulation system shows conflicts between specifications (ZIP Board, 1" rigid insulation) and details (plywood sheathing, 1.5" rigid insulation), with a weather barrier positioned in a way that exposes rigid foam to moisture without proper drainage detailing. The crawl space stem wall provides R-2.5 where R-10 is required. For a high-performance house in a mixed-humid climate, these envelope failures undermine energy performance and durability.
+
+3. **Scope Ambiguity and Missing Information:** Critical ambiguities exist regarding what is included in the base bid — most notably the solar array (shown as installed vs. specified as "ready"), numerous "TBD" selections without allowance amounts, and missing details for specialized systems (cable railings, pool installation sequencing, custom millwork fabrication). Contractors cannot price accurately when scope boundaries are unclear.
+
+**Secondary Issues:** The set also exhibits internal inconsistencies (door schedule vs. plans, window manufacturer conflicts, abbreviation reuse), missing constructability details (valley flashings, handrail profiles, window rough opening waterproofing sequences), and incomplete coordination information (allowance values, testing requirements, shop drawing submittals).
+
+The drawings demonstrate thoughtful design intent and appropriate detail for many conditions, but the coordination gaps and code violations require resolution before this set is suitable for competitive bidding or construction.

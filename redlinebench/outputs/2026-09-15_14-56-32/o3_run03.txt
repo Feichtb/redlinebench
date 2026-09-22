@@ -1,0 +1,65 @@
+STEP 1 – PROJECT CONTEXT  
+• Project: “Bonfire House,” Chatham County, North Carolina – governed by 2018 North Carolina Residential Code (adopts 2015 IRC)  
+• Occupancy / Construction: R-3 single-family residence, Type V-B, two stories over sealed crawl space plus attached garage  
+• Climate zone: 4A (mixed-humid)  
+• Drawing set scope: Architectural only – cover, symbols, code summary, site, plans (site, crawl, L1, L2, roof, enlarged), exterior & interior elevations, building/ wall/roof/floor sections & details, deck drawings, reflected ceiling plan & lighting schedule, door/window/finish schedules.  No structural, MEP, civil or landscape drawings included.  
+• Specifications: 11-page narrative “Project Specifications – Description of Materials, Applications and Allowances;” not organized by CSI divisions; no separate technical spec book.  
+
+STEP 3 – FINDINGS  
+
+A - INTERNAL CONSISTENCY  
+A-1 | G0.01, symbol legend & several plan call-outs | References to sheet A3.11 (e.g., “1/A3.11”) but A3.11 is not on the sheet list nor in the set | Certain  
+A-2 | A8.01 window schedule vs elevations A3.01–A3.03 | Schedule counts eight 6'-0"×6'-0" Type 6 windows but only four of that size appear on all exterior elevations combined | High  
+A-3 | A2.01A Powder Room door 14-1 vs A8.01 | Plan graphically shows ~2'-6" leaf but schedule lists 1'-10" width, producing clear conflict | High  
+A-4 | A2.01B Garage/House separating wall tagged W-1; wall schedule W-1 is unrated | Rated separation required between garage and dwelling is not distinguished from other interior partitions | High  
+A-5 | A4.01 floor-type tags stop at F-7, yet keynote list on A2.01A uses F-8 (wood stair) which is not defined anywhere | Certain  
+
+B - DIMENSIONAL & GEOMETRIC INTEGRITY  
+B-1 | A3.22-1 Stair Section East | 10 risers @ 6-11/16" total ≈66-7/8" but crawl-space datum 502'-0" to L1 508'-0" is 72", stair is ~5" short | Certain  
+B-2 | A3.22-2 Stair Section South | 8 risers, 7 treads shown but no riser or tread dimensions, making code compliance (max 7-3/4", min 10") unverifiable | High  
+B-3 | Roof slopes: A2.03 notes “3"/1'-0"” while specs p.1 describe “3"/12"” and A3.10 sections label slopes only graphically – inconsistent notation could mis-set pitch | Moderate  
+B-4 | A2.01A Grid-H dimension string (multiple segments) sums to 86'-4 ½" while overall shown is 86'-0" – 4-½" discrepancy | High  
+
+C - SPECIFICATION-TO-DRAWING ALIGNMENT  
+C-1 | Specs p.3 call for Andersen 400 Series windows; A8.01 specifies “Ultrex-Marvin-Stonewhite” – conflicting manufacturers and frame materials | Certain  
+C-2 | Specs p.3 exterior doors “Jeld-Wen IWP wood,” but A8.01 lists several exterior wood-glass doors with no manufacturer; 03-1 is “Metal” contradicting spec | High  
+C-3 | Specs p.3 lap siding only on North & West facades; Elevations A3.01/A3.02 show lap siding on portions of South facade also – cladding extents disagree | High  
+C-4 | Wall insulation: specs R-21 batt + R-6 exterior (total R-27) for 2×6 walls; assembly E-2 shows 1-½" rigid (≈R-7.5) plus 2×8 stud cavity (≈R-30) – section and spec do not match framing depth or R-values | High  
+C-5 | Roof insulation: specs R-38 batt + R-15 rigid; roof assembly R-1 omits any rigid thickness or R-value call-out – cannot verify compliance | High  
+C-6 | Specs require 6" seamless aluminum gutter; detail A4.11-4 shows gutter with no size, material, or fastening noted | High  
+C-7 | Specs select Silestone counters; A7.01 kitchen elevations note SS-1 but no product tie-back, leaving material ambiguous | Moderate  
+
+D - BUILDING ENVELOPE / BUILDING SCIENCE  
+D-1 | Assemblies E-2/E-4 place 1-½" rigid foam between studs and exterior plywood sheathing, leaving fasteners through foam & moving vapor control layer inward – atypical sequence may trap moisture and complicate shear transfer | High  
+D-2 | CMU crawl-space wall detail E-1 shows only ½" rigid (≈R-2.5) though specs and IECC CZ-4A require R-10 continuous; under-insulated foundation | Certain  
+D-3 | Roof assembly R-1 is drawn as unvented compact metal roof but lacks continuous air/vapor barrier indication and shows interior fiberglass – risk of interstitial condensation beneath metal deck in CZ-4A | High  
+D-4 | A4.10-7 Entry-hall roof overhang detail shows LVL cantilever with no flashing above LVL or air-barrier continuity at wall/roof intersection | High  
+D-5 | Rain-chain drains terminate in decorative pots; no freeze, overflow, or underground outlet detail provided – potential water against foundation | Moderate  
+
+E - CODE & LIFE-SAFETY  
+E-1 | Door 14-1 (Powder Room) width 1'-10" provides <24" clear, below minimum for egress and accessibility even in R-3 | Certain  
+E-2 | Door between garage (15) and laundry/house tagged 13-1, schedule shows unrated wood door; IRC requires 20-min or solid-wood 1-⅜" self-closing door | High  
+E-3 | Garage ceiling/floor above (Attic 20) separation not detailed; W-1 partition and F-1 floor assembly are unrated, yet garage below habitable space requires fire-resistive separation | High  
+E-4 | Window schedule designates many bedroom windows “fixed”; emergency escape/rescue openings from Bedrooms 06 & 09 cannot be fixed per IRC | High  
+E-5 | A5.10 deck elevations show 36" cable guard adjacent to >30" drop at stairs; pool code note requires 48" fence – mixed heights may fail either guard or pool-barrier requirement | Moderate  
+E-6 | Stair handrail/guard details (A3.22, A5.30) omit required 34-38" handrail height dimension and 4" sphere guard spacing verification | High  
+E-7 | No smoke or CO detector locations shown on plans; spec calls for system but drawings provide no device layout | Moderate  
+
+F - CONSTRUCTABILITY  
+F-1 | South porch overhang (A4.10-7) relies on concealed steel columns inside 2×6 wall yet gives no size, base plate, or connection details – high coordination risk with structure & envelope | High  
+F-2 | Siding/furring fastened through 1-½" foam into plywood will need 5" screws; pull-out capacity and fastener schedule not addressed | Moderate  
+F-3 | Wood pool deck abuts above-ground pool wall (A5.20-1) with no flashing or waterproof detail at interface – decay risk | High  
+F-4 | Rain-chain system tied to underground pipe is noted in spec but no routing, clean-outs, or freeze protection shown on plans | Moderate  
+F-5 | Entry-hall mirrored jamb detail (A4.10-8) shows full-height mirror flush with window cavity with no allowance for glazing stop removal or mirror fastening access | Moderate  
+
+G - COMPLETENESS & CLARITY  
+G-1 | Numerous material selections and colors in specs marked “TBD” (roof color, siding paint, interior stain, lighting fixtures) leaving scope undefined for bidding | High  
+G-2 | HVAC strategy (dual-fuel vs geothermal) listed as “under consideration” with no decision – major cost item undefinable at bid | High  
+G-3 | Lighting fixture schedule (A6.01) lists every fixture “TBD” – cannot price or coordinate electrical rough-in | High  
+G-4 | Keynote numbers on enlarged floor plans (e.g., 3, 4, 5 on A2.01A/B) have no legend on those sheets; unclear meaning in field | Certain  
+G-5 | Many notes state “See Structural Set” for foundations, overhang framing, and deck structure, but no structural drawings provided with bid set – missing critical information | High  
+G-6 | Spec booklet is narrative only, not CSI formatted; drawing call-outs such as “see specs div. 08” point to sections that do not exist, impeding cross-reference | High  
+G-7 | Hydronic floor heating in Master Bath called “bidder design layout” – no tubing diagram, manifold location, or control spec supplied | High  
+
+SUMMARY  
+The architectural bid set is visually complete but reveals numerous coordination and information gaps. Greatest concerns are: (1) inconsistent or missing life-safety provisions (garage separation, egress windows, stair geometry); (2) major conflicts between the narrative specifications and the drawing schedules (windows, doors, insulation, cladding), which will drive pricing disputes; (3) critical missing drawings/details referenced but not issued (sheet A3.11, structural connections, mechanical/electrical device layouts). Resolving these issues before issuance for construction will greatly reduce RFIs and change orders.

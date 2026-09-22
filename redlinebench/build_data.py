@@ -88,6 +88,17 @@ MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     "gpt-5-mini":                     {"label": "GPT-5 Mini",        "provider": "OpenAI",    "color": "#4878b4"},
     "gpt-4o":                         {"label": "GPT-4o",            "provider": "OpenAI",    "color": "#80a8cc"},
     "grok-4.20-beta-0309-reasoning":  {"label": "Grok 4.20 Beta",    "provider": "xAI",       "color": "#5a5650"},
+    # Back-catalog models run 2026-09-15 for the Jan 2025 - Jan 2026 progress
+    # series. Older OpenAI models take progressively paler blues and older
+    # Claude models paler reds, so the time ordering reads off the chart.
+    "gpt-5.2":                        {"label": "GPT-5.2",           "provider": "OpenAI",    "color": "#1b5e8c"},
+    "gpt-5-pro":                      {"label": "GPT-5 Pro",         "provider": "OpenAI",    "color": "#2d6d96"},
+    "gpt-5":                          {"label": "GPT-5",             "provider": "OpenAI",    "color": "#3d7fa8"},
+    "o3":                             {"label": "o3"        ,         "provider": "OpenAI",    "color": "#5c93b8"},
+    "gpt-4.1":                        {"label": "GPT-4.1",           "provider": "OpenAI",    "color": "#93b8d4"},
+    "o1":                             {"label": "o1"        ,         "provider": "OpenAI",    "color": "#6b8fa8"},
+    "claude-opus-4-5-20251101":       {"label": "Claude Opus 4.5",   "provider": "Anthropic", "color": "#d1452e"},
+    "claude-sonnet-4-5-20250929":     {"label": "Claude Sonnet 4.5", "provider": "Anthropic", "color": "#cf8a7c"},
 }
 
 # Ship dates, not benchmark dates. data.json records when a model was *run*, and
@@ -105,9 +116,17 @@ MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
 RELEASE_DATES: dict[str, tuple[str, str]] = {
     #  model key                        date          note
     "gpt-4o":                        ("2024-05-13", ""),
+    "o1":                            ("2024-12-17", "o1 GA in the API; the o1-preview opened 2024-09-12"),
+    "gpt-4.1":                       ("2025-04-14", ""),
+    "o3":                            ("2025-04-16", ""),
     "claude-sonnet-4-0":             ("2025-05-22", ""),
+    "gpt-5":                         ("2025-08-07", ""),
     "gpt-5-mini":                    ("2025-08-07", ""),
+    "claude-sonnet-4-5-20250929":    ("2025-09-29", ""),
+    "gpt-5-pro":                     ("2025-10-06", ""),
     "claude-haiku-4-5":              ("2025-10-15", ""),
+    "claude-opus-4-5-20251101":      ("2025-11-24", ""),
+    "gpt-5.2":                       ("2025-12-11", ""),
     "gemini-3-flash-preview":        ("2025-12-17", "Flash tier; the Gemini 3 family launched 2025-11-18"),
     "claude-opus-4-6":               ("2026-02-05", ""),
     "claude-sonnet-4-6":             ("2026-02-17", ""),

@@ -1,0 +1,99 @@
+## Step 1: Project Context
+
+- **Project:** Bonfire House, Chatham County, North Carolina; 2018 NC Residential Code (IRC 2015 with amendments)
+- **Building Type:** Single-family residence, R-3 Occupancy, Construction Type V-B
+- **Climate Zone:** 4A (stated on G0.11)
+- **Drawing Scope:** 34 architectural sheets including site plan, floor plans, elevations, building/wall sections, exterior/interior details, reflected ceiling plan, interior elevations, and door/window/finish schedules. Structural, MEP, and civil drawings referenced but not provided.
+- **Specifications:** 11-page project specification document covering materials, allowances, and applications.
+
+---
+
+## Step 2: Findings by Category
+
+### A. Internal Consistency Across Sheets
+
+| Tag | Location | Description | Confidence |
+|-----|----------|-------------|------------|
+| A-1 | A8.01 Room Finish Schedule, Specs p.3 | Powder Room (14) floor shown as F-4 (carpet) in schedule, but specifications list SS-2 limestone for this room—carpet is inappropriate for a half bath and conflicts with spec. | Certain |
+| A-2 | A8.01 Room Finish Schedule, A7.01 Detail 7 | Entry Hall (01) West wall listed as "WD-1" in schedule but interior elevation shows WD-4 (wood T&G boards) as primary finish with WD-1 only at trim. | Certain |
+| A-3 | A6.01 Lighting Schedule, Specs p.8 | L7 Strip Lighting shows count of "2" in fixture schedule but specifications indicate "75 LF" of strip lighting in kitchen, stair handrail, and reading nook—incompatible units. | Certain |
+| A-4 | G0.11, Specs p.7 | Code summary shows 5 hose bibs; specifications state 3 Aquor Hydrants; elevations show approximately 4 hydrant locations—counts do not reconcile. | Certain |
+| A-5 | A8.01 Door Schedule, A2.01A | Door 10-1 listed for Reading Nook (Room 10) but Reading Nook is shown as open alcove to Second Bedroom with no door tag on floor plan. | High |
+| A-6 | A4.00 Wall Assembly E-4, Specs p.4 | Wall assembly shows "1½" RIGID INSULATION" but specifications describe "1" Insulated ZIP Board"—different thickness and different product type. | Certain |
+| A-7 | A3.01, A3.02, A3.03 Elevations, Specs p.3 | Elevations note "FIBERBOARD SOFFIT" while specifications call for "Hardiesoffit panels" (fiber cement)—terminology mismatch may indicate different materials. | High |
+| A-8 | A8.01 Window Schedule, A2.01A | Window tags on plan use single numbers (3, 4, 5, 6) without distinguishing fixed types from casement types (3C, 4C, etc.), creating ambiguity for which openings are operable. | High |
+| A-9 | A3.21 Detail 4, A2.01B | 18'-0" wide garage door (15-1) shown with flanking windows on elevation, but plan dimensions suggest total facade width of approximately 22'-10"—verify door fits with windows and jamb structure. | Moderate |
+
+### B. Dimensional and Geometric Integrity
+
+| Tag | Location | Description | Confidence |
+|-----|----------|-------------|------------|
+| B-1 | A2.01 | Top dimension string totals approximately 72'-0" (30'-2½" + 7½" + 6'-10½" + 34'-4") while parallel string below totals 72'-1½" (30'-2½" + 31'-7½" + 10'-3½")—1½" discrepancy if measuring same overall length. | Moderate |
+| B-2 | A3.22, A2.01A/B | Stair headroom not dimensioned on sections; stair passes under Level 2 floor structure—should verify 6'-8" minimum headroom compliance. | High |
+| B-3 | A8.01 Door Schedule | Door 15-1 garage door at 18'-0" × 8'-0" is unusually wide for single-car garage; verify this matches owner intent and structural opening. | Moderate |
+
+### C. Specification-to-Drawing Alignment
+
+| Tag | Location | Description | Confidence |
+|-----|----------|-------------|------------|
+| C-1 | A4.00 Wall Assemblies, Specs p.4 | Specifications describe "Insulated ZIP Board" (integrated sheathing/insulation product) but wall assembly details show separate plywood sheathing plus rigid insulation—different system. | Certain |
+| C-2 | A8.01, Specs p.5 | Door schedule lists materials generically as "WOOD (SOLID-CORE)" but specifications name "JeldWen single panel solid core" with specific attributes—manufacturer should appear in schedule. | Moderate |
+| C-3 | A7.01 Kitchen Elevations, Specs p.6 | Kitchen countertop shown as SS-1 but specification states "thickness TBD"—undefined thickness will affect cabinet fabrication and coordination. | High |
+| C-4 | Specs p.3, A4.00/A4.11 | Specifications call for "2x6 Accoya" for exterior window frames (WD-2), but window jamb details show frame dimensions and materials without explicit species/product callout. | Moderate |
+
+### D. Building Envelope and Building Science
+
+| Tag | Location | Description | Confidence |
+|-----|----------|-------------|------------|
+| D-1 | A4.00 Wall Assembly E-3 | Layer sequence appears to show plywood sheathing outboard of rigid insulation (studs → rigid → plywood → WB), which is unconventional—structural sheathing typically at stud face for lateral bracing. | High |
+| D-2 | A4.00 Wall Assemblies E-3, E-4 | Weather barrier shown outboard of rigid insulation; rigid insulation joints should be taped/sealed to function as secondary drainage plane, but no note requiring this. | High |
+| D-3 | A4.11 Detail 4, Detail 5 | Wall-to-roof air barrier continuity not explicitly detailed at roof-to-wall transition—critical for achieving sealed envelope per HERO code compliance noted in specs. | High |
+| D-4 | A4.00 E-3, E-4; A4.11 | Rainscreen cavity (¾" air gap) shown but ventilation inlet/outlet paths at top and bottom of cavity not detailed—required for proper drainage and drying. | Moderate |
+
+### E. Code and Life Safety
+
+| Tag | Location | Description | Confidence |
+|-----|----------|-------------|------------|
+| E-1 | A4.01 Floor Assembly F-1, A2.01B, A2.02 | Floor/ceiling assembly above garage (below Guest Bedroom 17, Bath 18, Closet 19) shows ½" gypsum; IRC requires 5/8" Type X gypsum board on garage ceiling when habitable rooms are above. | Certain |
+| E-2 | A8.01 Door Schedule | Door 13-3 (garage to office) listed as solid-core wood which meets fire separation requirement, but no self-closing device noted—IRC requires garage-to-dwelling doors to be self-closing. | Certain |
+| E-3 | A8.01 Window Schedule, A2.01A | Many bedroom-area windows appear to be fixed types (4, 5, 6, 9); verify each sleeping room has operable egress window meeting 5.7 SF net clear opening, 24" min height, 20" min width, 44" max sill height. | High |
+| E-4 | A3.22 Stair Sections | Handrail graspability profile and mounting height not detailed; IRC requires specific graspable shape (1¼" to 2" diameter or equivalent) and 34"-38" height. | High |
+| E-5 | A5.01, A5.10 Deck Plans/Elevations | Pool barrier cable railing shown at 48" height with gate locations, but self-closing/self-latching hardware and 4" maximum opening spacing not specified or detailed. | High |
+| E-6 | A3.22 Stair Sections | Guardrail shown at open stair sides but intermediate rail/baluster spacing not dimensioned—must verify 4" sphere rule compliance. | Moderate |
+
+### F. Constructability
+
+| Tag | Location | Description | Confidence |
+|-----|----------|-------------|------------|
+| F-1 | A4.00 Wall Assembly E-3 | If plywood sheathing is truly outboard of rigid insulation as drawn, framing sequence will be problematic—structural sheathing cannot be installed until after foam, complicating waterproofing and lateral bracing. | High |
+| F-2 | A4.10, A3.20, A7.01 | Entry hall ¼" mirror panels at full height of window cavity (per A4.10) with angled ceiling/wall geometry requires precise coordination for waterproofing, thermal breaks, and installation sequence. | High |
+| F-3 | A2.03 Roof Plan | Multiple roof slope directions (3"/12", 2"/12", ¼"/12") on diagonal create complex hip and valley geometry—ridge/valley flashing details not provided for non-orthogonal intersections. | High |
+| F-4 | A5.01, A5.20 | Above-ground pool at 5'-6" depth with deck attachment and retaining wall interface requires coordination between pool contractor, structural, and landscape—interface details schematic only. | Moderate |
+| F-5 | A4.13 Detail 5 | Porch overhang with tube steel concealed in wall framing requires precise coordination of steel fabrication with wood framing dimensions and connection details (only noted "see structural"). | Moderate |
+
+### G. Completeness and Clarity
+
+| Tag | Location | Description | Confidence |
+|-----|----------|-------------|------------|
+| G-1 | A6.01 Lighting Schedule | All lighting fixtures list manufacturer and model as "TBD"—bid documents should include specific fixtures or allowances for pricing. | Certain |
+| G-2 | A8.01 Appliance Schedule, Specs p.10 | Schedule shows generic descriptions (Refrigerator, Dishwasher, etc.) while specifications list specific models with dimensions—schedules should include model numbers for coordination. | High |
+| G-3 | Specs pp.4-7 | Multiple finish selections marked "TBD": ash hardwood flooring, carpet material, cabinet hardware, kitchen sink, countertop thickness, miscellaneous bath accessories—extensive incomplete selections. | Certain |
+| G-4 | A8.01 Door Schedule | Hardware column blank for most doors; only garage door, shower doors, crawl space door, and gates have hardware noted—interior door hardware not specified. | High |
+| G-5 | A5.01, A5.10, A5.11, A5.30 Deck Drawings | Pool deck stair details (A5.30) show step lights and cable railing but no guard post spacing, cable tensioning details, or connection to pool edge/retaining wall. | High |
+| G-6 | A2.03 Roof Plan | Solar array shown with note "SOLAR AND DATA CABLES TO WALL PENETRATION BELOW" but mounting system, structural attachment, and array layout not detailed—marked as "solar ready" in specs without specifics. | Moderate |
+| G-7 | A7.02 Details 6, 7, 8, 9 | Master bathroom shower details show grab bar locations noted as "SIDE GRAB BARS" and "CORNER GRAB BARS" but specific sizes, heights, and blocking requirements not dimensioned. | Moderate |
+| G-8 | A2.01A, A2.01B Floor Plans | Floor drain symbols (FD) shown in wet areas but drain size, trap type, and connection routing not specified. | Moderate |
+
+---
+
+## Summary
+
+This bid set demonstrates competent architectural design with good resolution of many details, particularly at the entry hall's custom wood assemblies and window trim conditions. However, several categories of issues will impede smooth construction:
+
+**Top Three Concerns:**
+
+1. **Fire separation at garage:** The missing 5/8" Type X ceiling specification and absent self-closing hardware note for the garage-to-house door are code violations that will require correction before or during permitting.
+
+2. **Wall assembly layer sequences:** The E-3 wall section appears to show structural sheathing outboard of rigid insulation, which contradicts standard practice and the different configuration shown in E-2/E-4. This needs clarification before framing begins.
+
+3. **Incomplete specifications for bidding:** Extensive "TBD" items across lighting fixtures, finishes, and hardware—combined with discrepancies between specs and schedules (hose bib counts, insulation products, soffit materials)—will generate RFIs and may result in inconsistent bids or change orders.

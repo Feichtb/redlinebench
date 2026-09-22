@@ -1,0 +1,189 @@
+# Architectural Review: Bonfire House
+
+## Step 1: Project Context
+
+**Project identification:**
+Bonfire House, Chatham County, North Carolina; subject to 2018 North Carolina Residential Code (adopting 2015 IRC with amendments) under Chatham County Building Inspectors and Central Permitting jurisdiction.
+
+**Building program:**
+Single-family residence, R-3 occupancy, Type V-B construction. Four bedrooms, 3.5 bathrooms, two stories above sealed crawl space. 3,270 SF heated area plus 570 SF garage; total 3,840 SF. Site includes above-ground lap pool (8' × 60'), wood deck, septic system, and private well.
+
+**Climate:**
+Zone 4A (mixed-humid).
+
+**Document scope:**
+Complete architectural drawing set (34 sheets: general, site, floor plans, elevations, sections, wall/floor assemblies, exterior/interior/deck details, schedules). Structural drawings noted as separate; MEP, civil not included. Eleven-page project specification covering materials, finishes, systems, and allowances.
+
+---
+
+## Step 2: Findings by Category
+
+### A. Internal Consistency Across Sheets
+
+A-1 | A8.01 Room Finish Schedule, Room 14 | Powder Room assigned F-4 (carpet) floor finish; bathrooms require hard, water-resistant surface such as F-2 (tile) | Certain
+
+A-2 | A8.01 Room Finish Schedule, Rooms 07, 11, 18 | Note reads "FOR SHOWER FINISHES SEE" with no destination reference; cross-reference incomplete | Certain
+
+A-3 | A8.01 Window Schedule vs. Specifications p.3 | Schedule specifies "Ultrex-Marvin-Stonewhite" for all window interior and cladding material; specifications state "Andersen, 400 Series, Casement & Fixed" | Certain
+
+A-4 | A7.01 Detail 1 (Kitchen North Elevation) | Range hood labeled "A3 Ceiling Mounted Hood Vent" but appliance schedule assigns A3 to oven and A5 to hood | Certain
+
+A-5 | A2.01A floor plan, Room 11 (Bathroom) | Door visible on plan entering room from hallway; no door tag shown and no corresponding entry in door schedule A8.01 | High
+
+A-6 | A8.01 Door Schedule vs. A2.01A | Door 10-1 listed in schedule as interior 3'-0" × 7'-0" serving Reading Nook but door tag not visible on floor plan | High
+
+A-7 | G0.11 Code Summary vs. A2.01, A2.02 floor plans | Code summary states 4 bedrooms; floor plans label only three rooms as bedrooms (Master 06, Second 09, Guest 17); fourth bedroom not clearly identified | High
+
+A-8 | A7.01 Detail 2 (Kitchen West Elevation) | Interior wood trim specified as WD-1 with stain finish per specs, but Interior Doors and Trim spec section states "all door casing and trim to be painted"; door vs. window trim finish unclear | Moderate
+
+A-9 | A8.01 Abbreviations vs. Finish Codes | Symbol list defines "SS" as stainless steel; finish schedule uses SS-1, SS-2, SS-3 for stone surface materials (Silestone, limestone, flagstone), creating conflicting abbreviation use | Certain
+
+A-10 | A8.01 Lighting Fixture Schedule | Fixture L7 listed as strip lighting with count of "2" but specification note states "75 LF - Kitchen, Interior Stair handrail, Reading Nook"; count vs. linear footage inconsistent | Certain
+
+A-11 | A2.01A floor plans | Wall type assignments (E-1 through E-4, W-1 through W-4) shown in wall assembly key A4.00 but not tagged on floor plans; contractor must infer application locations from context | Moderate
+
+### B. Dimensional and Geometric Integrity
+
+B-1 | A3.22 Detail 1 (Section, Stairs East) | Stair shown with 10 equal risers between Level 1 (508'-0") and Level 2 (518'-0"); 120" height ÷ 10 = 12" riser height, exceeding IRC maximum 7-3/4" | Certain
+
+B-2 | A3.22 Detail 2 (Section, Stairs South) | Stair shown with 8 equal risers; floor-to-floor height and resulting riser dimension not clearly correlated to section view; verify against code maximum | High
+
+B-3 | A4.00 Wall Assembly E-1 plan dimension | Total wall thickness shown as 1'-0 1/8" (12.125"); sum of CMU (9.625" actual) + insulation + 2×4 studs (3.5") + gypsum (0.5") exceeds shown total even before accounting for insulation thickness | High
+
+B-4 | A4.01 Roof Assembly R-1 dimension | Total assembly height shown as 1'-10 1/2"; component breakdown (3" rigid insulation per spec + 12" joist depth per spec + furring + sheathing + roofing + gypsum) does not sum to dimensioned total | High
+
+B-5 | A2.00 Crawl Space Plan notation | Two crawl space levels noted: "-6'-0" (Crawlspace Level)" and "-7'-0" (Lowered Floor Area)"; corresponding elevations 502'-0" and 501'-0" not consistently labeled across all sections and details | Moderate
+
+B-6 | A3.22 Details 1 and 2 (Stair Sections) | Stair headroom dimensions not provided; code requires minimum 6'-8" clearance measured vertically from nosing to overhead obstruction | High
+
+### C. Specification-to-Drawing Alignment
+
+C-1 | A8.01 Window Schedule vs. Specifications p.3 | Schedule specifies Marvin Ultrex brand and model numbers (ESDG series, ESCA series); specification states "Andersen, 400 Series"; two different manufacturers specified for same windows | Certain
+
+C-2 | Specifications p.4 (Insulation) vs. A4.00 Wall Assembly E-4 | Spec states "R6 1" Insulated ZIP Board" for exterior walls; drawing E-4 shows 1/2" plywood sheathing and separate 1-1/2" rigid insulation layers; products and thicknesses do not match | Certain
+
+C-3 | Specifications p.4 (Insulation) vs. A4.00 Wall Assembly E-1 | Spec states "Stem Wall: 2" rigid XPS = R10" for crawl space; drawing E-1 detail shows "1/2" RIGID INSULATION @ CRAWL SPACE"; thickness conflict affects thermal performance by factor of four | Certain
+
+C-4 | Specifications p.4 (Insulation) vs. A4.01 Roof Assembly R-1 | Spec states "R38 12" fiberglass batts + 3" rigid XPS R15 = R49"; roof assembly R-1 does not dimension rigid insulation layer, making verification of R-15 (3" thickness) impossible | High
+
+C-5 | Specifications p.5 (Interior Doors and Trim) vs. WD-1 callouts | Spec states "all door casing and trim to be painted"; separate spec for "Interior wood trim (WD-1): maple or birch with clear stain"; whether door trim is painted and window trim is stained, or other differentiation, is unclear | Moderate
+
+C-6 | Specifications p.5 vs. A4.00, A4.01 | Gypsum board type (standard, moisture-resistant, Type X) not specified; wall and floor assemblies show only "1/2" GYPSUM BOARD"; moisture-resistant required in bathrooms, Type X required for fire-rated assemblies | Moderate
+
+C-7 | A8.01 Window Schedule vs. Specifications p.3 | Spec requires windows "to meet or exceed code requirement of U = .35, SHGC = .3"; window schedule does not list U-value or SHGC performance data for verification | Moderate
+
+C-8 | Specifications p.6 (Plumbing) vs. A4.01 Floor Assembly F-2 | Spec describes "complete hydronic radiant floor heating system at Master Bathroom (only)"; floor assembly F-2 assigned to Master Bath shows tile on mortar bed with no radiant tubing layer depicted | High
+
+C-9 | Specifications p.4 (Insulation) vs. A4.00 wall sections | Spec states "treat wall cavity base (0~18") with suitable insecticide"; wall assembly sections do not show how insecticide treatment integrates with vapor barrier and insulation installation sequence | Moderate
+
+### D. Building Envelope and Building Science
+
+D-1 | A4.00 Wall Assembly E-4 layer sequence | Weather barrier shown between 1-1/2" rigid insulation (exterior) and 1/2" plywood sheathing (interior); this places WRB inboard of insulation where it cannot drain moisture that penetrates cladding and collects on insulation face | High
+
+D-2 | A4.00 Wall Assembly E-4 attachment | Weather barrier shown outboard of rigid insulation but inboard of 1×4 furring strips; unclear how WRB is attached with adequate substrate and how penetrations are sealed given only 3/4" furring thickness available | High
+
+D-3 | A4.00 Wall Assembly E-1 vapor barrier position | Vapor barrier shown between CMU and interior insulation/framing; if this is foundation wall vapor barrier it should be on ground per crawl space detailing; if wall-applied it needs to be detailed for termination and overlap with floor vapor barrier | Moderate
+
+D-4 | Specifications p.4 (Insulation) | Cavity insulation specified as "R21 5.5" fiberglass batts" with no facing designation; Climate Zone 4A (mixed-humid) requires vapor retarder strategy; unfaced batts with no Class II or III retarder (kraft facing or vapor retarder paint) may allow excessive vapor transmission | Moderate
+
+D-5 | A4.01 Roof Assembly R-1 rigid insulation dimension missing | Unvented roof assembly relies on rigid insulation above deck to control condensation risk; specification states 3" (R-15) but assembly detail does not dimension this layer; field verification of thickness critical to building science performance | High
+
+D-6 | Specifications p.4 vs. wall/roof details | Air sealing spec lists six measures (sill sealer, penetration sealing, top plate sealing, etc.) but wall sections A3.20, A3.21, roof sections A4.11 show no air sealing details at critical transitions (rim joist, wall-to-roof, penetrations) | Moderate
+
+D-7 | A4.00 Wall Assembly E-2 vs. E-4 stud depth | E-2 shows 2×8 studs (7-1/4" cavity) while E-4 shows 2×6 studs (5-1/2" cavity); both specify same R-21 cavity insulation; 5.5" batts compressed into 5.5" cavity achieves R-21, but purpose of deeper E-2 cavity unclear if not using thicker batts | Moderate
+
+### E. Code and Life Safety
+
+E-1 | A4.00 Wall Assembly types, A2.01B Garage-House wall | No wall type identified as fire-rated assembly for garage-to-house separation; IRC requires 1/2" gypsum board on garage side; wall between Room 15 (Garage) and Room 16 (North Hallway) not tagged with fire-rated designation | High
+
+E-2 | A8.01 Door Schedule, Door between Garage and House | Door 16-1 or 16-2 connects garage to house interior; schedule lists as "WOOD (SOLID-CORE) PAINTED" with no notation of fire rating or self-closing hardware required by IRC for garage separation | High
+
+E-3 | A2.02, A6.01 Garage ceiling assembly | Guest Bedroom (17) and Guest Bathroom (18) located on Level 2 above Garage (15); IRC requires 5/8" Type X gypsum board on garage ceiling below habitable space; ceiling assembly not identified on plans or RCP | High
+
+E-4 | A3.22 Detail 1 vs. floor-to-floor height | Stair geometry shows 10 risers over 10'-0" = 12" per riser; IRC Section R311.7.5.1 limits riser height to 7-3/4" maximum; stair as drawn not code-compliant | Certain
+
+E-5 | A3.22 Details 1 and 2 | Stair headroom not dimensioned; IRC requires minimum 6'-8" vertical clearance measured from nosing; headroom must be verified particularly where stairs pass under Level 2 floor structure | High
+
+E-6 | A8.01 Window Schedule, Bedrooms 09 and 17 | IRC requires emergency escape and rescue openings in sleeping rooms: minimum 5.7 SF net clear opening, 24" minimum height, 20" minimum width, 44" maximum sill height; window schedule lists window types but does not identify which windows in bedrooms meet EERO requirements or provide opening dimensions | High
+
+E-7 | A3.22 Details 1 and 2 | Handrail height not dimensioned on stair sections; IRC requires handrails at 34" to 38" above stair nosing; detail shows stair profile but no handrail height confirmation | Moderate
+
+E-8 | Specifications p.8, A6.01 RCP | Spec states "complete smoke detection and carbon monoxide detection systems" required; IRC requires smoke alarms in each bedroom, outside each sleeping area, and on each level; reflected ceiling plan does not show smoke alarm locations for coordination | Moderate
+
+E-9 | A8.01 Door Schedule | Door schedule does not identify tempered glass requirements for doors and sidelites per IRC Section R308.4; glazing in/near doors, bathrooms, and other hazardous locations must be noted as tempered | Moderate
+
+E-10 | A2.02 Level 2 Plan, windows in Guest Bedroom 17 | Windows on upper level with sills potentially below 24" AFF create fall hazard per IRC Section R312.2; if sill height below 24", requires guards or window opening limitation to 4"; window sill heights not dimensioned on sections to verify compliance | Moderate
+
+### F. Constructability
+
+F-1 | A3.20 Details 1, 2, 3 (Entry Hall assembly) | Entry hall features full-height windows with intervening wood veneer panels, mirror panels at interior window jambs, and angled ceiling; detail shows final condition but no installation sequence notes for coordinating seven window units with intermediate trim panels and achieving plumb/alignment | Moderate
+
+F-2 | A5.01, A5.20, A5.30 Pool and deck details | Above-ground pool 60' × 8' with water surface at 506'-0" (2' below Level 1); wood deck at same elevation; no detail shows transition from wood deck to pool coping, structural gap for pool shell movement, or flashing at this interface | High
+
+F-3 | Specifications p.6, A1.01 Site Plan | Foundation drain specified with perforated pipe on aggregate base, draining to daylight with 1% minimum slope; site plan shows building location but does not show drain routing, daylight outlet location, or grades verifying slope | Moderate
+
+F-4 | A7.01 Kitchen Elevations vs. Specifications p.10 Appliances | Kitchen elevation dimensions must accommodate specified appliances: 36" refrigerator, 24" dishwasher, 30" cooktop/oven/hood; elevation dimension strings show cabinet widths but dimensional verification that rough openings match appliance dimensions not clearly provided | Moderate
+
+F-5 | A5.20, A5.30 Deck framing and flashing | Deck framing noted as "SEE STRUCTURAL SET FOR DECK STRUCTURE" but deck-to-house connection flashing (critical for water management) shown only in section A5.30 detail 6; flashing at ledger board and through-wall penetrations should be detailed architecturally regardless of structural responsibility | Moderate
+
+F-6 | Specifications p.3, A4.01 Roof Assembly R-1 | Metal roof spec notes "ensure roof is walkable with either underlayment support and/or sufficient gage thickness"; 24-gauge specified; roof assembly detail does not specify underlayment type, thickness, or walkboard provisions for roof access | Moderate
+
+F-7 | A5.01 Pool deck plan, Specifications p.10 | Pool mechanical equipment noted as "southwest end" of pool; specifications state builder provides utilities to pad (electric, gas, water) but mechanical pad dimensions, clearances for equipment access, and setback from pool not shown | Moderate
+
+F-8 | A4.10 Details 1, 2, 3 Entry door and window installation | Entry door and window details show multiple flashing layers (membrane, metal, insect screen) and Accoya frame components; details show final assembly but do not note installation sequence for flashing integration and weather barrier continuity | Moderate
+
+### G. Completeness and Clarity
+
+G-1 | Specifications pp.2-10 multiple sections | Multiple "TBD" items: wood flooring product (p.4), cabinet hardware (p.6), exterior paint color (p.3), countertop thickness (p.6), carpet product (p.5), kitchen sink (p.7); each TBD item represents pricing unknown and decision point not yet resolved | Moderate
+
+G-2 | A8.01 Room Finish Schedule | Shower finish notes for rooms 07, 11, 18 read "FOR SHOWER FINISHES SEE" with no reference; should state "SEE SPECIFICATIONS PAGE X" or "SEE DETAIL X" | Certain
+
+G-3 | A8.01 Window Schedule | Schedule lists window types by size and operation (fixed/casement) but does not identify which windows serve as emergency escape and rescue openings in bedrooms; egress compliance cannot be verified from schedule | High
+
+G-4 | Drawing set, detail callouts | Numbered callouts in circles appear throughout floor plans and sections (examples: 1, 2, 3 in circles on details); no keynote legend provided; unclear if these are reference bubbles, material designations, or annotation keys | Moderate
+
+G-5 | G0.11, A3.01, A3.02 elevation views | Code summary states elevations "based on height above Level One"; elevation views show absolute elevations (502'-0", 508'-0", 518'-0") and relative dimensions (-6'-0", -8'-0"); mixing absolute and relative systems without explanation creates ambiguity | Moderate
+
+G-6 | A8.01 Door Schedule | Door hardware column header reads "HARDWARE" with no product designations, finish specifications, or accessibility requirements (lever type, ADA compliance where applicable, fire exit hardware where required); only entry door calls out specific "Level Lock" product | High
+
+G-7 | A8.01 Door Schedule vs. Specifications p.7 | Shower doors specified in specs as frameless (Master Bath 07), curtain (Bathroom 11), semi-framed (Guest Bath 18); door schedule lists doors 07-2 and 18-2 as "GLASS" but does not indicate framing type; specifications separate from schedule creates coordination risk | Moderate
+
+G-8 | A8.01 Room Finish Schedule vs. Specifications p.5 | Finish schedule assigns code F-2 (tile) to multiple bathrooms; specifications describe three different tile products for three bathrooms (Hampton Floor Steel Blue 8×8, Miabella Red Clay 8×8, Layers Trend 12×24); finish code does not differentiate products, creating reliance on specs for tile selection | Moderate
+
+G-9 | A6.01 Reflected Ceiling Plan | Ceiling heights noted in two locations (7'-11 1/2" and 8'-5 1/2"); other areas with vaulted or non-standard ceiling geometry (entry hall, living room, bedrooms under sloped roof) show no ceiling height dimensions; confirm ceiling heights at all locations for framing coordination | Moderate
+
+G-10 | Specifications p.5, floor plans | Interior wood trim designated WD-1 used for windows, built-ins; specs state "maple or birch with clear stain" but do not finalize species; material selection affects grain, color, cost; specify one species or provide allowance | Moderate
+
+G-11 | Specifications p.6, floor plans | In-floor hydronic heating specified for Master Bathroom only; system type (electric mat vs. hydronic tubing), controls, thermostat location, and heating zone boundary not shown on plans; contractor cannot locate system components from current documents | Moderate
+
+G-12 | A6.01 Lighting Schedule, L7 Strip Lighting | Schedule lists L7 as "Strip Lighting - TBD - 2" (count of 2); specification note states "75 LF - Kitchen, Interior Stair handrail, Reading Nook"; linear footage specification inconsistent with count; total length and circuit/zone layout not shown on RCP | Certain
+
+G-13 | A8.01 Appliance Schedule | Schedule lists appliances A1 through A7 with descriptions but no count column; verification of appliance quantity against floor plan layout requires cross-referencing multiple documents; add count for clarity | Moderate
+
+G-14 | A2.01, A2.02 floor plans | Door swing direction shown with arc symbol; symbol legend on G0.01 does not define whether arc represents door leaf swing or frame opening side; standard convention should be noted to avoid field conflicts | Moderate
+
+G-15 | Specifications p.7, A6.01 RCP | Lighting control specified as "Lutron Caséta PRO series for in-wall switching/dimming" in nine rooms/areas; RCP shows fixture locations but does not map control zones or indicate which switches control which fixtures in multi-switch rooms | Moderate
+
+G-16 | Specifications p.10, A1.01 Site Plan | Above-ground pool location shown on site plan but pool type, size (60' × 8' × 5'6" depth), structural pad, grading, and utility routing not shown; pool installation coordination relies entirely on specifications without graphic confirmation | Moderate
+
+G-17 | Specifications p.3, deck details | Deck lumber specified as Thermory Ash (WD-5) 1×6 boards; treatment type (thermally modified), grade, grade stamp requirements, and fastener compatibility with modified wood not specified; verify fastener corrosion resistance with modified wood species | Moderate
+
+G-18 | Specifications p.6, foundation details | Foundation drain specified as "4" perforated pipe with filter fabric on 4" of #67 aggregate"; pipe material, class, schedule (PVC, HDPE, etc.) and standard (ASTM D2729, etc.) not specified; contractor must assume specification | Moderate
+
+G-19 | Specifications p.10, A1.01 | Septic system location shown on site plan as "Septic Drain Field" but system type, tank size, drainfield dimensions, and capacity not specified in architectural documents; may be on civil drawings not provided or separate permit; note if so to avoid omission assumption | Moderate
+
+G-20 | Specifications p.10, A1.01 | Well location shown on site plan as "Well Head" but well depth, casing diameter, pump capacity, and pressure tank location not specified; may be on separate well permit documents; clarify responsibility to avoid coordination gap | Moderate
+
+---
+
+## Summary
+
+The Bonfire House documents exhibit coordination deficiencies common to residential design-bid-build projects where multiple selection and specification decisions remain open at bid time. The three most critical areas requiring resolution are:
+
+1. **Building envelope assembly conflicts** (C-2, C-3, D-1, D-5): Wall and roof insulation specifications do not match drawn assemblies in type, thickness, or sequence. The weather barrier position in wall assembly E-4 creates potential moisture trapping, and the crawl space wall insulation thickness discrepancy (2" specified vs. 1/2" drawn) represents a four-fold thermal performance error. Roof rigid insulation is un-dimensioned despite being critical to condensation control in an unvented assembly.
+
+2. **Code-required fire and life safety documentation gaps** (E-1 through E-5): Garage-to-house separation lacks fire-rated wall designation, fire-rated/self-closing door specification, and Type X ceiling requirement despite habitable space above. Stair geometry arithmetic fails (12" risers calculated vs. 7-3/4" maximum allowed), and emergency egress window compliance for bedrooms cannot be verified from documents provided.
+
+3. **Material specification inconsistencies** (A-3, C-1, A-9, G-6, G-7): Window manufacturer conflict (Marvin scheduled vs. Andersen specified) creates bid ambiguity on a major visible component. Abbreviation "SS" used for both stainless steel and stone surfaces. Door hardware almost entirely unspecified beyond entry door. Shower door framing types separated between schedule and specs. These represent coordination failures between different document types that will generate immediate RFIs.
+
+Beyond these critical issues, the documents contain numerous incomplete references ("FOR SHOWER FINISHES SEE" with no destination), TBD placeholders on cost-significant items, and missing details for constructability (pool-to-deck transition, entry hall assembly sequencing, deck ledger flashing). The drawing set is graphically thorough but requires specification alignment, completion of deferred decisions, and code compliance verification before construction start.
