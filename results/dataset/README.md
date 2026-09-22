@@ -91,14 +91,6 @@ quality review before issuing for bid or construction.
    `data/model_summary.jsonl` report the mean, min, and max across all of a model's
    runs, and per-issue reliability (what fraction of runs caught each issue) is what
    the live leaderboard's heatmap displays for any model with more than one run.
-6. **Model selection**: models are tested when they ship. A back-catalog series was
-   run in September 2026 to measure progress over time, and it is weighted toward
-   OpenAI because OpenAI still serves its older models while other labs do not —
-   Gemini 2.5 Pro and Gemini 3 Pro, Grok 3 and Grok 4, and every Claude before
-   Sonnet 4.5 are no longer reachable by API. The pre-2026 portion of this dataset
-   is therefore the best *available* record of that period, not a complete one.
-   Those back-catalog models were all trained before this dataset was published on
-   5 July 2026, so unlike later models they cannot have been exposed to it.
 
 ## Scoring Validation
 
