@@ -74,6 +74,16 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
         "thinking_type": "adaptive",    # no budget_tokens; uses output_config.effort
         "output_effort": "high",        # matches the Opus runs for a fair comparison
     },
+    # Opus 5.5 (released 2026-09-22). Same adaptive-thinking request surface as
+    # Opus 5: send only {"type": "adaptive"} and control depth via
+    # output_config.effort. 1M context / 128K max output — max_tokens set to the
+    # model's ceiling so long reviews don't get truncated.
+    "claude-opus-5-5": {
+        "provider": "anthropic",
+        "max_tokens": 128000,
+        "thinking_type": "adaptive",    # no budget_tokens; uses output_config.effort
+        "output_effort": "high",        # matches the Opus 5 / Fable 5.x runs for a fair comparison
+    },
     # Opus 5 (released 2026-07-24). Same adaptive-thinking request surface as
     # Fable 5/5.1 and Opus 4.7/4.8: send only {"type": "adaptive"} and control
     # depth via output_config.effort. 1M context / 128K max output — max_tokens
@@ -256,6 +266,7 @@ MAX_RUNS = 5
 PRICING: dict[str, tuple[float, float]] = {
     "claude-fable-5-1":                   (10.00 / 1_000_000, 50.00 / 1_000_000),
     "claude-fable-5":                     (10.00 / 1_000_000, 50.00 / 1_000_000),
+    "claude-opus-5-5":                    (4.00 / 1_000_000, 20.00 / 1_000_000),
     "claude-opus-5":                      (5.00 / 1_000_000, 25.00 / 1_000_000),
     "claude-opus-4-8":                    (5.00 / 1_000_000, 25.00 / 1_000_000),  # verify pricing
     "claude-opus-4-7":                    (5.00 / 1_000_000, 25.00 / 1_000_000),

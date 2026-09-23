@@ -1,0 +1,29 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-09-23T15:03:09.877888+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-09-23_14-52",
+  "models_run": [
+    "claude-opus-5-5"
+  ],
+  "results": [
+    {
+      "model_name": "claude-opus-5-5",
+      "model_version": "claude-opus-5-5",
+      "run_number": 3,
+      "timestamp_start": "2026-09-23T14:52:13.374164+00:00",
+      "timestamp_end": "2026-09-23T15:03:09.874881+00:00",
+      "latency_seconds": 656.5,
+      "input_tokens": 118725,
+      "output_tokens": 69136,
+      "thinking_tokens": 0,
+      "cost_usd": 1.8576200000000003,
+      "temperature": 1,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "batch_note": "Produced by a single `runner.py --models claude-opus-5-5 --runs 3` invocation that wrote all three runs to 2026-09-23_14-28. Split into one folder per run (folder name = that run's start time) to match the one-run-per-folder convention build_data.py requires. The unmodified batch manifest is kept at 2026-09-23_14-28/manifest_batch_original.json."
+}

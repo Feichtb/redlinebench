@@ -58,11 +58,12 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 
 **Source of truth: `redlinebench/outputs/*/scores.json`.** `results/dataset/data.json` (fetched by the site), `results/dataset/data/*` (the HF export), and the table below are all generated from those files by `python redlinebench/build_data.py` — **never hand-edit the table between the markers**, it's overwritten every time `build_data.py` runs. If it disagrees with `results/dataset/data.json`, regenerate; don't manually reconcile.
 
-19 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
+28 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
 
 <!-- REDLINEBENCH:RESULTS_TABLE:START -->
 | Model | Net Score | % of max (55) | Cost / run |
 |-------|----------:|------------:|------------|
+| Claude Opus 5.5 (n=3, range 35.5–41.0) | 37.83 | 68.8% | $1.96 |
 | GPT-6 Astra (n=3, range 33.5–37.5) | 36.0 | 65.5% | $4.29 |
 | Claude Opus 5 (n=3, range 33.5–35.0) | 34.5 | 62.7% | $2.14 |
 | Claude Fable 5.1 (n=3, range 34.0–34.5) | 34.33 | 62.4% | $4.42 |
@@ -162,6 +163,7 @@ python runner.py --prompt my_custom_prompt.txt
 |-----------|----------|-------|
 | `claude-fable-5-1` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-fable-5` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
+| `claude-opus-5-5` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-opus-5` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-opus-4-8` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |
 | `claude-opus-4-7` | Anthropic | Adaptive thinking via `output_config.effort` ("high", type "adaptive") |

@@ -71,6 +71,11 @@ LEGACY_MODEL_ALIASES = {
 MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     "claude-fable-5-1":               {"label": "Claude Fable 5.1",  "provider": "Anthropic", "color": "#ff922b"},
     "claude-fable-5":                 {"label": "Claude Fable 5",    "provider": "Anthropic", "color": "#e8590c"},
+    # Deep crimson rather than another orange-red: the Anthropic family is
+    # crowded and the obvious #c2410c sat dE 11.7 from Opus 4.5/4.6/Haiku 4.5,
+    # which on the top-8 bar chart is two bars nobody can tell apart. This
+    # clears dE 22 from every other model and still reads warm, not Google amber.
+    "claude-opus-5-5":                {"label": "Claude Opus 5.5",   "provider": "Anthropic", "color": "#c6063f"},
     "claude-opus-5":                  {"label": "Claude Opus 5",     "provider": "Anthropic", "color": "#a33a28"},
     "claude-opus-4-8":                {"label": "Claude Opus 4.8",   "provider": "Anthropic", "color": "#7b2318"},
     "claude-opus-4-7":                {"label": "Claude Opus 4.7",   "provider": "Anthropic", "color": "#9c2216"},
@@ -142,6 +147,7 @@ RELEASE_DATES: dict[str, tuple[str, str]] = {
     "claude-opus-5":                 ("2026-07-24", ""),
     "claude-fable-5-1":              ("2026-09-01", ""),
     "gpt-6-astra":                   ("2026-09-04", "general API availability"),
+    "claude-opus-5-5":               ("2026-09-22", ""),
 }
 
 # Generated once (2026-07-05); must stay constant across regenerations to
