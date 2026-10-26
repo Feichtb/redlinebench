@@ -83,8 +83,14 @@ MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     "claude-sonnet-4-6":              {"label": "Claude Sonnet 4.6", "provider": "Anthropic", "color": "#d46058"},
     "claude-haiku-4-5":               {"label": "Claude Haiku 4.5",  "provider": "Anthropic", "color": "#c84838"},
     "claude-sonnet-4-0":              {"label": "Claude Sonnet 4.0", "provider": "Anthropic", "color": "#e09088"},
+    # Google green rather than another amber: clears dE 32 from every other model.
+    "gemini-4-argon":                 {"label": "Gemini 4 Argon",    "provider": "Google",    "color": "#2e9e4f"},
     "gemini-3.1-pro-preview":         {"label": "Gemini 3.1 Pro",    "provider": "Google",    "color": "#b48030"},
     "gemini-3-flash-preview":         {"label": "Gemini 3 Flash",    "provider": "Google",    "color": "#8a5a10"},
+    # Teal, not another blue: the OpenAI blues are saturated (every untried blue
+    # sat within dE 8-12 of Astra, 5.6 Sol or o3). This is near OpenAI's own
+    # brand teal and clears dE 18 from every model; its nearest are o1/o3.
+    "gpt-6.1-sol":                    {"label": "GPT-6.1 Sol",       "provider": "OpenAI",    "color": "#0f9d9a"},
     "gpt-6-astra":                    {"label": "GPT-6 Astra",       "provider": "OpenAI",    "color": "#1f8ac0"},
     "gpt-5.6-sol":                    {"label": "GPT-5.6 Sol",       "provider": "OpenAI",    "color": "#2a62b0"},
     "gpt-5.5":                        {"label": "GPT-5.5",           "provider": "OpenAI",    "color": "#0d3a7a"},
@@ -92,6 +98,9 @@ MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     "gpt-5.4-pro":                    {"label": "GPT-5.4 Pro",       "provider": "OpenAI",    "color": "#1a4a88"},
     "gpt-5-mini":                     {"label": "GPT-5 Mini",        "provider": "OpenAI",    "color": "#4878b4"},
     "gpt-4o":                         {"label": "GPT-4o",            "provider": "OpenAI",    "color": "#80a8cc"},
+    # Purple, not the near-black xAI uses: near-blacks disappear in the site's
+    # dark mode, and this clears dE 23 from every other model.
+    "grok-4.7":                       {"label": "Grok 4.7",          "provider": "xAI",       "color": "#8e44ad"},
     "grok-4.20-beta-0309-reasoning":  {"label": "Grok 4.20 Beta",    "provider": "xAI",       "color": "#5a5650"},
     # Back-catalog models run 2026-09-15 for the Jan 2025 - Jan 2026 progress
     # series. Older OpenAI models take progressively paler blues and older
@@ -147,7 +156,10 @@ RELEASE_DATES: dict[str, tuple[str, str]] = {
     "claude-opus-5":                 ("2026-07-24", ""),
     "claude-fable-5-1":              ("2026-09-01", ""),
     "gpt-6-astra":                   ("2026-09-04", "general API availability"),
+    "grok-4.7":                      ("2026-09-21", ""),
     "claude-opus-5-5":               ("2026-09-22", ""),
+    "gpt-6.1-sol":                   ("2026-09-29", ""),
+    "gemini-4-argon":                ("2026-10-13", ""),
 }
 
 # Generated once (2026-07-05); must stay constant across regenerations to
@@ -456,6 +468,8 @@ def _thinking_notes(cfg: dict) -> str:
     if cfg.get("output_effort"):
         ttype = cfg.get("thinking_type", "adaptive")
         return f'Adaptive thinking via `output_config.effort` ("{cfg["output_effort"]}", type "{ttype}")'
+    if cfg.get("thinking_level"):
+        return f'Thinking level `{cfg["thinking_level"]}`'
     if cfg.get("thinking_budget") is not None:
         budget = cfg["thinking_budget"]
         ttype = cfg.get("thinking_type", "adaptive")

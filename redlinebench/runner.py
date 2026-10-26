@@ -15,6 +15,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
@@ -151,6 +152,16 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
         "thinking_type": "enabled",     # adaptive unsupported on this model
     },
     # ── Google Gemini ──────────────────────────────────────────────────────
+    # Google's flagship reasoning model (released 2026-10-13). ID verified
+    # against ListModels on 2026-10-26. Argon uses discrete thinking levels
+    # (low/medium/high, default medium) rather than a token budget; "high"
+    # matches the effort="high" used for every 2026-09+ addition. No max_tokens
+    # (policy: new models get no cap; the sync default ceiling is 65,536).
+    "gemini-4-argon": {
+        "provider": "gemini",
+        "thinking_level": "high",
+        "stream": True,             # see GeminiAdapter: blocking calls hung
+    },
     # IDs verified against the API's ListModels endpoint (2026-03-12).
     "gemini-3.1-pro-preview": {
         "provider": "gemini",
@@ -174,6 +185,15 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
         "provider": "openai",
         "reasoning_effort": "high",  # matches Fable 5.1's effort="high" so the two
                                      # 2026-09 additions are a controlled comparison
+        "no_temperature": True,      # reasoning model; rejects temperature param
+        # No max_tokens — uncapped output (policy: new models get no cap).
+    },
+    # GPT-6.1 Sol (released 2026-09-29). Config mirrors gpt-6-astra so the two
+    # GPT-6 models are a controlled comparison. ID and effort="high" verified
+    # against the live Responses API on 2026-10-26.
+    "gpt-6.1-sol": {
+        "provider": "openai",
+        "reasoning_effort": "high",
         "no_temperature": True,      # reasoning model; rejects temperature param
         # No max_tokens — uncapped output (policy: new models get no cap).
     },
@@ -250,6 +270,15 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # ── xAI Grok ───────────────────────────────────────────────────────────
     # Uses OpenAI-compatible Chat Completions API at api.x.ai/v1.
     # Reasoning model — rejects temperature param.
+    # Grok 4.7 (released 2026-09-21). ID and reasoning.effort="high" verified
+    # against the live API on 2026-10-26; "high" matches every other 2026-09+
+    # addition. No max_tokens (policy: new models get no cap).
+    "grok-4.7": {
+        "provider": "xai",
+        "reasoning_effort": "high",
+        "no_temperature": True,     # reasoning model
+        "stream": True,             # see GrokAdapter: blocking calls hung
+    },
     "grok-4.20-beta-0309-reasoning": {
         "provider": "xai",
         "max_tokens": 32000,
@@ -275,6 +304,11 @@ PRICING: dict[str, tuple[float, float]] = {
     "claude-haiku-4-5":                   (0.80 / 1_000_000,   4.00 / 1_000_000),
     "claude-sonnet-4-0":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
     "gpt-6-astra":                        (10.00 / 1_000_000, 50.00 / 1_000_000),
+    "gpt-6.1-sol":                        (2.00 / 1_000_000,  10.00 / 1_000_000),
+    # Introductory rate, valid through 2026-11-30 (4/20 thereafter). This is
+    # what the run actually costs today, so it is the rate we record.
+    "gemini-4-argon":                     (2.00 / 1_000_000,  10.00 / 1_000_000),
+    "grok-4.7":                           (2.00 / 1_000_000,   6.00 / 1_000_000),
     "gpt-5.6-sol":                        (5.00 / 1_000_000,  30.00 / 1_000_000),
     "gpt-5.5":                            (5.00 / 1_000_000,  30.00 / 1_000_000),
     "gpt-5.5-pro":                        (30.00 / 1_000_000, 180.00 / 1_000_000),
@@ -310,6 +344,32 @@ def _reasoning_tokens(usage: Any) -> int:
     if isinstance(details, dict):
         return details.get("reasoning_tokens", 0) or 0
     return getattr(details, "reasoning_tokens", 0) or 0
+
+
+class _StreamProgress:
+    """Prints a status line at most every `interval` seconds while a streamed
+    response arrives, so a long-running call can be told apart from a hung one
+    (no line for a long time = nothing is arriving)."""
+
+    def __init__(self, interval: float = 30.0) -> None:
+        self._start = time.monotonic()
+        self._last = self._start
+        self._interval = interval
+        self.events = 0
+        self.thought_chars = 0
+        self.text_chars = 0
+
+    def tick(self, thought: str = "", text: str = "") -> None:
+        self.events += 1
+        self.thought_chars += len(thought)
+        self.text_chars += len(text)
+        now = time.monotonic()
+        if now - self._last >= self._interval:
+            self._last = now
+            mins = (now - self._start) / 60
+            print(f"\n    [{mins:5.1f} min] events={self.events} "
+                  f"thought_chars={self.thought_chars} text_chars={self.text_chars}",
+                  end="", flush=True)
 
 
 def _calculate_cost(model_name: str, input_tokens: int, output_tokens: int) -> float:
@@ -391,7 +451,10 @@ class ModelAdapter(ABC):
                 input_tokens=api_result["input_tokens"],
                 output_tokens=api_result["output_tokens"],
                 thinking_tokens=api_result.get("thinking_tokens", 0),
-                cost_usd=_calculate_cost(self.model_name, api_result["input_tokens"], api_result["output_tokens"]),
+                cost_usd=_calculate_cost(
+                    self.model_name, api_result["input_tokens"],
+                    api_result.get("billable_output_tokens", api_result["output_tokens"]),
+                ),
                 temperature=api_result.get("temperature"),
                 text_response=api_result["text"],
                 raw_response=api_result["raw_response"],
@@ -629,7 +692,17 @@ class GeminiAdapter(ModelAdapter):
         cfg_kwargs: dict[str, Any] = {}
         if self.config.get("max_tokens"):
             cfg_kwargs["max_output_tokens"] = self.config["max_tokens"]
-        if thinking_budget is not None:
+        if self.config.get("thinking_level"):
+            # Gemini 4+: discrete levels instead of a token budget.
+            # include_thoughts only returns thought *summaries* alongside the
+            # answer (kept out of the text, saved in raw_response); it does not
+            # change how the model reasons. It is on so streamed runs show
+            # progress during the thinking phase instead of going silent.
+            cfg_kwargs["thinking_config"] = types.ThinkingConfig(
+                thinking_level=self.config["thinking_level"],
+                include_thoughts=True,
+            )
+        elif thinking_budget is not None:
             cfg_kwargs["thinking_config"] = types.ThinkingConfig(
                 thinking_budget=thinking_budget  # -1 = dynamic
             )
@@ -638,22 +711,66 @@ class GeminiAdapter(ModelAdapter):
             # (some Gemini thinking models reject explicit temperature=0)
             cfg_kwargs["temperature"] = 0
 
-        response = self._client.models.generate_content(
-            model=self.model_name,
-            contents=contents,
-            config=types.GenerateContentConfig(**cfg_kwargs),
+        config = types.GenerateContentConfig(**cfg_kwargs)
+
+        if not self.config.get("stream"):
+            response = self._client.models.generate_content(
+                model=self.model_name, contents=contents, config=config,
+            )
+            usage = response.usage_metadata
+            return {
+                "text": response.text,
+                "input_tokens": usage.prompt_token_count or 0,
+                "output_tokens": usage.candidates_token_count or 0,
+                "thinking_tokens": getattr(usage, "thoughts_token_count", 0) or 0,
+                "billable_output_tokens": (usage.candidates_token_count or 0)
+                    + (getattr(usage, "thoughts_token_count", 0) or 0),
+                "model_version": self.model_name,  # Gemini doesn't echo version
+                "raw_response": response.model_dump(),
+                "temperature": cfg_kwargs.get("temperature"),
+            }
+
+        # Streamed: long high-thinking runs over the full PDFs can exceed what a
+        # single blocking request survives (a 2026-10-26 Argon call sat ~50 min
+        # with no reply). Usage totals arrive on the final chunk.
+        progress = _StreamProgress()
+        chunks: list[Any] = []
+        text_parts: list[str] = []
+        for chunk in self._client.models.generate_content_stream(
+            model=self.model_name, contents=contents, config=config,
+        ):
+            chunks.append(chunk)
+            thought, text = "", ""
+            for cand in chunk.candidates or []:
+                for part in (cand.content.parts if cand.content else None) or []:
+                    if not part.text:
+                        continue
+                    if part.thought:
+                        thought += part.text
+                    else:
+                        text += part.text
+            text_parts.append(text)
+            progress.tick(thought=thought, text=text)
+
+        usage = next(
+            (c.usage_metadata for c in reversed(chunks) if c.usage_metadata), None
         )
-
-        usage = response.usage_metadata
-        thinking_tokens = getattr(usage, "thoughts_token_count", 0) or 0
-
         return {
-            "text": response.text,
-            "input_tokens": usage.prompt_token_count or 0,
-            "output_tokens": usage.candidates_token_count or 0,
-            "thinking_tokens": thinking_tokens,
-            "model_version": self.model_name,  # Gemini doesn't echo version
-            "raw_response": response.model_dump(),
+            "text": "".join(text_parts),
+            "input_tokens": (usage.prompt_token_count or 0) if usage else 0,
+            "output_tokens": (usage.candidates_token_count or 0) if usage else 0,
+            "thinking_tokens": (getattr(usage, "thoughts_token_count", 0) or 0) if usage else 0,
+            # Gemini's candidates_token_count excludes thinking, but thinking is
+            # billed at the output rate -- unlike OpenAI, whose output_tokens
+            # already include reasoning. Cost must use the sum.
+            "billable_output_tokens": (
+                (usage.candidates_token_count or 0) + (getattr(usage, "thoughts_token_count", 0) or 0)
+            ) if usage else 0,
+            "model_version": next(
+                (c.model_version for c in reversed(chunks) if c.model_version),
+                self.model_name,
+            ),
+            "raw_response": {"streamed": True, "chunks": [c.model_dump() for c in chunks]},
             "temperature": cfg_kwargs.get("temperature"),
         }
 
@@ -711,14 +828,84 @@ class GrokAdapter(ModelAdapter):
         kwargs: dict[str, Any] = {
             "model": self.model_name,
             "input": [{"role": "user", "content": content}],
+            # xAI reads attached PDFs through a server-side pdf_browse tool, and
+            # the browsed pages are kept in the stored response. On a full
+            # review that copy outgrows xAI's limit and the server fails the
+            # whole response ("Response is too large to store. ... set `store`
+            # to false") -- every Grok 4.7 run on 2026-10-26 died this way at
+            # 11-18K chars. store=False only skips server-side retention; it
+            # does not change the input or the model's behavior.
+            "store": False,
         }
         if self.config.get("max_tokens"):
             kwargs["max_output_tokens"] = self.config["max_tokens"]
+        if self.config.get("reasoning_effort"):
+            kwargs["reasoning"] = {"effort": self.config["reasoning_effort"]}
         if not self.config.get("no_temperature"):
             kwargs["temperature"] = 0
 
         try:
-            response = self._client.responses.create(**kwargs)
+            if self.config.get("stream"):
+                # Streamed so a long reasoning run shows progress and isn't a
+                # single blocking request (a 2026-10-26 Grok 4.7 call sat ~50
+                # min with no reply). The final response object is identical.
+                progress = _StreamProgress()
+                last_event: Any = None
+                # Stall guard: xAI can hold a stream open with keep-alive bytes
+                # and no events indefinitely (2026-10-26 run 3 went silent at
+                # 3.4 min and was still open at 79 min), which also defeats the
+                # client read timeout. Normal pdf_browse gaps are ~5 min.
+                stall_s = self.config.get("stall_timeout_s", 1200)
+                last_seen = [time.monotonic()]
+                stalled = threading.Event()
+                done = threading.Event()
+                with self._client.responses.stream(**kwargs) as stream:
+                    def _watchdog() -> None:
+                        while not done.wait(min(15, stall_s / 3)):
+                            if time.monotonic() - last_seen[0] > stall_s:
+                                stalled.set()
+                                stream.close()
+                                return
+                    threading.Thread(target=_watchdog, daemon=True).start()
+                    try:
+                        for event in stream:
+                            last_seen[0] = time.monotonic()
+                            last_event = event
+                            delta = getattr(event, "delta", "") or ""
+                            if not isinstance(delta, str):
+                                delta = ""
+                            if "reasoning" in event.type:
+                                progress.tick(thought=delta)
+                            else:
+                                progress.tick(text=delta if event.type == "response.output_text.delta" else "")
+                    except Exception:
+                        if not stalled.is_set():
+                            raise
+                    finally:
+                        done.set()
+                    if stalled.is_set():
+                        raise RuntimeError(
+                            f"Stalled: no stream events for {stall_s:.0f}s after "
+                            f"{progress.events} events / {progress.text_chars} text chars; aborted."
+                        )
+                    try:
+                        response = stream.get_final_response()
+                    except RuntimeError as exc:
+                        # The SDK only says "no response.completed event"; say
+                        # what the stream actually ended on (response.failed /
+                        # response.incomplete carry the reason, a bare delta
+                        # means the connection was dropped mid-stream).
+                        detail = last_event.model_dump() if last_event is not None else None
+                        if isinstance(detail, dict) and isinstance(detail.get("response"), dict):
+                            r = detail["response"]
+                            detail = {k: r.get(k) for k in ("status", "error", "incomplete_details")}
+                        raise RuntimeError(
+                            f"{exc} Stream ended after {progress.events} events, "
+                            f"{progress.text_chars} text chars; last event "
+                            f"{getattr(last_event, 'type', None)!r}: {json.dumps(detail, default=str)[:800]}"
+                        ) from exc
+            else:
+                response = self._client.responses.create(**kwargs)
         finally:
             # Clean up uploaded files regardless of success/failure
             for fid in file_ids:

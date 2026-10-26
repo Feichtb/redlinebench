@@ -1,0 +1,205 @@
+### Step 1: Project Context
+
+- **Project Name, Location, and Code Jurisdiction:** Bonfire House (Bid Set dated 10/20/2021); located in Chatham County, North Carolina; governed by the 2018 North Carolina Residential Code (adopting the 2015 IRC with amendments).
+- **Building Type and Construction Type:** Two-story single-family residence (Occupancy Classification R-3) over a sealed crawl space and slab-on-grade garage; Construction Type V-B.
+- **Climate Zone:** Climate Zone 4A (stated on Sheet G0.11).
+- **Scope of Drawing Set:** 34 architectural sheets (Cover Sheet, General sheets G0.01–G1.00, Site/Survey A1.00–A1.01, Plans A2.00–A2.03, Exterior Elevations and Building/Wall Sections A3.01–A3.22, Wall/Horizontal Assemblies and Exterior Details A4.00–A4.13, Deck/Pool Plans/Elevations/Sections/Details A5.01–A5.30, Reflected Ceiling Plan A6.01, Interior Elevations and Details A7.01–A7.10, and Schedules A8.01); structural, civil, landscape, mechanical, electrical, and plumbing engineering drawings are absent (survey on A1.00 is also removed).
+- **Specifications:** An 11-page narrative "Project Specifications: Description of Materials, Applications and Allowances" booklet (dated 10/20/2021) is provided; it is organized by topic headings rather than standard CSI MasterFormat divisions.
+
+---
+
+### Step 2 & Step 3: Document Review Findings
+
+#### A. Internal Consistency Across Sheets
+
+A-1 | Cover Sheet, Sheet A5.20, Sheets A3.02, A5.01, A5.10 | The Sheet List on the Cover Sheet lists sheet `A5.11 SECTIONS, DECK`, whereas the actual sheet in the drawing set and all corresponding section callouts on A3.02, A5.01, and A5.10 are numbered `A5.20`. | Certain
+
+A-2 | Sheets A2.01, A2.02, A2.03, A3.01, A3.02 | Exterior elevation markers `1/A3.01` and `1/A3.02` are swapped on the Level 1, Level 2, and Roof plans: marker `1/A3.02` is placed on the east side of the building pointing west (which is East Elevation `1/A3.01`), while marker `1/A3.01` is placed in the courtyard pointing south (which is North Elevation `1/A3.02`). | Certain
+
+A-3 | Sheet G0.11, Sheet A2.01A, Sheet A2.01B | The Plumbing Fixture Count on Sheet G0.11 lists 4 lavatories, whereas the floor plans show 5 lavatories (two in Master Bathroom 07, one in Bathroom 11, one in Powder Room 14, and one in Guest Bathroom 18). | Certain
+
+A-4 | Sheet A2.01, Sheet A2.01B, Sheet A8.01 | On Sheet A2.01, the room tag for the Office displays room number `2` (which is the Living Room's number) instead of `13` as shown on Sheet A2.01B and in the Room Finish Schedule on Sheet A8.01. | Certain
+
+A-5 | Sheet A2.01A, Sheet A8.01 | Door `11-1` (into Bathroom 11 on Sheet A2.01A) is completely omitted from the Door Schedule on Sheet A8.01. | Certain
+
+A-6 | Sheet A2.01A, Sheet A8.01 | The Door Schedule on Sheet A8.01 lists interior door `10-1` (3'-0" × 7'-0" solid-core wood door for Reading Nook 10), but Reading Nook 10 is an open alcove with no door on Sheet A2.01A, while the pocket door into the Kitchen Pantry is tagged only with a square keynote-style box `13` and has no entry in the Door Schedule. | Certain
+
+A-7 | Sheet A8.01, Sheet A3.03 (Detail 2/A3.03), Sheet A3.21 (Detail 3/A3.21) | Garage door `15-1` is listed as 8'-0" high in the Door Schedule on Sheet A8.01, dimensioned as 7'-0" high (`3'-0" + 4'-0"`) on North Elevation `2/A3.03`, and dimensioned as 7'-1" high in Garage Section `3/A3.21`. | Certain
+
+A-8 | Sheet A2.01A, Sheet A3.02 (Detail 1/A3.02), Sheet A3.01 (Detail 1/A3.01) | The windows shown on the north wall of the south wing in North Elevation `1/A3.02` do not match Enlarged Plan `1/A2.01A`: `1/A3.02` adds a 4'-0" × 4'-0" window (`4`) next to window `2` at the Kitchen corner, omits window `2C` in Master Closet 08, and replaces the 2'-6" × 4'-0" casement window `8C` in Master Bathroom 07 with a 2'-0" × 2'-0" window `2`, while `8C` is erroneously tagged on entry door `01-1` on East Elevation `1/A3.01`. | Certain
+
+A-9 | Sheet A2.01A, Sheet A3.01 (Detail 2/A3.01), Sheet A3.03 (Detail 3/A3.03) | On West Elevation `2/A3.01`, the 2'-0" × 4'-0" casement window `7C` (Bathroom 11) and the 3'-0" × 3'-0" fixed window `3` (Kitchen 04) between Grids 3 and 4 are drawn in reversed positions compared to Plan `1/A2.01A` and Partial Section/Elevation `3/A3.03`. | Certain
+
+A-10 | Sheet A2.01A, Sheet A3.01 (Detail 2/A3.01) | On Plan `1/A2.01A`, the two windows on the west wall of Master Bedroom 06 are both tagged as `5` (5'-0" × 5'-0" fixed), whereas on West Elevation `2/A3.01` they are drawn and tagged as two different sizes, `4` (4'-0" × 4'-0") and `6` (6'-0" × 6'-0"). | Certain
+
+A-11 | Sheet A2.02, Sheet A3.02 (Detail 2/A3.02) | On Level 2 Plan `A2.02`, the three south-facing clerestory windows above the Dining and Living Rooms (between Grids D and G) are all drawn the same width and tagged `5`, `5`, `5` (5'-0" × 5'-0"), whereas on South Elevation `2/A3.02` they are drawn and tagged as `3` (3'-0" × 3'-0"), `4` (4'-0" × 4'-0"), and `5` (5'-0" × 5'-0"). | Certain
+
+A-12 | Sheet A2.02, Sheet A3.01 (Detail 1/A3.01) | On Level 2 Plan `A2.02`, the two east-facing clerestory windows above the Living Room (along Grid G) are tagged `4` (4'-0" × 4'-0") and `3` (3'-0" × 3'-0"), whereas on East Elevation `1/A3.01` those same two windows are tagged `5` (5'-0" × 5'-0") and `6` (6'-0" × 6'-0", with the `6` tag placed on the smaller window). | Certain
+
+A-13 | Sheet A2.01B (Detail 1/A2.01B), Sheet A3.01 (Detail 2/A3.01), Sheet A3.03 (Detail 1/A3.03) | On Plan `1/A2.01B`, Laundry Room 12 has a 5'-0" × 5'-0" window (`5`) on its south wall (Grid 2) and only a 3'-0" × 3'-0" window (`3C`) on the west wall (Grid D), but South Elevation `1/A3.03` omits the south wall window completely while West Elevation `2/A3.01` erroneously draws window `5` on the west wall of the Garage/Laundry. | Certain
+
+A-14 | Sheet A2.01B (Details 1/A2.01B & 2/A2.01B), Sheet A3.02 (Detail 2/A3.02), Sheet A3.03 (Detail 1/A3.03) | On Plans `1/A2.01B` and `2/A2.01B`, the south wall of the stairwell (between Grids G and H along Grid 2) has a 5'-0" × 5'-0" window (`5`) at Level 1 and a 4'-0" × 4'-0" window (`4`) at Level 2, whereas South Elevations `1/A3.03` and `2/A3.02` show only a single 3'-0" × 3'-0" window (`3`) on that wall. | Certain
+
+A-15 | Sheet A2.01B (Detail 2/A2.01B), Sheet A2.02, Sheet A3.03 (Detail 2/A3.03) | The middle window on the north wall of Guest Bedroom 17 (along Grid 1) is drawn and dimensioned as a 4'-0" × 4'-0" fixed window (`4`) on Plans `2/A2.01B` and `A2.02`, but is drawn and tagged as a 3'-0" × 3'-0" casement window (`3C`) on North Elevation `2/A3.03` (and `4/A3.21`). | Certain
+
+A-16 | Sheet A8.01, Sheets A2.01A, A2.01B, A2.02 | Because of the window tag discrepancies between plans and elevations, the total counts in the Window Schedule on Sheet A8.01 do not match the floor plans (for example, the schedule lists two Type `2` windows and six Type `3` windows, while the floor plans show only one Type `2` window and four Type `3` windows). | Certain
+
+A-17 | Sheet A2.00, Sheet A2.01, Sheet A3.01 (Detail 2/A3.01), Sheet A5.10 (Details 1/A5.10 & 4/A5.10) | Sheet A2.00 labels the exterior access to crawl space door `21-1` as `CONCRETE RAMP FROM GRADE TO DOOR` with a bottom elevation of `Face of Conc. -7'-8"`, whereas Sheets A2.01, A3.01, A5.01, A5.10, and A5.20 all depict a flight of stairs down to elevation `-8'-0"`. | Certain
+
+A-18 | Sheet A2.01A, Sheet A7.01 (Details 3/A7.01, 4/A7.01, 5/A7.01) | On Plan `1/A2.01A`, the interior elevation markers for the Kitchen island (`3/A7.01`, `4/A7.01`, `5/A7.01`) are misoriented and do not match the views on Sheet A7.01: `5/A7.01` ("KITCHEN 04 - ISLAND EAST") actually depicts the northwest sink/dishwasher face of the island, `4/A7.01` ("KITCHEN 04 - ISLAND WEST") depicts the southeast bar-seating face, and `3/A7.01` ("KITCHEN 04 - ISLAND SOUTH") depicts the southwest end looking northeast. | Certain
+
+A-19 | Sheet A7.01 (Detail 1/A7.01), Sheet A8.01 | On Kitchen elevation `1/A7.01`, the ceiling-mounted range hood has both an `A5` tag and a leader note reading `A3 CEILING MOUNTED HOOD VENT`, conflicting with the Appliance Schedule on Sheet A8.01 where `A3` is the Oven and `A5` is the Hood. | Certain
+
+A-20 | Sheet A2.01A, Sheet A7.01 (Detail 9/A7.01), Sheet A7.10 (Detail 1/A7.10) | Detail `9/A7.01` ("SECOND BEDROOM 09 - EAST") and Detail `1/A7.10` ("SECTION, READING NOOK") are the exact same drawing at different scales (1/4" = 1'-0" and 1" = 1'-0"), yet `9/A7.01` is mislabeled as Second Bedroom 09 with grid lines `5` and `6` (and includes a section marker `1/A7.10` cutting through itself), while `1/A7.10` labels the same walls as grid lines `C` and `B` and reverses the east/west positions of the bookshelves and ladder compared to Plan `1/A2.01A`. | Certain
+
+A-21 | Sheet A2.01A, Sheet A7.02 (Details 7/A7.02, 8/A7.02, 9/A7.02) | The Master Bathroom 07 interior elevations on Sheet A7.02 contradict Plan `1/A2.01A`: `7/A7.02` (East) shows the shower on the right (south) instead of the left (north) and shows only one door instead of the two doors (`07-1` and `08-1`) on the east wall; `8/A7.02` (South) shows a door in the middle of the south wall where no door exists on the plan; and `9/A7.02` (West) omits the freestanding bathtub shown along the west wall on `1/A2.01A` and in `10/A7.02`. | Certain
+
+A-22 | Sheet A2.01A, Sheet A7.02 (Details 2/A7.02 & 3/A7.02) | Interior elevation `2/A7.02` ("BATHROOM 11 - EAST") shows the shower, toilet, and vanity arranged side-by-side along a single wall, contradicting Plan `1/A2.01A` where the toilet is on the west wall and the vanity is on the opposite east wall. | Certain
+
+A-23 | Sheet A2.01B (Detail 2/A2.01B), Sheet A7.02 (Detail 5/A7.02), Sheet A8.01 | Detail `5/A7.02` is titled `GUEST BATHROOM 19 - SOUTH` (Room 19 is the Guest Closet; the Guest Bathroom is Room 18), and the elevation depicts a straight wall with a vanity, toilet, and shower side-by-side that does not match the angled plan layout of Guest Bathroom 18 on Sheet A2.01B. | Certain
+
+A-24 | Sheet A2.01B (Detail 1/A2.01B), Sheet A8.01 | The Room Finish Schedule on Sheet A8.01 assigns floor assembly `F-4` (Carpet) to `14 Powder Room`, contradicting Plan `1/A2.01B` where Powder Room 14 is tagged `F-2` (tile/stone) with a floor drain. | Certain
+
+A-25 | Sheet A2.01A, Sheet A4.00, Sheet A7.01 (Details 6/A7.01, 7/A7.01, 9/A7.01), Sheet A8.01 | The Room Finish Schedule on Sheet A8.01 lists the Entry Hall (01) east wall as `P-1` (paint) and west wall as `WD-1`, and lists the Reading Nook (10) walls as `WD-1`, whereas Wall Assemblies `E-2` and `W-4` on Sheet A4.00 and Interior Elevations `6/A7.01`, `7/A7.01`, and `9/A7.01` specify `WD-4` (1×6 tongue-and-groove wood boards) on those walls. | Certain
+
+A-26 | Sheet A2.01B (Detail 1/A2.01B), Sheet A3.10 (Detail 2/A3.10), Sheet A3.21 (Detail 3/A3.21), Sheet A7.10 (Detail 3/A7.10) | On Plan `1/A2.01B`, detail callout `3/A7.10` is placed in the middle of the Garage slab at a control joint rather than at the perimeter wall, and Detail `3/A7.10` ("BASE, GARAGE, INTERIOR") shows the Garage concrete slab flush with the Level 1 (`508'-0"`) wood floor framing rather than `1'-0"` lower as shown on `1/A2.01B`, `2/A3.10`, and `3/A3.21`. | Certain
+
+A-27 | Sheet A3.01 (Detail 2/A3.01), Sheet A4.01 | West Elevation `2/A3.01` tags the Entry Hall roof as assembly `R-2`, but Sheet A4.01 (Horizontal Assemblies) only defines `R-1` and contains no `R-2` roof assembly. | Certain
+
+A-28 | Sheet A5.10 (Details 3/A5.10 & 4/A5.10), Sheet A3.02, Sheet A5.01 | On Sheet A5.10, view `3/A5.10` (looking north at the south face of the pool/deck from Grids A to H) is titled `NORTH ELEVATION, DECK` and view `4/A5.10` (looking south from Grids H to A) is titled `SOUTH SECTION, DECK`, which is the exact opposite of the directional naming convention used on Sheet A3.02 (`2/A3.02` South Elevation and `1/A3.02` North Elevation). | Certain
+
+A-29 | Sheet A6.01, Sheets A3.01, A3.02, A3.03, Sheet A5.01 | Fixture counts on the plans do not match the Lighting Fixture Schedule on Sheet A6.01: First Floor RCP `1/A6.01` shows seven `L5` security lights while the schedule lists 6 (and exterior elevations A3.01–A3.03 show them in different locations); Enlarged Plans A2.01A/B and Interior Elevations show at least five separate `L7` LED strip light locations while the schedule lists a count of 2; and Deck Plan `A5.01` shows seven `L8` step lights while the schedule lists 12. | Certain
+
+---
+
+#### B. Dimensional and Geometric Integrity
+
+B-1 | Sheet A2.01, Sheet A2.01A, Sheet A2.02 | On the west side of the South Wing (Master Bathroom 07 and Master Bedroom 06), the overall dimension between Grid 4 and Grid 5 is labeled `29'-6"` (`6'-8" + 4'-5" + 18'-5"` on A2.01A), which equals the East Wing dimension from Grid 3 to Grid 5 (`29'-6"`) even though Grid 4 is offset `4'-0"` south of Grid 3 (`1'-5 3/4" + 2'-6 1/4"`) and both wings terminate at the same south wall line (Grid 5); meanwhile, the adjacent window dimension chain on the same west wall between Grid 4 and Grid 5 sums to `26'-6"` (`2'-4 1/4" + 3'-8" + 2'-0 3/4" + 3'-3" + 7'-9" + 7'-5"`), and the interior room chain shows `29'-6"` is the distance from Grid 4 to Grid 6 (`25'-6"` from Grid 4 to Grid 5). | Certain
+
+B-2 | Sheet A2.01A | At the bottom of Sheet A2.01A, the exterior dimension chain along the south wall of Master Bedroom 06, Second Bedroom 09, and Reading Nook 10 (`2'-6 1/2" + 6'-9 1/2" + 4'-6" + 5'-7" + 8'-3 1/2" + 2'-6"`) sums to `30'-2 1/2"` (the distance from Grid A to Grid B), but its eastern witness line is drawn to the east face of Reading Nook 10 at Grid C (`30'-10"`). | Certain
+
+B-3 | Sheet A2.01B (Details 1/A2.01B & 2/A2.01B) | On Level 2 North Plan `2/A2.01B`, the bottom horizontal dimension chain from Grid D to Grid H (`24'-3" + 5'-7" + 4'-0 1/2"`) sums to `33'-10 1/2"`, which conflicts with the `34'-4"` overall building width shown at the top of `2/A2.01B` and on `1/A2.01B`. | Certain
+
+B-4 | Sheet A2.01B (Details 1/A2.01B & 2/A2.01B), Sheet A3.22 (Detail 1/A3.22) | In Stair Section `1/A3.22`, the upper flight of the stair has 9 treads at 11" (`8'-3"` horizontal run), which cannot fit within the `5'-7"` stair run dimensioned on Level 2 Plan `2/A2.01B` (where only 7 treads are drawn) or the ~`3'-7 1/2"` run available before hitting the Powder Room 14 wall on Level 1 Plan `1/A2.01B` (where only 4 treads are drawn). | Certain
+
+B-5 | Sheet A2.00 | On the west side of the Crawl Space Plan (`A2.00`), the individual dimension segments from Grid 5 to the south end of the pool foundation (`3'-8" + 3'-4" + 6'-0 1/4" + 1 1/2" + 5'-0" + 8'-0"`) sum to `26'-1 3/4"`, conflicting with the adjacent overall dimension of `20'-1 3/4"`. | Certain
+
+B-6 | Sheet A2.00, Sheet A5.01 | On Crawl Space Plan `A2.00`, the pool foundation length is dimensioned as `62'-0"` (plus `5'-0"` mechanical area) and the east deck width is `31'-6"`, whereas on Enlarged Deck Plan `A5.01` the pool length is `60'-0"` with `1'-0"` walls (plus `5'-0"` mechanical area) and the corresponding deck dimension is `31'-5"`. | Certain
+
+B-7 | Sheet A2.03 | Along the south edge of the Roof Plan (`A2.03`), the sub-dimension chain on the left (`2'-0" + 29'-10" + 4 1/2"`) sums to `32'-2 1/2"`, conflicting with the overall dimension of `31'-10"` directly beneath it. | Certain
+
+B-8 | Sheet A3.02 (Detail 1/A3.02) | On North Elevation `1/A3.02`, the `PLAN, CRAWL SPACE` datum is labeled `501'-0"`, even though it is dimensioned `6'-0"` below `LEVEL 1` (`508'-0"`), which equals `502'-0"` as shown on all other elevations and sections. | Certain
+
+B-9 | Sheet A3.02 (Detail 1/A3.02), Sheet A3.03 (Detail 1/A3.03), Sheet A3.01 (Detail 1/A3.01) | On Elevations `1/A3.02` and `1/A3.03`, the East Entry Hall ramp is labeled with a slope of `1/8" / 1'-0"`, which mathematically cannot overcome the `1'-6"` vertical rise from grade to Level 1 (`508'-0"`) over the ~18'-0" ramp length shown on plan. | Certain
+
+B-10 | Sheet A4.00 (Details E-2, E-3, E-4) | In exterior wall assemblies `E-2`, `E-3`, and `E-4` on Sheet A4.00, the text callouts specify `1 1/2" RIGID INSULATION`, whereas the dimension strings at the top of all three details label that same layer as `1"`, and in `E-3` the individual layer dimensions (`1/2" + 5 1/2" + 1/2" + 1" + 3/4" + 5/16" = 8 9/16"`) do not sum to the stated `8"` total thickness. | Certain
+
+B-11 | Sheet A4.12 (Details 7/A4.12 & 8/A4.12) | On Sheet A4.12, Detail `8/A4.12` ("BASE, GARAGE DOOR") dimensions the top of the garage slab and driveway pad `1'-0"` below `LEVEL 1 508'-0"`, whereas adjacent Detail `7/A4.12` ("BASE, GARAGE") shows the exact same garage slab and driveway pad flush with `LEVEL 1 508'-0"`. | Certain
+
+B-12 | Sheet A4.10 (Detail 6/A4.10), Sheet A4.11 (Detail 5/A4.11) | In foundation base details `6/A4.10` and `5/A4.11`, the dimension strings inside the `9 5/8"` CMU stem wall (`7 1/4" + 1 1/2"` in `6/A4.10` and `5 1/2" + 1 1/2"` in `5/A4.11`) dimension the stud and exterior foam thicknesses of the framed wall above rather than the CMU stem wall and crawl space insulation layers they are drawn across. | Certain
+
+---
+
+#### C. Specification-to-Drawing Alignment
+
+C-1 | Sheet A8.01 (Window Schedule), Specifications Page 3 | The Window Schedule on Sheet A8.01 specifies `Ultrex-Marvin-Stonewhite` for the interior and cladding materials of all windows, directly contradicting Specifications Page 3 which specifies `Windows: Andersen, 400 Series, Casement & Fixed`. | Certain
+
+C-2 | Sheet A8.01 (Door Schedule), Specifications Page 3 | The Door Schedule on Sheet A8.01 lists exterior door `03-1` as `METAL` door material, contradicting Specifications Page 3 which specifies `Exterior doors (01-1, 01-2, 03-01, 06-01) - Jeld Wen IWP Wood Exterior Door: 500 Glass Panel or similar`. | Certain
+
+C-3 | Sheet G0.11, Sheet A4.00 (Detail E-1), Sheet A4.10 (Detail 6/A4.10), Sheet A4.11 (Detail 5/A4.11), Specifications Page 4 | Specifications Page 4 requires `Stem Wall: 2" rigid XPS = R10` (and Sheet G0.11 lists `CRAWL SPACE WALL R = 10 (INTERIOR)`), whereas Detail `E-1` on Sheet A4.00 specifies `1/2" RIGID INSULATION @ CRAWL SPACE` (which cannot achieve R-10). | Certain
+
+C-4 | Sheet G0.11, Specifications Page 4 | Code Summary Sheet G0.11 states a project ceiling insulation value of `R = 53`, whereas Specifications Page 4 states `Ceilings: R38 12" fiberglass batts + 3" rigid XPS R15 = R49`. | Certain
+
+C-5 | Sheet A4.00 (Details E-2, E-3, E-4), Specifications Page 4 | Specifications Page 4 specifies `R6 1" Insulated ZIP Board` for the exterior wall assembly, whereas Details `E-2`, `E-3`, and `E-4` on Sheet A4.00 depict `1/2" PLYWOOD`, `1 1/2" RIGID INSULATION` (dimensioned as `1"`), and a separate exterior `WEATHER BARRIER`. | Certain
+
+C-6 | Sheet A4.00 (Detail E-2), Sheet A4.10 (Detail 4/A4.10), Specifications Page 2 | Specifications Page 2 states that all conditioned exterior walls are to be `2" x 6"`, whereas Entry Hall exterior wall `E-2` on Sheet A4.00 specifies `2X8 STUDS` and jamb detail `4/A4.10` specifies `2x10 STUD`. | Certain
+
+C-7 | Sheets A2.01A, A2.01B, A3.01, A3.02, A3.03, A4.00, Specifications Pages 2–3 | Specifications Pages 2–3 state that `WD-3` Thermory Ash Cladding is located on the `South and West Facades` and `8" Hardieplank Lap Siding` is located on the `North and West Facades`, whereas the drawings apply `E-4` (`WD-3` vertical wood cladding) to the East, South, and North facades of the South Wing and apply `E-3` (`5/16" CEMENT FIBER BOARD` panels rather than 8" lap siding) to the North, East, and West facades of the North Wing. | Certain
+
+C-8 | Sheet A2.01A, Sheet A7.02 (Details 2/A7.02 & 3/A7.02), Specifications Pages 5, 7, 10 | Specifications Pages 5, 7, and 10 specify a 60" × 32" three-wall alcove soaking bathtub (`Signature Hardware Sitka 60" X 32"`), a tub/shower faucet (`Delta T14476-BL`), and a shower curtain for Downstairs Guest Bathroom 11, whereas Sheet A2.01A and Details `2/A7.02` and `3/A7.02` depict a `4'-4 1/2"` × `3'-0 1/2"` walk-in shower with a floor drain (`FD`) where a 60" tub cannot fit. | Certain
+
+C-9 | Sheet A4.01 (Detail F-3), Sheet A3.21 (Detail 3/A3.21), Sheet A7.02 (Details 6/A7.02 & 10/A7.02), Specifications Pages 2 & 5 | Specifications Pages 2 and 5 state that the subfloor under the tile at showers in Rooms 07 and 18 will be lowered per assembly `F-3` on Sheet A4.01 to provide a level transition, whereas Plans `A2.01A` and `2/A2.01B` only tag `F-3` at Bathroom 11 (tagging Guest Bathroom 18 shower as `F-2`), and Sections `3/A3.21`, `6/A7.02`, and `10/A7.02` show raised shower curbs on top of the floor rather than a flush recessed transition. | Certain
+
+C-10 | Sheet A2.01A, Sheet A4.00 (Detail W-2), Specifications Page 4 | Specifications Page 4 requires an acoustic barrier in the interior wall between the Master and Second Bedrooms and in the Bathroom 11 walls shared with the hallway and kitchen, but on Sheet A2.01A those walls are designated as `W-1` and `W-2`, neither of which includes cavity insulation or acoustic treatment on Sheet A4.00. | Certain
+
+C-11 | Sheet G0.11, Sheets A3.01, A3.02, A3.03, Specifications Page 7 | Specifications Page 7 calls for `Exterior hose bibs (3) to be Aqua Hydrants`, whereas Code Summary Sheet G0.11 lists `HOSE BIBS: 5` and Exterior Elevations A3.01–A3.03 show 5 `AQUOR HOUSE HYDRANT V2+` locations. | Certain
+
+C-12 | Sheet A2.03, Sheet A3.20 (Detail 3/A3.20), Specifications Page 1 | Specifications Page 1 states `1. Roofs are 3"/12" slope on diagonal`, whereas Roof Plan `A2.03` and Section `3/A3.20` show the North Wing roof and Entry Hall roof at a `2" / 1'-0"` slope and the South Porch roof at `1/4" / 1'-0"`. | Certain
+
+C-13 | Sheet A7.01 (Detail 1/A7.01), Specifications Page 10 | Specifications Page 10 specifies a 30"-wide electric wall oven (`LG LWS3063ST`) and 30"-wide gas cooktop (`JennAir JGC3530GS`), which cannot fit inside the `2'-6 1/2"` (30.5" total width including stiles/partitions) cabinet bay dimensioned on Kitchen elevation `1/A7.01`. | High
+
+C-14 | Sheet A7.01 (Detail 2/A7.01), Specifications Page 5 | Specifications Page 5 calls for `Pantry - 7 shelves on 2 adjacent walls. Detail 2 on A7.01`, whereas Detail `2/A7.01` and Plan `1/A2.01A` show 6 shelves along a single wall. | Certain
+
+C-15 | Sheet A7.01, Sheet A7.10, Specifications Page 6 | Specifications Page 6 references `Built-in shelves in Dining room wall (Room 03), as shown in drawing set, page A7.01` and `Reading Nook (Room 10) on page A8.10`, but there is no Dining Room elevation on Sheet A7.01 and no Sheet A8.10 in the drawing set (the Reading Nook section is on Sheet A7.10). | Certain
+
+---
+
+#### D. Building Envelope and Building Science
+
+D-1 | Sheet A4.12 (Detail 6/A4.12), Sheet A2.03 | In Roof Intersection Detail `6/A4.12` (between Grids B and C), the upper sloped roof eaves overhang directly over the lower roof's gutter without an upper-roof gutter, dumping upper-roof runoff onto the lower roof edge while trapping the lower gutter in an inaccessible pocket underneath the upper soffit. | High
+
+D-2 | Sheet A4.13 (Detail 5/A4.13) | In Porch Overhang Section `5/A4.13`, the horizontal structural `TUBE STEEL` cantilevers directly through the exterior plywood sheathing, rigid insulation, and weather barrier into the interior stud cavity (creating a direct thermal bridge and condensation risk), and the top roof-to-wall `METAL FLASHING` terminates against the outer face of the wood siding rather than lapping behind the cladding, furring, and weather barrier. | Certain
+
+D-3 | Sheet A4.11 (Details 1/A4.11 & 2/A4.11), Sheet A4.10 (Details 2/A4.10 & 8/A4.10) | In Window Head Detail `1/A4.11`, the `METAL FLASHING` terminates behind the `1 1/2"` exterior Accoya trim (`WD-2`) rather than projecting beyond the outer face of the exterior trim to form a drip edge, and in Window Sill Details `2/A4.11` and `8/A4.10` the exterior Accoya sill frame is drawn flat with no positive slope to drain water outward. | High
+
+D-4 | Sheet A4.12 (Detail 4/A4.12) | Entry Hall Roof Section `4/A4.12` omits all roof insulation, rigid foam, weather barrier, furring, and standing-seam metal roofing panels above the roof sheathing, showing only bare plywood sheathing meeting a sidewall flashing. | Certain
+
+D-5 | Sheet A4.00 (Detail E-1), Sheet A4.10 (Detail 6/A4.10), Sheet A4.11 (Detail 5/A4.11), Sheet A5.30 (Details 3/A5.30 & 5/A5.30), Sheet A7.10 (Detail 3/A7.10) | The crawl space foundation details depict two `VAPOR BARRIER` layers sandwiching the interior stem-wall rigid insulation, omit insulation at the wood rim/band joist cavity, and call out a horizontal `VAPOR BARRIER` stretched across the underside of the floor joists at the top of the crawl space (which would trap moisture inside the wood floor assembly). | Certain
+
+D-6 | Sheet A4.10 (Details 3/A4.10 & 6/A4.10), Sheet A4.12 (Details 7/A4.12 & 8/A4.12), Sheet A5.30 (Detail 6/A5.30) | Exterior stone porch details (`3/A4.10`, `6/A4.10`) and garage slab details (`7/A4.12`, `8/A4.12`) show the exterior porch deck and driveway concrete pad completely flush with the interior finish floor elevation (`LEVEL 1 508'-0"`) with no step-down, slope away from the threshold, or sill pan flashing turned up behind the door sill. | High
+
+---
+
+#### E. Code and Life Safety
+
+E-1 | Sheet A2.01A, Sheet A8.01 (Window Schedule) | Second Bedroom 09 has no exterior door and its only window is Window `6` (`6'-0" × 6'-0"` `FIXED` window `ESDG6060`), leaving the sleeping room without a code-required operable emergency escape and rescue opening or natural ventilation. | Certain
+
+E-2 | Sheet A4.01 (Details F-1 & F-2), Sheet A2.01B (Details 1/A2.01B & 2/A2.01B), Sheet A8.01 (Door Schedule) | Garage fire separation from the dwelling is deficient: Floor Assemblies `F-1` and `F-2` above Garage 15 (supporting habitable rooms Guest Bedroom 17 and Guest Bathroom 18) specify `1/2" GYPSUM BOARD` instead of the required 5/8" Type X gypsum board, and Door `16-1` between the Garage and North Hallway 16 lacks self-closing hardware and fire-rating specifications in the Door Schedule. | Certain
+
+E-3 | Sheet A2.01B (Detail 1/A2.01B) | Door `16-1` between North Hallway 16 and Garage 15 swings outward directly over the steps descending to the `-1'-0"` garage slab without a code-required landing on the garage side of the door. | Certain
+
+E-4 | Sheet A5.10 (Detail 4/A5.10), Sheet A5.30 (Detail 4/A5.30), Sheet A3.22 (Detail 2/A3.22) | Exterior and interior stair handrail/guard details show non-compliant or inconsistent geometry: South Deck Section `4/A5.10` specifies a `26" CABLE RAILING` on the deck stair (well below the 34"–38" handrail and 36" guard minimums), Wood Stair Detail `4/A5.30` shows 2'-0" treads with inconsistent risers, and Interior Stair Section `2/A3.22` dimensions the `3'-0"` handrail height from the flat landing floor rather than vertically from the stair nosing line. | Certain
+
+E-5 | Sheet A5.01, Sheet A5.10 (Detail 3/A5.10), Sheet A8.01 (Door Schedule) | The swimming pool barrier has multiple life-safety concerns: the `48" CABLE RAILING` uses horizontal cables that create a climbable ladder condition; pool gate `22-1` on Sheet A5.01 swings inward toward the pool rather than outward away from the pool (and the Door Schedule does not specify self-closing/self-latching hardware); and on `3/A5.10` the grade along the unfenced south pool wall rises to `-3'-6"` near the east end, leaving only `1'-6"` of wall height above grade instead of a 48" barrier. | High
+
+E-6 | Sheet A7.01 (Detail 9/A7.01), Sheet A7.10 (Detail 1/A7.10) | The elevated bunk/loft platform in Reading Nook 10 is located `7'-0 1/2"` above the floor (`6'-2" + 10 1/2"`) but is provided with only an 18"-high (`1'-6"`) metal rail and has an unprotected window (`3`) directly adjacent to the upper bunk surface. | High
+
+E-7 | Sheet A2.01A, Sheet A2.01B, Sheet A3.20 (Detail 1/A3.20), Sheet A8.01 (Window Schedule) | The Window Schedule on Sheet A8.01 contains no tempered/safety glazing designations for windows in hazardous locations, including window `7C` inside the Bathroom 11 shower stall, window `3C` at the Master Bathroom 07 tub/toilet, and large fixed windows `6` and `9` located within 24" of exterior doors with glazing less than 60" above the walking surface. | High
+
+E-8 | Sheet A2.01A, Sheet A2.01B (Detail 1/A2.01B), Sheet A8.01 (Door Schedule) | Bathroom door clearances are deficient: Powder Room door `14-1` is scheduled at only `1'-10"` (22") nominal width, and Bathroom 11 door `11-1` (3'-0" wide) swings directly across the front of the water closet, encroaching into its required clear floor space. | Certain
+
+---
+
+#### F. Constructability
+
+F-1 | Sheet A2.01A, Sheet A2.01B (Detail 1/A2.01B), Sheet A7.01 (Detail 2/A7.01), Specifications Page 9 | Specifications Page 9 directs the contractor to install vertical `18" x 24"` plywood network mounting panels and AC outlets above 6'-0" on the "north side wall" of the Office closet and "south side wall" of the Pantry, but on `1/A2.01B` the north side of the 2'-0"-deep Office closets consists entirely of double doors (`13-2` and `13-3`), and on `1/A2.01A` and `2/A7.01` the south wall of the Pantry is occupied by the pocket door opening and 1'-deep shelving. | Certain
+
+F-2 | Sheet A2.01A, Sheet A2.01B, Sheet A4.01 (Details F-1 & F-2), Specifications Page 7 | Plans `A2.01A` and `A2.01B` call out seven overflow floor drains (`FD`) in dry floor areas (under the kitchen refrigerator, under the kitchen island dishwasher, outside showers in Bathrooms 07, 11, and 18, in Powder Room 14, and in Laundry Room 12), but Floor Assemblies `F-1` and `F-2` provide no floor slope, recessed subfloor, or waterproofing membrane outside showers, and Specifications Page 7 leaves the drain discharge design as an open question (`Is there a means to provide a "normally closed" drain path to divert outside?`). | High
+
+F-3 | Sheet A1.01, Sheet A2.00, Sheet A2.01A, Sheet A2.01B | Site Plan `A1.01` routes the buried `LP GAS LINE` into the northwest corner of the Master Bedroom/Bathroom wing (where there are no gas appliances), whereas all gas-fired equipment (gas furnace, tankless water heaters, kitchen cooktop, laundry gas dryer, and pool heater) is located in the central crawl space, kitchen, north laundry room, and southwest pool pad. | Moderate
+
+F-4 | Sheet A2.00, Sheet A2.01B, Specifications Page 6 | While Crawl Space Plan `A2.00` shows a gas furnace and split heat pump under the South Wing, neither `A2.00` nor `A2.01B` shows any HVAC air handler, furnace, or ductwork pathway serving the North Wing (Office 13, North Hallway 16, Guest Bedroom 17, and Guest Bathroom 18), despite floor supply grilles (`SG`) and wall return grilles (`RG`) being drawn throughout both levels of the North Wing. | High
+
+---
+
+#### G. Completeness and Clarity
+
+G-1 | Cover Sheet | The Location Map, Owner contact information, and Structural Engineer contact information blocks on the Cover Sheet are blank. | Certain
+
+G-2 | Sheet G0.01 | Under `DIMENSIONING STANDARDS` on Sheet G0.01, the numbered list under `INTERIOR DIMENSIONS` jumps from item `3` (with sub-items `A` through `D`) directly to items `6` and `7` (omitting items `4` and `5`), and the note under Door/Window tags references `RELITE TYPES AND DETAILS SHEET A8.01` and `SPECIFICATIONS DIV. 8`, neither of which exists in the set. | Certain
+
+G-3 | Sheet A3.21 | Sheet A3.21 contains only Details `3/A3.21` and `4/A3.21`, with no Details `1` or `2` on the sheet. | Certain
+
+G-4 | Sheet A5.01 | The drawing title bubble `1/A5.01` is labeled `ENLARGED PLAN, SITE PLAN` instead of `ENLARGED PLAN, DECK` to match the sheet title block and Sheet List. | Certain
+
+G-5 | Sheet A6.01 | The Lighting Fixture Schedule on Sheet A6.01 skips mark `L2` (jumping from `L1` to `L3`) and leaves the `Manufacturer` and `Model` columns for all nine fixture types as `TBD`. | Certain
+
+G-6 | Sheet A8.01 (Room Finish Schedule) | The Room Finish Schedule on Sheet A8.01 references wall finish code `T-1` on the north wall of Bathroom 11 and base codes `B-1` and `B-2`, none of which are defined in a finish legend on the drawings (and `T-1` is not defined in the specifications). | Certain
+
+G-7 | Sheet A3.01 (Detail 1/A3.01) | East Elevation `1/A3.01` has an unattached window tag `2C` floating near the upper-left roof/wall corner of the North Wing at Grid 2 where no window exists. | Certain
+
+---
+
+### Summary
+
+Overall, this Bid Set and its accompanying Project Specifications exhibit significant coordination gaps that would generate numerous RFIs, change orders, and field delays if issued for construction without revision. While the overall architectural design intent and building massing are clear, the drawings suffer from widespread discrepancies between the floor plans, exterior/interior elevations, wall sections, and schedules, as well as direct material conflicts with the specification booklet. The top three areas of greatest concern are: (1) **Code and Life Safety Compliance**, most notably the absence of an operable emergency escape and rescue window in Second Bedroom 09, inadequate fire separation at the garage ceiling and door beneath the Guest Suite, and non-compliant stair/pool-barrier guard details; (2) **Plan-to-Elevation and Dimensional Coordination**, including swapped elevation markers (`1/A3.01` vs. `1/A3.02`), conflicting window sizes/locations across virtually every facade, a `4'-0"` dimensional bust on the west wing between Grids 3, 4, and 5, and an upper stair run (`8'-3"` in section vs. `5'-7"` in plan) that does not fit the floor plan; and (3) **Specification-to-Drawing Conflicts**, such as specifying Marvin Ultrex windows in the schedule versus Andersen 400 Series in the specs, scheduling carpet (`F-4`) in the Powder Room, and conflicting R-values and assembly layers for the crawl space walls, exterior walls, and Bathroom 11 tub/shower.

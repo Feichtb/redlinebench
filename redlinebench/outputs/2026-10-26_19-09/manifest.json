@@ -1,0 +1,30 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-10-26T18:52:00+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-10-26_19-09",
+  "models_run": [
+    "grok-4.7"
+  ],
+  "results": [
+    {
+      "model_name": "grok-4.7",
+      "model_version": "grok-4.7",
+      "run_number": 2,
+      "timestamp_start": "2026-10-26T19:09:50+00:00",
+      "timestamp_end": "2026-10-26T19:21:44+00:00",
+      "latency_seconds": 718.38,
+      "input_tokens": 658465,
+      "output_tokens": 77695,
+      "thinking_tokens": 71181,
+      "cost_usd": 1.7831,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "reconstructed": "Written by hand on 2026-10-26 after the runner was killed during a stalled run 3 (the runner only writes manifest.json when a batch finishes). Runs 1-2: timestamps, model, and token counts copied from each *_raw.json; latency from the runner's console log; cost_usd from runner.PRICING exactly as the runner computes it. xAI's own usage.cost_in_usd_ticks reports $2.29 (run 1) and $2.10 (run 2).",
+  "batch_note": "Produced by a single `runner.py --models grok-4.7 --runs 3` invocation that wrote runs 1-2 to 2026-10-26_18-52 before run 3 stalled (no output; recorded only in the batch manifest). Split into one folder per run (folder name = that run's start time) to match the one-run-per-folder convention build_data.py requires. The unmodified, hand-reconstructed batch manifest is kept at 2026-10-26_18-52/manifest_batch_original.json."
+}

@@ -58,7 +58,7 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 
 **Source of truth: `redlinebench/outputs/*/scores.json`.** `results/dataset/data.json` (fetched by the site), `results/dataset/data/*` (the HF export), and the table below are all generated from those files by `python redlinebench/build_data.py` — **never hand-edit the table between the markers**, it's overwritten every time `build_data.py` runs. If it disagrees with `results/dataset/data.json`, regenerate; don't manually reconcile.
 
-28 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
+31 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
 
 <!-- REDLINEBENCH:RESULTS_TABLE:START -->
 | Model | Net Score | % of max (55) | Cost / run |
@@ -67,8 +67,11 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 | GPT-6 Astra (n=3, range 33.5–37.5) | 36.0 | 65.5% | $4.29 |
 | Claude Opus 5 (n=3, range 33.5–35.0) | 34.5 | 62.7% | $2.14 |
 | Claude Fable 5.1 (n=3, range 34.0–34.5) | 34.33 | 62.4% | $4.42 |
+| GPT-6.1 Sol (n=3, range 31.0–33.5) | 32.5 | 59.1% | $0.86 |
+| Grok 4.7 (n=3, range 26.0–33.0) | 29.83 | 54.2% | $1.82 |
 | GPT-5.6 Sol (n=3, range 26.0–28.0) | 27.0 | 49.1% | $3.25 |
 | Claude Fable 5 (n=3, range 26.0–26.5) | 26.33 | 47.9% | $3.31 |
+| Gemini 4 Argon (n=3, range 22.0–27.5) | 25.5 | 46.4% | $0.22 |
 | GPT-5.5 (n=3, range 21.5–29.0) | 24.83 | 45.1% | $1.84 |
 | Claude Opus 4.6 | 23.0 | 41.8% | $1.09 |
 | GPT-5.5 Pro (n=3, range 19.5–25.5) | 22.67 | 41.2% | $12.21 |
@@ -173,9 +176,11 @@ python runner.py --prompt my_custom_prompt.txt
 | `claude-sonnet-4-0` | Anthropic | Extended thinking (`budget_tokens`, legacy `enabled` type) |
 | `claude-opus-4-5-20251101` | Anthropic | Extended thinking (`budget_tokens`, legacy `enabled` type) |
 | `claude-sonnet-4-5-20250929` | Anthropic | Extended thinking (`budget_tokens`, legacy `enabled` type) |
+| `gemini-4-argon` | Google | Thinking level `high` |
 | `gemini-3.1-pro-preview` | Google | Dynamic thinking budget (`-1`) |
 | `gemini-3-flash-preview` | Google | Dynamic thinking budget (`-1`) |
 | `gpt-6-astra` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
+| `gpt-6.1-sol` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
 | `gpt-5.6-sol` | OpenAI | Reasoning model (no temperature) |
 | `gpt-5.5` | OpenAI | Reasoning model; `reasoning_effort: xhigh`, no temperature |
 | `gpt-5.5-pro` | OpenAI | Reasoning model; `reasoning_effort: xhigh`, no temperature |
@@ -188,6 +193,7 @@ python runner.py --prompt my_custom_prompt.txt
 | `gpt-4.1` | OpenAI | Standard model (temperature=0) |
 | `o3` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
 | `o1` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
+| `grok-4.7` | xAI | Reasoning model; `reasoning_effort: high`, no temperature |
 | `grok-4.20-beta-0309-reasoning` | xAI | Reasoning model (no temperature) |
 <!-- REDLINEBENCH:MODEL_TABLE:END -->
 

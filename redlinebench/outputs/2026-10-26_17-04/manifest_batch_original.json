@@ -1,0 +1,56 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-10-26T17:46:21.032255+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-10-26_17-04",
+  "models_run": [
+    "gpt-6.1-sol"
+  ],
+  "results": [
+    {
+      "model_name": "gpt-6.1-sol",
+      "model_version": "gpt-6.1-sol",
+      "run_number": 1,
+      "timestamp_start": "2026-10-26T17:04:44.262908+00:00",
+      "timestamp_end": "2026-10-26T17:19:27.161439+00:00",
+      "latency_seconds": 882.97,
+      "input_tokens": 287584,
+      "output_tokens": 27824,
+      "thinking_tokens": 22753,
+      "cost_usd": 0.853408,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gpt-6.1-sol",
+      "model_version": "gpt-6.1-sol",
+      "run_number": 2,
+      "timestamp_start": "2026-10-26T17:19:27.165469+00:00",
+      "timestamp_end": "2026-10-26T17:33:38.877386+00:00",
+      "latency_seconds": 851.83,
+      "input_tokens": 287584,
+      "output_tokens": 30870,
+      "thinking_tokens": 25380,
+      "cost_usd": 0.8838680000000001,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gpt-6.1-sol",
+      "model_version": "gpt-6.1-sol",
+      "run_number": 3,
+      "timestamp_start": "2026-10-26T17:33:38.886334+00:00",
+      "timestamp_end": "2026-10-26T17:46:21.022804+00:00",
+      "latency_seconds": 762.22,
+      "input_tokens": 287584,
+      "output_tokens": 27499,
+      "thinking_tokens": 21885,
+      "cost_usd": 0.850158,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": []
+}

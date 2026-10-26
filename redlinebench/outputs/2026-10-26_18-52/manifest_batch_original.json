@@ -1,0 +1,57 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-10-26T18:52:00+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-10-26_18-52",
+  "models_run": [
+    "grok-4.7"
+  ],
+  "results": [
+    {
+      "model_name": "grok-4.7",
+      "model_version": "grok-4.7",
+      "run_number": 1,
+      "timestamp_start": "2026-10-26T18:52:22+00:00",
+      "timestamp_end": "2026-10-26T19:09:45+00:00",
+      "latency_seconds": 1047.8,
+      "input_tokens": 777061,
+      "output_tokens": 77612,
+      "thinking_tokens": 72893,
+      "cost_usd": 2.019794,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "grok-4.7",
+      "model_version": "grok-4.7",
+      "run_number": 2,
+      "timestamp_start": "2026-10-26T19:09:50+00:00",
+      "timestamp_end": "2026-10-26T19:21:44+00:00",
+      "latency_seconds": 718.38,
+      "input_tokens": 658465,
+      "output_tokens": 77695,
+      "thinking_tokens": 71181,
+      "cost_usd": 1.7831,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "grok-4.7",
+      "model_version": "grok-4.7",
+      "run_number": 3,
+      "timestamp_start": "2026-10-26T19:21:44+00:00",
+      "timestamp_end": null,
+      "latency_seconds": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0,
+      "cost_usd": 0.0,
+      "temperature": null,
+      "error": "Stalled: no stream events after 3.4 min; connection held open with no data. Process killed at ~79 min. No output."
+    }
+  ],
+  "errors": [],
+  "reconstructed": "Written by hand on 2026-10-26 after the runner was killed during a stalled run 3 (the runner only writes manifest.json when a batch finishes). Runs 1-2: timestamps, model, and token counts copied from each *_raw.json; latency from the runner's console log; cost_usd from runner.PRICING exactly as the runner computes it. xAI's own usage.cost_in_usd_ticks reports $2.29 (run 1) and $2.10 (run 2)."
+}

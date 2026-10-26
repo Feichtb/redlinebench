@@ -1,0 +1,29 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-10-26T18:30:50.937035+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-10-26_18-00",
+  "models_run": [
+    "gemini-4-argon"
+  ],
+  "results": [
+    {
+      "model_name": "gemini-4-argon",
+      "model_version": "gemini-4-argon",
+      "run_number": 1,
+      "timestamp_start": "2026-10-26T18:01:02.344064+00:00",
+      "timestamp_end": "2026-10-26T18:11:20.211044+00:00",
+      "latency_seconds": 617.91,
+      "input_tokens": 57014,
+      "output_tokens": 11668,
+      "thinking_tokens": 44872,
+      "cost_usd": 0.230708,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "batch_note": "Produced by a single `runner.py --models gemini-4-argon --runs 3` invocation that wrote all three runs to 2026-10-26_18-00. Split into one folder per run (folder name = that run's start time) to match the one-run-per-folder convention build_data.py requires. The unmodified batch manifest is kept at 2026-10-26_18-00/manifest_batch_original.json."
+}

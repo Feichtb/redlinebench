@@ -1,0 +1,56 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-10-26T18:30:50.937035+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-10-26_18-00",
+  "models_run": [
+    "gemini-4-argon"
+  ],
+  "results": [
+    {
+      "model_name": "gemini-4-argon",
+      "model_version": "gemini-4-argon",
+      "run_number": 1,
+      "timestamp_start": "2026-10-26T18:01:02.344064+00:00",
+      "timestamp_end": "2026-10-26T18:11:20.211044+00:00",
+      "latency_seconds": 617.91,
+      "input_tokens": 57014,
+      "output_tokens": 11668,
+      "thinking_tokens": 44872,
+      "cost_usd": 0.230708,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gemini-4-argon",
+      "model_version": "gemini-4-argon",
+      "run_number": 2,
+      "timestamp_start": "2026-10-26T18:11:20.264308+00:00",
+      "timestamp_end": "2026-10-26T18:21:39.605969+00:00",
+      "latency_seconds": 619.38,
+      "input_tokens": 57014,
+      "output_tokens": 11602,
+      "thinking_tokens": 44350,
+      "cost_usd": 0.230048,
+      "temperature": null,
+      "error": null
+    },
+    {
+      "model_name": "gemini-4-argon",
+      "model_version": "gemini-4-argon",
+      "run_number": 3,
+      "timestamp_start": "2026-10-26T18:21:39.665314+00:00",
+      "timestamp_end": "2026-10-26T18:30:50.922538+00:00",
+      "latency_seconds": 551.27,
+      "input_tokens": 57014,
+      "output_tokens": 9639,
+      "thinking_tokens": 39354,
+      "cost_usd": 0.210418,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": []
+}

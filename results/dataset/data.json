@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T15:38:11.232170+00:00",
+  "generated_at": "2026-10-26T22:20:12.075456+00:00",
   "benchmark_version": "v2",
   "max_possible": 55,
   "categories": [
@@ -2073,6 +2073,845 @@
       ]
     },
     {
+      "id": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "color": "#0f9d9a",
+      "release_date": "2026-09-29",
+      "release_note": "",
+      "n": 3,
+      "net_mean": 32.5,
+      "net_min": 31.0,
+      "net_max": 33.5,
+      "pct_mean": 59.1,
+      "cost_mean": 0.86,
+      "flagged_mean": 92.33,
+      "neutral_mean": 22.67,
+      "incorrect_count_mean": 0,
+      "incorrect": [],
+      "issue_reliability": {
+        "A1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A3": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "A4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A10": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A11": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B6": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "C1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C6": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "C7": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "C8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C9": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D3": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D4": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D5": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D6": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "E1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "E2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E6": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "E7": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "F1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F3": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "F4": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G2": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "G3": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "G4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G8": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "G9": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "G10": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G11": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "G12": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G13": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G14": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G15": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "G16": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        }
+      },
+      "issue_mean_scores": {
+        "A1": 1,
+        "A2": 0,
+        "A3": 0.667,
+        "A4": 1,
+        "A5": 1,
+        "A6": 1,
+        "A10": 1,
+        "A11": 1,
+        "B1": 1,
+        "B2": 1,
+        "B3": 1,
+        "B4": 0.833,
+        "B5": 1,
+        "B6": 0,
+        "C1": 1,
+        "C2": 1,
+        "C3": 1,
+        "C4": 1,
+        "C5": 1,
+        "C6": 0.333,
+        "C7": 0,
+        "C8": 0.5,
+        "C9": 0,
+        "D1": 0,
+        "D2": 0.833,
+        "D3": 0,
+        "D4": 0,
+        "D5": 0,
+        "D6": 0.667,
+        "E1": 0,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 0,
+        "E7": 1,
+        "E8": 1,
+        "F1": 0,
+        "F2": 0,
+        "F3": 0.333,
+        "F4": 0,
+        "G1": 0,
+        "G2": 0.167,
+        "G3": 0.333,
+        "G4": 1,
+        "G6": 1,
+        "G8": 0.667,
+        "G9": 0.167,
+        "G10": 0,
+        "G11": 0.333,
+        "G12": 1,
+        "G13": 0,
+        "G14": 1,
+        "G15": 0.667,
+        "G16": 1
+      },
+      "runs": [
+        {
+          "run_id": "2026-10-26_17-04",
+          "date": "2026-10-26",
+          "model_version": "gpt-6.1-sol",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 33.0,
+          "net": 33.0,
+          "pct": 60.0,
+          "cost_usd": 0.85,
+          "flagged": 87,
+          "neutral": 21,
+          "incorrect_count": 0,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 1 of 3. 87 findings, no penalties. Full catch on B4: it names the C-D grid dimension differing by one inch from A2.01A as well as the 72'-0 1/2\" vs 72'-1 1/2\" top/bottom chain difference on A2.01. B1 is caught within A2.01B alone (22'-10\" + 11'-5\" = 34'-3\" vs 34'-4\"), and B3 from the E-3/E-4 callout totals. B5 is the stair headroom dimension on A3.22, not the Powder Room (N31). The only run of the three to take C6 (spec 3:12 with no exceptions for the 2:12 and 1/4:12 roofs) and F3 (hydronic system in Room 07 with no coordinated location in the F-2 assembly). D2 is 0.5: it flags the E-1 rigid insulation as labelled 1/2\" against a 2\" dimension string but never links it to R-10. G16 names the bedroom and Bathroom 11 partitions without claiming W-3 is untagged everywhere. Stair read correctly as 18 risers (N33, not I8). Spot-check: C8 is 0.5 for the wet-laid SS-3 ramp vs SS-2 conflict. Prior rounds scored that finding 0 or 0.5 inconsistently; this round gives 0.5 whenever the finding names the wet-laid callout. Misses: A2, B6, C7 (its 2x8 finding is E-2 vs a 2x10 jamb detail, not the 2x6 spec), C9, D1, D3-D5, E1, E6, F1, F2, F4, G1-G3, G9-G11, G13, G15."
+        },
+        {
+          "run_id": "2026-10-26_17-19",
+          "date": "2026-10-26",
+          "model_version": "gpt-6.1-sol",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 33.5,
+          "net": 33.5,
+          "pct": 60.9,
+          "cost_usd": 0.88,
+          "flagged": 95,
+          "neutral": 23,
+          "incorrect_count": 0,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 2 of 3 and the best of the three. 95 findings, no penalties. Clean on B1-B5: B4 names the C-D grid 6'-10 1/2\" vs 6'-11 1/2\" directly, and B3 identifies the 1-1/2\" rigid callout against the drawn 1\" layer. D2 is in full this time (E-1 1/2\" against the specified 2\" XPS and R-10). G11 (T-1 undefined) and G15 (L7 count of 2 vs 75 LF) are only caught in this run. Two partials for the spot-check: G3 is 0.5 because it reads the orphaned '13' tag on A2.01A together with the adjacent '3/A7.01' bubble as a dead reference '13/A7.01' (the PDF text shows a separate '13' beside an elevation bubble '3' / 'A7.01'), so it notices the unexplained 13 but misidentifies it. G2 is 0.5 for A-13, which says the east-facing type 5 window on A2.02 is not tagged 5 on the east elevation; that is the right window and sheet but reads a tag the seeded change removed. C8 is 0.5 by the same wet-laid rule as run 1. The south pool edge finding is at Moderate and accepts that the edge is intentionally unfenced, so it is not penalized (same as Opus 5.5 run 1). Misses: A2, B6, C6, C7, C9, D1, D3-D6, E1, E6, F1-F4, G1, G9, G10, G13."
+        },
+        {
+          "run_id": "2026-10-26_17-33",
+          "date": "2026-10-26",
+          "model_version": "gpt-6.1-sol",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 31.0,
+          "net": 31.0,
+          "pct": 56.4,
+          "cost_usd": 0.85,
+          "flagged": 95,
+          "neutral": 24,
+          "incorrect_count": 0,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 3 of 3. 95 findings, no penalties. The weakest of the three, mostly because of three omissions: no type-6 window count (A3), no low-slope roof finding (G8), and no C6. B4 is 0.5 because it flags the A2.01 top/bottom A-H chain difference without naming the C-D grid dimension, which the key scores as a partial. B3 counts the 1-1/2\" callout against the 1\" dimension on E-2/E-4 (E-4 is in scope for B3). D6 is in full (wall-to-roof and wall-to-foundation air-barrier continuity). G9 is 0.5: it flags missing dimensioned setback ties on A1.01 but not the 'verify in field' deferral. G3 is 0.5 by the same '13/A7.01' reading as run 2. C8 is 0.5 by the wet-laid rule. The Powder Room ceiling finding is N31, not B5, which is scored on its separate stair-headroom finding. Misses: A2, A3, B6, C6, C7, C9, D1, D3-D5, E1, E6, F1-F4, G1, G2, G8, G10, G11, G13."
+        }
+      ]
+    },
+    {
+      "id": "grok-4.7",
+      "label": "Grok 4.7",
+      "provider": "xAI",
+      "color": "#8e44ad",
+      "release_date": "2026-09-21",
+      "release_note": "",
+      "n": 3,
+      "net_mean": 29.83,
+      "net_min": 26.0,
+      "net_max": 33.0,
+      "pct_mean": 54.2,
+      "cost_mean": 1.82,
+      "flagged_mean": 77.33,
+      "neutral_mean": 17.33,
+      "incorrect_count_mean": 1.33,
+      "incorrect": [
+        {
+          "ref": "I8",
+          "claim": "B-1 / E-1: The east flight's 10 equal risers are drawn as spanning the full 10'-0\" story (12\" risers) and the south flight does not reach Level 2, so the two sections cannot be one stair and the risers exceed the residential maximum.",
+          "why": "Known Incorrect Findings entry I8: the stair has 18 risers across two runs (10 east + 8 south) at about 6-11/16\", which is compliant. Treating one run as the whole 10'-0\" story is the single-run misread. Stated at Certain. Repeated in E-1; penalized once.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-52"
+        },
+        {
+          "ref": "I8",
+          "claim": "B-1 / E-1: Ten equal risers between 508'-0\" and 518'-0\" require 12\" risers; a single flight of 10 risers in a 10'-0\" story exceeds the residential maximum.",
+          "why": "Known Incorrect Findings entry I8: the stair has 18 risers across two runs (10 east + 8 south) at about 6-11/16\", which is compliant. Treating one run as the whole 10'-0\" story is the single-run misread. Stated at Certain. Also restated in A-5; penalized once.",
+          "penalty": -1,
+          "run_id": "2026-10-26_19-09"
+        },
+        {
+          "ref": "I8",
+          "claim": "B-1 / B-2 / E-1: Ten equal risers over the 10'-0\" rise are 12\" each and eight equal risers over the same rise are 15\" each; neither flight can meet a residential riser maximum.",
+          "why": "Known Incorrect Findings entry I8: the stair has 18 risers across two runs (10 east + 8 south) at about 6-11/16\", which is compliant. Treating one run as the whole 10'-0\" story is the single-run misread. Stated at Certain. Also restated in A-1; penalized once.",
+          "penalty": -1,
+          "run_id": "2026-10-26_20-42"
+        },
+        {
+          "ref": "I (foundation thermal break)",
+          "claim": "D-5: Base details 5/A4.11 and 6/A4.10 do not continue the wall's continuous rigid layer to the sill, leaving a thermal break [bridge] at the floor line.",
+          "why": "Known Incorrect Findings entry: detail 6/A4.10 clearly shows a 3\" thermal break at the foundation-to-wall interface. Same basis as Gemini 4 Argon 2026-10-26_18-21. Stated at High.",
+          "penalty": -1,
+          "run_id": "2026-10-26_20-42"
+        }
+      ],
+      "issue_reliability": {
+        "A1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A3": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A10": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A11": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "B2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B3": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "B4": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "B5": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "B6": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "C1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C6": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "C7": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "C8": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "C9": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "D1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D3": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D5": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "D6": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "E1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E2": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "E3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E5": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "E6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E7": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "F1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "F4": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G3": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G8": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "G9": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G10": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G11": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G12": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G13": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G14": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "G15": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G16": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        }
+      },
+      "issue_mean_scores": {
+        "A1": 1,
+        "A2": 0,
+        "A3": 0,
+        "A4": 1,
+        "A5": 1,
+        "A6": 1,
+        "A10": 1,
+        "A11": 1,
+        "B1": 0,
+        "B2": 1,
+        "B3": 0.667,
+        "B4": 0,
+        "B5": 0.333,
+        "B6": 0,
+        "C1": 1,
+        "C2": 1,
+        "C3": 0.833,
+        "C4": 1,
+        "C5": 0.5,
+        "C6": 0.167,
+        "C7": 0,
+        "C8": 0.5,
+        "C9": 0.333,
+        "D1": 0,
+        "D2": 1,
+        "D3": 0,
+        "D4": 1,
+        "D5": 0.667,
+        "D6": 0.333,
+        "E1": 1,
+        "E2": 0.667,
+        "E3": 1,
+        "E4": 1,
+        "E5": 0.5,
+        "E6": 1,
+        "E7": 0.667,
+        "E8": 0.833,
+        "F1": 0,
+        "F2": 0,
+        "F3": 1,
+        "F4": 0,
+        "G1": 0,
+        "G2": 0,
+        "G3": 0,
+        "G4": 1,
+        "G6": 0.667,
+        "G8": 0.333,
+        "G9": 0.833,
+        "G10": 0,
+        "G11": 1,
+        "G12": 1,
+        "G13": 0,
+        "G14": 0.667,
+        "G15": 1,
+        "G16": 0.667
+      },
+      "runs": [
+        {
+          "run_id": "2026-10-26_18-52",
+          "date": "2026-10-26",
+          "model_version": "grok-4.7",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 31.5,
+          "net": 30.5,
+          "pct": 55.5,
+          "cost_usd": 2.02,
+          "flagged": 61,
+          "neutral": 13,
+          "incorrect_count": 1,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 1 of 3. 61 findings, one penalty. Clean code coverage: E1 (1'-10\" powder-room door), E2 (26\" deck-stair rail), E3, E4/E7/E8 (0-hour summary, 1/2\" gypsum under the habitable rooms over the garage, no closer on 16-1), and E6 (650 CFM hood, makeup air unresolved). D5 is caught in full: sheathing on the cold side of the 1-1/2\" rigid in CZ 4A. F3 is in full (master-bath hydronic over a thin F-2 thinset bed, bidder layout). G9 counts the 'verify in field' property lines on A1.01. C5 is 0.5: it misreads the code summary as R-63 (it is R-53), although it does note that the spec's own R-38 + R-15 is R-53, not R-49. C4 is 1.0 for the spec-3 vs code-summary-5 hose-bib conflict, despite counting four hydrants on the elevations. C8 is 0.5 by the wet-laid rule used for GPT-6.1 Sol and Gemini 4 Argon. G6 is 0.5: its TBD list is finishes and owner decisions, with no lighting fixtures or appliances. The penalty is I8: it reads the 10-riser east flight as the whole story. The same misread produces a claim of 3'-0\" headroom over the lower flight, which is why B5 scores 0 (it never says headroom is undimensioned). Responses open with a few lines of tool-use narration, which is not counted as findings. Grok reads the PDFs through xAI's server-side pdf_browse/pdf_search tools (17 calls here), which is why input tokens vary between runs; no web search was used. cost_usd is the runner's PRICING calculation, as recorded in the manifest; xAI's own usage.cost_in_usd_ticks reports $2.29 for this run. Misses: A2, A3, B1, B4-B6, C6, C7, C9, D1, D3, D6, E5, F1, F2, F4, G1-G3, G8, G10, G13."
+        },
+        {
+          "run_id": "2026-10-26_19-09",
+          "date": "2026-10-26",
+          "model_version": "grok-4.7",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 34.0,
+          "net": 33.0,
+          "pct": 60.0,
+          "cost_usd": 1.78,
+          "flagged": 90,
+          "neutral": 19,
+          "incorrect_count": 1,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 2 of 3 and the best of the three. 90 findings, one penalty. Adds D6 (no air-barrier connection at roof-to-wall 4/A4.11 and 6/A4.12) and G8 (1/4\":12 below the SnapLock 450 range) to run 1's coverage. C8 is 1.0, the only full C8 this round: F-4 says dry-laid SS-3 at the path, patio and ramp has no setting assembly and the only exterior stone assembly is thinset, which is the unspecified-installation-method defect. Spot-check this one, because it calls the ramp dry-laid when the plan says wet-laid. C6 is 0.5: D-2 contrasts the drawn 1/4\":12 with the spec's single 3\":12, but names only one of the unaddressed slopes. Partials: C5 0.5 (R-63 misread again); E5 0.5 (missing cable spacing, cited at the exterior stairs rather than the pool barrier); E7 0.5 (hedged, '5/8\" Type X if any habitable room bears on that ceiling'); G9 0.5 (the 'verify in field' note is cited for the driveway, with setback mentioned only generally); G16 0.5 (names the right walls but says 'no wall type ... shows that treatment', and W-3 is defined on A4.00; same call as Opus 5.5 run 2). The penalty is I8, stated three times (A-5, B-1, E-1). Its south-pool-edge finding accepts the edge as intentionally open and asks for the wall height, so it is not penalized. 14 server-side PDF tool calls. cost_usd is the runner's PRICING calculation, as recorded in the manifest; xAI's own usage.cost_in_usd_ticks reports $2.10 for this run. Misses: A2, A3, B1, B4-B6, C7, C9, D1, D3, F1, F2, F4, G1-G3, G10, G13."
+        },
+        {
+          "run_id": "2026-10-26_20-42",
+          "date": "2026-10-26",
+          "model_version": "grok-4.7",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 28.0,
+          "net": 26.0,
+          "pct": 47.3,
+          "cost_usd": 1.67,
+          "flagged": 81,
+          "neutral": 20,
+          "incorrect_count": 2,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 3 of 3 (written to its own folder by a separate single-run invocation after run 3 of the original batch stalled). 81 findings, two penalties. The weakest run. It never mentions the 26\" deck-stair rail (E2), R-2 (G14), the E-3/E-4 thickness mismatch (B3), or a low-slope roof (G8), all of which runs 1-2 caught. It is the only Grok run to take B5 (states that neither stair section dimensions headroom) and C9 (F-2 is shared by the entry, laundry and baths while the spec assigns SS-2 limestone to some and ceramic to others). E5 is in full (3/16\" cable with no spacing, so the 4\" limit cannot be checked). Partials: C3 0.5 (notes that the spec assigns the east facade no cladding but never ties it to the drawn east wood); C5 0.5 (R-63 misread, R-49 arithmetic caught); E7 and E8 0.5 each, because the garage finding is a generic code list ('5/8\" Type X where a habitable room is above', 'self-closing solid door') that says the garage has attic above it and wrongly says no garage-to-house door is in the schedule; G6 0.5 (finishes, not fixtures); G16 0.5 (same 'no assembly shows acoustic insulation' framing as run 2). Penalties: I8 again, and D-5's claim that the base details leave a thermal discontinuity at the floor line, where the key says 6/A4.10 shows a 3\" thermal break. Unlisted and not scored, for the spot-check: an 8'-0\" garage door said not to fit under a 7'-1\" clear height (A-17/F-1). The answer key confirms the 18'-0\" x 8'-0\" door size against the plans but does not address that section. 11 server-side PDF tool calls. cost_usd is the runner's PRICING calculation, as recorded in the manifest; xAI's own usage.cost_in_usd_ticks reports $2.14 for this run. Misses: A2, A3, B1, B3, B4, B6, C6-C8, D1, D3, D5, D6, E2, F1, F2, F4, G1-G3, G8, G10, G13, G14."
+        }
+      ]
+    },
+    {
       "id": "gpt-5.6-sol",
       "label": "GPT-5.6 Sol",
       "provider": "OpenAI",
@@ -2902,6 +3741,496 @@
           "scorer": "Claude Sonnet 5",
           "scoring_date": "2026-07-05",
           "notes": "AI-assisted triage only -- not yet reviewed/approved by a human scorer. Per CLAUDE.md this must be skimmed and approved before being treated as a published score. This run's raw API response text is claude-fable-5_run01.txt in this folder, originally the second call ('run02') of a single `runner.py --models claude-fable-5 --runs 2` invocation whose output folder was outputs/2026-07-05_16-27/ -- see that folder's manifest.json note for why it was split out. No incorrect findings applied for this run (scoring agent found the two borderline candidates -- pool barrier and stair-riser math -- were both hedged/pedantic rather than confidently wrong)."
+        }
+      ]
+    },
+    {
+      "id": "gemini-4-argon",
+      "label": "Gemini 4 Argon",
+      "provider": "Google",
+      "color": "#2e9e4f",
+      "release_date": "2026-10-13",
+      "release_note": "",
+      "n": 3,
+      "net_mean": 25.5,
+      "net_min": 22.0,
+      "net_max": 27.5,
+      "pct_mean": 46.4,
+      "cost_mean": 0.22,
+      "flagged_mean": 80,
+      "neutral_mean": 11,
+      "incorrect_count_mean": 4,
+      "incorrect": [
+        {
+          "ref": "I (entry roof slope)",
+          "claim": "B-16: Entry Hall roof slope is 2\"/12 on A2.03 and 3/A3.20 but 1/8\"/12 on elevations 1/A3.02 and 1/A3.03.",
+          "why": "The connector/entry roof is 2\" per foot everywhere it appears. The 1/8\" figure is the porch floor slope at the entry, not a roof. Known Incorrect Findings entry, stated at Certain.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-00"
+        },
+        {
+          "ref": "I (top-loading washer)",
+          "claim": "C-12: The specified top-loading washer conflicts with 13/A7.02, which shows a continuous fixed stone countertop over the washer and dryer.",
+          "why": "The washer is drawn under a shelf, not a continuous countertop, and has clearance for top-loading access. Known Incorrect Findings entry, stated at Certain.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-00"
+        },
+        {
+          "ref": "I (enlarged plan chain)",
+          "claim": "B-9: On 1/A2.01A the Master Bathroom 07 west-wall inner chain (2'-1 1/2\" + 2'-0\" + 4'-0\") does not match the 6'-8\" outer dimension; the full inner string sums to 30'-11 1/2\" instead of 29'-6\".",
+          "why": "Matches the Known Incorrect Findings entry that enlarged plan dimension chains do not sum to overall building dimensions; absent a confirmed discrepancy those strings measure different datums and should be assumed correct. Same basis as the Opus 5.5 run 1 penalty (2026-09-23_14-28). Stated at Certain.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-00"
+        },
+        {
+          "ref": "I (enlarged plan chain)",
+          "claim": "B-1: The 29'-6\" Grid 4-5 dimension on the west side of the South Wing (A2.01A/A2.01) is a 4'-0\" dimensional bust against the window and room chains.",
+          "why": "Matches the Known Incorrect Findings entry that enlarged plan dimension chains do not sum to overall building dimensions; absent a confirmed discrepancy those strings measure different datums and should be assumed correct. Same basis as the Opus 5.5 run 1 penalty (2026-09-23_14-28). Stated at Certain.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-11"
+        },
+        {
+          "ref": "I (A2.01A datums)",
+          "claim": "B-2: The bottom chain on A2.01A sums to 30'-2 1/2\" (Grid A-B) but its witness line is drawn to Grid C at 30'-10\".",
+          "why": "Known Incorrect Findings entry: the 30'-2 1/2\" and 30'-10\" strings on A2.01A measure different structures at different datums and are not in conflict. Stated at Certain.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-11"
+        },
+        {
+          "ref": "I (enlarged plan chain)",
+          "claim": "B-3: On 2/A2.01B the chain 24'-3\" + 5'-7\" + 4'-0 1/2\" = 33'-10 1/2\" conflicts with the 34'-4\" overall width.",
+          "why": "Matches the Known Incorrect Findings entry that enlarged plan dimension chains do not sum to overall building dimensions; absent a confirmed discrepancy those strings measure different datums and should be assumed correct. Same basis as the Opus 5.5 run 1 penalty (2026-09-23_14-28). Stated at Certain. This is the identical chain Opus 5.5 run 1 was penalized for.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-11"
+        },
+        {
+          "ref": "I (south pool edge)",
+          "claim": "E-5: Grade along the unfenced south pool wall rises to -3'-6\", leaving only 1'-6\" of wall above grade instead of a 48\" barrier.",
+          "why": "Known Incorrect Findings entry: the south pool edge is intentionally unenclosed and the pool wall there extends high enough above grade that no guard is required. Stated at High.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-11"
+        },
+        {
+          "ref": "I (enlarged plan chain)",
+          "claim": "B-2: On 1/A2.01B the east vertical chains between Grids 1 and 2 sum to 32'-4\", 2'-0\" short of the 34'-4\" overall.",
+          "why": "Matches the Known Incorrect Findings entry that enlarged plan dimension chains do not sum to overall building dimensions; absent a confirmed discrepancy those strings measure different datums and should be assumed correct. Same basis as the Opus 5.5 run 1 penalty (2026-09-23_14-28). Stated at Certain.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-21"
+        },
+        {
+          "ref": "I (enlarged plan chain)",
+          "claim": "B-3: On 2/A2.01B the chain 24'-3\" + 5'-7\" + 4'-0 1/2\" = 33'-10 1/2\" fails to account for 5 1/2\" of the 34'-4\" overall width.",
+          "why": "Matches the Known Incorrect Findings entry that enlarged plan dimension chains do not sum to overall building dimensions; absent a confirmed discrepancy those strings measure different datums and should be assumed correct. Same basis as the Opus 5.5 run 1 penalty (2026-09-23_14-28). Stated at Certain. This is the identical chain Opus 5.5 run 1 was penalized for.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-21"
+        },
+        {
+          "ref": "I (A2.01A datums)",
+          "claim": "B-4: The top of 1/A2.01A labels Grid A-C 30'-10\" and C-G 31'-0\" while the bottom and A2.01 give 30'-2 1/2\" and 31'-7 1/2\"; the top string is snapping to the wrong grid.",
+          "why": "Known Incorrect Findings entry, nearly verbatim: the 30'-10\" + 31'-0\" and 30'-2 1/2\" + 31'-7 1/2\" strings on A2.01A measure different structures at different datums. Stated at Certain.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-21"
+        },
+        {
+          "ref": "I (top-loading washer)",
+          "claim": "C-10: The specified top-loading washer conflicts with 13/A7.02, where a continuous stone countertop is installed directly over the washer and dryer.",
+          "why": "The washer is drawn under a shelf, not a continuous countertop, and has clearance for top-loading access. Known Incorrect Findings entry, stated at Certain.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-21"
+        },
+        {
+          "ref": "I (foundation thermal break)",
+          "claim": "D-5: Entry Hall details 3/A4.10 and 6/A4.10 show a continuous CMU/concrete thermal bridge into the conditioned space.",
+          "why": "Known Incorrect Findings entry: detail 6/A4.10 clearly shows a 3\" thermal break at the foundation-to-wall interface. Stated at High. The same finding's flush-threshold point is neutral; the penalty is for the thermal-bridge claim only.",
+          "penalty": -1,
+          "run_id": "2026-10-26_18-21"
+        }
+      ],
+      "issue_reliability": {
+        "A1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A3": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "A4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A5": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "A6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "A10": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "A11": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B1": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "B2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "B3": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "B4": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "B5": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "B6": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "C1": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C3": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "C4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C5": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "C6": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "C7": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "C8": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "C9": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D3": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "D4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "D5": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "D6": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "E1": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "E2": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E3": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E5": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "E6": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "E7": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "E8": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "F1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "F2": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "F3": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "F4": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "G1": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G2": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G3": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "G4": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G6": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G8": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "G9": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        },
+        "G10": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G11": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G12": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G13": {
+          "caught": 0,
+          "n": 3,
+          "frac": 0.0
+        },
+        "G14": {
+          "caught": 1,
+          "n": 3,
+          "frac": 0.333
+        },
+        "G15": {
+          "caught": 3,
+          "n": 3,
+          "frac": 1.0
+        },
+        "G16": {
+          "caught": 2,
+          "n": 3,
+          "frac": 0.667
+        }
+      },
+      "issue_mean_scores": {
+        "A1": 1,
+        "A2": 0,
+        "A3": 0,
+        "A4": 1,
+        "A5": 0.667,
+        "A6": 1,
+        "A10": 0.667,
+        "A11": 1,
+        "B1": 0.333,
+        "B2": 1,
+        "B3": 0.667,
+        "B4": 0.333,
+        "B5": 0,
+        "B6": 0,
+        "C1": 1,
+        "C2": 1,
+        "C3": 0.333,
+        "C4": 1,
+        "C5": 1,
+        "C6": 0.333,
+        "C7": 0.667,
+        "C8": 0.167,
+        "C9": 0,
+        "D1": 0,
+        "D2": 1,
+        "D3": 0.167,
+        "D4": 1,
+        "D5": 0,
+        "D6": 0,
+        "E1": 0.667,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 0.167,
+        "E6": 0.167,
+        "E7": 1,
+        "E8": 0.833,
+        "F1": 0,
+        "F2": 0.167,
+        "F3": 0.333,
+        "F4": 0.167,
+        "G1": 0,
+        "G2": 0,
+        "G3": 0.5,
+        "G4": 1,
+        "G6": 1,
+        "G8": 0.667,
+        "G9": 0.5,
+        "G10": 0,
+        "G11": 1,
+        "G12": 1,
+        "G13": 0,
+        "G14": 0.333,
+        "G15": 1,
+        "G16": 0.667
+      },
+      "runs": [
+        {
+          "run_id": "2026-10-26_18-00",
+          "date": "2026-10-26",
+          "model_version": "gemini-4-argon",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 30.0,
+          "net": 27.0,
+          "pct": 49.1,
+          "cost_usd": 0.23,
+          "flagged": 84,
+          "neutral": 12,
+          "incorrect_count": 3,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 1 of 3. 84 findings and the best Gemini run, but three penalties. The only run in this round to catch G3 in full (boxed keynote '13' on A2.01A with no legend entry) and G9 in full (A1.01 has no dimensional ties to the property lines, 'VERIFY IN FIELD'). It also flags E1 directly: the 1'-10\" Powder Room door is called a 22\" pinch point. Strong on code: E2, E3 (Bedroom 09 has only a fixed window), E4, E7 and E8 (doors 13-2 and 16-1). D3 is 0.5: it says the 2/A4.11 sill membrane turns down into the wall cavity behind the cladding, which is the right detail and the right failure, but it never says the lap is reversed. Partials from a single 'deferred scope' finding: E6 is 0.5 (makeup air left unresolved, no 650 CFM trigger) and F3 is 0.5 (hydronic system bidder-designed, no tile coordination). F4 is 0.5 for a central-vacuum count conflict (4 in spec, 5 on plans), matching Sonnet 4.5 (2026-09-15_14-53). Penalties: the 2\" vs 1/8\" entry roof slope, the top-loading washer under a countertop, and an enlarged-plan chain claim on A2.01A. All three are Known Incorrect Findings stated at Certain; the chain penalty follows the Opus 5.5 precedent and is the one to spot-check. A long run of plan-vs-elevation window tag/size conflicts (A-8 to A-17) is not on any list and is not scored, but most could not be verified from the text and several look like misreads. Misses: A2, A3, A5, B1, B5, B6, C3, C6-C9, D1, D5, D6, E5, F1, F2, G1, G2, G10, G13, G14, G16."
+        },
+        {
+          "run_id": "2026-10-26_18-11",
+          "date": "2026-10-26",
+          "model_version": "gemini-4-argon",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 31.5,
+          "net": 27.5,
+          "pct": 50.0,
+          "cost_usd": 0.23,
+          "flagged": 81,
+          "neutral": 12,
+          "incorrect_count": 4,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 2 of 3. 81 findings, highest raw score of the three Gemini runs (31.5) but four penalties. The only Gemini run to sweep C1-C7, including C6 (spec says 3:12 on the diagonal, while the plan shows 2:12 and 1/4:12) and C7 (spec 2x6 vs E-2 2x8). It also catches G14 (R-2 called out on 2/A3.01, undefined on A4.01), which runs 1 and 3 miss. Partials to spot-check: F2 is 0.5, the first F2 credit any model has earned. It says door 11-1 swings across the water closet's clear floor space, which is the right door and a swing-clearance conflict, but it reads the obstruction as the WC rather than questioning an unidentified element. G3 is 0.5: it sees the square '13' box on A2.01A but reads it as the pantry door's tag. E5 is 0.5 for calling the horizontal-cable pool barrier climbable, which is the right element but not the 4\" opening criterion. E1 is in full (Powder Room door 14-1 scheduled at 22\"). Penalties: three enlarged-plan dimension-chain claims (two on A2.01A, plus the same 2/A2.01B chain Opus 5.5 run 1 was penalized for), and a confident claim that the south pool wall stands only 1'-6\" above grade. Unlisted and unverified, likely misreads that are not scored: Bathroom 11 drawn as a walk-in shower where the spec puts a tub, swapped elevation markers on the plans, and the stair upper run 'not fitting' the plan. Misses: A2, A3, B1, B4-B6, C8, C9, D1, D3, D5, D6, E6, F1, F3, F4, G1, G2, G8-G10, G13."
+        },
+        {
+          "run_id": "2026-10-26_18-21",
+          "date": "2026-10-26",
+          "model_version": "gemini-4-argon",
+          "prompt_version": "v3",
+          "temperature": null,
+          "raw": 27.0,
+          "net": 22.0,
+          "pct": 40.0,
+          "cost_usd": 0.21,
+          "flagged": 75,
+          "neutral": 9,
+          "incorrect_count": 5,
+          "scorer": "Claude Opus 5.5",
+          "scoring_date": "2026-10-26",
+          "notes": "Run 3 of 3. 75 findings, five penalties. Weakest of the three, and the penalties do most of the damage. B1 is caught in full here (22'-10\" + 11'-5\" = 34'-3\" on 1/A2.01B), unlike runs 1 and 2, but the run misses B3 and B4. E8 is 0.5: it puts the missing closer and rating on 'door 12-1 between Garage 15 and Laundry Room 12'. The key names 16-1 and 13-2 as the garage-to-house doors, so this is the right defect on the wrong door tag. C8 is 0.5 by the wet-laid rule; this run cites both the 'DRY-LAID SS-3 PATIO' and 'WET-LAID SS-3 RAMP' notes but frames the conflict as SS-2 vs SS-3. GPT-6 Astra 2026-09-08_00-24 got 1.0 for a similar finding, so this one is worth a spot-check. G9 is 0.5 (missing setback ties on A1.01, no field-verify deferral). F3 is 0.5 from the deferred-scope list. Penalties: three enlarged-plan dimension-chain claims (one is nearly verbatim the A2.01A datum entry), the top-loading washer under a countertop again, and a claim that 6/A4.10 shows a continuous thermal bridge where the key says it shows a 3\" thermal break. That last one is the least clear-cut and is worth a spot-check. Misses: A2, A3, A10 (its WD-1/WD-4 finding is on the A4.10/A4.13 detail labels, which is the neutral W-4 veneer entry), B3-B6, C3, C6, C9, D1, D3, D5, D6, E1, E5, E6, F1, F2, F4, G1-G3, G10, G13, G14."
         }
       ]
     },

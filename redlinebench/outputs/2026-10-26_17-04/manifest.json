@@ -1,0 +1,29 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-10-26T17:46:21.032255+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-10-26_17-04",
+  "models_run": [
+    "gpt-6.1-sol"
+  ],
+  "results": [
+    {
+      "model_name": "gpt-6.1-sol",
+      "model_version": "gpt-6.1-sol",
+      "run_number": 1,
+      "timestamp_start": "2026-10-26T17:04:44.262908+00:00",
+      "timestamp_end": "2026-10-26T17:19:27.161439+00:00",
+      "latency_seconds": 882.97,
+      "input_tokens": 287584,
+      "output_tokens": 27824,
+      "thinking_tokens": 22753,
+      "cost_usd": 0.853408,
+      "temperature": null,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "batch_note": "Produced by a single `runner.py --models gpt-6.1-sol --runs 3` invocation that wrote all three runs to 2026-10-26_17-04. Split into one folder per run (folder name = that run's start time) to match the one-run-per-folder convention build_data.py requires. The unmodified batch manifest is kept at 2026-10-26_17-04/manifest_batch_original.json."
+}
