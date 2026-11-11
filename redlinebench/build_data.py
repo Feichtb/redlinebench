@@ -69,6 +69,11 @@ LEGACY_MODEL_ALIASES = {
 # back to the most recent run's own label/provider/color if a model_id is
 # missing here.
 MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
+    # Gold, continuing the Fable ramp (5 deep orange -> 5.1 orange -> 5.2 gold).
+    # Clears dE 28 from every other model; darker than the brighter yellows so
+    # it still reads on the light-mode background. Nearest are Fable 5.1 and
+    # Gemini 3.1 Pro.
+    "claude-fable-5-2":               {"label": "Claude Fable 5.2",  "provider": "Anthropic", "color": "#e8b10a"},
     "claude-fable-5-1":               {"label": "Claude Fable 5.1",  "provider": "Anthropic", "color": "#ff922b"},
     "claude-fable-5":                 {"label": "Claude Fable 5",    "provider": "Anthropic", "color": "#e8590c"},
     # Deep crimson rather than another orange-red: the Anthropic family is
@@ -160,6 +165,7 @@ RELEASE_DATES: dict[str, tuple[str, str]] = {
     "claude-opus-5-5":               ("2026-09-22", ""),
     "gpt-6.1-sol":                   ("2026-09-29", ""),
     "gemini-4-argon":                ("2026-10-13", ""),
+    "claude-fable-5-2":              ("2026-11-09", ""),
 }
 
 # Generated once (2026-07-05); must stay constant across regenerations to

@@ -1,0 +1,28 @@
+{
+  "prompt_file": "review.txt",
+  "prompt_version": "v1",
+  "drawings_pdf": "211020 Bonfire House_Architectural_current.pdf",
+  "specs_pdf": "211020 Bonfire House_Specifications_current.pdf",
+  "run_timestamp": "2026-11-11T05:41:35.393443+00:00",
+  "run_directory": "C:\\dev\\arch_documentation_benchmark\\redlinebench\\outputs\\2026-11-11_05-26",
+  "models_run": [
+    "claude-fable-5-2"
+  ],
+  "results": [
+    {
+      "model_name": "claude-fable-5-2",
+      "model_version": "claude-fable-5-2",
+      "run_number": 1,
+      "timestamp_start": "2026-11-11T05:26:38.226465+00:00",
+      "timestamp_end": "2026-11-11T05:41:35.389917+00:00",
+      "latency_seconds": 897.17,
+      "input_tokens": 118725,
+      "output_tokens": 88337,
+      "thinking_tokens": 0,
+      "cost_usd": 4.483280000000001,
+      "temperature": 1,
+      "error": null
+    }
+  ],
+  "errors": []
+}

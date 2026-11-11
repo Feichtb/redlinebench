@@ -52,6 +52,16 @@ OUTPUTS_DIR = SCRIPT_DIR / "outputs"
 
 MODEL_CONFIG: dict[str, dict[str, Any]] = {
     # ── Anthropic ──────────────────────────────────────────────────────────
+    # Successor to Fable 5.1 (API created_at 2026-11-09). Models API confirms the
+    # same request surface: adaptive thinking only (enabled/disabled both
+    # unsupported), effort low..max, 1M context / 128K max output.
+    # Requires 30-day data retention (not available under zero data retention).
+    "claude-fable-5-2": {
+        "provider": "anthropic",
+        "max_tokens": 128000,
+        "thinking_type": "adaptive",    # no budget_tokens; uses output_config.effort
+        "output_effort": "high",        # matches the Fable 5 / 5.1 runs for a fair comparison
+    },
     # Anthropic's most capable model (released 2026-08-28; successor to Fable 5).
     # Identical request surface to Fable 5: thinking is always on, so send only
     # {"type": "adaptive"} (no budget_tokens) and control depth via
@@ -293,6 +303,7 @@ MAX_RUNS = 5
 # Output pricing applies to all output tokens including thinking tokens.
 # Leave a model out of this dict to get cost_usd = 0.0 in the manifest.
 PRICING: dict[str, tuple[float, float]] = {
+    "claude-fable-5-2":                   (8.00 / 1_000_000, 40.00 / 1_000_000),
     "claude-fable-5-1":                   (10.00 / 1_000_000, 50.00 / 1_000_000),
     "claude-fable-5":                     (10.00 / 1_000_000, 50.00 / 1_000_000),
     "claude-opus-5-5":                    (4.00 / 1_000_000, 20.00 / 1_000_000),
