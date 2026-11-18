@@ -96,6 +96,11 @@ MODEL_DISPLAY_OVERRIDES: dict[str, dict[str, str]] = {
     # sat within dE 8-12 of Astra, 5.6 Sol or o3). This is near OpenAI's own
     # brand teal and clears dE 18 from every model; its nearest are o1/o3.
     "gpt-6.1-sol":                    {"label": "GPT-6.1 Sol",       "provider": "OpenAI",    "color": "#0f9d9a"},
+    # Electric indigo: still reads as an OpenAI blue, but pushed toward violet
+    # because the plain blues are taken. Clears dE 41 (CIE76, the metric the
+    # other notes here use) from every other model; nearest is Grok 4.7. L*=46,
+    # so it holds on both the light and dark backgrounds.
+    "gpt-6.2-astra":                  {"label": "GPT-6.2 Astra",     "provider": "OpenAI",    "color": "#3d5afe"},
     "gpt-6-astra":                    {"label": "GPT-6 Astra",       "provider": "OpenAI",    "color": "#1f8ac0"},
     "gpt-5.6-sol":                    {"label": "GPT-5.6 Sol",       "provider": "OpenAI",    "color": "#2a62b0"},
     "gpt-5.5":                        {"label": "GPT-5.5",           "provider": "OpenAI",    "color": "#0d3a7a"},
@@ -166,6 +171,7 @@ RELEASE_DATES: dict[str, tuple[str, str]] = {
     "gpt-6.1-sol":                   ("2026-09-29", ""),
     "gemini-4-argon":                ("2026-10-13", ""),
     "claude-fable-5-2":              ("2026-11-09", ""),
+    "gpt-6.2-astra":                 ("2026-11-17", "API release"),
 }
 
 # Generated once (2026-07-05); must stay constant across regenerations to
@@ -188,6 +194,31 @@ def load_manifest_lookup(run_dir: Path) -> dict[str, dict]:
     for result in manifest.get("results", []):
         lookup.setdefault(result["model_name"], result)
     return lookup
+
+
+def run_cost(model_id: str, model_entry: dict, manifest_result: dict) -> float | None:
+    """Published cost of one run.
+
+    Normally the scores.json value, falling back to the manifest for the few
+    older scores.json files that never recorded one. The exception is OpenAI's
+    long-context tier (runner.LONG_CONTEXT_PRICING): every run of GPT-5.6 Sol,
+    GPT-6 Astra and GPT-6.1 Sol sent ~282-288K input tokens, over the 272K
+    line, but was costed at the short-context rate because the runner did not
+    model the tier until 2026-11-17. Those runs are recosted here from the
+    manifest's own token counts with the runner's own function, so rates live
+    in one place and no scores.json is edited.
+    """
+    from runner import LONG_CONTEXT_PRICING, LONG_CONTEXT_THRESHOLD, _calculate_cost
+
+    in_tok = manifest_result.get("input_tokens") or 0
+    out_tok = manifest_result.get("output_tokens")
+    if in_tok > LONG_CONTEXT_THRESHOLD and model_id in LONG_CONTEXT_PRICING and out_tok is not None:
+        return round(_calculate_cost(model_id, in_tok, out_tok), 2)
+    if "cost_usd" in model_entry:
+        return model_entry["cost_usd"]
+    if manifest_result.get("cost_usd") is not None:
+        return round(manifest_result["cost_usd"], 2)
+    return None
 
 
 def load_runs() -> tuple[list[dict], list[dict], list[dict]]:
@@ -228,10 +259,7 @@ def load_runs() -> tuple[list[dict], list[dict], list[dict]]:
                 "prompt_version": data.get("prompt_version"),
                 "benchmark_version": data.get("benchmark_version"),
                 "temperature": manifest_result.get("temperature"),
-                # A few older scores.json files never recorded cost_usd on the model
-                # entry; fall back to the manifest's computed cost for that run.
-                "cost_usd": model_entry["cost_usd"] if "cost_usd" in model_entry
-                    else (round(manifest_result["cost_usd"], 2) if manifest_result.get("cost_usd") is not None else None),
+                "cost_usd": run_cost(canonical_id, model_entry, manifest_result),
                 "raw": model_entry["raw"],
                 "net": model_entry["net"],
                 "pct": model_entry["pct"],

@@ -40,6 +40,7 @@ RedlineBench is published on benfeicht.com. The audience is **architects and arc
 - **Second audit — 2026-09-08** — fifteen scoring questions raised by the Fable 5.1 / GPT-6 Astra round were checked against the drawings. It corrected **B3, B4, B5, E2, E8, G1, G14, G16** in place, **voided the A2.01 north/south chain** entry on the Known Incorrect Findings list (the chains really do differ, by 1", because the seeded B4 grid change propagates into one and not the other), narrowed **I8** to the single-run misread, and added **N31–N37**. Two structural fixes matter most: the B4 row named the wrong grid pair (D–E; it is **C–D**), and **G1/G14 were being treated as two valid readings of one gap**, which paid a single "R-2 is undefined" observation into two scoreable issues — they are separate defects and G1 is the blank tag only. Six models' scores moved; no issue was added or removed, so the key stays v1 at 55.
 - **An open question is not an audit action** (2026-09-12) — E8 and G8 are flagged in the answer key's "Entries with open questions" section as not yet confirmed to be issues at all: E8 turns on whether the governing IRC edition requires a *self-closing* device on the garage-to-dwelling door, G8 on whether the awning is annotated ¼":12 and on the minimum slope of the snap-lock profile the spec names. **Flagging is not retiring.** Both rows stay live, stay scored as written, stay in the denominator of 55, and stay in every published number; nothing goes in `retired-issues.md` and no score moves until the research lands and says it should. Both are also cut from the conference deck (`presentation/crops.js` `skip`) — an unsettled entry is not something to put in front of a room, and `skip` has no effect on scoring. Resolve a flag by either deleting it (the entry holds up) or doing the normal retire/reword through the overlay.
 - **Corrections stay in v1, additions do not** — the 2026-08-10 audit was applied to the published v1 numbers rather than forked into a v2, because it removes entries that were never answerable and corrects one that was misworded; nobody's score changed on a judgement about their answer except where a run was re-read and re-judged in the open. A new *issue* would still force a version bump.
+- **Cost is a cold, launch-day list price** (2026-11-17) — `cost_usd` is what one uncached request cost at the model's launch-day rate. OpenAI auto-caches the prompt, so back-to-back runs bill most input at the cached rate; that is a scheduling artifact and is deliberately not applied (real counts stay in `_raw.json`). OpenAI's long-context tier (2× input, 1.5× output for the whole request above 272K input) *is* applied, and our prompt crosses it on GPT-5.6+. Rates live in `runner.py`'s `PRICING` / `LONG_CONTEXT_PRICING`; runs scored before the tier was modelled (GPT-5.6 Sol, GPT-6 Astra, GPT-6.1 Sol) are recosted from manifest tokens by `build_data.py`'s `run_cost()` — no `scores.json` is edited.
 - **Versioning**: this public release is v1 (`benchmark_version: v2` internally, since a v1 answer key existed only during development and was never published). Any future private/internal benchmark version gets calibrated against v1 via bridge runs — models re-run on both versions to confirm relative rankings hold — before being treated as comparable. Never silently replace published v1 numbers.
 
 ## Scoring Method
@@ -58,19 +59,20 @@ Neutral findings (debatable, out-of-scope, or judgment calls listed in the answe
 
 **Source of truth: `redlinebench/outputs/*/scores.json`.** `results/dataset/data.json` (fetched by the site), `results/dataset/data/*` (the HF export), and the table below are all generated from those files by `python redlinebench/build_data.py` — **never hand-edit the table between the markers**, it's overwritten every time `build_data.py` runs. If it disagrees with `results/dataset/data.json`, regenerate; don't manually reconcile.
 
-32 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
+33 models scored against the 55-issue answer key (mean net score across all runs; `n` shown only where >1):
 
 <!-- REDLINEBENCH:RESULTS_TABLE:START -->
 | Model | Net Score | % of max (55) | Cost / run |
 |-------|----------:|------------:|------------|
 | Claude Opus 5.5 (n=3, range 35.5–41.0) | 37.83 | 68.8% | $1.96 |
 | Claude Fable 5.2 (n=3, range 36.0–40.5) | 37.67 | 68.5% | $4.20 |
-| GPT-6 Astra (n=3, range 33.5–37.5) | 36.0 | 65.5% | $4.29 |
+| GPT-6.2 Astra (n=3, range 35.0–39.5) | 37.67 | 68.5% | $5.50 |
+| GPT-6 Astra (n=3, range 33.5–37.5) | 36.0 | 65.5% | $7.85 |
 | Claude Opus 5 (n=3, range 33.5–35.0) | 34.5 | 62.7% | $2.14 |
 | Claude Fable 5.1 (n=3, range 34.0–34.5) | 34.33 | 62.4% | $4.42 |
-| GPT-6.1 Sol (n=3, range 31.0–33.5) | 32.5 | 59.1% | $0.86 |
+| GPT-6.1 Sol (n=3, range 31.0–33.5) | 32.5 | 59.1% | $1.58 |
 | Grok 4.7 (n=3, range 26.0–33.0) | 29.83 | 54.2% | $1.82 |
-| GPT-5.6 Sol (n=3, range 26.0–28.0) | 27.0 | 49.1% | $3.25 |
+| GPT-5.6 Sol (n=3, range 26.0–28.0) | 27.0 | 49.1% | $5.58 |
 | Claude Fable 5 (n=3, range 26.0–26.5) | 26.33 | 47.9% | $3.31 |
 | Gemini 4 Argon (n=3, range 22.0–27.5) | 25.5 | 46.4% | $0.22 |
 | GPT-5.5 (n=3, range 21.5–29.0) | 24.83 | 45.1% | $1.84 |
@@ -182,6 +184,7 @@ python runner.py --prompt my_custom_prompt.txt
 | `gemini-3.1-pro-preview` | Google | Dynamic thinking budget (`-1`) |
 | `gemini-3-flash-preview` | Google | Dynamic thinking budget (`-1`) |
 | `gpt-6-astra` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
+| `gpt-6.2-astra` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
 | `gpt-6.1-sol` | OpenAI | Reasoning model; `reasoning_effort: high`, no temperature |
 | `gpt-5.6-sol` | OpenAI | Reasoning model (no temperature) |
 | `gpt-5.5` | OpenAI | Reasoning model; `reasoning_effort: xhigh`, no temperature |

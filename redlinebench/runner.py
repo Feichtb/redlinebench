@@ -198,6 +198,15 @@ MODEL_CONFIG: dict[str, dict[str, Any]] = {
         "no_temperature": True,      # reasoning model; rejects temperature param
         # No max_tokens — uncapped output (policy: new models get no cap).
     },
+    # GPT-6.2 Astra (API release 2026-11-17). Config mirrors gpt-6-astra so the
+    # two Astra generations are a controlled comparison. ID verified against the
+    # live models list on 2026-11-17. The API itself caps output at 128K tokens.
+    "gpt-6.2-astra": {
+        "provider": "openai",
+        "reasoning_effort": "high",
+        "no_temperature": True,      # reasoning model; rejects temperature param
+        # No max_tokens — uncapped output (policy: new models get no cap).
+    },
     # GPT-6.1 Sol (released 2026-09-29). Config mirrors gpt-6-astra so the two
     # GPT-6 models are a controlled comparison. ID and effort="high" verified
     # against the live Responses API on 2026-10-26.
@@ -315,6 +324,9 @@ PRICING: dict[str, tuple[float, float]] = {
     "claude-haiku-4-5":                   (0.80 / 1_000_000,   4.00 / 1_000_000),
     "claude-sonnet-4-0":                  (3.00 / 1_000_000,  15.00 / 1_000_000),
     "gpt-6-astra":                        (10.00 / 1_000_000, 50.00 / 1_000_000),
+    # Launch-day rate (2026-11-17), confirmed from OpenAI's pricing table.
+    # Long-context tier: see LONG_CONTEXT_PRICING.
+    "gpt-6.2-astra":                      (8.00 / 1_000_000,  40.00 / 1_000_000),
     "gpt-6.1-sol":                        (2.00 / 1_000_000,  10.00 / 1_000_000),
     # Introductory rate, valid through 2026-11-30 (4/20 thereafter). This is
     # what the run actually costs today, so it is the rate we record.
@@ -383,10 +395,38 @@ class _StreamProgress:
                   end="", flush=True)
 
 
+# OpenAI long-context tier: when a request's input exceeds the threshold, the
+# *whole* request (input and output) is billed at these rates instead of
+# PRICING's. Our two-PDF prompt is ~282-288K on GPT-5.6+ models, so it crosses.
+# The rule is OpenAI's standing one -- 2x input, 1.5x output, for the whole
+# request -- stated on its GPT-5.4 model page (2026-03) and so in force for
+# every run here. Rates from OpenAI's pricing table as supplied by Ben on
+# 2026-11-17, and like PRICING they are launch-day rates: gpt-5.6-sol launched
+# at 5/30 (since cut to a 4/20 promo, long 8/30), so its entry is 2x/1.5x of
+# the launch rate, not today's table.
+#
+# Cost is still a *cold, uncached* list price. OpenAI caches the prompt
+# automatically, so back-to-back runs bill most input at the cached rate; that
+# discount is an artifact of how the benchmark schedules runs, not what one
+# firm reviewing one set would pay, so it is not applied here. The real
+# cached/cache-write counts are kept in each _raw.json usage block.
+LONG_CONTEXT_THRESHOLD = 272_000
+LONG_CONTEXT_PRICING: dict[str, tuple[float, float]] = {
+    "gpt-6.2-astra":                      (16.00 / 1_000_000,  60.00 / 1_000_000),
+    "gpt-6-astra":                        (20.00 / 1_000_000,  75.00 / 1_000_000),
+    "gpt-6.1-sol":                        (4.00 / 1_000_000,   15.00 / 1_000_000),
+    "gpt-5.6-sol":                        (10.00 / 1_000_000,  45.00 / 1_000_000),
+    "gpt-5.5":                          (10.00 / 1_000_000,  45.00 / 1_000_000),
+    "gpt-5.5-pro":                        (60.00 / 1_000_000, 270.00 / 1_000_000),
+}
+
+
 def _calculate_cost(model_name: str, input_tokens: int, output_tokens: int) -> float:
     if model_name not in PRICING:
         return 0.0
     in_rate, out_rate = PRICING[model_name]
+    if input_tokens > LONG_CONTEXT_THRESHOLD and model_name in LONG_CONTEXT_PRICING:
+        in_rate, out_rate = LONG_CONTEXT_PRICING[model_name]
     return input_tokens * in_rate + output_tokens * out_rate
 
 
